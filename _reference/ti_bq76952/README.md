@@ -1,38 +1,34 @@
-# TI BQ76952 reference (electrical source of truth)
+# TI BQ76952 electrical references
 
-For the **working** fork, cell-monitor / AFE circuitry follows TI — not pixel-matching the clone passives.
+Use TI documentation for the monitor's electrical requirements, pin functions, ratings, and layout guidance. Apply it to the 32s charge-only objective in [PLAN.md](../../PLAN.md), the mechanical constraints in [DESIGN_RULES.md](../../DESIGN_RULES.md), and the supplied [firmware/package interface](../../docs/FIRMWARE_INTERFACE.md).
 
-## Local files
+## Local reference material
 
-| File | What |
-|------|------|
-| `bq76952_datasheet.pdf` | Device datasheet (pinout, typical app, abs max) |
-| `BQ76952EVM_users_guide_sluuc33a.pdf` | EVM user’s guide — **schematics §5.4**, BOM §5.2, layout |
-| `TIDA-010208_design_guide_tiduey5.pdf` | 10s–16s pack ref design (high-side FETs, aux power, e-bike-ish) |
+- [BQ76952 datasheet](bq76952_datasheet.pdf): device requirements, pinout, and application circuits.
+- [BQ76952EVM user's guide](BQ76952EVM_users_guide_sluuc33a.pdf): schematics in section 5.4, BOM in section 5.2, and layout. Figures 5-9 through 5-12 cover the monitor, pin configuration, FETs, and interface.
+- [TIDA-010208 design guide](TIDA-010208_design_guide_tiduey5.pdf): a 10s–16s reference with high-side FETs and auxiliary power.
+- [SLUC687A.zip](SLUC687A.zip): EVM board files, also extracted in [SLUC687A/](SLUC687A/).
 
-## EVM board / CAD files
+## Applying a 16s reference to this 32s board
 
-- `SLUC687A.zip` — BQ76952EVM board files (Rev. A)
-- Extracted under `SLUC687A/` (schematics, PCB, Gerbers, etc.)
+The EVM and TIDA-010208 are references for one monitor domain, not a complete two-monitor QFBMS circuit. The upper BQ uses the midpoint of the pack as its local reference; its interface to the ESP32 needs appropriate isolation or level shifting.
 
-## Primary circuit cues (from EVM BOM)
+[TI's stacked-BQ76952 guidance](https://www.ti.com/document-viewer/lit/html/SSZT191/GUID-D1DE75C4-D7DF-46D6-BABF-B322A3EC1A9B) illustrates an isolated upper-monitor I2C interface and additional wake/control considerations. Its protection-switch example does not add a discharge-protection requirement to QFBMS. Check each support circuit against the chosen charge-only architecture and the firmware's communication-enable startup sequence.
 
-Per BQ IC (16S half of our dual-BQ board):
+## Values and configuration
 
-| Role | EVM typical |
-|------|-------------|
-| Cell input series R | **20 Ω** (1206 on EVM; we may use smaller pkgs if dissipation OK) |
-| Cell differential C | **0.22 µF** |
-| Assorted decoupling | **0.1 µF** near rails / digital |
-| Thermistor bias | **10 kΩ** |
-| Sense resistor (pack) | **1 mΩ** on EVM (our pack may keep clone sense if already sized) |
+Choose and document the final values for the actual circuit. Do not copy a generic EVM BOM over the supplied software's sensing assumptions:
 
-Schematic pages in the EVM guide: Fig 5-9 monitor, 5-10 pin config, 5-11 FETs, 5-12 interface.
+- Cell-input filtering and balancing topology must be checked together, including the mechanically fixed balance/heatsink parts.
+- The supplied firmware configures BQ temperature inputs with internal 18 kΩ pull-ups. An EVM external-bias example is not an instruction to add a 10 kΩ resistor to those inputs.
+- The C firmware's current conversion assumes a 0.2 mΩ shunt, and the package applies an additional −0.2 multiplier. Reconcile that complete conversion with actual resistance and sense polarity before choosing values or claiming compatibility.
+- The package controls balancing and charging policy. Its charge switching uses an ESP32 control output; do not assume the EVM's BQ CHG/DSG gate connections are the intended QFBMS implementation.
+- Verify local decoupling, supply filters, communication pull-ups, and ratings for each monitor domain. Preserve the fixed mechanical features while fitting necessary supporting circuitry.
 
-## Links
+## Vendor links
 
-- Product: https://www.ti.com/product/BQ76952
-- EVM: https://www.ti.com/tool/BQ76952EVM
-- Datasheet: https://www.ti.com/lit/ds/symlink/bq76952.pdf
-- EVM UG: https://www.ti.com/lit/ug/sluuc33a/sluuc33a.pdf
-- TIDA-010208: https://www.ti.com/lit/ug/tiduey5/tiduey5.pdf
+- [BQ76952 product page](https://www.ti.com/product/BQ76952)
+- [BQ76952EVM](https://www.ti.com/tool/BQ76952EVM)
+- [Current datasheet](https://www.ti.com/lit/ds/symlink/bq76952.pdf)
+- [EVM user's guide](https://www.ti.com/lit/ug/sluuc33a/sluuc33a.pdf)
+- [TIDA-010208 design guide](https://www.ti.com/lit/ug/tiduey5/tiduey5.pdf)

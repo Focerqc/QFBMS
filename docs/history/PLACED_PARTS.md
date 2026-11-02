@@ -1,5 +1,8 @@
 > Historical snapshot from before the 2026-11-02 repository split.
 > May contain conflicting or unverified electrical instructions; not current editing guidance.
+>
+> Superseded by the [current build plan](../../PLAN.md) and [design rules](../../DESIGN_RULES.md).
+> This remains a dated inventory. Its inferred part functions, placement restrictions, and electrical proposals are not the current specification.
 
 # Placed parts on qfbms32
 

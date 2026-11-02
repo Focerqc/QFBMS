@@ -1,5 +1,8 @@
 > Historical snapshot from before the 2026-11-02 repository split.
 > May contain conflicting or unverified electrical instructions; not current editing guidance.
+>
+> Superseded by the [current build plan](../../PLAN.md) and [design rules](../../DESIGN_RULES.md).
+> The active design is charge-only. Discharge-switching instructions, blanket placement locks, and pin assignments below are preserved history, not the current specification.
 
 # qfbms32
 

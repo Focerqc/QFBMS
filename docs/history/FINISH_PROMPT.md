@@ -1,5 +1,8 @@
 > Historical snapshot from before the 2026-11-02 repository split.
 > May contain conflicting or unverified electrical instructions; not current editing guidance.
+>
+> Superseded by the [current build plan](../../PLAN.md) and [design rules](../../DESIGN_RULES.md).
+> The active design is charge-only. Discharge-switching instructions, blanket placement locks, and pin assignments below are preserved history, not the current specification.
 
 Finish `qfbms32 ai pcb/` on the parts that are already placed. The board is finished when those parts measure the 32 cells, sense pack current, read the thermistors, let the ESP talk to both monitors, and switch charge and discharge. A silk screen that matches the photos, with nets that do not do that, is not finished.
 
