@@ -1,0 +1,1234 @@
+{
+  "board": "qfbms32 ai pcb/qfbms32.kicad_pcb",
+  "verdict": "32 of 32 cell taps share copper with a filter resistor, and 0 of those resistors reach a BQ pad. U_BQ1 has 24 of 48 pins named. U_BQ2 has 22. Copper from a BQ pin to another part: 0 and 0. The regulator, I2C, and FET-driver pins are empty.",
+  "summary": {
+    "footprints": 150,
+    "pads": 655,
+    "signal_pads_unnetted": 318,
+    "tracks": 107,
+    "vias": 0,
+    "unconnected": 146,
+    "bq_named": {
+      "U_BQ1": 24,
+      "U_BQ2": 22
+    },
+    "bq_copper": {
+      "U_BQ1": 0,
+      "U_BQ2": 0
+    },
+    "bq_empty": {
+      "U_BQ1": 22,
+      "U_BQ2": 24
+    },
+    "cell_named": 33,
+    "cell_to_rf": 32,
+    "rf_to_bq": 0,
+    "blocks_copper": 0,
+    "blocks_partial": 5,
+    "blocks_missing": 6,
+    "harness_copper": 2,
+    "harness_total": 10
+  },
+  "rows": [
+    {
+      "group": "Harness",
+      "label": "TOP CELL",
+      "expect": "J_BAT1.1 named CELL32, copper to the fuse",
+      "state": "copper",
+      "found": "J_BAT1.1 = CELL32 \u00b7 island also F1.1",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "BOT",
+      "expect": "J_BAT1.2 named CELL0",
+      "state": "ok",
+      "found": "J_BAT1.2 = CELL0",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "Charger XT30",
+      "expect": "J_CHG1 = CHG+ / CHG\u2212, copper to the charge FET",
+      "state": "named",
+      "found": "pad1=CHG+, pad2=CHG- \u00b7 no copper to a FET",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "Cell taps",
+      "expect": "33 sense pads named CELL32\u2026CELL0",
+      "state": "ok",
+      "found": "33 / 33 named",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "Cell wire to filter R",
+      "expect": "Each CELL1\u2013CELL32 pad shares copper with its R_F",
+      "state": "copper",
+      "found": "32 / 32 cell nets reach an R_F pad",
+      "note": "CELL0 has no series resistor on this board."
+    },
+    {
+      "group": "Harness",
+      "label": "Temp 1\u20134",
+      "expect": "J_T pad1 = TS1\u2026TS4, pad2 = GND, copper to a BQ pin",
+      "state": "named",
+      "found": "4 / 4 named \u00b7 0 / 4 reach a BQ pin",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "ESC CAN / 5V",
+      "expect": "J_COMM1 and the isolator share CANH, CANL, ISO_GND, 5VExt in copper",
+      "state": "named",
+      "found": "names match on J_COMM1 and U7",
+      "note": "No track joins the connector to U7."
+    },
+    {
+      "group": "Harness",
+      "label": "Internal buzzer",
+      "expect": "BZ1 driven by another part",
+      "state": "named",
+      "found": "1=+3V3, 2=BUZZ_LOW",
+      "note": "BUZZ_LOW does not reach another footprint."
+    },
+    {
+      "group": "Harness",
+      "label": "Enable override",
+      "expect": "A switch footprint, netted",
+      "state": "missing",
+      "found": "no switch footprint on the board",
+      "note": ""
+    },
+    {
+      "group": "Harness",
+      "label": "USB-C",
+      "expect": "J_USB1 D+/D\u2212 and power netted to the ESP",
+      "state": "missing",
+      "found": "0 signal pads have a net",
+      "note": ""
+    },
+    {
+      "group": "Power",
+      "label": "Pack fuse",
+      "expect": "F1 in series, copper from CELL32 to both FET drains",
+      "state": "named",
+      "found": "F1.1=CELL32, F1.2=CELL32_FUSED",
+      "note": "FET drains are not on the fuse copper."
+    },
+    {
+      "group": "Power",
+      "label": "Discharge FET gate",
+      "expect": "Q2 gate reaches a driver",
+      "state": "named",
+      "found": "Q2.4=PACK+ \u00b7 nothing else on this island",
+      "note": ""
+    },
+    {
+      "group": "Power",
+      "label": "Charge FET gate",
+      "expect": "Q1 gate copper to the SSR output and the gate parts",
+      "state": "named",
+      "found": "Q1.4=CHG+ \u00b7 nothing else on this island",
+      "note": ""
+    },
+    {
+      "group": "Power",
+      "label": "Current shunt",
+      "expect": "R_SH copper to BQ SRP and SRN",
+      "state": "named",
+      "found": "R_SH1.1=CELL0 \u00b7 R_SH1.2=SHUNT_MID \u00b7 R_SH2.2=CHG-",
+      "note": "SRP/SRN stay on the BQ pins. They do not touch the shunt."
+    },
+    {
+      "group": "Host",
+      "label": "ESP32-C3",
+      "expect": "I2C and the buzzer/USB nets land on U_ESP1",
+      "state": "missing",
+      "found": "0 nets",
+      "note": ""
+    },
+    {
+      "group": "Host",
+      "label": "3V3 buck",
+      "expect": "LTC7138 and its power parts netted",
+      "state": "missing",
+      "found": "0 / 5 parts have a net",
+      "note": ""
+    }
+  ],
+  "blocks": [
+    {
+      "id": "series-r",
+      "title": "Cell series 20 \u03a9",
+      "state": "partial",
+      "detail": "32 parts placed, 32 / 32 have CELL and VC nets, 0 / 32 reach a BQ pad."
+    },
+    {
+      "id": "diff-c",
+      "title": "Cell 0.22 \u00b5F",
+      "state": "partial",
+      "detail": "32 parts placed, 32 / 32 have two nets, 0 / 32 reach a BQ pad."
+    },
+    {
+      "id": "vc0",
+      "title": "VC0 series resistor",
+      "state": "wrong",
+      "detail": "U_BQ1 pin 16 (VC0) is tied straight to CELL0. The EVM uses 20 \u03a9 there too."
+    },
+    {
+      "id": "bat",
+      "title": "BAT pin filter",
+      "state": "missing",
+      "detail": "BAT pin is open."
+    },
+    {
+      "id": "cp1",
+      "title": "CP1 charge-pump cap",
+      "state": "missing",
+      "detail": "Pin 46 is empty on both chips."
+    },
+    {
+      "id": "regs",
+      "title": "REG18 / REG1 / REG2 / REGIN / BREG",
+      "state": "missing",
+      "detail": "Pins 24, 34, 35, 36, and 37 are empty. Those caps are how the chip powers itself."
+    },
+    {
+      "id": "sense",
+      "title": "SRP / SRN to the shunt",
+      "state": "partial",
+      "detail": "Both chips have SRP and SRN net names. Those nets do not reach R_SH1 or R_SH2."
+    },
+    {
+      "id": "ts",
+      "title": "Thermistor bias",
+      "state": "partial",
+      "detail": "4 / 4 connectors are named. No 10 k\u03a9 bias to REG18, and 0 / 4 have copper to a BQ pin."
+    },
+    {
+      "id": "i2c",
+      "title": "I2C to the ESP",
+      "state": "missing",
+      "detail": "SCL and SDA (pins 26 and 27) are empty. U_ESP1 has no nets."
+    },
+    {
+      "id": "drivers",
+      "title": "BQ CHG / DSG / PCHG pins",
+      "state": "missing",
+      "detail": "Pins 39, 40, 43, and 45 are empty. The charge-gate parts around Q1 are a separate named island, not these pins."
+    },
+    {
+      "id": "balance",
+      "title": "Balance resistors R_B",
+      "state": "missing",
+      "detail": "0 / 33 of the 27 \u03a9 bleed resistors have a net. The EVM balances inside the BQ, through the VC pins."
+    }
+  ],
+  "pins": [
+    {
+      "ref": "U_BQ1",
+      "pin": 1,
+      "func": "VC15",
+      "net": "BQ1_VC15",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 2,
+      "func": "VC14",
+      "net": "BQ1_VC14",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 3,
+      "func": "VC13",
+      "net": "BQ1_VC13",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 4,
+      "func": "VC12",
+      "net": "BQ1_VC12",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 5,
+      "func": "VC11",
+      "net": "BQ1_VC11",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 6,
+      "func": "VC10",
+      "net": "BQ1_VC10",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 7,
+      "func": "VC9",
+      "net": "BQ1_VC9",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 8,
+      "func": "VC8",
+      "net": "BQ1_VC8",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 9,
+      "func": "VC7",
+      "net": "BQ1_VC7",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 10,
+      "func": "VC6",
+      "net": "BQ1_VC6",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 11,
+      "func": "VC5",
+      "net": "BQ1_VC5",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 12,
+      "func": "VC4",
+      "net": "BQ1_VC4",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 13,
+      "func": "VC3",
+      "net": "BQ1_VC3",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 14,
+      "func": "VC2",
+      "net": "BQ1_VC2",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 15,
+      "func": "VC1",
+      "net": "BQ1_VC1",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 16,
+      "func": "VC0",
+      "net": "CELL0",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 17,
+      "func": "VSS",
+      "net": "GND",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 18,
+      "func": "SRP",
+      "net": "SRP",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 19,
+      "func": "NC",
+      "net": "",
+      "state": "nc",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 20,
+      "func": "SRN",
+      "net": "SRN",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 21,
+      "func": "TS1",
+      "net": "TS1",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 22,
+      "func": "TS2",
+      "net": "TS2",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 23,
+      "func": "TS3",
+      "net": "TS3",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 24,
+      "func": "REG18",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 25,
+      "func": "ALERT",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 26,
+      "func": "SCL",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 27,
+      "func": "SDA",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 28,
+      "func": "SPI_MOSI",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 29,
+      "func": "CFETOFF",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 30,
+      "func": "DFETOFF",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 31,
+      "func": "DCHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 32,
+      "func": "DDSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 33,
+      "func": "RST_SHUT",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 34,
+      "func": "REG2",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 35,
+      "func": "REG1",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 36,
+      "func": "REGIN",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 37,
+      "func": "BREG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 38,
+      "func": "FUSE",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 39,
+      "func": "PDSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 40,
+      "func": "PCHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 41,
+      "func": "LD",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 42,
+      "func": "PACK",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 43,
+      "func": "DSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 44,
+      "func": "NC",
+      "net": "",
+      "state": "nc",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 45,
+      "func": "CHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 46,
+      "func": "CP1",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 47,
+      "func": "BAT",
+      "net": "BQ1_BAT",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ1",
+      "pin": 48,
+      "func": "VC16",
+      "net": "BQ1_VC16",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 1,
+      "func": "VC15",
+      "net": "BQ2_VC15",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 2,
+      "func": "VC14",
+      "net": "BQ2_VC14",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 3,
+      "func": "VC13",
+      "net": "BQ2_VC13",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 4,
+      "func": "VC12",
+      "net": "BQ2_VC12",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 5,
+      "func": "VC11",
+      "net": "BQ2_VC11",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 6,
+      "func": "VC10",
+      "net": "BQ2_VC10",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 7,
+      "func": "VC9",
+      "net": "BQ2_VC9",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 8,
+      "func": "VC8",
+      "net": "BQ2_VC8",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 9,
+      "func": "VC7",
+      "net": "BQ2_VC7",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 10,
+      "func": "VC6",
+      "net": "BQ2_VC6",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 11,
+      "func": "VC5",
+      "net": "BQ2_VC5",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 12,
+      "func": "VC4",
+      "net": "BQ2_VC4",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 13,
+      "func": "VC3",
+      "net": "BQ2_VC3",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 14,
+      "func": "VC2",
+      "net": "BQ2_VC2",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 15,
+      "func": "VC1",
+      "net": "BQ2_VC1",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 16,
+      "func": "VC0",
+      "net": "CELL16",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 17,
+      "func": "VSS",
+      "net": "GND",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 18,
+      "func": "SRP",
+      "net": "SRP",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 19,
+      "func": "NC",
+      "net": "",
+      "state": "nc",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 20,
+      "func": "SRN",
+      "net": "SRN",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 21,
+      "func": "TS1",
+      "net": "TS4",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 22,
+      "func": "TS2",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 23,
+      "func": "TS3",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 24,
+      "func": "REG18",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 25,
+      "func": "ALERT",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 26,
+      "func": "SCL",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 27,
+      "func": "SDA",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 28,
+      "func": "SPI_MOSI",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 29,
+      "func": "CFETOFF",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 30,
+      "func": "DFETOFF",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 31,
+      "func": "DCHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 32,
+      "func": "DDSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 33,
+      "func": "RST_SHUT",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 34,
+      "func": "REG2",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 35,
+      "func": "REG1",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 36,
+      "func": "REGIN",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 37,
+      "func": "BREG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 38,
+      "func": "FUSE",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 39,
+      "func": "PDSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 40,
+      "func": "PCHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 41,
+      "func": "LD",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 42,
+      "func": "PACK",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 43,
+      "func": "DSG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 44,
+      "func": "NC",
+      "net": "",
+      "state": "nc",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 45,
+      "func": "CHG",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 46,
+      "func": "CP1",
+      "net": "",
+      "state": "empty",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 47,
+      "func": "BAT",
+      "net": "BQ2_BAT",
+      "state": "named",
+      "reaches": ""
+    },
+    {
+      "ref": "U_BQ2",
+      "pin": 48,
+      "func": "VC16",
+      "net": "BQ2_VC16",
+      "state": "named",
+      "reaches": ""
+    }
+  ],
+  "blank": [
+    {
+      "ref": "C_DISC",
+      "value": "10uF"
+    },
+    {
+      "ref": "C_FLT1",
+      "value": "10uF_100V"
+    },
+    {
+      "ref": "C_TAN1",
+      "value": "100uF_16V"
+    },
+    {
+      "ref": "D_BST1",
+      "value": "Schottky"
+    },
+    {
+      "ref": "D_CHG1",
+      "value": "DSK320"
+    },
+    {
+      "ref": "D_CHG2",
+      "value": "DSK320"
+    },
+    {
+      "ref": "D_CHG3",
+      "value": "DSK320"
+    },
+    {
+      "ref": "D_PRI1",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "D_PRI2",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "D_PRI3",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "D_S1",
+      "value": "TVS"
+    },
+    {
+      "ref": "D_SEC1",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "D_SEC2",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "D_SEC3",
+      "value": "D_Schottky"
+    },
+    {
+      "ref": "FB1",
+      "value": "Unmarked"
+    },
+    {
+      "ref": "J_USB1",
+      "value": "USB-C"
+    },
+    {
+      "ref": "L1",
+      "value": "180uH_181"
+    },
+    {
+      "ref": "R_B1",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B10",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B11",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B12",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B13",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B14",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B15",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B16",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B17",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B18",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B19",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B2",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B20",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B21",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B22",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B23",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B24",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B25",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B26",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B27",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B28",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B29",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B3",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B30",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B31",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B32",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B33",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B4",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B5",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B6",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B7",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B8",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_B9",
+      "value": "27R0"
+    },
+    {
+      "ref": "R_CHG1",
+      "value": "100k"
+    },
+    {
+      "ref": "R_CHG2",
+      "value": "2203"
+    },
+    {
+      "ref": "R_DSG1",
+      "value": "1000"
+    },
+    {
+      "ref": "R_S1",
+      "value": "1000"
+    },
+    {
+      "ref": "R_S2",
+      "value": "1000"
+    },
+    {
+      "ref": "R_SEC1",
+      "value": "01X"
+    },
+    {
+      "ref": "U4",
+      "value": "LTC7138"
+    },
+    {
+      "ref": "U_ESP1",
+      "value": "ESP32-C3-MINI-1"
+    }
+  ]
+}

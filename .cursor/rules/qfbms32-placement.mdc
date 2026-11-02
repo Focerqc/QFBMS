@@ -1,0 +1,8 @@
+---
+description: Preserve QFBMS placement and use current editing guidance
+alwaysApply: true
+---
+
+Follow DESIGN_RULES.md at the repository root. The active board is qfbms32.kicad_pcb.
+Use _reference/user_photos/ for placement. docs/history/ contains historical proposals, not active instructions.
+Do not run archived generators, move parts, change values, or alter electrical design as part of maintenance.
