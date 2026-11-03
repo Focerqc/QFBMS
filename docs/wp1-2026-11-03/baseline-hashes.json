@@ -1,0 +1,177 @@
+[
+  {
+    "path": "3dmodels/ESP32-C3-MINI-1.STEP",
+    "bytes": 7512261,
+    "sha256": "3ca5ac24b6943edf816eb1e75c525a42f13118cd5546b70812c1d21149bcdcab"
+  },
+  {
+    "path": "3dmodels/Fuse_2512_6332Metric.step",
+    "bytes": 40206,
+    "sha256": "b4c95e134514e7dda10e6195c02ea159a7c2231b019fb15fb7b7de994cfa318a"
+  },
+  {
+    "path": "3dmodels/TOLL-8.step",
+    "bytes": 114374,
+    "sha256": "0652e8cdd874cda4aea35fe725bb43e669be09363cb60ad1e7000fe2e3e588d6"
+  },
+  {
+    "path": "3dmodels/USB-C.step",
+    "bytes": 1059856,
+    "sha256": "6338ce740fa231c2d3dcc6384e0576994a47240a312a21413cb85d76990a69a0"
+  },
+  {
+    "path": "3dmodels/XT30PW-F.step",
+    "bytes": 192287,
+    "sha256": "ab126dc6fa9f686db18b901c09c0153a268110b51cdb684c615209f2494413e0"
+  },
+  {
+    "path": "3dmodels/XT30PW-M.step",
+    "bytes": 1281906,
+    "sha256": "206ac662475e0f5b13f3ba3e4457cdd2a7572ef14515710e028594a6e57e1b02"
+  },
+  {
+    "path": "_reference/firmware/bq769x2_defs.h",
+    "bytes": 23723,
+    "sha256": "1f5db41e595c830bc7308bce7d39b5f7784358e0a157750ae2d17dcab8286d08"
+  },
+  {
+    "path": "_reference/firmware/hw.c",
+    "bytes": 38796,
+    "sha256": "5ab637f4db713aaf7ff2b883d2b3ea5c277636eddabf10d7e9ce33f0a1ca9944"
+  },
+  {
+    "path": "_reference/firmware/hw.h",
+    "bytes": 6057,
+    "sha256": "2a035de83fd7f91d1669404d29d221cdb9829f47cc461e160d738c80674d45e2"
+  },
+  {
+    "path": "_reference/firmware/hw_vbms32.c",
+    "bytes": 38796,
+    "sha256": "5ab637f4db713aaf7ff2b883d2b3ea5c277636eddabf10d7e9ce33f0a1ca9944"
+  },
+  {
+    "path": "_reference/firmware/hw_vbms32.h",
+    "bytes": 6057,
+    "sha256": "2a035de83fd7f91d1669404d29d221cdb9829f47cc461e160d738c80674d45e2"
+  },
+  {
+    "path": "_reference/firmware/Makefile",
+    "bytes": 746,
+    "sha256": "e966603e445afa37e21150ec143a0ac74c80fdff3e6569bffb8624b62b511a5e"
+  },
+  {
+    "path": "_reference/firmware/pkgdesc.qml",
+    "bytes": 1271,
+    "sha256": "819427015522b49eb01224bf4fbae1eaed47052f551c5bbd2c8ce1b8dc3d7521"
+  },
+  {
+    "path": "_reference/firmware/README-in.md",
+    "bytes": 118,
+    "sha256": "65c30e0b589a82bc13121e68d50afb18c624ecd6d7a11328d4c64919f33b5f2c"
+  },
+  {
+    "path": "_reference/firmware/ui.qml.in",
+    "bytes": 4133,
+    "sha256": "ca24e793ca85258fed984650689be53f4a47eae95623f2419263b7b5634c3a48"
+  },
+  {
+    "path": "_reference/firmware/vbms32_conf_default.h",
+    "bytes": 4816,
+    "sha256": "b757074f9ef95d96c1d8190db67bafe04960f583ca65576e4abc8a99f15ee71c"
+  },
+  {
+    "path": "_reference/firmware/vbms32_confparser.c",
+    "bytes": 9381,
+    "sha256": "d592f8c242cd3ee3fe6af4ff3819c509fa2731e0a130850eafa8bbe6e559fd79"
+  },
+  {
+    "path": "_reference/firmware/vbms32_confparser.h",
+    "bytes": 531,
+    "sha256": "19d64d6987d361197f0d7fd8b44a5ffe7cfed05da545385497fe8594a2d2438f"
+  },
+  {
+    "path": "_reference/firmware/vbms32_confxml.c",
+    "bytes": 41512,
+    "sha256": "4d9b02eef3340355725588dd632c177b222df0755b3d3964781f4b64fca0f7e8"
+  },
+  {
+    "path": "_reference/firmware/vbms32_confxml.h",
+    "bytes": 295,
+    "sha256": "513a8f9f7928a86f98a8bfaf573f4d973e5a3dcac85da03412e5f2e4e4fa7d2c"
+  },
+  {
+    "path": "_reference/firmware/vbms32_micro.lisp",
+    "bytes": 31649,
+    "sha256": "94f90424c3932f1e8dad0665ed2f24932ac851b7fccc1035b2204ce39e3cd0ab"
+  },
+  {
+    "path": "_reference/firmware/vbms32_settings.xml",
+    "bytes": 86318,
+    "sha256": "80d185cada7718a6689ef050a4bf8b066674a1baab4ccc2663d46743244f6151"
+  },
+  {
+    "path": "_reference/firmware/version",
+    "bytes": 6,
+    "sha256": "d1b77b88f4b9f675a900e4143ac768a21218623cfe1703ca43162388c3271bd6"
+  },
+  {
+    "path": "fp-lib-table",
+    "bytes": 152,
+    "sha256": "277367d8b83ddf51bf9a04df4c7ace188aa3c0301fa667c1ae7e0dd2b7bd6265"
+  },
+  {
+    "path": "qfbms.pretty/Buzzer_5.0x5.0mm_SMD.kicad_mod",
+    "bytes": 2066,
+    "sha256": "7fa4e8a3a5ec9163f6b631d92afde5e0b3eb5914e8880c5e38e273409ad54dbb"
+  },
+  {
+    "path": "qfbms.pretty/ESP32-C3-MINI-1.kicad_mod",
+    "bytes": 13622,
+    "sha256": "eb646bd53305f0a2497bc87803ad258b4e916eef9d8d635ec80363f786b55c2c"
+  },
+  {
+    "path": "qfbms.pretty/H2440_SSR.kicad_mod",
+    "bytes": 2778,
+    "sha256": "52f144c025b1a272740d8386a4c3d26d58a045e6b11cfa965455dfd44c679846"
+  },
+  {
+    "path": "qfbms.pretty/TOLL-8_AGM15T03LL.kicad_mod",
+    "bytes": 1832,
+    "sha256": "64968b31fa6cc14f9d718cf7225eb27746d9e694a882a2da28b780a9ac43cc37"
+  },
+  {
+    "path": "qfbms.pretty/USB_C_Receptacle_16P.kicad_mod",
+    "bytes": 7095,
+    "sha256": "2599fd47ea376fe2eeb87f3f1c578fec55f6f428002817247d598bc15d05ed7c"
+  },
+  {
+    "path": "qfbms.pretty/XT30PW-F_Lugs.kicad_mod",
+    "bytes": 1381,
+    "sha256": "6c4feef7760b2d5b39bd68ddee70edd056146bfbd4ea7ebe19faf5f897e7e2b7"
+  },
+  {
+    "path": "qfbms.pretty/XT30PW-M_Lugs.kicad_mod",
+    "bytes": 1375,
+    "sha256": "3e463354332fedd375098827b988a69c2bd46db1683194beae6a6e681ce45bb2"
+  },
+  {
+    "path": "qfbms32-charge-only-draft.kicad_sch",
+    "bytes": 4192,
+    "sha256": "2046caabfa361b79879ecac0b6701c29ad2b849d31c6c96f0d3d1434c0cc5761"
+  },
+  {
+    "path": "qfbms32.kicad_pcb",
+    "bytes": 889378,
+    "sha256": "44045b287d223fa48ad0c9864a69a794fbc2407edbb3922745e9a5b46db71e8e"
+  },
+  {
+    "path": "qfbms32.kicad_pro",
+    "bytes": 9782,
+    "sha256": "0f84f61398bd25215ada1a9c53abe8c4e0f80b3b613c16e2d02f656b900cfed2"
+  },
+  {
+    "path": "qfbms32.kicad_sch",
+    "bytes": 248816,
+    "sha256": "c8b17e5aa0936d8ffa2d0c3b4535be0b898064dc0976f2abd4436c4a3b704603"
+  }
+]

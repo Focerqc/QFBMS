@@ -1,0 +1,441 @@
+{
+  "user_intent": "User-marked capacitor locations, not verified original component identities. Use as placement references; agent may choose remaining capacitor positions. Preserve connectors and bleed resistors.",
+  "source": "qfbms32.boxes.json",
+  "annotations": {
+    "version": 1,
+    "ref": "_reference/vfbms32_cad_top_reference_rotated.png",
+    "refBot": "_reference/vfbms32_real_bottom_hd.png",
+    "sideView": "top",
+    "refFit": {
+      "ox": 0,
+      "oy": 0,
+      "sx": 100,
+      "sy": 100
+    },
+    "colors": [
+      {
+        "id": "cec3yi5i69",
+        "hex": "#4ea1ff",
+        "note": "thing"
+      },
+      {
+        "id": "cwpr00i0ej",
+        "hex": "#ff6b6b",
+        "note": "0805"
+      },
+      {
+        "id": "cux5kds3bk",
+        "hex": "#ffd166",
+        "note": "1206"
+      }
+    ],
+    "boxes": [
+      {
+        "id": "b82lis6kfp",
+        "c": "cec3yi5i69",
+        "x": 51.85,
+        "y": 14.15,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bnha2njllj",
+        "c": "cec3yi5i69",
+        "x": 51.85,
+        "y": 12.6,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bgjnsuvoe0",
+        "c": "cec3yi5i69",
+        "x": 51.7,
+        "y": 11.05,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bidnrghp62",
+        "c": "cec3yi5i69",
+        "x": 51.6,
+        "y": 9.4,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "b11sovl50r",
+        "c": "cec3yi5i69",
+        "x": 37.95,
+        "y": 17.7,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bpfz46kaqe",
+        "c": "cec3yi5i69",
+        "x": 50.3,
+        "y": 7.95,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "b2fd4yvi6b",
+        "c": "cec3yi5i69",
+        "x": 41,
+        "y": 8.65,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bqfx1ltp7b",
+        "c": "cec3yi5i69",
+        "x": 43.1,
+        "y": 7.15,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b8x5uboqyf",
+        "c": "cec3yi5i69",
+        "x": 44.55,
+        "y": 7.35,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b7h6x1pxod",
+        "c": "cec3yi5i69",
+        "x": 44.3,
+        "y": 5,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "b2wz72u8fg",
+        "c": "cec3yi5i69",
+        "x": 47.4,
+        "y": 4.9,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bsxk4z19rw",
+        "c": "cec3yi5i69",
+        "x": 43.3,
+        "y": 2.4,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bkjcohiavk",
+        "c": "cec3yi5i69",
+        "x": 44.9,
+        "y": 2.3,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b93px23g4r",
+        "c": "cec3yi5i69",
+        "x": 28.55,
+        "y": 1.95,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bwp8a7yhmc",
+        "c": "cec3yi5i69",
+        "x": 30.05,
+        "y": 1.85,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bqosso6u33",
+        "c": "cec3yi5i69",
+        "x": 56.15,
+        "y": 18.05,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b72ovgzzrx",
+        "c": "cec3yi5i69",
+        "x": 63.95,
+        "y": 8.75,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bs4wwgp4r0",
+        "c": "cec3yi5i69",
+        "x": 70.2,
+        "y": 13.4,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bhf3l0e90n",
+        "c": "cec3yi5i69",
+        "x": 68.95,
+        "y": 18.3,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bdil8phlav",
+        "c": "cec3yi5i69",
+        "x": 91.85,
+        "y": 8.8,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "btrpl3ymgn",
+        "c": "cec3yi5i69",
+        "x": 90.3,
+        "y": 7.5,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "boxes4pnly",
+        "c": "cec3yi5i69",
+        "x": 87,
+        "y": 7.2,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "boiysagpap",
+        "c": "cec3yi5i69",
+        "x": 85.65,
+        "y": 7.4,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bsodb3rqqf",
+        "c": "cec3yi5i69",
+        "x": 84.05,
+        "y": 7.2,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b1huxj7sly",
+        "c": "cec3yi5i69",
+        "x": 84.85,
+        "y": 2.1,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b1pwbbiu2g",
+        "c": "cec3yi5i69",
+        "x": 79.2,
+        "y": 1.9,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b1fe84x0bn",
+        "c": "cec3yi5i69",
+        "x": 100.65,
+        "y": 7.3,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bpbz887318",
+        "c": "cec3yi5i69",
+        "x": 97.1,
+        "y": 12.8,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b3y6koz4kx",
+        "c": "cec3yi5i69",
+        "x": 98.8,
+        "y": 12.75,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bcdk7oq5nt",
+        "c": "cec3yi5i69",
+        "x": 98,
+        "y": 18.4,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "bql48za6ri",
+        "c": "cec3yi5i69",
+        "x": 104.1,
+        "y": 18.55,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "beqt6alz2e",
+        "c": "cec3yi5i69",
+        "x": 116.15,
+        "y": 16.25,
+        "w": 0.8,
+        "h": 1.6,
+        "pat": null
+      },
+      {
+        "id": "b5ge94q82t",
+        "c": "cec3yi5i69",
+        "x": 122.35,
+        "y": 19.95,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bpidir39ck",
+        "c": "cec3yi5i69",
+        "x": 128.3,
+        "y": 20.05,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bvqwneiq5y",
+        "c": "cec3yi5i69",
+        "x": 95.75,
+        "y": 19.05,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bi3n9t2s3z",
+        "c": "cec3yi5i69",
+        "x": 92.8,
+        "y": 19.1,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bpxjhzdu3z",
+        "c": "cec3yi5i69",
+        "x": 95.25,
+        "y": 15.05,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bbl9hx7wbh",
+        "c": "cec3yi5i69",
+        "x": 94.9,
+        "y": 13.5,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "blf7cwu5ic",
+        "c": "cec3yi5i69",
+        "x": 94.85,
+        "y": 12,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "b94h28t0cx",
+        "c": "cwpr00i0ej",
+        "x": 37.85,
+        "y": 15.7,
+        "w": 2,
+        "h": 1.25,
+        "pat": null
+      },
+      {
+        "id": "bihniyi8xo",
+        "c": "cwpr00i0ej",
+        "x": 59.95,
+        "y": 1.6,
+        "w": 2,
+        "h": 1.25,
+        "pat": null
+      },
+      {
+        "id": "bsdsfw0bzv",
+        "c": "cwpr00i0ej",
+        "x": 81.15,
+        "y": 14.75,
+        "w": 2,
+        "h": 1.25,
+        "pat": null
+      },
+      {
+        "id": "b1mlza2m0v",
+        "c": "cec3yi5i69",
+        "x": 81.15,
+        "y": 16.55,
+        "w": 1.6,
+        "h": 0.8,
+        "pat": null
+      },
+      {
+        "id": "bohgzy83ze",
+        "c": "cux5kds3bk",
+        "x": 72.6,
+        "y": 13.8,
+        "w": 1.6,
+        "h": 3.2,
+        "pat": null
+      },
+      {
+        "id": "bq4pruuenn",
+        "c": "cux5kds3bk",
+        "x": 30.05,
+        "y": 14,
+        "w": 1.6,
+        "h": 3.2,
+        "pat": null
+      }
+    ],
+    "board": "qfbms32.kicad_pcb"
+  }
+}

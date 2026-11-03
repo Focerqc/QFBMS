@@ -1,0 +1,669 @@
+{
+  "current_counts": {
+    "violations": 650,
+    "unconnected_items": 146,
+    "schematic_parity": 366
+  },
+  "types": {
+    "tracks_crossing": 60,
+    "shorting_items": 199,
+    "clearance": 29,
+    "hole_clearance": 15,
+    "copper_edge_clearance": 4,
+    "drill_out_of_range": 56,
+    "solder_mask_bridge": 195,
+    "courtyards_overlap": 23,
+    "silk_edge_clearance": 5,
+    "lib_footprint_mismatch": 1,
+    "text_height": 24,
+    "silk_over_copper": 21,
+    "silk_overlap": 18
+  },
+  "added": [
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad A9 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 122.2,
+            "y": 7.79
+          },
+          "uuid": "595ae39d-d672-4856-b605-8898a89fda23"
+        },
+        {
+          "description": "Pad B4 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 122.2,
+            "y": 7.79
+          },
+          "uuid": "4437d973-f023-4f9a-a794-b78890c89902"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad B1 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 121.4,
+            "y": 7.79
+          },
+          "uuid": "9186e189-4f60-4225-9538-5b0db14606e6"
+        },
+        {
+          "description": "Pad A12 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 121.4,
+            "y": 7.79
+          },
+          "uuid": "202e60a7-76af-4458-b990-25ff72340931"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Items shorting two nets (nets CHG+ and )",
+      "items": [
+        {
+          "description": "PTH pad 1 [CHG+] of J_CHG1",
+          "pos": {
+            "x": 14.342,
+            "y": 4.5
+          },
+          "uuid": "dbe54e03-a089-428d-b4c0-db2ce7c0d9f3"
+        },
+        {
+          "description": "Polygon [<no net>] on B.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and CHG-)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on B.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+        },
+        {
+          "description": "PTH pad 2 [CHG-] of J_CHG1",
+          "pos": {
+            "x": 14.342,
+            "y": 9.5
+          },
+          "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and )",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "adae2e6a-3f1f-449b-b9f8-1290c95b8431"
+        },
+        {
+          "description": "Pad 2 [<no net>] of R_CHG2 on F.Cu",
+          "pos": {
+            "x": 16.1125,
+            "y": 1.1
+          },
+          "uuid": "ba73d172-dd5c-481c-9911-475a71a0b381"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and CHG-)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 3.5,
+            "y": 8.5
+          },
+          "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+        },
+        {
+          "description": "PTH pad 2 [CHG-] of J_CHG1",
+          "pos": {
+            "x": 14.342,
+            "y": 9.5
+          },
+          "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and CELL0)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 3.5,
+            "y": 8.5
+          },
+          "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+        },
+        {
+          "description": "PTH pad 2 [CELL0] of J_BAT1",
+          "pos": {
+            "x": 13.3,
+            "y": 22.4
+          },
+          "uuid": "d86e1b12-c176-4721-84c6-d07c095753d7"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets PACK+ and )",
+      "items": [
+        {
+          "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+          "pos": {
+            "x": 25.3,
+            "y": 20.25
+          },
+          "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 14.6
+          },
+          "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad 5 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 23.0,
+            "y": 11.95
+          },
+          "uuid": "251ea3fd-0f34-4c7d-bb67-312e0a04b80a"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        },
+        {
+          "description": "Pad 6 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 24.2,
+            "y": 11.95
+          },
+          "uuid": "f1c536f6-ccbd-475e-8d37-dced93d13d6b"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad 7 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 25.4,
+            "y": 11.95
+          },
+          "uuid": "a125e024-332d-4a22-991b-f22db624bd6c"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad 1 [Q1_GATE] of Q1 on F.Cu",
+          "pos": {
+            "x": 18.2,
+            "y": 11.95
+          },
+          "uuid": "657c9e2a-2eac-44a4-bfd7-608769e25694"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        },
+        {
+          "description": "Pad 2 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 19.4,
+            "y": 11.95
+          },
+          "uuid": "fdda64d7-d94e-4060-81a1-6a842d3d2473"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad 3 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 20.6,
+            "y": 11.95
+          },
+          "uuid": "89920450-1802-48c0-85c1-8d70bbe57939"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    }
+  ],
+  "removed": [
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad A12 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 121.4,
+            "y": 7.79
+          },
+          "uuid": "202e60a7-76af-4458-b990-25ff72340931"
+        },
+        {
+          "description": "Pad B1 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 121.4,
+            "y": 7.79
+          },
+          "uuid": "9186e189-4f60-4225-9538-5b0db14606e6"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad B4 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 122.2,
+            "y": 7.79
+          },
+          "uuid": "4437d973-f023-4f9a-a794-b78890c89902"
+        },
+        {
+          "description": "Pad A9 [<no net>] of J_USB1 on F.Cu",
+          "pos": {
+            "x": 122.2,
+            "y": 7.79
+          },
+          "uuid": "595ae39d-d672-4856-b605-8898a89fda23"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Items shorting two nets (nets CHG+ and )",
+      "items": [
+        {
+          "description": "Pad 5 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 23.0,
+            "y": 11.95
+          },
+          "uuid": "251ea3fd-0f34-4c7d-bb67-312e0a04b80a"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and CHG+)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        },
+        {
+          "description": "Pad 6 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 24.2,
+            "y": 11.95
+          },
+          "uuid": "f1c536f6-ccbd-475e-8d37-dced93d13d6b"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets CHG+ and )",
+      "items": [
+        {
+          "description": "Pad 7 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 25.4,
+            "y": 11.95
+          },
+          "uuid": "a125e024-332d-4a22-991b-f22db624bd6c"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets Q1_GATE and )",
+      "items": [
+        {
+          "description": "Pad 1 [Q1_GATE] of Q1 on F.Cu",
+          "pos": {
+            "x": 18.2,
+            "y": 11.95
+          },
+          "uuid": "657c9e2a-2eac-44a4-bfd7-608769e25694"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets  and CHG+)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        },
+        {
+          "description": "Pad 2 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 19.4,
+            "y": 11.95
+          },
+          "uuid": "fdda64d7-d94e-4060-81a1-6a842d3d2473"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets CHG+ and )",
+      "items": [
+        {
+          "description": "Pad 3 [CHG+] of Q1 on F.Cu",
+          "pos": {
+            "x": 20.6,
+            "y": 11.95
+          },
+          "uuid": "89920450-1802-48c0-85c1-8d70bbe57939"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 9.5
+          },
+          "uuid": "a599c30e-33fb-457d-9ce3-9afa1e7129c4"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "adae2e6a-3f1f-449b-b9f8-1290c95b8431"
+        },
+        {
+          "description": "Pad 2 [<no net>] of R_CHG2 on F.Cu",
+          "pos": {
+            "x": 16.1125,
+            "y": 1.1
+          },
+          "uuid": "ba73d172-dd5c-481c-9911-475a71a0b381"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 3.5,
+            "y": 8.5
+          },
+          "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+        },
+        {
+          "description": "PTH pad 2 [CELL0] of J_BAT1",
+          "pos": {
+            "x": 13.3,
+            "y": 22.4
+          },
+          "uuid": "d86e1b12-c176-4721-84c6-d07c095753d7"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+          "pos": {
+            "x": 22.9,
+            "y": 20.25
+          },
+          "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+        },
+        {
+          "description": "Polygon [<no net>] on F.Cu",
+          "pos": {
+            "x": 18.0,
+            "y": 14.6
+          },
+          "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "PTH pad 1 [CHG+] of J_CHG1",
+          "pos": {
+            "x": 14.342,
+            "y": 4.5
+          },
+          "uuid": "dbe54e03-a089-428d-b4c0-db2ce7c0d9f3"
+        },
+        {
+          "description": "Polygon [<no net>] on B.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+      "items": [
+        {
+          "description": "Polygon [<no net>] on B.Cu",
+          "pos": {
+            "x": 12.0,
+            "y": 1.0
+          },
+          "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+        },
+        {
+          "description": "PTH pad 2 [CHG-] of J_CHG1",
+          "pos": {
+            "x": 14.342,
+            "y": 9.5
+          },
+          "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    }
+  ],
+  "ignored": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ]
+}

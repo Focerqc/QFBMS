@@ -5,11 +5,11 @@ Use [PLAN.md](PLAN.md) for the active build objective: a 32s charge-only BMS usi
 ## Mechanical constraints
 
 - Preserve the existing connectors' positions, orientation, and mating geometry. Check against `_reference/user_photos/` and the harness reference.
-- Preserve the balance/heatsink-related parts and thermal arrangement, including R_B1–R_B33. Identify the exact additional capacitor/resistor references before moving potentially affected parts. An unnetted part is not expendable.
-- Keep U_BQ1 and U_BQ2 in approximately their existing areas. Modest local movement is permitted for the electrical layout; do not use that flexibility to move connectors or the fixed thermal components.
+- Preserve the bleed-resistor row R_B1–R_B33 in its existing positions so the board can share the same case. There is no heatsink. Do not infer additional fixed capacitor/resistor positions from an assumed heatsink arrangement. An unnetted part is not expendable.
+- Keep U_BQ1 and U_BQ2 in approximately their existing areas. Modest local movement is permitted for the electrical layout; do not use that flexibility to move connectors or the fixed bleed resistors.
 - Supporting parts may be added, changed, or locally repositioned when justified by TI requirements and the verified software interface during electrical work. Record the reference, value/function, and reason. Do not preserve a wrong value or omit a necessary part solely because an old prompt froze every footprint.
-- Maintain the front-side component target. C_F1–C_F32 are a known unresolved back-side exception. Establish their front-side sites, clear of packages and thermal pads, while checking which components belong to the fixed heatsink arrangement. Documentation and repository maintenance do not authorize moving them.
-- If a fixed connector or thermal feature must change, present the specific reference and proposed change to the user. Ordinary supporting-circuit work within the agreed constraints does not require repeated placement approval.
+- Maintain the front-side component target. C_F1–C_F32 are a known unresolved back-side exception. Establish their front-side sites, clear of packages and the fixed bleed-resistor row. Documentation and repository maintenance do not authorize moving them.
+- If a fixed connector or bleed-resistor position must change, present the specific reference and proposed change to the user. Ordinary supporting-circuit work within the agreed constraints does not require repeated placement approval.
 
 ## Electrical and software basis
 
@@ -27,3 +27,9 @@ Use [PLAN.md](PLAN.md) for the active build objective: a 32s charge-only BMS usi
 - Record circuit changes and unresolved parts by reference and pin. Use ERC/DRC, mechanical checks, and staged functional verification appropriate to the change.
 - Dashboard scores and the saved connectivity snapshot are aids only. Their expectations may reflect the superseded topology.
 - Files in `docs/history/` are preserved evidence, not active instructions. Follow the current plan and these rules when they disagree with those files.
+
+## Capacitor placement clarification — November 3, 2026
+
+The user measured the reference capacitor bodies as 1.6 × 0.8 mm (0603 / 1608 metric). Use compact reflow footprints, normally `Capacitor_SMD:C_0603_1608Metric`, rather than enlarged hand-soldering variants, where electrical ratings and effective capacitance permit.
+
+The 45 marked locations in [the placement reference](docs/capacitor-placement-reference-2026-11-03.json) are visual references only, not verified circuit identities or net assignments. Establish capacitor functions, values, voltage ratings, and domain references from TI requirements and the supplied firmware before assigning parts to those sites. Complete the electrical schematic before placement and routing. Preserve connector and bleed-resistor positions for case compatibility; there is no heatsink.

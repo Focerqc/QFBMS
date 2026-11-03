@@ -5,7 +5,7 @@ alwaysApply: true
 
 Read README.md, PLAN.md, and DESIGN_RULES.md at the repository root before design work.
 The active board is qfbms32.kicad_pcb: a 32s charge-only BMS, with no discharge-protection requirement.
-Preserve placed connectors and balance/heatsink-related parts, including R_B1–R_B33.
+Preserve placed connectors and bleed resistors R_B1–R_B33. There is no heatsink.
 Keep the BQ monitors approximately in place; limited local movement and justified support-circuit changes are allowed during electrical work.
 Use docs/FIRMWARE_INTERFACE.md and the supplied firmware/package as the software compatibility baseline, and TI guidance for electrical requirements.
 Use _reference/user_photos/ for placement. Resolve the C_F back-side exception under DESIGN_RULES.md before moving those parts.

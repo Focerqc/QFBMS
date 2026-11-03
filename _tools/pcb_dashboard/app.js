@@ -811,10 +811,8 @@
       S.doc.refBot = pair.bot;
       fillImageSelect($('imageSelect'), dir, pair.top);
       fillImageSelect($('imageSelectBot'), dir, pair.bot);
-      const savedSide = S.doc.sideView;
-      const side = (savedSide === 'top' || savedSide === 'bottom' || savedSide === 'both')
-        ? savedSide
-        : (pair.top && pair.bot ? 'both' : (pair.bot && !pair.top ? 'bottom' : 'top'));
+      // Open on the full-width top view, even if Both was used last session.
+      const side = pair.bot && !pair.top ? 'bottom' : 'top';
       await Promise.all([loadRef(pair.top, 'top'), loadRef(pair.bot, 'bot')]);
       setSideView(side, false);
 
@@ -1090,8 +1088,8 @@
   function sideRole(p) {
     const base = String(p).split('/').pop().toLowerCase().replace(/\.[a-z0-9]+$/i, '');
     if (/top_reference/.test(base)) return 'front';
-    if (/^(front|top)$/.test(base) || /(?:^|_)(front|top)$/.test(base)) return 'front';
-    if (/^(back|bottom)$/.test(base) || /(?:^|_)(back|bottom)$/.test(base)) return 'back';
+    if (/(?:^|_)(front|top)(?:_|$)/.test(base)) return 'front';
+    if (/(?:^|_)(back|bottom)(?:_|$)/.test(base)) return 'back';
     return '';
   }
   function looksLikeBack(p) { return sideRole(p) === 'back'; }
@@ -1099,7 +1097,7 @@
   function imgRank(p) {
     let s = 0;
     if (p.includes('/crops/')) s += 20;
-    if (p.includes('/_reference/')) s += 5;
+    if (/(?:^|\/)_reference\//.test(p)) s += 5;
     if (p.includes('/full/')) s -= 8;
     if (p.includes('/photos/') && !p.includes('/full/') && !p.includes('/crops/')) s += 2;
     return s;
@@ -1108,7 +1106,7 @@
     return list.filter(pred).sort((a, b) => imgRank(b) - imgRank(a) || a.localeCompare(b))[0] || '';
   }
   function boardImages(dir) {
-    return (S.images || []).map(i => i.path).filter(p => p.startsWith(dir + '/'));
+    return (S.images || []).map(i => i.path).filter(p => !dir || p.startsWith(dir + '/'));
   }
   function pickRefPair(dir, savedTop, savedBot) {
     const local = boardImages(dir);
@@ -1117,13 +1115,13 @@
     let bot = savedBot && known(savedBot) && savedBot !== top ? savedBot : '';
     if (!top) top = bestImage(local, looksLikeFront);
     if (!bot) bot = bestImage(local, p => looksLikeBack(p) && p !== top);
-    if (!top) top = bestImage(local, p => p.includes('/_reference/') && !looksLikeBack(p) && p !== bot);
+    if (!top) top = bestImage(local, p => /(?:^|\/)_reference\//.test(p) && !looksLikeBack(p) && p !== bot);
     if (top && bot === top) bot = '';
     return { top, bot };
   }
   function fillImageSelect(sel, dir, chosen) {
     if (!sel) return;
-    let imgs = (S.images || []).filter(i => i.path.startsWith(dir + '/'));
+    let imgs = (S.images || []).filter(i => !dir || i.path.startsWith(dir + '/'));
     if (chosen && !imgs.some(i => i.path === chosen)) {
       const extra = (S.images || []).find(i => i.path === chosen);
       if (extra) imgs = [extra, ...imgs];
@@ -1772,7 +1770,12 @@
       toast('Click a color (or + Add) to start drawing boxes', 'info');
       return;
     }
-    const x = snap(m.x), y = snap(m.y);
+    let x = snap(m.x), y = snap(m.y);
+    const previous = S.doc.boxes.filter(b => b.c === S.activeColor).at(-1);
+    if (e.shiftKey && S.activePreset && previous) {
+      if (Math.abs(x - previous.x) < Math.abs(y - previous.y)) x = previous.x;
+      else y = previous.y;
+    }
     S.drag = { mode: 'draw', x0: x, y0: y, x1: x, y1: y };
     refreshUI();
   }
@@ -1813,6 +1816,10 @@
     if (d?.mode === 'move') {
       d.b.x = r2(snap(d.x0 + (m.x - d.m0.x)));
       d.b.y = r2(snap(d.y0 + (m.y - d.m0.y)));
+      if (e.shiftKey) {
+        if (Math.abs(m.x - d.m0.x) < Math.abs(m.y - d.m0.y)) d.b.x = d.x0;
+        else d.b.y = d.y0;
+      }
       d.moved = true;
       render(); fillSelbar();
       return;
@@ -1863,7 +1870,7 @@
             renderLegend();
           }
           S.doc.boxes.push(b);
-          S.sel = null;
+          S.sel = { id: b.id, i: 0 };
           commit();
           refreshUI();
           toast(`Placed ${S.activePreset.name} at (${fmt(cx)}, ${fmt(cy)})`);
@@ -1898,7 +1905,15 @@
   }
 
   // ---------- KEYBOARD ----------
-  // Keyboard shortcuts disabled — do not attach keydown/keyup handlers.
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea, select, [contenteditable]')) return;
+    if (!(e.ctrlKey || e.metaKey) || e.altKey || S.drag) return;
+    const key = e.key.toLowerCase();
+    if (key === 'z' || key === 'y') {
+      e.preventDefault();
+      if (key === 'y' || e.shiftKey) redo(); else undo();
+    }
+  });
   // (Previously: undo/redo, fit, modes, delete, arrows, space-pan, etc.)
 
   function duplicate() {
@@ -2247,6 +2262,7 @@
     // and never accidentally resizes or resets orientation of existing boxes!
     S.sel = null;
     if (S.infoMode) toggleInfoMode(false);
+    S.selectMode = false;
     if (!S.activeColor || !color(S.activeColor)) {
       ensureArmedColor();
       toast(`Preset ${name} ready — color armed. Click board to stamp (${fmt(S.activePreset.w)} × ${fmt(S.activePreset.h)} mm)`);
@@ -2299,7 +2315,7 @@
     });
     canvas.addEventListener('wheel', onWheel, { passive: false });
     canvas.addEventListener('contextmenu', e => e.preventDefault());
-    // Keyboard shortcuts intentionally disabled (no keydown/keyup listeners).
+    // Undo/redo shortcuts are registered above.
 
     $('tglRef').onclick = () => { S.showRef = !S.showRef; $('tglRef').classList.toggle('active', S.showRef); render(); };
     const sideView = $('sideView');

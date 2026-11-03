@@ -16,9 +16,9 @@ These documents supersede the proposals in [docs/history](docs/history/README.md
 
 ## What stays in place
 
-Keep the placed connectors and the balance/heatsink-related components in their existing locations. Preserve the R_B1–R_B33 row and its thermal arrangement. Keep the two BMS monitors in approximately their existing areas; modest local adjustment is acceptable when needed for a sound layout.
+Keep the placed connectors and bleed resistors R_B1–R_B33 in their existing locations for compatibility with the same case. There is no heatsink. Keep the two BMS monitors in approximately their existing areas; modest local adjustment is acceptable when needed for a sound layout.
 
-Supporting circuitry should follow TI's applicable electrical and layout guidance while fitting these constraints. The exact capacitor/resistor set belonging to the heatsink arrangement still needs to be identified against the photos. The existing C_F1–C_F32 back-side placement is a separate unresolved issue; see [Design rules](DESIGN_RULES.md).
+Supporting circuitry should follow TI's applicable electrical and layout guidance while fitting these constraints. The existing C_F1–C_F32 back-side placement is a separate unresolved issue; see [Design rules](DESIGN_RULES.md).
 
 ## How the software controls the board
 

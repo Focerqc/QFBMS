@@ -1,0 +1,1352 @@
+[
+  {
+    "ref": "D_CHG3",
+    "value": "DSK320",
+    "footprint": "D_SOD-123F",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F12",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_CELL3",
+    "value": "17-24",
+    "footprint": "JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B2",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F9",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F7",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_CELL2",
+    "value": "9-16",
+    "footprint": "JST_GH_BM09B-GHS-TBT_1x09-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_CHG1",
+    "value": "100k",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F30",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B3",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B14",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_S2",
+    "value": "1000",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F19",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F6",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_CELL4",
+    "value": "25-32",
+    "footprint": "JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U_BQ2",
+    "value": "BQ7695202 (IC2)",
+    "footprint": "TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F18",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F27",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_DSG1",
+    "value": "1000",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F32",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F32",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B8",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U7",
+    "value": "ISO1050 (DUB-8)",
+    "footprint": "Package_DIP:SMDIP-8_W9.53mm",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B22",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F31",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_SH1",
+    "value": "R001",
+    "footprint": "R_2512_6332Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U4",
+    "value": "LTC7138",
+    "footprint": "Package_SO:Analog_MSOP-12-16-1EP_3x4.039mm_P0.5mm_EP1.651x2.845mm_ThermalVias",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "F1",
+    "value": "JT 15A",
+    "footprint": "Fuse_2512_6332Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F31",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B24",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F3",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B19",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_SH2",
+    "value": "R001",
+    "footprint": "R_2512_6332Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_PRI1",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B31",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F11",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_SSR1",
+    "value": "100nF",
+    "footprint": "C_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_SEC1",
+    "value": "01X",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F27",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_TAN1",
+    "value": "100uF_16V",
+    "footprint": "CP_EIA-6032-28_Kemet-C",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F5",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F2",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B15",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B25",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F26",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "Q1",
+    "value": "AGM15T03LL",
+    "footprint": "TOLL-8_AGM15T03LL",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U_BQ1",
+    "value": "BQ7695202 (IC1)",
+    "footprint": "TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F8",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_PRI2",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F26",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B29",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_CHG1",
+    "value": "DSK320",
+    "footprint": "D_SOD-123F",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F24",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F19",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F5",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_CHG2",
+    "value": "DSK320",
+    "footprint": "D_SOD-123F",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B16",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F23",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F3",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_FLT1",
+    "value": "10uF_100V",
+    "footprint": "C_1812_4532Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F4",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F15",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B23",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_CHG1",
+    "value": "XT30PW-F (CHG)",
+    "footprint": "XT30PW-F_Lugs",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F24",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F20",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_S1",
+    "value": "1000",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B9",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_CHG2",
+    "value": "2203",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B10",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_BAT1",
+    "value": "XT30PW-M (BAT)",
+    "footprint": "XT30PW-M_Lugs",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B12",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F13",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F21",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_CELL1",
+    "value": "0-8",
+    "footprint": "JST_GH_BM10B-GHS-TBT_1x10-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F10",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F12",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B5",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B17",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B6",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_SEC3",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F1",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_BST1",
+    "value": "Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B28",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F10",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F22",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F29",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "FB1",
+    "value": "Unmarked",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_GS1",
+    "value": "PDZ16B",
+    "footprint": "D_SOD-323",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B26",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_T3",
+    "value": "T3",
+    "footprint": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B20",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F6",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B32",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_PRI3",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F16",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F28",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F1",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B30",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F25",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_SSR1",
+    "value": "01X",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_USB1",
+    "value": "USB-C",
+    "footprint": "USB_C_Receptacle_16P",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_SSR2",
+    "value": "10k",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F13",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F14",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F25",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F16",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_GS1",
+    "value": "474",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F11",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B33",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B13",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_S1",
+    "value": "TVS",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_SEC1",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F29",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F15",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U_SSR1",
+    "value": "GSRELAY",
+    "footprint": "qfbms:H2440_SSR",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F2",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F22",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "L1",
+    "value": "180uH_181",
+    "footprint": "L_7.3x7.3_H4.5",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F9",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_COMM1",
+    "value": "CAN/5V",
+    "footprint": "JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F4",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B27",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F8",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F28",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B18",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_T1",
+    "value": "T1",
+    "footprint": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B1",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F7",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F14",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "Q2",
+    "value": "AGM15T03LL",
+    "footprint": "TOLL-8_AGM15T03LL",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_T2",
+    "value": "T2",
+    "footprint": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "J_T4",
+    "value": "T4",
+    "footprint": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B21",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F20",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "D_SEC2",
+    "value": "D_Schottky",
+    "footprint": "D_SOD-123",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B11",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_DISC",
+    "value": "10uF",
+    "footprint": "C_1206_3216Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B4",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "BZ1",
+    "value": "FUET-5030",
+    "footprint": "qfbms:Buzzer_5.0x5.0mm_SMD",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F21",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_B7",
+    "value": "27R0",
+    "footprint": "R_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_SSR2",
+    "value": "1uF",
+    "footprint": "C_0805_2012Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F17",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F17",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "C_F23",
+    "value": "0.22uF",
+    "footprint": "C_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F18",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_F30",
+    "value": "20R",
+    "footprint": "R_0402_1005Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "U_ESP1",
+    "value": "ESP32-C3-MINI-1",
+    "footprint": "ESP32-C3-MINI-1",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  },
+  {
+    "ref": "R_G1",
+    "value": "01X",
+    "footprint": "R_0603_1608Metric",
+    "mpn": "",
+    "lcsc": "",
+    "status": "Requires manufacturer comparison or exact purchased MPN; value alone does not establish ratings",
+    "owner": "WP2 BOM"
+  }
+]

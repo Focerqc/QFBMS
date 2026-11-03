@@ -1,88 +1,130 @@
-# QFBMS build plan
+# QFBMS completion plan
 
-Current intent agreed on November 2, 2026. This is the active plan; it supersedes the electrical proposals and finish instructions in `docs/history/`.
+Updated November 3, 2026. Investigation and planning only. Hardware is incomplete and must not be fabricated from the present files.
 
-## Build objective
+## Objective and placement contract
 
-Build a 32s **charge-only** BMS around two BQ76952 monitors and an ESP32-C3-MINI-1, using the supplied VBMS32-target VESC Express firmware and VBMS32 Micro package as the intended software baseline.
+Complete a 32s charge-only BMS with two BQ76952 monitors and ESP32-C3-MINI-1, using the supplied VBMS32 firmware and Micro package (API 6, package 1.0.4). Discharge protection is outside scope. Preserve connector coordinates, orientations and mating geometry and R_B1–R_B33 positions for the existing case. There is no heatsink. Keep both monitors near their current regions; supporting parts can change when justified. Complete the electrical schematic before final placement or routing. Never run historical generators or import an unchecked netlist.
 
-The board must measure all 32 cells, read the required temperatures, measure charging current, switch charging, and balance cells. It should support the existing connector functions, communications, programming, and wake/sleep behavior needed by that software. Discharge protection is outside scope; an old `DSG`, `PACK`, or `Q2` label does not establish a discharge-protection requirement or a verified component role.
+## Evidence established in this investigation
 
-## Placement contract
+Direct KiCad 10 pcbnew inspection finds 150 footprints. The full reference/value/footprint/position/pad-net inventory is in `exports/planning-2026-11-03/pad-inventory.json`. This is a pad assignment inventory, not proof of physical connectivity. Reports are generated evidence under ignored exports; retain them with any design review archive.
 
-- Keep the existing connector positions and mating orientations.
-- Keep balance/heatsink-related capacitors, resistors, and their thermal arrangement in place. Preserve R_B1–R_B33. Identify the remaining affected references from the board and photos before moving nearby parts.
-- Keep U_BQ1 and U_BQ2 in approximately their current regions. Limited local movement is acceptable; wholesale relocation is not the intended design.
-- Adapt supporting circuitry to TI's applicable requirements within those constraints. Required support parts, values, and local layout can be corrected as part of electrical work; the old blanket instruction to use only existing footprints is superseded.
-- Keep the existing front-side component target. C_F1–C_F32 are recorded as a back-side exception; establish their intended front-side sites and distinguish these input-filter capacitors from the mechanically fixed balance components before changing them.
+KiCad CLI DRC succeeded with Windows registry access outside the restricted sandbox. Command: `kicad-cli pcb drc --format json --all-track-errors --schematic-parity --severity-all --output exports/planning-2026-11-03/drc.json qfbms32.kicad_pcb`. No refill/save option was used. Results: 649 violations, 146 unconnected items, 366 schematic parity issues. Violation types: 199 shorting_items, 60 tracks_crossing, 28 clearance, 195 solder_mask_bridge, 56 drill_out_of_range, 23 courtyards_overlap, 15 hole_clearance, 4 copper_edge_clearance, 1 lib_footprint_mismatch and 68 text/silkscreen issues. Counts can overlap in physical cause; they are not unique defect counts. Five checks are listed as ignored in the JSON and must be reviewed before sign-off. The earlier 20 horizontal-overlap pairs are therefore not a complete defect inventory; their exact coordinate count has not been independently reproduced here.
 
-See [Design rules](DESIGN_RULES.md) for the editing details.
+Schematic ERC completed with 121 violations (`erc.json`); schematic netlist export is `schematic.net` in the same directory. The working schematic and board are not reconciled. `qfbms32-charge-only-draft.kicad_sch` contains functional text with no electrical symbol library; its obsolete heatsink sentence has no authority.
 
-## Architecture and sources
+Verified board assignments:
 
-U_BQ1 covers the lower 16 cells and U_BQ2 the upper 16. Their local voltage references differ. Design the communication, power, wake, and control interfaces for that stacked arrangement using [TI's guidance](_reference/ti_bq76952/README.md).
+- U_BQ1 at (87.875,13.875) mm and U_BQ2 at (44.775,13.875) mm both have pin 17 on GND and pins 18/20 on shared SRP/SRN. Upper pin 16 is CELL16. This is incompatible with a correctly referenced upper domain; simply correcting VSS alone is insufficient. Both exposed-pad assignments and many supply/interface/control pins are empty.
+- J_CELL1 pins 1–10 carry CELL9 down to CELL0; J_CELL2 pins 1–9 carry CELL18 down to CELL10; J_CELL3 pins 1–8 carry CELL26 down to CELL19; J_CELL4 pins 1–6 carry CELL32 down to CELL27. Their value labels respectively say 0–8, 9–16, 17–24, 25–32 and are misleading. These are verified PCB assignments; mating-harness polarity remains to be checked visually and by continuity.
+- R_SH1 and R_SH2 each say R001 and are assigned in series: CELL0–SHUNT_MID–CHG-. If the values represent 1 mΩ parts, the assigned chain is 2 mΩ. Actual purchased resistance and sense pickup remain unverified.
+- Q1/Q2 say AGM15T03LL, custom TOLL footprints: pad 1 gate, pads 2–8 CHG+ / PACK+, drain pad D CELL32_FUSED. This records the footprint convention, not verification against the manufacturer drawing or proof of switch function.
+- U4 says LTC7138 but all numbered pads are unassigned. U7 says ISO1050 DUB-8 and has logic/CAN domain assignments; no complete powered circuit is established by those assignments. U_SSR1 says GSRELAY; that marking does not establish an H2440 identity or a valid driver.
 
-The package's LispBM application runs on the ESP32, makes charging/balancing decisions, and calls the board-specific C firmware. That firmware communicates with the BQ monitors over I2C and drives charge-control GPIOs. The supplied implementation already defines charging limits, balancing policy, GPIO assignments, monitor startup, and sensing conversions. Start with the [firmware interface notes](docs/FIRMWARE_INTERFACE.md) and linked source rather than redefining those behaviors from memory.
+The supplied TI datasheet, EVM guide and TIDA-010208 PDFs were text-extracted for investigation; the local AGM manufacturer-branded `agm_ds.pdf` states 150 V VDS and ±20 V VGS. The file named `AGM15T03LL.pdf` is only a JavaScript website message, not a usable datasheet. At an illustrative 4.21 V/cell, pack voltage is 134.72 V, leaving only 15.28 V below a 150 V absolute rating before transients; retaining these FETs requires a documented transient/clamp margin analysis. No current rating from a cold-case datasheet establishes capability in this case without a heatsink.
 
-Use the sources for their respective purposes:
+Primary sources: [TI BQ76952 datasheet](https://www.ti.com/lit/ds/symlink/bq76952.pdf), local EVM section 5.4 and BOM section 5.2, [TI stacked-monitor guidance](https://www.ti.com/lit/pdf/sszt191). TI describes upper-bus isolation, separate wake requirements and domain load balancing; its switch example does not change charge-only scope. Exact component MPNs, all footprint pinouts and operating ratings remain review gates, not completed verification.
 
-- This plan and [Design rules](DESIGN_RULES.md): product intent and mechanical constraints.
-- Supplied firmware/package: desired software behavior and hardware interface.
-- TI documentation and component datasheets: electrical requirements, ratings, pin functions, and layout guidance.
-- Working PCB and photographs: existing placement, footprints, and actual connectivity.
+## Ordered work packages and release gates
 
-Resolve conflicts explicitly. An existing pad net is evidence of the current board, not proof of a correct circuit. An EVM value is an example, not automatically the value compatible with this package.
+### WP1 — Freeze evidence and resolve electrical inputs
 
-## Work sequence
+Dependency: none. First executable package: archive hashes of working PCB, schematic, project, footprints and supplied software; save every connector and R_B footprint UUID, XY, rotation, side and pad geometry from the live board. Preserve existing user edits. Create a pin-level connection ledger from the exported netlist and pad inventory, with intended function, domain, reference pin, value, source and disposition for every pad. Classify the 199 short reports and 60 crossings by actual copper objects and coordinates. Record the five ignored DRC checks and project clearance/stackup settings.
 
-### 1. Establish the hardware/software mapping
+Open the PCB dashboard on port 5180 and progress dashboard on 5181 using the README commands. Visually compare the board, harness drawing, top/bottom photographs and capacitor annotations alongside KiCad; capture views with filenames and dates. Dashboard inspection was not completed during this investigation and must not be represented as verified evidence. Reconcile harness pin numbers from the mating side, including connector keying, before relabeling anything. Do not use a score as acceptance.
 
-- [x] Record the charge-only scope and placement constraints.
-- [x] Locate and inspect the supplied package's charge/balance logic and the firmware's interface. Both expect BMS API version 6.
-- [ ] Map each connector and mechanically fixed balance/heatsink part to its actual board references and pads.
-- [ ] Map the firmware's GPIOs, BQ functions, communication-enable sequence, temperature channels, and analog inputs to the PCB.
-- [ ] Reconcile current-sense polarity and scale, voltage-divider ratios, and thermistor wiring with the complete firmware-plus-package conversion chain.
+Deliverables: immutable placement baseline, complete pin ledger, defect triage, harness drawing annotated by PCB pin number, requirements envelope. Pass: all 33 taps uniquely mapped with independently checked polarity; every unknown explicitly owned; no hardware edits in this package. Fail: relying on value labels, photo marks or historical net maps alone.
 
-Deliverable: a checked circuit-to-software mapping, with specific mismatches or unknown component functions called out by reference and pin. This mapping precedes routing.
+### WP2 — Decide architecture and component ratings
 
-### 2. Complete the charge-only circuit
+Dependency: WP1. Lower domain uses CELL0 reference and cells 1–16; upper domain uses CELL16 reference and cells 17–32. Establish separate upper VSS, exposed pad, supply returns, input capacitors, regulator decoupling, unused-pin terminations, current inputs, wake and communication. Never share lower SRP/SRN with the upper monitor. Terminate unused upper current inputs exactly as TI specifies for the chosen measurement mode. Audit BAT, REGIN/BREG, REG18/REG1/REG2, CP1, PACK/LD, RST_SHUT, TS2 and every multifunction pin against the actual ordering option and startup defaults.
 
-- [ ] Establish the two monitor domains and the upper monitor's communication interface, including power and startup behavior.
-- [ ] Complete the cell-input filters, balancing circuit, monitor supplies, decoupling, sensing, and temperature interfaces using applicable TI guidance.
-- [ ] Identify the actual function and pinout of the placed FETs and gate-control parts. Implement the package's charge-enable behavior through the required external circuit.
-- [ ] Complete ESP32 power, reset/programming, CAN, enable/wake, and other package-required support circuits within the existing connector arrangement.
-- [ ] Record required support-part additions or value changes and reconcile the schematic with the intended circuit without overwriting existing PCB work blindly.
+Preferred architecture for evaluation: isolated bidirectional upper I2C, with local pull-ups/supply on each side and a host-side disconnect that is disabled when GPIO9 is high. GPIO9 low admits upper address 0x08 only after lower BQ has changed from 0x08 to 0x10. Select an isolator from its manufacturer datasheet; do not presume a named isolator has an enable pin. Specify bus-switch truth table, powered-off behavior, rise times at 100 kHz and no back-powering. Provide defined GPIO9 reset bias compatible with ESP32-C3 boot straps. Both monitors need a wake path that operates before their configured regulator outputs are available; verify shutdown versus deep-sleep behavior separately.
 
-Deliverable: a coherent charge-only schematic and PCB net assignment that implement the verified interface. Any unavoidable change to a fixed mechanical feature must be raised with a concrete proposed change.
+Draw the charge-current loop explicitly through connector, fuse, switch and shunt, including body diodes and reverse charger conditions. Decide whether Q2 has a justified charge-only function or is legacy circuitry. Select gate driver supply, VGS clamp, gate resistor, discharge resistor and default-off behavior from actual ratings; GPIO5/10 must control the resulting truth table. Output/precharge API calls must remain harmless in the charge-only hardware or receive documented software adaptations. No unintended USB, CAN or chassis path may bypass the shunt or off-state charge switch.
 
-### 3. Place and route
+Verify full-pack and half-pack supply envelopes, start voltage, quiescent current, dissipation and wake behavior. Do not connect an unverified LTC7138 circuit across the full 32s pack. Establish 3.3 V peak load capacity for ESP32, CAN-side power source and isolation reference, USB VBUS protection/backfeed prevention, CC resistors, native USB GPIO18/19, EN/reset and boot/program access. Confirm ESP32 module pad numbers from Espressif's module datasheet. Check CAN transceiver exact suffix, logic levels, isolated-side supply, termination, ESD and creepage from TI's ISO1050 datasheet.
 
-- [ ] Resolve the front-side filter-capacitor placement against the photos and the fixed thermal arrangement.
-- [ ] Fit supporting parts and make only the necessary local monitor adjustments.
-- [ ] Route the verified circuit with appropriate clearances, return paths, sensing connections, and thermal provisions.
-- [ ] Check the preserved connector and heatsink geometry, reconcile schematic/PCB connectivity, and resolve or document justified ERC/DRC exceptions.
-- [ ] Update dashboard expectations where they encode superseded discharge or topology assumptions; use dashboards as connectivity aids.
+Deliverables: reviewed domain schematic, power budget, switch-state matrix, exact-MPN BOM with manufacturer PDF revision/page, footprint pad comparison and voltage/current/thermal derating. Reject ambiguous GSRELAY, 01X, Unmarked and generic diode/TVS identities until resolved or replaced. Pass: every component meets the selected envelope and no domain crossing lacks a rated interface. Unsupported identities remain blocked decisions.
 
-Deliverable: the routed board and matching schematic, with the mechanical constraints preserved and electrical checks recorded.
+### WP3 — Close the complete software measurement chain
 
-### 4. Bring up the board and verify compatibility
+Dependency: WP2 sensing topology. Source details are in `docs/FIRMWARE_INTERFACE.md` and supplied C/header/Lisp files; preserve originals and put adaptations in a separate maintained target.
 
-- [ ] Verify supplies, both monitors' startup/communication, and all cell and temperature channels using controlled bench conditions.
-- [ ] Verify charging-current polarity and calibration and charger-voltage sensing against measurements.
-- [ ] Verify charge enable/disable, the package's voltage/temperature/current cutoff behavior, balancing limits, and communications-failure/recovery behavior.
-- [ ] Verify sleep/wake, charger detection, CAN reporting, and package/firmware compatibility on the actual hardware.
-- [ ] Record the firmware/package revisions and configured limits used for the checks, then regenerate release outputs from the checked design.
+C assumes 0.2 mΩ, sets CC gain to 7.4768/(Rshunt×1000), reads CC2/100 and applies PCB_VERSION sign. Lisp applies −0.2 afterward and considers negative application current charging. Consequently, assuming ideal calibration, application magnitude is 0.2×Ractual/0.2mΩ times real current. A 1 mΩ sensed resistance cancels that multiplier; a sensed 2 mΩ gives twice the real magnitude. This is a derived diagnostic, not permission to choose a pickup blindly. Trace SRP/SRN to actual Kelvin points, determine PCB_VERSION, document sign, choose effective resistance and consolidate calibration intentionally. Verify offset, gain, Ah/Wh accumulation and cutoff using known injected currents.
 
-Deliverable: evidence that the intended software works with this board. Source-code agreement and a clean connectivity dashboard alone do not complete bring-up.
+ADC scale is (220k+4.7k)/4.7k = 47.8085. At 134.72 V the divider output would be about 2.818 V. Verify ESP32 ADC attenuation, characterized range, input protection and resistor working voltage/power; use series high-side resistors as necessary. Match charger/output pickup references and avoid switched-ground errors. Check both channels against independent voltmeters over the required range.
 
-## Current open items
+Firmware configures TS1, TS3, ALERT, DCHG and HDQ with internal 18 kΩ pull-up; conversion assumes 10 kΩ beta3380 NTC and subtracts 500 Ω series resistance. Package uses up to four lower-BQ cell sensors and HDQ for MOS temperature; upper external TS4 assignment is not automatically consumed. Specify actual NTC MPNs, series resistance and connector mapping, open/short handling and sensor placement. Zero configured sensors substitutes 24 °C and must not count as valid protection.
 
-These are implementation checks, not requests to invent new charging policy:
+Review C initial outputs (switch controls low, COM high), GPIO3 buzzer, GPIO2 button/wake, GPIO4/8 legacy outputs, GPIO5 charge and GPIO10 power enable. Check Lisp direct GPIO9 writes, startup, crash recovery, watchdog, stale data and communication exceptions. Baseline disables automatic protection groups A/B and uses host balancing; prove a bounded charge-off response to stopped/crashed firmware and loss of either BQ. Add hardware timeout/interlock or explicit software changes where necessary; source agreement alone is insufficient.
 
-- Exact reference list for all mechanically fixed balance/heatsink components, beyond the known R_B row.
-- Front-side sites for the input-filter capacitors currently recorded on the back.
-- Actual circuit roles and verified pinouts for the placed charge-switch/gate-control parts.
-- PCB implementation of the upper monitor interface and the firmware's switched-communication startup.
-- Sensing, bias, and calibration agreement between the PCB and supplied software.
+Deliverables: signed conversion equations, pin-to-module-pad map, adaptation list, startup/fault timing requirements and configuration export. Pass: measured sign/scale and charge truth table agree at every layer; no unconsumed required sensor or undefined boot state.
 
-This documentation update does not change the PCB, schematic, firmware, package, or saved connectivity snapshot. Update this plan as those implementation checks are completed.
+### WP4 — Complete pin-level schematic and reconcile PCB
+
+Dependencies: WP2–3. Use sheets for harness/filters/balance, lower BQ, upper BQ/isolation, supplies/ESP32, charge switch/shunt and CAN/USB. Specify every pin, decoupler, test point, pull resistor and intentional no-connect. Compare EVM examples against stacked application and firmware. Choose internal versus external balancing with calculations for current, resistor power, BQ input current and thermal limits. The fixed 33 R_B sites do not establish a 33-cell topology; identify each role without moving them. An unnetted R_B pad can still collide with copper.
+
+Deliverables: complete schematic, ERC report, reviewed netlist diff and support-part change log. Reconcile UUID/reference associations and apply only reviewed net changes to a saved board copy first; compare fixed geometry before accepting changes into the working board. Pass: zero unexplained ERC errors and zero unexplained schematic parity issues, with every intentional exception justified by datasheet. No routing work may hide incomplete circuitry.
+
+### WP5 — Place, route and verify mechanics
+
+Dependency: WP4. Assign the 45 JSON capacitor marks only after their circuit roles are defined. Use compact 0603/1608 reflow footprints where voltage rating, DC-bias effective capacitance, tolerance and temperature permit. Marks are visual locations, not identities. Resolve C_F1–C_F32 back-side placement against front-side target; place differential cell filters and supply decoupling close to their respective pins with short local returns. Keep upper returns out of lower ground. Reserve capacitor site IDs in a placement ledger with function/domain/voltage rationale; unused marks are acceptable.
+
+Remove or reroute reviewed shorting copper only after the intended netlist is known. Route Kelvin sense separately from power current; keep gate/switch loops tight and cell inputs away from switching nodes. Define net classes from maximum normal/transient differential voltage, material, pollution/environment and fabrication rules, including copper to holes/edges and isolation boundaries. Calculate charge copper temperature rise and balance dissipation in the enclosed case without a heatsink. Review antenna keepout, USB differential route, CAN return path and accessible test points.
+
+Deliverables: routed matching board, layer/3D review, fixed-geometry comparison, mechanical case overlay, DRC/clearance rationale. Pass: no electrical short/crossing/clearance errors, no unrouted required nets, no unexplained parity issues; all waivers reviewed individually. Repeat checks with final zone fill on a controlled saved revision.
+
+### WP6 — Release and assemble
+
+Dependencies: WP5. Independently review schematic/PCB against TI requirements and complete firmware chain. Produce BOM with exact MPNs and alternates, assembly drawings with polarity, centroid files, Gerbers/drills, stackup, fabrication notes, paste/stencil and programming instructions from one tagged revision. Re-import fabrication outputs and inspect layers/drills, solder-mask bridges, courtyard/case conflicts and connector mating. Check fuse DC interrupt rating against pack voltage and available fault current. Inspect incoming parts and measure shunts before assembly.
+
+Pass: reproducible outputs, manufacturer capability checks satisfied, no generic safety-critical identities and no unreviewed DRC exclusions. Dashboard score and clean DRC are supporting evidence only.
+
+### WP7 — Staged bench acceptance
+
+Dependency: assembled WP6 revision and approved test envelope. Use current-limited isolated supplies/cell simulator first, with logging and a controlled disconnect. Record board/software/package hashes, settings, instrument IDs, measured values and failures. Establish numerical accuracy and response-time budgets before executing tests; the provisional targets below require confirmation against chosen parts and product needs.
+
+1. Unpowered: inspect polarity, shorts, isolation and shunt continuity. Pass: no unintended domain connection; fixed geometry matches baseline.
+2. Supplies: power each intended domain at minimum/nominal/maximum inputs, including USB/CAN-only states. Pass: rails remain within all component limits, no backfeed or excessive heat, switches remain off throughout resets.
+3. BQs: observe COM gating, address reassignment and both local supplies over repeated cold/warm starts. Pass: lower 0x10 and upper 0x08 uniquely readable, no collisions or overvoltage, successful restart after each single-domain power loss.
+4. Cells: sweep every one of 32 simulated channels at low/mid/high voltage, including CELL16 boundary; test open-wire, swapped harness detection and attach sequence under controlled energy. Provisional pass: ≤10 mV error per channel after calibration, correct ordering and fault inhibits charging; refine from TI accuracy and error budget.
+5. Temperatures: use precision resistors and controlled thermal points for every enabled cell/MOS channel, then open/short each. Provisional pass: ≤2 °C over operating range and no fault interpreted as a safe temperature.
+6. Current/voltage: inject zero and multiple known charging currents, verify polarity, gain and integration; sweep charge/output voltage ADCs. Provisional pass: ≤2% current error above defined minimum measurable current, documented zero offset and ≤1% voltage error, with cutoff margins wider than total error.
+7. Charge switch: test enable/disable, charger attach/remove, reverse/off-state leakage and current limit first at low energy. Exercise each voltage, temperature, current and allow-flag threshold plus hysteresis and fault reset. Pass: measured hardware off within the approved response time, no body-diode bypass, no unsafe re-enable and no gate-rating excursions.
+8. Balance: command each channel, verify bleed current, mapping and adjacent-cell exclusion including stack boundary. Run worst permitted simultaneous balancing in the closed case. Pass: all resistor/BQ/PCB temperatures below derated limits and measurement disturbance within budget.
+9. Failures: disconnect each BQ bus, stall SDA/SCL, stop Lisp, reset ESP32 and remove each supply while charging. Pass: bounded charge-off with no stale-data re-enable; recovery requires fresh valid measurements. Verify CAN/USB reporting and error states.
+10. Sleep/wake: button, charger, periodic timer and both BQ wake paths; repeat with lowest allowed cell voltages. Pass: both monitors recover, no boot-strap lockout, switches default off and measured sleep current meets the established pack-storage budget.
+11. Advance to rated-voltage/current tests only after the preceding gates pass. Validate load steps, transients, switch SOA and enclosed thermal soak. Repeat the protection tests at the final electrical envelope. Release only with signed evidence and resolved failures.
+
+## Decisions and information still required
+
+Investigation has established concrete faults, but manufacturer pinout checks, visual harness/dashboard comparison and complete component identification are not finished. These are engineering work, not questions for the user. Search local photographs, source, supplied BOM/reference boards and primary manufacturer documents before declaring a part unknowable.
+
+Product inputs genuinely needed before ratings and acceptance limits can be finalized: exact cell chemistry and permitted maximum voltage; intended charger maximum voltage/current and credible transients; required balance current/time; enclosure ambient/ventilation and allowable temperatures; required storage duration/sleep-current budget; and whether the existing harness is already built to an independently verified drawing. Source defaults (4.16/4.21 V charge thresholds, 16 A maximum charge, etc.) are compatibility evidence, not approval of those settings for this pack. No answers are needed to execute WP1 or continue the component investigation.
+
+This plan records completed checks and unfinished investigation separately. Completion of the plan does not certify the present hardware or firmware for use.
+
+## User-confirmed product inputs — November 3, 2026
+
+- Cells: lithium-ion Samsung 50S. Verify the exact Samsung cell datasheet before final voltage settings and ratings.
+- Charger: 5 A. This establishes nominal charger current; the supplied 16 A software default is not automatically the selected charge-overcurrent threshold. Charger output voltage/tolerance remains to be established.
+- Temperature limits: use the supplied firmware/package reference definitions as the intended baseline, including charge cell range 0–45 °C, charge MOS limit 85 °C and balancing cell/IC maxima 45/85 °C. Verify runtime settings and actual sensor fault handling against these definitions.
+- Harness: supplied folder photographs and wiring reference are the evidence to inspect; do not ask the user to recreate the mapping. The wiring image was visually opened in this session. It depicts 32s cell wiring, four external temperatures, CAN and enable override, but does not by itself prove the current PCB connector pad numbering.
+
+These inputs supersede the corresponding requests above for cell identity, nominal charging current, source of temperature limits and harness-reference location. Continue the remaining pin-level and photographic investigation before asking for additional mappings.
+
+### Pack and charger clarification
+
+User confirmed 32S1P Samsung 50S pack and a 134 V, 5 A charger. These are the selected nominal product inputs; pack configuration and nominal charger voltage are no longer open questions. Charger nominal power is 670 W and nominal average cell voltage at 134 V is 4.1875 V. Actual charger tolerance, transients and individual-cell imbalance remain engineering verification items; the pack-average voltage does not replace per-cell cutoff checks.
+
+## WP1 execution checkpoint and implementation priority — November 3, 2026
+
+See [durable WP1 evidence](docs/wp1-2026-11-03/README.md). Fresh collection records 150 footprints, 655 physical pad instances and 45 fixed connector/R_B footprints. Pad assignment/position/rotation comparison against the prior inventory has zero differences. Regenerated DRC reports 650 violations (199 shorts, 60 crossings), 146 unconnected items and 366 parity issues; ERC reports 121. SHA-256 baseline, fixed geometry, full pad ledger, object-level short/crossing classification and regenerated reports are retained under docs/wp1-2026-11-03/.
+
+WP1 is **partially executed, not passed**: independent harness mating/polarity confirmation, complete manufacturer identity/pinout/rating review and complete visual checks remain open. Do not describe automated classification as individual electrical disposition or assigned pad nets as verified continuity.
+
+The next implementation package is **reference-based schematic construction, starting with the two 16-cell BQ sheets**, followed by isolated/gated upper communications and wake, then ESP32/power/sensing/charge-only control. These sheets can be drafted incrementally while unresolved component choices are explicitly marked; full procurement and bench closure need not precede schematic progress. Preserve fixed board geometry and defer PCB netlist import until schematic review. This investigation did not authorize or perform schematic, PCB or firmware edits.
+
+Source corrections: the supplied header selects PCB_VERSION=2; BQ7695202 defaults to CRC-enabled I2C and enabled 3.3 V REG1 according to TI's device table. Startup supply/wake analysis must use that exact variant. Lisp has crash/re-init handling, but charge-off follows init-hw, so a bounded fail-off response remains unproven. See the checkpoint for the exact distinction between verified source behavior and required adaptation.

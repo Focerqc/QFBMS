@@ -1,0 +1,5197 @@
+[
+  {
+    "uuid": "059ae9c4-409e-4db1-aac2-d59f796d1542",
+    "ref": "J_CELL3",
+    "value": "17-24",
+    "fpid": "JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical",
+    "x": 57.4,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 53.025,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL26"
+      },
+      {
+        "num": "2",
+        "x": 54.275,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL25"
+      },
+      {
+        "num": "3",
+        "x": 55.525,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL24"
+      },
+      {
+        "num": "4",
+        "x": 56.775,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL23"
+      },
+      {
+        "num": "5",
+        "x": 58.025,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL22"
+      },
+      {
+        "num": "6",
+        "x": 59.275,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL21"
+      },
+      {
+        "num": "7",
+        "x": 60.525,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL20"
+      },
+      {
+        "num": "8",
+        "x": 61.775,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL19"
+      },
+      {
+        "num": "MP",
+        "x": 51.175,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 63.625,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          50.775,
+          20.3
+        ],
+        [
+          64.025,
+          20.3
+        ]
+      ],
+      [
+        [
+          50.775,
+          24.55
+        ],
+        [
+          50.775,
+          20.3
+        ]
+      ],
+      [
+        [
+          50.775,
+          24.55
+        ],
+        [
+          64.025,
+          24.55
+        ]
+      ],
+      [
+        [
+          52.525,
+          24.55
+        ],
+        [
+          53.025,
+          23.8429
+        ]
+      ],
+      [
+        [
+          53.025,
+          23.8429
+        ],
+        [
+          53.525,
+          24.55
+        ]
+      ],
+      [
+        [
+          64.025,
+          24.55
+        ],
+        [
+          64.025,
+          20.3
+        ]
+      ],
+      [
+        [
+          52.775,
+          22.3
+        ],
+        [
+          53.275,
+          22.3
+        ],
+        [
+          53.275,
+          22.8
+        ],
+        [
+          52.775,
+          22.8
+        ],
+        [
+          52.775,
+          22.3
+        ]
+      ],
+      [
+        [
+          54.025,
+          22.3
+        ],
+        [
+          54.525,
+          22.3
+        ],
+        [
+          54.525,
+          22.8
+        ],
+        [
+          54.025,
+          22.8
+        ],
+        [
+          54.025,
+          22.3
+        ]
+      ],
+      [
+        [
+          55.275,
+          22.3
+        ],
+        [
+          55.775,
+          22.3
+        ],
+        [
+          55.775,
+          22.8
+        ],
+        [
+          55.275,
+          22.8
+        ],
+        [
+          55.275,
+          22.3
+        ]
+      ],
+      [
+        [
+          56.525,
+          22.3
+        ],
+        [
+          57.025,
+          22.3
+        ],
+        [
+          57.025,
+          22.8
+        ],
+        [
+          56.525,
+          22.8
+        ],
+        [
+          56.525,
+          22.3
+        ]
+      ],
+      [
+        [
+          57.775,
+          22.3
+        ],
+        [
+          58.275,
+          22.3
+        ],
+        [
+          58.275,
+          22.8
+        ],
+        [
+          57.775,
+          22.8
+        ],
+        [
+          57.775,
+          22.3
+        ]
+      ],
+      [
+        [
+          59.025,
+          22.3
+        ],
+        [
+          59.525,
+          22.3
+        ],
+        [
+          59.525,
+          22.8
+        ],
+        [
+          59.025,
+          22.8
+        ],
+        [
+          59.025,
+          22.3
+        ]
+      ],
+      [
+        [
+          60.275,
+          22.3
+        ],
+        [
+          60.775,
+          22.3
+        ],
+        [
+          60.775,
+          22.8
+        ],
+        [
+          60.275,
+          22.8
+        ],
+        [
+          60.275,
+          22.3
+        ]
+      ],
+      [
+        [
+          61.525,
+          22.3
+        ],
+        [
+          62.025,
+          22.3
+        ],
+        [
+          62.025,
+          22.8
+        ],
+        [
+          61.525,
+          22.8
+        ],
+        [
+          61.525,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "060e8a01-ca9c-4e7f-b5b0-83953d2055eb",
+    "ref": "R_B2",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 38.378,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 38.378,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 38.378,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          37.753,
+          29.05
+        ],
+        [
+          39.003,
+          29.05
+        ],
+        [
+          39.003,
+          27.05
+        ],
+        [
+          37.753,
+          27.05
+        ],
+        [
+          37.753,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "0c41d1a2-ee6b-40d2-8cf5-fd29251c8fbd",
+    "ref": "J_CELL2",
+    "value": "9-16",
+    "fpid": "JST_GH_BM09B-GHS-TBT_1x09-1MP_P1.25mm_Vertical",
+    "x": 72.6,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 67.6,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL18"
+      },
+      {
+        "num": "2",
+        "x": 68.85,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL17"
+      },
+      {
+        "num": "3",
+        "x": 70.1,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL16"
+      },
+      {
+        "num": "4",
+        "x": 71.35,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL15"
+      },
+      {
+        "num": "5",
+        "x": 72.6,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL14"
+      },
+      {
+        "num": "6",
+        "x": 73.85,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL13"
+      },
+      {
+        "num": "7",
+        "x": 75.1,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL12"
+      },
+      {
+        "num": "8",
+        "x": 76.35,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL11"
+      },
+      {
+        "num": "9",
+        "x": 77.6,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL10"
+      },
+      {
+        "num": "MP",
+        "x": 65.75,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 79.45,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          65.35,
+          20.3
+        ],
+        [
+          79.85,
+          20.3
+        ]
+      ],
+      [
+        [
+          65.35,
+          24.55
+        ],
+        [
+          65.35,
+          20.3
+        ]
+      ],
+      [
+        [
+          65.35,
+          24.55
+        ],
+        [
+          79.85,
+          24.55
+        ]
+      ],
+      [
+        [
+          67.1,
+          24.55
+        ],
+        [
+          67.6,
+          23.8429
+        ]
+      ],
+      [
+        [
+          67.6,
+          23.8429
+        ],
+        [
+          68.1,
+          24.55
+        ]
+      ],
+      [
+        [
+          79.85,
+          24.55
+        ],
+        [
+          79.85,
+          20.3
+        ]
+      ],
+      [
+        [
+          67.35,
+          22.3
+        ],
+        [
+          67.85,
+          22.3
+        ],
+        [
+          67.85,
+          22.8
+        ],
+        [
+          67.35,
+          22.8
+        ],
+        [
+          67.35,
+          22.3
+        ]
+      ],
+      [
+        [
+          68.6,
+          22.3
+        ],
+        [
+          69.1,
+          22.3
+        ],
+        [
+          69.1,
+          22.8
+        ],
+        [
+          68.6,
+          22.8
+        ],
+        [
+          68.6,
+          22.3
+        ]
+      ],
+      [
+        [
+          69.85,
+          22.3
+        ],
+        [
+          70.35,
+          22.3
+        ],
+        [
+          70.35,
+          22.8
+        ],
+        [
+          69.85,
+          22.8
+        ],
+        [
+          69.85,
+          22.3
+        ]
+      ],
+      [
+        [
+          71.1,
+          22.3
+        ],
+        [
+          71.6,
+          22.3
+        ],
+        [
+          71.6,
+          22.8
+        ],
+        [
+          71.1,
+          22.8
+        ],
+        [
+          71.1,
+          22.3
+        ]
+      ],
+      [
+        [
+          72.35,
+          22.3
+        ],
+        [
+          72.85,
+          22.3
+        ],
+        [
+          72.85,
+          22.8
+        ],
+        [
+          72.35,
+          22.8
+        ],
+        [
+          72.35,
+          22.3
+        ]
+      ],
+      [
+        [
+          73.6,
+          22.3
+        ],
+        [
+          74.1,
+          22.3
+        ],
+        [
+          74.1,
+          22.8
+        ],
+        [
+          73.6,
+          22.8
+        ],
+        [
+          73.6,
+          22.3
+        ]
+      ],
+      [
+        [
+          74.85,
+          22.3
+        ],
+        [
+          75.35,
+          22.3
+        ],
+        [
+          75.35,
+          22.8
+        ],
+        [
+          74.85,
+          22.8
+        ],
+        [
+          74.85,
+          22.3
+        ]
+      ],
+      [
+        [
+          76.1,
+          22.3
+        ],
+        [
+          76.6,
+          22.3
+        ],
+        [
+          76.6,
+          22.8
+        ],
+        [
+          76.1,
+          22.8
+        ],
+        [
+          76.1,
+          22.3
+        ]
+      ],
+      [
+        [
+          77.35,
+          22.3
+        ],
+        [
+          77.85,
+          22.3
+        ],
+        [
+          77.85,
+          22.8
+        ],
+        [
+          77.35,
+          22.8
+        ],
+        [
+          77.35,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM09B-GHS-TBT_1x09-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM09B-GHS-TBT_1x09-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "1031ac13-efad-46ba-8b45-3cbf55ed8e5a",
+    "ref": "R_B3",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 40.381,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 40.381,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 40.381,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          39.756,
+          29.05
+        ],
+        [
+          41.006,
+          29.05
+        ],
+        [
+          41.006,
+          27.05
+        ],
+        [
+          39.756,
+          27.05
+        ],
+        [
+          39.756,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "1149901e-2f95-4864-9457-c4bf1f8e97f3",
+    "ref": "R_B14",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 62.414,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 62.414,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 62.414,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          61.789,
+          29.05
+        ],
+        [
+          63.039,
+          29.05
+        ],
+        [
+          63.039,
+          27.05
+        ],
+        [
+          61.789,
+          27.05
+        ],
+        [
+          61.789,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "1835ce3b-8605-4a4d-8f80-f3bd6913b3e0",
+    "ref": "J_CELL4",
+    "value": "25-32",
+    "fpid": "JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical",
+    "x": 44.3,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 41.175,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL32"
+      },
+      {
+        "num": "2",
+        "x": 42.425,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL31"
+      },
+      {
+        "num": "3",
+        "x": 43.675,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL30"
+      },
+      {
+        "num": "4",
+        "x": 44.925,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL29"
+      },
+      {
+        "num": "5",
+        "x": 46.175,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL28"
+      },
+      {
+        "num": "6",
+        "x": 47.425,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL27"
+      },
+      {
+        "num": "MP",
+        "x": 39.325,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 49.275,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          38.925,
+          20.3
+        ],
+        [
+          49.675,
+          20.3
+        ]
+      ],
+      [
+        [
+          38.925,
+          24.55
+        ],
+        [
+          38.925,
+          20.3
+        ]
+      ],
+      [
+        [
+          38.925,
+          24.55
+        ],
+        [
+          49.675,
+          24.55
+        ]
+      ],
+      [
+        [
+          40.675,
+          24.55
+        ],
+        [
+          41.175,
+          23.8429
+        ]
+      ],
+      [
+        [
+          41.175,
+          23.8429
+        ],
+        [
+          41.675,
+          24.55
+        ]
+      ],
+      [
+        [
+          49.675,
+          24.55
+        ],
+        [
+          49.675,
+          20.3
+        ]
+      ],
+      [
+        [
+          40.925,
+          22.3
+        ],
+        [
+          41.425,
+          22.3
+        ],
+        [
+          41.425,
+          22.8
+        ],
+        [
+          40.925,
+          22.8
+        ],
+        [
+          40.925,
+          22.3
+        ]
+      ],
+      [
+        [
+          42.175,
+          22.3
+        ],
+        [
+          42.675,
+          22.3
+        ],
+        [
+          42.675,
+          22.8
+        ],
+        [
+          42.175,
+          22.8
+        ],
+        [
+          42.175,
+          22.3
+        ]
+      ],
+      [
+        [
+          43.425,
+          22.3
+        ],
+        [
+          43.925,
+          22.3
+        ],
+        [
+          43.925,
+          22.8
+        ],
+        [
+          43.425,
+          22.8
+        ],
+        [
+          43.425,
+          22.3
+        ]
+      ],
+      [
+        [
+          44.675,
+          22.3
+        ],
+        [
+          45.175,
+          22.3
+        ],
+        [
+          45.175,
+          22.8
+        ],
+        [
+          44.675,
+          22.8
+        ],
+        [
+          44.675,
+          22.3
+        ]
+      ],
+      [
+        [
+          45.925,
+          22.3
+        ],
+        [
+          46.425,
+          22.3
+        ],
+        [
+          46.425,
+          22.8
+        ],
+        [
+          45.925,
+          22.8
+        ],
+        [
+          45.925,
+          22.3
+        ]
+      ],
+      [
+        [
+          47.175,
+          22.3
+        ],
+        [
+          47.675,
+          22.3
+        ],
+        [
+          47.675,
+          22.8
+        ],
+        [
+          47.175,
+          22.8
+        ],
+        [
+          47.175,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "2850a9eb-f0fd-49be-9744-e76dc80fd72d",
+    "ref": "R_B8",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 50.396,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 50.396,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 50.396,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          49.771,
+          29.05
+        ],
+        [
+          51.021,
+          29.05
+        ],
+        [
+          51.021,
+          27.05
+        ],
+        [
+          49.771,
+          27.05
+        ],
+        [
+          49.771,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "29552b98-8f7f-44e3-a87d-e67b113a50ae",
+    "ref": "R_B22",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 78.438,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 78.438,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 78.438,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          77.813,
+          29.05
+        ],
+        [
+          79.063,
+          29.05
+        ],
+        [
+          79.063,
+          27.05
+        ],
+        [
+          77.813,
+          27.05
+        ],
+        [
+          77.813,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "2e8cd097-7010-41db-a958-b85368ae4096",
+    "ref": "R_B24",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 82.444,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 82.444,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 82.444,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          81.819,
+          29.05
+        ],
+        [
+          83.069,
+          29.05
+        ],
+        [
+          83.069,
+          27.05
+        ],
+        [
+          81.819,
+          27.05
+        ],
+        [
+          81.819,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "30e6b31e-b5cf-4615-b8b2-7a3aca68fd8a",
+    "ref": "R_B19",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 72.429,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 72.429,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 72.429,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          71.804,
+          29.05
+        ],
+        [
+          73.054,
+          29.05
+        ],
+        [
+          73.054,
+          27.05
+        ],
+        [
+          71.804,
+          27.05
+        ],
+        [
+          71.804,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "36a4b4e6-3c47-484a-8c8f-58447bb0a0b7",
+    "ref": "R_B31",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 96.465,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 96.465,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 96.465,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          95.84,
+          29.05
+        ],
+        [
+          97.09,
+          29.05
+        ],
+        [
+          97.09,
+          27.05
+        ],
+        [
+          95.84,
+          27.05
+        ],
+        [
+          95.84,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "41f653b8-0200-44a7-a76a-88c95a525fc5",
+    "ref": "R_B15",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 64.417,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 64.417,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 64.417,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          63.792,
+          29.05
+        ],
+        [
+          65.042,
+          29.05
+        ],
+        [
+          65.042,
+          27.05
+        ],
+        [
+          63.792,
+          27.05
+        ],
+        [
+          63.792,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "439b5535-70ce-43e4-819a-4eb2e00a0899",
+    "ref": "R_B25",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 84.447,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 84.447,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 84.447,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          83.822,
+          29.05
+        ],
+        [
+          85.072,
+          29.05
+        ],
+        [
+          85.072,
+          27.05
+        ],
+        [
+          83.822,
+          27.05
+        ],
+        [
+          83.822,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "4f8b20ca-b58f-4052-8fc9-01141ef35d0c",
+    "ref": "R_B29",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 92.459,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 92.459,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 92.459,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          91.834,
+          29.05
+        ],
+        [
+          93.084,
+          29.05
+        ],
+        [
+          93.084,
+          27.05
+        ],
+        [
+          91.834,
+          27.05
+        ],
+        [
+          91.834,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "5407d1c9-927c-47a2-9c7d-82fcf71aa5a4",
+    "ref": "R_B16",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 66.42,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 66.42,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 66.42,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          65.795,
+          29.05
+        ],
+        [
+          67.045,
+          29.05
+        ],
+        [
+          67.045,
+          27.05
+        ],
+        [
+          65.795,
+          27.05
+        ],
+        [
+          65.795,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "5d799c3e-14c6-40d7-a3b9-1e14aee85017",
+    "ref": "R_B23",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 80.441,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 80.441,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 80.441,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          79.816,
+          29.05
+        ],
+        [
+          81.066,
+          29.05
+        ],
+        [
+          81.066,
+          27.05
+        ],
+        [
+          79.816,
+          27.05
+        ],
+        [
+          79.816,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "624210d5-ea0d-438f-9d9b-27bbb1c9755d",
+    "ref": "J_CHG1",
+    "value": "XT30PW-F (CHG)",
+    "fpid": "XT30PW-F_Lugs",
+    "x": 5.6,
+    "y": 7.0,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 14.342,
+        "y": 4.5,
+        "w": 2.8,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": "CHG+"
+      },
+      {
+        "num": "2",
+        "x": 14.342,
+        "y": 9.5,
+        "w": 2.8,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": "CHG-"
+      },
+      {
+        "num": "TAB1",
+        "x": 9.342,
+        "y": 1.5,
+        "w": 2.4,
+        "h": 2.4,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": ""
+      },
+      {
+        "num": "TAB2",
+        "x": 9.342,
+        "y": 12.5,
+        "w": 2.4,
+        "h": 2.4,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": ""
+      }
+    ],
+    "outline": [],
+    "models": [
+      {
+        "path": "${KIPRJMOD}/3dmodels/XT30PW-F.step",
+        "resolved": "C:\\Users\\quinn\\Documents\\GitHub\\QFBMS\\3dmodels\\XT30PW-F.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "6ef62bd4-c92f-4c4b-8209-1d8fab412609",
+    "ref": "R_B9",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 52.399,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 52.399,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 52.399,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          51.774,
+          29.05
+        ],
+        [
+          53.024,
+          29.05
+        ],
+        [
+          53.024,
+          27.05
+        ],
+        [
+          51.774,
+          27.05
+        ],
+        [
+          51.774,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "7029f192-c10a-48b7-acb5-b92ad5a8dee4",
+    "ref": "R_B10",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 54.402,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 54.402,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 54.402,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          53.777,
+          29.05
+        ],
+        [
+          55.027,
+          29.05
+        ],
+        [
+          55.027,
+          27.05
+        ],
+        [
+          53.777,
+          27.05
+        ],
+        [
+          53.777,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "70597ac2-3417-42a1-98ca-28ce6df6474b",
+    "ref": "J_BAT1",
+    "value": "XT30PW-M (BAT)",
+    "fpid": "XT30PW-M_Lugs",
+    "x": 5.2,
+    "y": 24.9,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 13.3,
+        "y": 27.4,
+        "w": 2.8,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": "CELL32"
+      },
+      {
+        "num": "2",
+        "x": 13.3,
+        "y": 22.4,
+        "w": 2.8,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": "CELL0"
+      },
+      {
+        "num": "TAB1",
+        "x": 3.4,
+        "y": 19.3,
+        "w": 2.4,
+        "h": 2.4,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": ""
+      },
+      {
+        "num": "TAB2",
+        "x": 3.4,
+        "y": 30.5,
+        "w": 2.4,
+        "h": 2.4,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": true,
+        "net": ""
+      }
+    ],
+    "outline": [],
+    "models": [
+      {
+        "path": "${KIPRJMOD}/3dmodels/XT30PW-M.step",
+        "resolved": "C:\\Users\\quinn\\Documents\\GitHub\\QFBMS\\3dmodels\\XT30PW-M.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "72d772cb-8588-427c-9f70-02ebb931547e",
+    "ref": "R_B12",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 58.408,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 58.408,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 58.408,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          57.783,
+          29.05
+        ],
+        [
+          59.033,
+          29.05
+        ],
+        [
+          59.033,
+          27.05
+        ],
+        [
+          57.783,
+          27.05
+        ],
+        [
+          57.783,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "7f959e8b-345d-4aec-b2af-3e6fe94145a9",
+    "ref": "J_CELL1",
+    "value": "0-8",
+    "fpid": "JST_GH_BM10B-GHS-TBT_1x10-1MP_P1.25mm_Vertical",
+    "x": 89.0,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 83.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL9"
+      },
+      {
+        "num": "2",
+        "x": 84.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL8"
+      },
+      {
+        "num": "3",
+        "x": 85.875,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL7"
+      },
+      {
+        "num": "4",
+        "x": 87.125,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL6"
+      },
+      {
+        "num": "5",
+        "x": 88.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL5"
+      },
+      {
+        "num": "6",
+        "x": 89.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL4"
+      },
+      {
+        "num": "7",
+        "x": 90.875,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL3"
+      },
+      {
+        "num": "8",
+        "x": 92.125,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL2"
+      },
+      {
+        "num": "9",
+        "x": 93.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL1"
+      },
+      {
+        "num": "10",
+        "x": 94.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CELL0"
+      },
+      {
+        "num": "MP",
+        "x": 81.525,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 96.475,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          81.125,
+          20.3
+        ],
+        [
+          96.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          81.125,
+          24.55
+        ],
+        [
+          81.125,
+          20.3
+        ]
+      ],
+      [
+        [
+          81.125,
+          24.55
+        ],
+        [
+          96.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          82.875,
+          24.55
+        ],
+        [
+          83.375,
+          23.8429
+        ]
+      ],
+      [
+        [
+          83.375,
+          23.8429
+        ],
+        [
+          83.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          96.875,
+          24.55
+        ],
+        [
+          96.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          83.125,
+          22.3
+        ],
+        [
+          83.625,
+          22.3
+        ],
+        [
+          83.625,
+          22.8
+        ],
+        [
+          83.125,
+          22.8
+        ],
+        [
+          83.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          84.375,
+          22.3
+        ],
+        [
+          84.875,
+          22.3
+        ],
+        [
+          84.875,
+          22.8
+        ],
+        [
+          84.375,
+          22.8
+        ],
+        [
+          84.375,
+          22.3
+        ]
+      ],
+      [
+        [
+          85.625,
+          22.3
+        ],
+        [
+          86.125,
+          22.3
+        ],
+        [
+          86.125,
+          22.8
+        ],
+        [
+          85.625,
+          22.8
+        ],
+        [
+          85.625,
+          22.3
+        ]
+      ],
+      [
+        [
+          86.875,
+          22.3
+        ],
+        [
+          87.375,
+          22.3
+        ],
+        [
+          87.375,
+          22.8
+        ],
+        [
+          86.875,
+          22.8
+        ],
+        [
+          86.875,
+          22.3
+        ]
+      ],
+      [
+        [
+          88.125,
+          22.3
+        ],
+        [
+          88.625,
+          22.3
+        ],
+        [
+          88.625,
+          22.8
+        ],
+        [
+          88.125,
+          22.8
+        ],
+        [
+          88.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          89.375,
+          22.3
+        ],
+        [
+          89.875,
+          22.3
+        ],
+        [
+          89.875,
+          22.8
+        ],
+        [
+          89.375,
+          22.8
+        ],
+        [
+          89.375,
+          22.3
+        ]
+      ],
+      [
+        [
+          90.625,
+          22.3
+        ],
+        [
+          91.125,
+          22.3
+        ],
+        [
+          91.125,
+          22.8
+        ],
+        [
+          90.625,
+          22.8
+        ],
+        [
+          90.625,
+          22.3
+        ]
+      ],
+      [
+        [
+          91.875,
+          22.3
+        ],
+        [
+          92.375,
+          22.3
+        ],
+        [
+          92.375,
+          22.8
+        ],
+        [
+          91.875,
+          22.8
+        ],
+        [
+          91.875,
+          22.3
+        ]
+      ],
+      [
+        [
+          93.125,
+          22.3
+        ],
+        [
+          93.625,
+          22.3
+        ],
+        [
+          93.625,
+          22.8
+        ],
+        [
+          93.125,
+          22.8
+        ],
+        [
+          93.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          94.375,
+          22.3
+        ],
+        [
+          94.875,
+          22.3
+        ],
+        [
+          94.875,
+          22.8
+        ],
+        [
+          94.375,
+          22.8
+        ],
+        [
+          94.375,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM10B-GHS-TBT_1x10-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM10B-GHS-TBT_1x10-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "8170af6e-ee8e-4c38-8393-b00656f3ecd8",
+    "ref": "R_B5",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 44.387,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 44.387,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 44.387,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          43.762,
+          29.05
+        ],
+        [
+          45.012,
+          29.05
+        ],
+        [
+          45.012,
+          27.05
+        ],
+        [
+          43.762,
+          27.05
+        ],
+        [
+          43.762,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "8242cd50-99b9-49cc-a868-e87ced42c616",
+    "ref": "R_B17",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 68.423,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 68.423,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 68.423,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          67.798,
+          29.05
+        ],
+        [
+          69.048,
+          29.05
+        ],
+        [
+          69.048,
+          27.05
+        ],
+        [
+          67.798,
+          27.05
+        ],
+        [
+          67.798,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "845b570f-61a2-4d6f-ade6-a4bf3591803d",
+    "ref": "R_B6",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 46.39,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 46.39,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 46.39,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          45.765,
+          29.05
+        ],
+        [
+          47.015,
+          29.05
+        ],
+        [
+          47.015,
+          27.05
+        ],
+        [
+          45.765,
+          27.05
+        ],
+        [
+          45.765,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "8a82098a-e568-44b8-aa16-cb286687cfdf",
+    "ref": "R_B28",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 90.456,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 90.456,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 90.456,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          89.831,
+          29.05
+        ],
+        [
+          91.081,
+          29.05
+        ],
+        [
+          91.081,
+          27.05
+        ],
+        [
+          89.831,
+          27.05
+        ],
+        [
+          89.831,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "940c3328-ea2a-4330-8a87-723a3b275feb",
+    "ref": "R_B26",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 86.45,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 86.45,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 86.45,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          85.825,
+          29.05
+        ],
+        [
+          87.075,
+          29.05
+        ],
+        [
+          87.075,
+          27.05
+        ],
+        [
+          85.825,
+          27.05
+        ],
+        [
+          85.825,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "96bded5b-757e-4f4e-aece-362cfb59b752",
+    "ref": "J_T3",
+    "value": "T3",
+    "fpid": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "x": 108.0,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 107.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "TS3"
+      },
+      {
+        "num": "2",
+        "x": 108.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "GND"
+      },
+      {
+        "num": "MP",
+        "x": 105.525,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 110.475,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          105.125,
+          20.3
+        ],
+        [
+          110.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          105.125,
+          24.55
+        ],
+        [
+          105.125,
+          20.3
+        ]
+      ],
+      [
+        [
+          105.125,
+          24.55
+        ],
+        [
+          110.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          106.875,
+          24.55
+        ],
+        [
+          107.375,
+          23.8429
+        ]
+      ],
+      [
+        [
+          107.375,
+          23.8429
+        ],
+        [
+          107.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          110.875,
+          24.55
+        ],
+        [
+          110.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          107.125,
+          22.3
+        ],
+        [
+          107.625,
+          22.3
+        ],
+        [
+          107.625,
+          22.8
+        ],
+        [
+          107.125,
+          22.8
+        ],
+        [
+          107.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          108.375,
+          22.3
+        ],
+        [
+          108.875,
+          22.3
+        ],
+        [
+          108.875,
+          22.8
+        ],
+        [
+          108.375,
+          22.8
+        ],
+        [
+          108.375,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "9ac55472-d159-4427-bb22-e4782e6e3278",
+    "ref": "R_B20",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 74.432,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 74.432,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 74.432,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          73.807,
+          29.05
+        ],
+        [
+          75.057,
+          29.05
+        ],
+        [
+          75.057,
+          27.05
+        ],
+        [
+          73.807,
+          27.05
+        ],
+        [
+          73.807,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "9d38cf1e-71f0-4b2e-b7a8-a38ab09dff9a",
+    "ref": "R_B32",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 98.468,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 98.468,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 98.468,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          97.843,
+          29.05
+        ],
+        [
+          99.093,
+          29.05
+        ],
+        [
+          99.093,
+          27.05
+        ],
+        [
+          97.843,
+          27.05
+        ],
+        [
+          97.843,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "a646d61d-7208-4deb-9d49-1f44c157a25b",
+    "ref": "R_B30",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 94.462,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 94.462,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 94.462,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          93.837,
+          29.05
+        ],
+        [
+          95.087,
+          29.05
+        ],
+        [
+          95.087,
+          27.05
+        ],
+        [
+          93.837,
+          27.05
+        ],
+        [
+          93.837,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "a83fa8a8-d21e-455d-928e-d03d4d9ffad8",
+    "ref": "J_USB1",
+    "value": "USB-C",
+    "fpid": "USB_C_Receptacle_16P",
+    "x": 124.6,
+    "y": 4.11,
+    "rot": 180.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "",
+        "x": 127.49,
+        "y": 6.715,
+        "w": 0.65,
+        "h": 0.65,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "",
+        "x": 121.71,
+        "y": 6.715,
+        "w": 0.65,
+        "h": 0.65,
+        "angle": 0.0,
+        "shape": "circle",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A1",
+        "x": 127.8,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A4",
+        "x": 127.0,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A5",
+        "x": 125.85,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A6",
+        "x": 124.85,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A7",
+        "x": 124.35,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A8",
+        "x": 123.35,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A9",
+        "x": 122.2,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "A12",
+        "x": 121.4,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B1",
+        "x": 121.4,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B4",
+        "x": 122.2,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B5",
+        "x": 122.85,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B6",
+        "x": 123.85,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B7",
+        "x": 125.35,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B8",
+        "x": 126.35,
+        "y": 7.79,
+        "w": 0.3,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B9",
+        "x": 127.0,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "B12",
+        "x": 127.8,
+        "y": 7.79,
+        "w": 0.6,
+        "h": 1.15,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "SH",
+        "x": 128.92,
+        "y": 7.215,
+        "w": 1.0,
+        "h": 2.1,
+        "angle": 0.0,
+        "shape": "oval",
+        "tht": true,
+        "net": ""
+      },
+      {
+        "num": "SH",
+        "x": 128.92,
+        "y": 3.035,
+        "w": 1.0,
+        "h": 1.8,
+        "angle": 0.0,
+        "shape": "oval",
+        "tht": true,
+        "net": ""
+      },
+      {
+        "num": "SH",
+        "x": 120.28,
+        "y": 7.215,
+        "w": 1.0,
+        "h": 2.1,
+        "angle": 0.0,
+        "shape": "oval",
+        "tht": true,
+        "net": ""
+      },
+      {
+        "num": "SH",
+        "x": 120.28,
+        "y": 3.035,
+        "w": 1.0,
+        "h": 1.8,
+        "angle": 0.0,
+        "shape": "oval",
+        "tht": true,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          129.07,
+          7.785
+        ],
+        [
+          120.13,
+          7.785
+        ],
+        [
+          120.13,
+          0.435
+        ],
+        [
+          129.07,
+          0.435
+        ],
+        [
+          129.07,
+          7.785
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KIPRJMOD}/3dmodels/USB-C.step",
+        "resolved": "C:\\Users\\quinn\\Documents\\GitHub\\QFBMS\\3dmodels\\USB-C.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "b39c010b-e239-4c35-a2ab-e9a4a1f6ccd6",
+    "ref": "R_B33",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 100.975,
+    "y": 28.025,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 100.975,
+        "y": 28.9375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 100.975,
+        "y": 27.1125,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          100.35,
+          29.025
+        ],
+        [
+          101.6,
+          29.025
+        ],
+        [
+          101.6,
+          27.025
+        ],
+        [
+          100.35,
+          27.025
+        ],
+        [
+          100.35,
+          29.025
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "b4e65ca3-74bb-498a-bc34-434c4988095d",
+    "ref": "R_B13",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 60.411,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 60.411,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 60.411,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          59.786,
+          29.05
+        ],
+        [
+          61.036,
+          29.05
+        ],
+        [
+          61.036,
+          27.05
+        ],
+        [
+          59.786,
+          27.05
+        ],
+        [
+          59.786,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "c886e845-e905-4972-b1f3-291fc13c0b84",
+    "ref": "J_COMM1",
+    "value": "CAN/5V",
+    "fpid": "JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+    "x": 34.1,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 32.225,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CANH"
+      },
+      {
+        "num": "2",
+        "x": 33.475,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "CANL"
+      },
+      {
+        "num": "3",
+        "x": 34.725,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "ISO_GND"
+      },
+      {
+        "num": "4",
+        "x": 35.975,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "5VExt"
+      },
+      {
+        "num": "MP",
+        "x": 30.375,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 37.825,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          29.975,
+          20.3
+        ],
+        [
+          38.225,
+          20.3
+        ]
+      ],
+      [
+        [
+          29.975,
+          24.55
+        ],
+        [
+          29.975,
+          20.3
+        ]
+      ],
+      [
+        [
+          29.975,
+          24.55
+        ],
+        [
+          38.225,
+          24.55
+        ]
+      ],
+      [
+        [
+          31.725,
+          24.55
+        ],
+        [
+          32.225,
+          23.8429
+        ]
+      ],
+      [
+        [
+          32.225,
+          23.8429
+        ],
+        [
+          32.725,
+          24.55
+        ]
+      ],
+      [
+        [
+          38.225,
+          24.55
+        ],
+        [
+          38.225,
+          20.3
+        ]
+      ],
+      [
+        [
+          31.975,
+          22.3
+        ],
+        [
+          32.475,
+          22.3
+        ],
+        [
+          32.475,
+          22.8
+        ],
+        [
+          31.975,
+          22.8
+        ],
+        [
+          31.975,
+          22.3
+        ]
+      ],
+      [
+        [
+          33.225,
+          22.3
+        ],
+        [
+          33.725,
+          22.3
+        ],
+        [
+          33.725,
+          22.8
+        ],
+        [
+          33.225,
+          22.8
+        ],
+        [
+          33.225,
+          22.3
+        ]
+      ],
+      [
+        [
+          34.475,
+          22.3
+        ],
+        [
+          34.975,
+          22.3
+        ],
+        [
+          34.975,
+          22.8
+        ],
+        [
+          34.475,
+          22.8
+        ],
+        [
+          34.475,
+          22.3
+        ]
+      ],
+      [
+        [
+          35.725,
+          22.3
+        ],
+        [
+          36.225,
+          22.3
+        ],
+        [
+          36.225,
+          22.8
+        ],
+        [
+          35.725,
+          22.8
+        ],
+        [
+          35.725,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "c9db91fb-a35f-45ff-9fee-f31dd487b4c1",
+    "ref": "R_B27",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 88.453,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 88.453,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 88.453,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          87.828,
+          29.05
+        ],
+        [
+          89.078,
+          29.05
+        ],
+        [
+          89.078,
+          27.05
+        ],
+        [
+          87.828,
+          27.05
+        ],
+        [
+          87.828,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "ce99fb05-07a4-4187-89a5-cc829e987430",
+    "ref": "R_B18",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 70.426,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 70.426,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 70.426,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          69.801,
+          29.05
+        ],
+        [
+          71.051,
+          29.05
+        ],
+        [
+          71.051,
+          27.05
+        ],
+        [
+          69.801,
+          27.05
+        ],
+        [
+          69.801,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "ceb90dae-430c-42bd-b029-c420c7e40edb",
+    "ref": "J_T1",
+    "value": "T1",
+    "fpid": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "x": 122.0,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 121.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "TS1"
+      },
+      {
+        "num": "2",
+        "x": 122.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "GND"
+      },
+      {
+        "num": "MP",
+        "x": 119.525,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 124.475,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          119.125,
+          20.3
+        ],
+        [
+          124.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          119.125,
+          24.55
+        ],
+        [
+          119.125,
+          20.3
+        ]
+      ],
+      [
+        [
+          119.125,
+          24.55
+        ],
+        [
+          124.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          120.875,
+          24.55
+        ],
+        [
+          121.375,
+          23.8429
+        ]
+      ],
+      [
+        [
+          121.375,
+          23.8429
+        ],
+        [
+          121.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          124.875,
+          24.55
+        ],
+        [
+          124.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          121.125,
+          22.3
+        ],
+        [
+          121.625,
+          22.3
+        ],
+        [
+          121.625,
+          22.8
+        ],
+        [
+          121.125,
+          22.8
+        ],
+        [
+          121.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          122.375,
+          22.3
+        ],
+        [
+          122.875,
+          22.3
+        ],
+        [
+          122.875,
+          22.8
+        ],
+        [
+          122.375,
+          22.8
+        ],
+        [
+          122.375,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "cf91d21d-d300-4124-ae3f-3699196d29d3",
+    "ref": "R_B1",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 36.375,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 36.375,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 36.375,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          35.75,
+          29.05
+        ],
+        [
+          37.0,
+          29.05
+        ],
+        [
+          37.0,
+          27.05
+        ],
+        [
+          35.75,
+          27.05
+        ],
+        [
+          35.75,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "d5f0b2b6-6c7a-4d1a-a0a4-6259b608694d",
+    "ref": "J_T2",
+    "value": "T2",
+    "fpid": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "x": 115.0,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 114.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "TS2"
+      },
+      {
+        "num": "2",
+        "x": 115.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "GND"
+      },
+      {
+        "num": "MP",
+        "x": 112.525,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 117.475,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          112.125,
+          20.3
+        ],
+        [
+          117.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          112.125,
+          24.55
+        ],
+        [
+          112.125,
+          20.3
+        ]
+      ],
+      [
+        [
+          112.125,
+          24.55
+        ],
+        [
+          117.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          113.875,
+          24.55
+        ],
+        [
+          114.375,
+          23.8429
+        ]
+      ],
+      [
+        [
+          114.375,
+          23.8429
+        ],
+        [
+          114.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          117.875,
+          24.55
+        ],
+        [
+          117.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          114.125,
+          22.3
+        ],
+        [
+          114.625,
+          22.3
+        ],
+        [
+          114.625,
+          22.8
+        ],
+        [
+          114.125,
+          22.8
+        ],
+        [
+          114.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          115.375,
+          22.3
+        ],
+        [
+          115.875,
+          22.3
+        ],
+        [
+          115.875,
+          22.8
+        ],
+        [
+          115.375,
+          22.8
+        ],
+        [
+          115.375,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "dbc6cd05-a457-4f8b-ac9f-9010337cbb19",
+    "ref": "J_T4",
+    "value": "T4",
+    "fpid": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical",
+    "x": 101.0,
+    "y": 22.8,
+    "rot": 0.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 100.375,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "TS4"
+      },
+      {
+        "num": "2",
+        "x": 101.625,
+        "y": 24.75,
+        "w": 0.6,
+        "h": 1.7,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": "GND"
+      },
+      {
+        "num": "MP",
+        "x": 98.525,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "MP",
+        "x": 103.475,
+        "y": 21.4,
+        "w": 1.0,
+        "h": 2.8,
+        "angle": 0.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          98.125,
+          20.3
+        ],
+        [
+          103.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          98.125,
+          24.55
+        ],
+        [
+          98.125,
+          20.3
+        ]
+      ],
+      [
+        [
+          98.125,
+          24.55
+        ],
+        [
+          103.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          99.875,
+          24.55
+        ],
+        [
+          100.375,
+          23.8429
+        ]
+      ],
+      [
+        [
+          100.375,
+          23.8429
+        ],
+        [
+          100.875,
+          24.55
+        ]
+      ],
+      [
+        [
+          103.875,
+          24.55
+        ],
+        [
+          103.875,
+          20.3
+        ]
+      ],
+      [
+        [
+          100.125,
+          22.3
+        ],
+        [
+          100.625,
+          22.3
+        ],
+        [
+          100.625,
+          22.8
+        ],
+        [
+          100.125,
+          22.8
+        ],
+        [
+          100.125,
+          22.3
+        ]
+      ],
+      [
+        [
+          101.375,
+          22.3
+        ],
+        [
+          101.875,
+          22.3
+        ],
+        [
+          101.875,
+          22.8
+        ],
+        [
+          101.375,
+          22.8
+        ],
+        [
+          101.375,
+          22.3
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "dc9d0600-572e-46ba-90fd-744a6dc1d724",
+    "ref": "R_B21",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 76.435,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 76.435,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 76.435,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          75.81,
+          29.05
+        ],
+        [
+          77.06,
+          29.05
+        ],
+        [
+          77.06,
+          27.05
+        ],
+        [
+          75.81,
+          27.05
+        ],
+        [
+          75.81,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "e0792088-5ac4-4d6e-8b78-0d70f884ad36",
+    "ref": "R_B11",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 56.405,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 56.405,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 56.405,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          55.78,
+          29.05
+        ],
+        [
+          57.03,
+          29.05
+        ],
+        [
+          57.03,
+          27.05
+        ],
+        [
+          55.78,
+          27.05
+        ],
+        [
+          55.78,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "e264124e-6990-4061-86a7-c795612090f1",
+    "ref": "R_B4",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 42.384,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 42.384,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 42.384,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          41.759,
+          29.05
+        ],
+        [
+          43.009,
+          29.05
+        ],
+        [
+          43.009,
+          27.05
+        ],
+        [
+          41.759,
+          27.05
+        ],
+        [
+          41.759,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  },
+  {
+    "uuid": "ea806cce-af06-40fe-b1f9-007218427f27",
+    "ref": "R_B7",
+    "value": "27R0",
+    "fpid": "R_0805_2012Metric",
+    "x": 48.393,
+    "y": 28.05,
+    "rot": 90.0,
+    "side": "F",
+    "locked": false,
+    "pads": [
+      {
+        "num": "1",
+        "x": 48.393,
+        "y": 28.9625,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      },
+      {
+        "num": "2",
+        "x": 48.393,
+        "y": 27.1375,
+        "w": 1.025,
+        "h": 1.4,
+        "angle": 90.0,
+        "shape": "roundrect",
+        "tht": false,
+        "net": ""
+      }
+    ],
+    "outline": [
+      [
+        [
+          47.768,
+          29.05
+        ],
+        [
+          49.018,
+          29.05
+        ],
+        [
+          49.018,
+          27.05
+        ],
+        [
+          47.768,
+          27.05
+        ],
+        [
+          47.768,
+          29.05
+        ]
+      ]
+    ],
+    "models": [
+      {
+        "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step",
+        "resolved": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0805_2012Metric.step",
+        "exists": true,
+        "alt_exists": null,
+        "visible": true
+      }
+    ],
+    "lcsc": "",
+    "mpn": ""
+  }
+]

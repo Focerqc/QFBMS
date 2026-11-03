@@ -1,6 +1,8 @@
 {
  "version": 1,
  "ref": "_reference/vfbms32_cad_top_reference_rotated.png",
+ "refBot": "_reference/vfbms32_real_bottom_hd.png",
+ "sideView": "top",
  "refFit": {
   "ox": 0,
   "oy": 0,
@@ -9,7 +11,7 @@
  },
  "colors": [
   {
-   "id": "cbsukigv83",
+   "id": "ckp5kmbqkk",
    "hex": "#4ea1ff",
    "note": ""
   }
