@@ -1,0 +1,380 @@
+(kicad_sch
+	(version 20260101)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001")
+	(paper "A2")
+	(title_block
+		(title "QFBMS32 BQ monitor sheets")
+		(date "2026-11-03")
+		(rev "0.1")
+		(comment 1 "Schematic increment only. qfbms32.kicad_pcb is not updated from this file.")
+	)
+	(lib_symbols
+
+	)
+	(wire
+		(pts (xy 195.58 299.72) (xy 220.98 299.72))
+		(stroke (width 0) (type default))
+		(uuid "d06aa922-dc10-420d-9c84-76098d5ef4d6")
+	)
+	(wire
+		(pts (xy 220.98 299.72) (xy 220.98 78.74))
+		(stroke (width 0) (type default))
+		(uuid "b6e515e5-e8de-4178-9d04-ed903d650556")
+	)
+	(wire
+		(pts (xy 220.98 78.74) (xy 195.58 78.74))
+		(stroke (width 0) (type default))
+		(uuid "640fe6bc-029a-44d8-bd64-3bafde9d850c")
+	)
+	(wire
+		(pts (xy 195.58 307.34) (xy 223.52 307.34))
+		(stroke (width 0) (type default))
+		(uuid "7c0d807c-23a7-4408-ab06-faafcee2b63a")
+	)
+	(wire
+		(pts (xy 223.52 307.34) (xy 223.52 86.36))
+		(stroke (width 0) (type default))
+		(uuid "01cda08f-31d1-4a9c-a875-3ea6f67ccad7")
+	)
+	(wire
+		(pts (xy 223.52 86.36) (xy 195.58 86.36))
+		(stroke (width 0) (type default))
+		(uuid "b25f8e07-115c-4771-b2e8-61a9ae3e17b2")
+	)
+	(wire
+		(pts (xy 195.58 198.12) (xy 226.06 198.12))
+		(stroke (width 0) (type default))
+		(uuid "1b9faaa3-4ef1-4680-81e1-799eff083c6f")
+	)
+	(wire
+		(pts (xy 226.06 198.12) (xy 226.06 48.26))
+		(stroke (width 0) (type default))
+		(uuid "d7eee837-6296-43eb-a570-5b4481fbcdf6")
+	)
+	(wire
+		(pts (xy 226.06 48.26) (xy 195.58 48.26))
+		(stroke (width 0) (type default))
+		(uuid "41fbdfbc-2a18-4542-acdb-6673af427a23")
+	)
+	(wire
+		(pts (xy 195.58 205.74) (xy 228.6 205.74))
+		(stroke (width 0) (type default))
+		(uuid "06abe902-293b-4a5d-999b-2bd4bb45fcce")
+	)
+	(wire
+		(pts (xy 228.6 205.74) (xy 228.6 55.88))
+		(stroke (width 0) (type default))
+		(uuid "21519bcb-243d-4bfd-bf01-415d5f92c561")
+	)
+	(wire
+		(pts (xy 228.6 55.88) (xy 195.58 55.88))
+		(stroke (width 0) (type default))
+		(uuid "199d8e3e-13c7-4ec0-870f-a5b0f6c9cf00")
+	)
+	(wire
+		(pts (xy 195.58 213.36) (xy 231.14 213.36))
+		(stroke (width 0) (type default))
+		(uuid "f7bceaac-f83f-4506-9680-2443bc934dc6")
+	)
+	(wire
+		(pts (xy 231.14 213.36) (xy 231.14 63.5))
+		(stroke (width 0) (type default))
+		(uuid "9717f9d9-8e53-40e7-8a52-f86c2c7987d1")
+	)
+	(wire
+		(pts (xy 231.14 63.5) (xy 195.58 63.5))
+		(stroke (width 0) (type default))
+		(uuid "3214c08e-ba9f-4862-84fb-35735ef32e17")
+	)
+	(wire
+		(pts (xy 195.58 220.98) (xy 233.68 220.98))
+		(stroke (width 0) (type default))
+		(uuid "d32876fe-c707-45a3-91d6-626beb7ef6c3")
+	)
+	(wire
+		(pts (xy 233.68 220.98) (xy 233.68 71.12))
+		(stroke (width 0) (type default))
+		(uuid "69d86c0a-012a-4734-8643-8520d367f768")
+	)
+	(wire
+		(pts (xy 233.68 71.12) (xy 195.58 71.12))
+		(stroke (width 0) (type default))
+		(uuid "e965c6a0-3fdd-4bcf-bf3f-2c9f32625149")
+	)
+	(no_connect (at 195.58 314.96) (uuid "47563170-f075-4a92-ac9b-05245f48e74a"))
+	(no_connect (at 195.58 322.58) (uuid "e4e34cb0-a6f5-4cdb-9d5f-8386cf081707"))
+	(no_connect (at 195.58 330.2) (uuid "f3cc0b22-5142-458b-9117-cb762a74d344"))
+	(no_connect (at 195.58 337.82) (uuid "800edbaf-f7a7-475c-a279-3a0eda45a9a3"))
+	(sheet
+		(at 25.4 292.1)
+		(size 170.18 60.96)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "c4e8b21a-7f63-4d18-a902-11d6e5a72011")
+		(property "Sheetname" "Lower monitor"
+			(at 25.4 355.06 0)
+			(effects (font (size 1.524 1.524)) (justify left bottom))
+		)
+		(property "Sheetfile" "qfbms32-bq-lower.kicad_sch"
+			(at 25.4 290.1 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "SDA_HOST" bidirectional
+			(at 195.58 299.72 0)
+			(uuid "14647f03-38de-4099-b033-274f374bf261")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SCL_HOST" bidirectional
+			(at 195.58 307.34 0)
+			(uuid "fe399045-3316-4ff9-a7db-11fc19d52e98")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "CHG_NEG" bidirectional
+			(at 195.58 314.96 0)
+			(uuid "696ac974-652a-431a-8c41-f457b9203ecf")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "RST_SHUT_BQ1" bidirectional
+			(at 195.58 322.58 0)
+			(uuid "81d09e02-80a3-4817-8cc0-010e283c18b8")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "TS2_WAKE_BQ1" bidirectional
+			(at 195.58 330.2 0)
+			(uuid "9f304af0-a6d5-4592-a76e-fe30c5c9f286")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "LD_WAKE_BQ1" bidirectional
+			(at 195.58 337.82 0)
+			(uuid "0ec09feb-615d-4936-a970-0910c3dfaf49")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(page "2")
+				)
+			)
+		)
+	)
+	(no_connect (at 195.58 228.6) (uuid "0aeb8e6c-d497-41ac-8c64-4a3019edde9c"))
+	(no_connect (at 195.58 236.22) (uuid "b731122c-bf25-471d-a160-bcafbe5e592c"))
+	(no_connect (at 195.58 243.84) (uuid "37f8b3e1-b508-4ede-adaa-3f56cfb991ea"))
+	(sheet
+		(at 25.4 190.5)
+		(size 170.18 76.2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "d91f06c4-2ab8-4e77-b5c3-88a14f903022")
+		(property "Sheetname" "Upper monitor"
+			(at 25.4 268.7 0)
+			(effects (font (size 1.524 1.524)) (justify left bottom))
+		)
+		(property "Sheetfile" "qfbms32-bq-upper.kicad_sch"
+			(at 25.4 188.5 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "SDA_BQ2" bidirectional
+			(at 195.58 198.12 0)
+			(uuid "8f440570-65f5-4548-88d7-7c9d53ae2ba6")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SCL_BQ2" bidirectional
+			(at 195.58 205.74 0)
+			(uuid "e15fe170-0c1e-4b27-bd64-4f37ab545f91")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "ALERT_BQ2" bidirectional
+			(at 195.58 213.36 0)
+			(uuid "4e4ce065-1a97-470c-871f-73ea507b2535")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "REG1_BQ2" bidirectional
+			(at 195.58 220.98 0)
+			(uuid "36b757ec-478d-4adc-ad76-6720a4478a82")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "RST_SHUT_BQ2" bidirectional
+			(at 195.58 228.6 0)
+			(uuid "375b5961-206f-44f5-9e3d-b674cce421d2")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "TS2_WAKE_BQ2" bidirectional
+			(at 195.58 236.22 0)
+			(uuid "b430fe10-d984-4cff-a29e-3ed2ecca26ff")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "LD_WAKE_BQ2" bidirectional
+			(at 195.58 243.84 0)
+			(uuid "de1307f2-43f7-4608-ade8-a4b87848c0c5")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(page "3")
+				)
+			)
+		)
+	)
+	(no_connect (at 195.58 93.98) (uuid "6a466d42-803e-4da3-b912-71fed413289c"))
+	(no_connect (at 195.58 101.6) (uuid "8d1029c5-74cb-4f8f-9451-799c3b173d0a"))
+	(sheet
+		(at 25.4 40.64)
+		(size 170.18 83.82)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "a18c44e0-6b21-4f55-9d30-2c7e91ab6044")
+		(property "Sheetname" "Upper I2C isolation"
+			(at 25.4 126.46 0)
+			(effects (font (size 1.524 1.524)) (justify left bottom))
+		)
+		(property "Sheetfile" "qfbms32-bq-iso-i2c.kicad_sch"
+			(at 25.4 38.64 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "SDA_BQ2" bidirectional
+			(at 195.58 48.26 0)
+			(uuid "73e278c6-9841-488c-833f-c316931bd541")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SCL_BQ2" bidirectional
+			(at 195.58 55.88 0)
+			(uuid "c636290c-3e75-4814-83af-e70b3e8447e5")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "ALERT_BQ2" bidirectional
+			(at 195.58 63.5 0)
+			(uuid "59573523-8c66-4361-a6c8-bad681571088")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "REG1_BQ2" bidirectional
+			(at 195.58 71.12 0)
+			(uuid "ff1f4a7d-f73b-4b2d-b446-6fc7caf6d138")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SDA_HOST" bidirectional
+			(at 195.58 78.74 0)
+			(uuid "f36be570-b403-4f42-9239-74ade8fe296e")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SCL_HOST" bidirectional
+			(at 195.58 86.36 0)
+			(uuid "baa8beab-b16b-4535-afa1-f6d20d8b9389")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "GPIO9" bidirectional
+			(at 195.58 93.98 0)
+			(uuid "914761bf-abc2-4534-8a50-4760b8288092")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "HOST_3V3" bidirectional
+			(at 195.58 101.6 0)
+			(uuid "77e18d99-6c37-44fe-a26b-265bb541b057")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(page "4")
+				)
+			)
+		)
+	)
+	(text "Host I2C is SDA_HOST and SCL_HOST: GPIO21 and GPIO20, 100 kHz.\nGPIO9 is pulled high on the isolation sheet. GPIO9 low selects ESP32-C3 download mode.\nGPIO9 high opens the host-side upper-bus switch. GPIO9 low connects upper address 0x08.\nThat connection is allowed only after the lower device has been verified at 0x10.\nCHG_NEG and the wake ports remain open. No charge FET, USB, or CAN is on these sheets.\nCELL0 and CELL16 stay separate. CELL16 is the upper reference, not the lower ground.\nIsolation OPEN items:\nU_ISO: Bidirectional I2C isolator using the ISO1640 8-D pin map (VCC1, SDA1, SCL1, GND1, GND2, SCL2, SDA2, VCC2). No enable pin. Orderable suffix is OPEN; the 16-DW package has different pin numbers and is not this symbol.\nSW_SDA: Host-side SDA disconnect. MPN and footprint are OPEN. GPIO9 high = open, GPIO9 low = closed. Must isolate when unpowered and must not back-power the host rail.\nSW_SCL: Host-side SCL disconnect. Same requirements as SW_SDA.\nR201: Side-1 SDA pull-up to HOST_3V3. Resistance is OPEN at 100 kHz.\nR202: Side-1 SCL pull-up to HOST_3V3. Resistance is OPEN at 100 kHz.\nR203: GPIO9 reset pull-up to HOST_3V3. Value is OPEN. GPIO9 must be high at reset because GPIO9 low selects ESP32-C3 download mode."
+		(at 299.72 389.89 0)
+		(effects
+			(font
+				(size 1.15 1.15)
+			)
+			(justify left top)
+		)
+		(uuid "ab47b61d-016a-4884-8cc1-aa69f6d8c84c")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
