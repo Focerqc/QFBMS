@@ -1,0 +1,4551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\quinn\Documents\GitHub\QFBMS\qfbms32-bq-monitors.kicad_sch</source>
+    <date>2026-11-04T14:19:35</date>
+    <tool>Eeschema 10.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>QFBMS32 BQ monitor sheets</title>
+        <company/>
+        <rev>0.2</rev>
+        <date>2026-11-04</date>
+        <source>qfbms32-bq-monitors.kicad_sch</source>
+        <comment number="1" value="Schematic increment only. qfbms32.kicad_pcb is not updated from this file."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/">
+      <title_block>
+        <title>QFBMS32 lower monitor U_BQ1</title>
+        <company/>
+        <rev>0.2</rev>
+        <date>2026-11-04</date>
+        <source>qfbms32-bq-lower.kicad_sch</source>
+        <comment number="1" value="Charge-only monitor sheet. Do not import this netlist into qfbms32.kicad_pcb."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/">
+      <title_block>
+        <title>QFBMS32 upper monitor U_BQ2</title>
+        <company/>
+        <rev>0.2</rev>
+        <date>2026-11-04</date>
+        <source>qfbms32-bq-upper.kicad_sch</source>
+        <comment number="1" value="Charge-only monitor sheet. Do not import this netlist into qfbms32.kicad_pcb."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/">
+      <title_block>
+        <title>QFBMS32 upper I2C isolation</title>
+        <company/>
+        <rev>0.2</rev>
+        <date>2026-11-04</date>
+        <source>qfbms32-bq-iso-i2c.kicad_sch</source>
+        <comment number="1" value="GPIO9 is pulled high at reset. GPIO9 low selects ESP32-C3 download mode."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C204">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e9662a92-08e6-5fe0-8d41-4da09507a09b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C205">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1e8bd8b9-781f-50d4-89ea-08ccaf7651bf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J201">
+      <value>External 3.3 V</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x02_Pin" description="Generic connector, single row, 01x02, script generated"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42eb4d0e-4d06-51fb-ac0f-b0281e3f0786</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q201">
+      <value>BC847BTT1G</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Transistor_BJT" part="Q_NPN_BEC" description="NPN transistor, base/emitter/collector"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="BJT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f4771c83-08c8-5bee-9903-f334b1cc5c4b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R205">
+      <value>4.3k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f38e6cef-9996-5487-88c0-44daf6a4de7d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R206">
+      <value>4.3k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2c281b48-1815-5ab8-a1ff-26cf31a4a48f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R207">
+      <value>3.3k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9bf25b81-082f-5398-9dd6-0601b4af19d7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R208">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1eb8cdce-7e7b-5a99-b418-568b6052a676</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R209">
+      <value>249R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>481fbd16-6bf1-5083-ba54-cde639f1d55c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW201">
+      <value>Host run</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="switch lever"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0e974f3a-a7c0-545d-b39a-b2d7085ef097</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW202">
+      <value>Wake</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0aee3f70-6bf9-5ba3-bbc8-6349021bc833</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U205">
+      <value>ESP32-C3 interface</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="Host_interface" description=""/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <property name="exclude_from_pos_files"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e30a3f40-d418-5b09-ae73-566ff4d9f298</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U206">
+      <value>ISO1640BDR</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="ISO1640_D8" description="ISO1640 8-D pin map, bidirectional SDA and SCL, no enable pin. Orderable suffix is not selected."/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="digital isolator i2c"/>
+      <property name="ki_fp_filters" value="SOIC*3.9x4.9mm*P1.27mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4747795b-3f39-59d2-851c-e8cb92e1b00e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U207">
+      <value>VOMA617A-3X001T</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Isolator" part="PC817" description="DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4"/>
+      <property name="Sheetname" value="BQ monitors"/>
+      <property name="Sheetfile" value="qfbms32-bq-monitors.kicad_sch"/>
+      <property name="ki_keywords" value="NPN DC Optocoupler"/>
+      <property name="ki_fp_filters" value="DIP*W7.62mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8d32e668-ee2f-57f4-adbc-84295ff81cad</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C1">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>04d669e8-3019-4234-a4f5-f7c3f16ffb11</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>ffd1b409-a621-4520-a447-bc898bf9d7c2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>b6ede1c5-7d01-4f27-b596-481232ddaa1c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>c1029836-2890-4d73-99f9-55748342ac42</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>4564fb5f-5af9-41c6-9c8c-047fdf96d4e0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>95aa77c2-ab43-459f-b591-318672b18869</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>14918da3-98e4-447f-aede-fc202123ac37</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>7608a7b7-9db4-49c1-bea8-ba0c6c0eee5c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>4d7921e2-ad36-4590-bacb-80a0e5ad3337</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>222edaac-27fc-4ab8-8b71-e46d677a4369</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>129a865e-3b0f-4a59-a57d-d12977d20a54</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>16fbd64c-9d5d-4cb4-9ee6-66e3029b3b3d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>3107b110-89ce-455a-b43a-46a9abb49ecb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>ffa4672e-eefc-48bb-9039-61a9ec80bd73</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>d481bd1a-420d-4601-984e-f0e2cf7f24d1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>b3fd625f-f7eb-4585-b2c8-de53117b4b37</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>40dcf5a3-57aa-4ae3-b94f-5eb48791681a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>1uF</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>5c7f4793-86c5-450d-8d72-3aeeec44118f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C19">
+      <value>100pF</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>770f1708-9d95-4753-8750-c8c34615f712</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C20">
+      <value>22nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>bc182c79-ace8-4700-b4f5-90e2abf8043b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C21">
+      <value>2.2uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>e8554951-674d-4b40-b4cc-15b004f029f7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C22">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>4a3eef42-00a5-4072-90d7-bfa2c814e20b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C23">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>c61e6bc8-185d-402a-83d2-d3da8163aadb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>cf9df425-aaae-42c6-8fc9-f46ad2c79e53</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>d22f12ba-125c-4df1-aea9-b4b8f3a1cb86</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q1">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Transistor_BJT" part="Q_NPN_BCE" description="NPN transistor, base/collector/emitter"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="BJT"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>a8967a1e-ff8b-49aa-9882-75eb5f85f559</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>39a5deb1-fa09-4ef6-8f01-ca85f58a0f61</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>65906fb5-9924-471f-a206-fe74061ca403</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>9149f9d5-39da-4998-8a8b-cd03dfb331d3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>717a06a1-6c53-4a9c-a78b-73ad8be2432e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>97e208eb-b694-4f1f-811b-9b07c2604d4b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>a502afe9-4603-49ab-ac4f-9d4fe8fe074a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>7b12b923-15be-4632-a4f7-dd099b53f84d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>d8dd16d1-c2c7-41a3-90b0-a50f838c29ac</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>4b061f4d-c717-4731-bbd9-d80cc545feb9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>df2b742e-f801-4fa3-b192-b0b499650139</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>b1904984-970f-4b0f-b751-58002001d5ab</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>253cb224-9415-41d2-8e13-2f95760bf706</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>6d5961f5-e6bd-494e-be4c-0290d28ad1b7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>ce69bdc3-c2ce-4910-a23e-b2a1d8ebb327</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>391e05f1-f008-42dc-a987-96d78ba6cca4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R16">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>99480ccb-1cfc-48bc-a731-b30bce949d22</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R17">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>db046d71-c578-4148-8be2-3ade7189ac23</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R18">
+      <value>100</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>6a68aa8d-2529-4331-a233-4600938b4c61</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R19">
+      <value>10M</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>b471d371-52f1-40d9-9e5b-9e40cc8aa097</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R20">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>4dd76484-9de1-4768-9c2e-710bb4e29543</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R21">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>37543b59-3701-4d89-969b-4b4e6921a0da</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R22">
+      <value>10k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>38f86ffb-93cf-4429-8272-e6fc66148456</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R23">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>1ab71e6d-db0f-473c-8c42-f83719ee5da4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R24">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>a90145a4-82b0-4cc7-8593-c5e4ea0134a2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R25">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>e111ccaa-ae92-4170-bf8e-f5c093d647f0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R26">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>dff655d6-9805-4ea2-907a-18561fc76817</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R27">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>41f9537c-326f-440a-ae67-53978162eac3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R28">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>0e15ee7a-2bcf-4f08-b461-11c84b2f3570</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R29">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>c25b8bfd-0823-4154-bae6-6259da86ef12</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R30">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>64f57ac2-a6ce-4253-93f3-7fbe9ac7694f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R31">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>ac9a8e38-d403-4611-96ec-a5c2bc7d69f2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RT1">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Thermistor" description="Temperature dependent resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res thermistor"/>
+      <property name="ki_fp_filters" value="R_* RV_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>31a96947-82bc-4fec-96e4-bf03c0283bfe</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RT2">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Thermistor" description="Temperature dependent resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res thermistor"/>
+      <property name="ki_fp_filters" value="R_* RV_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>7b7ae75b-3deb-4077-b91c-9b7e84b2e89a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RT3">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Thermistor" description="Temperature dependent resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res thermistor"/>
+      <property name="ki_fp_filters" value="R_* RV_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>991f9ca4-2547-41f5-aa0e-54a661046439</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RT4">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Thermistor" description="Temperature dependent resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res thermistor"/>
+      <property name="ki_fp_filters" value="R_* RV_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>1823b480-9b74-46d1-b442-353d62e58840</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RT5">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Thermistor" description="Temperature dependent resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res thermistor"/>
+      <property name="ki_fp_filters" value="R_* RV_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>d5d0c54e-6b54-4a36-8a29-70c139af9385</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R_SH">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>9b6f95fb-1785-454d-8f32-7a76e26fcb4c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U_BQ1">
+      <value>BQ7695202</value>
+      <footprint>Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="BQ7695202PFB" description="Lithium battery monitor, 3-16 cells, integrated balancing, I2C interface with CRC, REG1 default 3.3 V, TQFP-48"/>
+      <property name="Sheetname" value="Lower monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-lower.kicad_sch"/>
+      <property name="ki_keywords" value="Texas-Instruments BMS Battery-Management-System lithium Li-ion Li-Polymer LiPo LiFePO4 I2C HDQ"/>
+      <property name="ki_fp_filters" value="*QFP*7x7mm*P0.5mm*"/>
+      <sheetpath names="/Lower monitor/" tstamps="/c4e8b21a-7f63-4d18-a902-11d6e5a72011/"/>
+      <tstamps>ddf74ac1-c607-4e9a-af11-19e7c9f1a190</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="48"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="20"/>
+            <pin num="18"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="23"/>
+            <pin num="33"/>
+            <pin num="19"/>
+            <pin num="44"/>
+            <pin num="47"/>
+            <pin num="17"/>
+            <pin num="49"/>
+            <pin num="46"/>
+            <pin num="38"/>
+            <pin num="45"/>
+            <pin num="43"/>
+            <pin num="42"/>
+            <pin num="41"/>
+            <pin num="39"/>
+            <pin num="40"/>
+            <pin num="37"/>
+            <pin num="36"/>
+            <pin num="35"/>
+            <pin num="34"/>
+            <pin num="24"/>
+            <pin num="29"/>
+            <pin num="28"/>
+            <pin num="27"/>
+            <pin num="26"/>
+            <pin num="25"/>
+            <pin num="32"/>
+            <pin num="31"/>
+            <pin num="30"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C101">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>913fbb2d-e557-41cc-b9ec-05f9b609bc3f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C102">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>192de323-f7d7-4054-b770-ce4eae2ab56f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C103">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>f0a203f6-abb3-4521-90c4-26992d2ecf29</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C104">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>ba9ca84b-694f-4834-afa1-80daf48395af</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C105">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>d2896a47-8e4d-4aa3-9762-0d0ba64026e9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C106">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>23200b65-1647-4ab4-a0a8-f42e0654dc76</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C107">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>850e84c1-f8bf-4bf1-a1f4-3da665a9d981</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C108">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>95df08d2-8a4b-4df0-8272-16dcd33086b0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C109">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>c1e4c5b6-12f5-4bf7-9abd-361ec1aa33d2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C110">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>e68618ad-d3ce-4d49-9e18-2a81587f066a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C111">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>7059694f-d844-4675-8a3b-addaeb1344e6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C112">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>fe93d193-b672-44d1-b07a-8f4235db754b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C113">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>def8fb12-ccdc-451a-9ab8-22ec0e1bbaf0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C114">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>213c0242-314a-4b13-8247-0b70efea038c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C115">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>8d9155a9-ecce-441f-87f3-c4c892621ee5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C116">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>09f7a3ba-982c-46c6-8d94-7b19fd1db5f6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C117">
+      <value>220nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>d61e0ff2-65da-46af-8cf8-df9237fe677b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C118">
+      <value>1uF</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>48c9aefc-d8b7-43f7-afd7-8779ea8b1e7e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C119">
+      <value>100pF</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>23f56465-62b6-45a1-9bc0-ce625b3ececa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C120">
+      <value>22nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>68fe1e53-7712-4cd5-9313-129cd5f96ade</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C121">
+      <value>2.2uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>2b509637-f411-41dc-b7dc-55f854a237c0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C122">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>5f25bc3d-a913-495a-8087-64f9a8e7f90f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D101">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>94f8f0a3-b4d5-4e77-8c17-3f9702e69dba</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D102">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>6dfdba7a-7a1f-4a79-9c8c-92bbe115fee4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q101">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Transistor_BJT" part="Q_NPN_BCE" description="NPN transistor, base/collector/emitter"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="BJT"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>4854856a-63ed-42cc-a467-13fa78f8e201</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R101">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>6e1b8587-8cb7-4fc0-8571-27cbbc9993a4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R102">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>de495bd4-0ac2-47e2-bc80-88df343e2aa8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R103">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>c36916d2-c9ef-4a5d-bfcd-1e1a9c835c52</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R104">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>02e627b2-6b66-40aa-95b9-45fce7b82f53</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R105">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>4a36618d-4826-4e13-91d2-91229d0515c3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R106">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>f65a9602-5740-4aa8-92d5-1367d62fafbf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R107">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>127e0589-e724-437c-9509-2cc36c2485a1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R108">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>402c88b3-e3bc-47f2-8736-820423bbcb6c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R109">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>46743df8-8da7-47f4-bf4b-52234a8a2510</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R110">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>9c28e9ce-cfb8-46d5-a158-e2cc3df2d53b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R111">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>63c5d2ee-35cd-439c-810b-d32db952cd5b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R112">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>9dba9cc9-4fc9-4e7b-b3d9-2f4610048e30</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R113">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>f6344438-90b6-457c-8fae-f2355bb44802</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R114">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>fc1881b3-76d8-45a0-9f15-6d8d278ae4b5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R115">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>b5243d3e-7371-4edf-9a2c-73b33fe97682</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R116">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>1da28bc5-6cbd-422e-b49b-0f57e02fb07f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R117">
+      <value>20</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>a8f20bbe-36d7-4923-bf67-d9094493b786</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R118">
+      <value>100</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>9d05c836-6b78-45c4-b57e-ad43c2f624a5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R119">
+      <value>10M</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>29e98131-f83a-4c15-b9ca-9eda8006b307</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R120">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>6d9f4312-088f-4897-b9b2-d15474cc8577</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R121">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>99af6c93-5d68-4276-9a9c-1e61652041eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R122">
+      <value>10k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>b447a9f7-a502-4c8d-98ca-b3627af4d6e1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R123">
+      <value>OPEN</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>5bc73e71-a1dc-4ccb-894f-ad420c9a0e18</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R124">
+      <value>OPEN</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>1ae0efc4-30f6-4d6c-b4ed-373cd1fb8dc4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U_BQ2">
+      <value>BQ7695202</value>
+      <footprint>Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="BQ7695202PFB" description="Lithium battery monitor, 3-16 cells, integrated balancing, I2C interface with CRC, REG1 default 3.3 V, TQFP-48"/>
+      <property name="Sheetname" value="Upper monitor"/>
+      <property name="Sheetfile" value="qfbms32-bq-upper.kicad_sch"/>
+      <property name="ki_keywords" value="Texas-Instruments BMS Battery-Management-System lithium Li-ion Li-Polymer LiPo LiFePO4 I2C HDQ"/>
+      <property name="ki_fp_filters" value="*QFP*7x7mm*P0.5mm*"/>
+      <sheetpath names="/Upper monitor/" tstamps="/d91f06c4-2ab8-4e77-b5c3-88a14f903022/"/>
+      <tstamps>6137ce48-0141-4558-a30b-b95c79b1e7a7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="48"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="20"/>
+            <pin num="18"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="23"/>
+            <pin num="33"/>
+            <pin num="19"/>
+            <pin num="44"/>
+            <pin num="47"/>
+            <pin num="17"/>
+            <pin num="49"/>
+            <pin num="46"/>
+            <pin num="38"/>
+            <pin num="45"/>
+            <pin num="43"/>
+            <pin num="42"/>
+            <pin num="41"/>
+            <pin num="39"/>
+            <pin num="40"/>
+            <pin num="37"/>
+            <pin num="36"/>
+            <pin num="35"/>
+            <pin num="34"/>
+            <pin num="24"/>
+            <pin num="29"/>
+            <pin num="28"/>
+            <pin num="27"/>
+            <pin num="26"/>
+            <pin num="25"/>
+            <pin num="32"/>
+            <pin num="31"/>
+            <pin num="30"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C201">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>ed2e2c5b-6746-44b8-b998-08c9563feb21</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C202">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>9e912536-59ca-4b59-a2b0-cb21f282ddbf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C203">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>28a19b63-2d42-5762-bd44-48a660828a02</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R201">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>ebff0559-8398-4979-b9e8-c44acd3b4896</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R202">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>d224cd7f-ebb7-4eca-8ec7-ae2ad8debf52</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R203">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>f86f9a17-3279-4dfa-9543-d4063cb8ad29</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R204">
+      <value>0R RUN link</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>f12d47a0-0777-5596-9a24-796e1a60f04d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U204">
+      <value>TMUX154EDGSR</value>
+      <footprint>Package_SO:TSSOP-10_3x3mm_P0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Package_SO:TSSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="TMUX154E" description=""/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>7cf78116-52a3-5f19-b0ef-27c85bb6f473</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="5"/>
+            <pin num="10"/>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U_ISO">
+      <value>ISO1640</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="qfbms" part="ISO1640_D8" description="ISO1640 8-D pin map, bidirectional SDA and SCL, no enable pin. Orderable suffix is not selected."/>
+      <property name="Sheetname" value="Upper I2C isolation"/>
+      <property name="Sheetfile" value="qfbms32-bq-iso-i2c.kicad_sch"/>
+      <property name="ki_keywords" value="digital isolator i2c"/>
+      <property name="ki_fp_filters" value="SOIC*3.9x4.9mm*P1.27mm*"/>
+      <sheetpath names="/Upper I2C isolation/" tstamps="/a18c44e0-6b21-4f55-9d30-2c7e91ab6044/"/>
+      <tstamps>d3e61906-f115-4a48-b301-c8413113563f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Pin">
+      <description>Generic connector, single row, 01x02, script generated</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Pin</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x02, script generated</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D">
+      <description>Diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Diode</field>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Thermistor">
+      <description>Temperature dependent resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>RV_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">TH</field>
+        <field name="Value">Thermistor</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Temperature dependent resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Isolator" part="PC817">
+      <description>DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4</description>
+      <docs>http://www.soselectronic.cz/a_info/resource/d/pc817.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PC817</field>
+        <field name="Footprint">Package_DIP:DIP-4_W7.62mm</field>
+        <field name="Datasheet">http://www.soselectronic.cz/a_info/resource/d/pc817.pdf</field>
+        <field name="Description">DC Optocoupler, Vce 35V, CTR 50-300%, DIP-4</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_SPST">
+      <description>Single Pole Single Throw (SPST) switch</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPST</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Single Pole Single Throw (SPST) switch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="Q_NPN_BCE">
+      <description>NPN transistor, base/collector/emitter</description>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NPN_BCE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">NPN transistor, base/collector/emitter</field>
+        <field name="Sim.Device">NPN</field>
+        <field name="Sim.Pins">1=B 2=C 3=E</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="C" type="passive"/>
+        <pin num="3" name="E" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="Q_NPN_BEC">
+      <description>NPN transistor, base/emitter/collector</description>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NPN_BEC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">NPN transistor, base/emitter/collector</field>
+        <field name="Sim.Device">NPN</field>
+        <field name="Sim.Pins">1=B 2=E 3=C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="qfbms" part="BQ7695202PFB">
+      <description>Lithium battery monitor, 3-16 cells, integrated balancing, I2C interface with CRC, REG1 default 3.3 V, TQFP-48</description>
+      <docs>https://www.ti.com/lit/ds/symlink/bq76952.pdf</docs>
+      <footprints>
+        <fp>*QFP*7x7mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BQ7695202PFB</field>
+        <field name="Footprint">Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/bq76952.pdf</field>
+        <field name="Description">Lithium battery monitor, 3-16 cells, integrated balancing, I2C interface with CRC, REG1 default 3.3 V, TQFP-48</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VC15" type="input"/>
+        <pin num="2" name="VC14" type="input"/>
+        <pin num="3" name="VC13" type="input"/>
+        <pin num="4" name="VC12" type="input"/>
+        <pin num="5" name="VC11" type="input"/>
+        <pin num="6" name="VC10" type="input"/>
+        <pin num="7" name="VC9" type="input"/>
+        <pin num="8" name="VC8" type="input"/>
+        <pin num="9" name="VC7" type="input"/>
+        <pin num="10" name="VC6" type="input"/>
+        <pin num="11" name="VC5" type="input"/>
+        <pin num="12" name="VC4" type="input"/>
+        <pin num="13" name="VC3" type="input"/>
+        <pin num="14" name="VC2" type="input"/>
+        <pin num="15" name="VC1" type="input"/>
+        <pin num="16" name="VC0" type="input"/>
+        <pin num="17" name="VSS" type="power_in"/>
+        <pin num="18" name="SRP" type="input"/>
+        <pin num="19" name="NC" type="no_connect"/>
+        <pin num="20" name="SRN" type="input"/>
+        <pin num="21" name="TS1" type="input"/>
+        <pin num="22" name="TS2/WAKE" type="input"/>
+        <pin num="23" name="TS3" type="input"/>
+        <pin num="24" name="REG18" type="power_out"/>
+        <pin num="25" name="HDQ_IO/ALERT" type="bidirectional"/>
+        <pin num="26" name="SCL/SPI_CLK" type="input"/>
+        <pin num="27" name="SDA/SPI_MISO" type="bidirectional"/>
+        <pin num="28" name="HDQ_IO/SPI_MOSI" type="bidirectional"/>
+        <pin num="29" name="CFETOFF/SPI_CS" type="bidirectional"/>
+        <pin num="30" name="DFETOFF/BOTHOFF" type="bidirectional"/>
+        <pin num="31" name="DCHG" type="bidirectional"/>
+        <pin num="32" name="DDSG" type="bidirectional"/>
+        <pin num="33" name="RST_SHUT" type="input"/>
+        <pin num="34" name="REG2" type="power_out"/>
+        <pin num="35" name="REG1" type="power_out"/>
+        <pin num="36" name="REGIN" type="input"/>
+        <pin num="37" name="BREG" type="output"/>
+        <pin num="38" name="FUSE" type="bidirectional"/>
+        <pin num="39" name="PDSG" type="output"/>
+        <pin num="40" name="PCHG" type="output"/>
+        <pin num="41" name="LD" type="passive"/>
+        <pin num="42" name="PACK" type="input"/>
+        <pin num="43" name="DSG" type="output"/>
+        <pin num="44" name="NC" type="no_connect"/>
+        <pin num="45" name="CHG" type="output"/>
+        <pin num="46" name="CP1" type="power_out"/>
+        <pin num="47" name="BAT" type="power_in"/>
+        <pin num="48" name="VC16" type="input"/>
+        <pin num="49" name="EP" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="qfbms" part="Host_interface">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32-C3 interface</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GPIO21_/_SDA" type="passive"/>
+        <pin num="2" name="GPIO20_/_SCL" type="passive"/>
+        <pin num="3" name="GPIO9" type="passive"/>
+        <pin num="4" name="3V3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="qfbms" part="ISO1640_D8">
+      <description>ISO1640 8-D pin map, bidirectional SDA and SCL, no enable pin. Orderable suffix is not selected.</description>
+      <docs>https://www.ti.com/lit/ds/symlink/iso1640.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ISO1640</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/iso1640.pdf</field>
+        <field name="Description">ISO1640 8-D pin map, bidirectional SDA and SCL, no enable pin. Orderable suffix is not selected.</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC1" type="power_in"/>
+        <pin num="2" name="SDA1" type="bidirectional"/>
+        <pin num="3" name="SCL1" type="bidirectional"/>
+        <pin num="4" name="GND1" type="power_in"/>
+        <pin num="5" name="GND2" type="power_in"/>
+        <pin num="6" name="SCL2" type="bidirectional"/>
+        <pin num="7" name="SDA2" type="bidirectional"/>
+        <pin num="8" name="VCC2" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="qfbms" part="TMUX154E">
+      <docs>https://www.ti.com/lit/ds/symlink/tmux154e.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TMUX154E</field>
+        <field name="Footprint">Package_SO:TSSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tmux154e.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SEL" type="input"/>
+        <pin num="2" name="A0" type="passive"/>
+        <pin num="3" name="A2" type="passive"/>
+        <pin num="4" name="A" type="passive"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="B" type="passive"/>
+        <pin num="7" name="B1" type="passive"/>
+        <pin num="8" name="B0" type="passive"/>
+        <pin num="9" name="EN" type="input"/>
+        <pin num="10" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>${KICAD10_SYMBOL_DIR}/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>${KICAD10_SYMBOL_DIR}/Device.kicad_sym</uri>
+    </library>
+    <library logical="Isolator">
+      <uri>${KICAD10_SYMBOL_DIR}/Isolator.kicad_sym</uri>
+    </library>
+    <library logical="Switch">
+      <uri>${KICAD10_SYMBOL_DIR}/Switch.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>${KICAD10_SYMBOL_DIR}/Transistor_BJT.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/AUX_3V3" class="Default">
+      <node ref="J201" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="SW201" pin="1" pinfunction="A_1" pintype="passive"/>
+    </net>
+    <net code="2" name="/LED_A" class="Default">
+      <node ref="R209" pin="2" pintype="passive"/>
+      <node ref="U207" pin="1" pintype="passive"/>
+    </net>
+    <net code="3" name="/Lower monitor/ALERT_NTC" class="Default">
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="25" pinfunction="HDQ_IO/ALERT_25" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="/Lower monitor/BAT_PIN" class="Default">
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="46" pinfunction="CP1_46" pintype="power_out"/>
+      <node ref="U_BQ1" pin="47" pinfunction="BAT_47" pintype="power_in"/>
+    </net>
+    <net code="5" name="/Lower monitor/BREG" class="Default">
+      <node ref="Q1" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="37" pinfunction="BREG_37" pintype="output"/>
+    </net>
+    <net code="6" name="/Lower monitor/CHG_NEG" class="Default">
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="R_SH" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="/Lower monitor/DCHG_NTC" class="Default">
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="31" pinfunction="DCHG_31" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/Lower monitor/HDQ_NTC" class="Default">
+      <node ref="R31" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="28" pinfunction="HDQ_IO/SPI_MOSI_28" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/Lower monitor/LD_PIN" class="Default">
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="41" pinfunction="LD_41" pintype="passive"/>
+    </net>
+    <net code="10" name="/Lower monitor/LD_WAKE_BQ1" class="Default">
+      <node ref="R24" pin="2" pintype="passive+no_connect"/>
+    </net>
+    <net code="11" name="/Lower monitor/PACK_PIN" class="Default">
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="42" pinfunction="PACK_42" pintype="input"/>
+    </net>
+    <net code="12" name="/Lower monitor/REG18" class="Default">
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="24" pinfunction="REG18_24" pintype="power_out"/>
+    </net>
+    <net code="13" name="/Lower monitor/REGIN" class="Default">
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="E_3" pintype="passive"/>
+      <node ref="U_BQ1" pin="36" pinfunction="REGIN_36" pintype="input"/>
+    </net>
+    <net code="14" name="/Lower monitor/RST_SHUT_BQ1" class="Default">
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="33" pinfunction="RST_SHUT_33" pintype="input"/>
+    </net>
+    <net code="15" name="/Lower monitor/SRN_NET" class="Default">
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="20" pinfunction="SRN_20" pintype="input"/>
+    </net>
+    <net code="16" name="/Lower monitor/SRP_NET" class="Default">
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="18" pinfunction="SRP_18" pintype="input"/>
+    </net>
+    <net code="17" name="/Lower monitor/TS1_NTC" class="Default">
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="21" pinfunction="TS1_21" pintype="input"/>
+    </net>
+    <net code="18" name="/Lower monitor/TS3_NTC" class="Default">
+      <node ref="R28" pin="1" pintype="passive"/>
+      <node ref="U_BQ1" pin="23" pinfunction="TS3_23" pintype="input"/>
+    </net>
+    <net code="19" name="/Lower monitor/VCF0" class="Default">
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="16" pinfunction="VC0_16" pintype="input"/>
+    </net>
+    <net code="20" name="/Lower monitor/VCF1" class="Default">
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="15" pinfunction="VC1_15" pintype="input"/>
+    </net>
+    <net code="21" name="/Lower monitor/VCF2" class="Default">
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="14" pinfunction="VC2_14" pintype="input"/>
+    </net>
+    <net code="22" name="/Lower monitor/VCF3" class="Default">
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="13" pinfunction="VC3_13" pintype="input"/>
+    </net>
+    <net code="23" name="/Lower monitor/VCF4" class="Default">
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="12" pinfunction="VC4_12" pintype="input"/>
+    </net>
+    <net code="24" name="/Lower monitor/VCF5" class="Default">
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="11" pinfunction="VC5_11" pintype="input"/>
+    </net>
+    <net code="25" name="/Lower monitor/VCF6" class="Default">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="10" pinfunction="VC6_10" pintype="input"/>
+    </net>
+    <net code="26" name="/Lower monitor/VCF7" class="Default">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="9" pinfunction="VC7_9" pintype="input"/>
+    </net>
+    <net code="27" name="/Lower monitor/VCF8" class="Default">
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="8" pinfunction="VC8_8" pintype="input"/>
+    </net>
+    <net code="28" name="/Lower monitor/VCF9" class="Default">
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="7" pinfunction="VC9_7" pintype="input"/>
+    </net>
+    <net code="29" name="/Lower monitor/VCF10" class="Default">
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="6" pinfunction="VC10_6" pintype="input"/>
+    </net>
+    <net code="30" name="/Lower monitor/VCF11" class="Default">
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="5" pinfunction="VC11_5" pintype="input"/>
+    </net>
+    <net code="31" name="/Lower monitor/VCF12" class="Default">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="4" pinfunction="VC12_4" pintype="input"/>
+    </net>
+    <net code="32" name="/Lower monitor/VCF13" class="Default">
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="3" pinfunction="VC13_3" pintype="input"/>
+    </net>
+    <net code="33" name="/Lower monitor/VCF14" class="Default">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="2" pinfunction="VC14_2" pintype="input"/>
+    </net>
+    <net code="34" name="/Lower monitor/VCF15" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="1" pinfunction="VC15_1" pintype="input"/>
+    </net>
+    <net code="35" name="/Lower monitor/VCF16" class="Default">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="48" pinfunction="VC16_48" pintype="input"/>
+    </net>
+    <net code="36" name="/REG1_BQ1" class="Default">
+      <node ref="C205" pin="2" pintype="passive"/>
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="U206" pin="8" pinfunction="VCC2_8" pintype="power_in"/>
+      <node ref="U_BQ1" pin="35" pinfunction="REG1_35" pintype="power_out"/>
+    </net>
+    <net code="37" name="/SCL_BQ1" class="Default">
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="U206" pin="6" pinfunction="SCL2_6" pintype="bidirectional"/>
+      <node ref="U_BQ1" pin="26" pinfunction="SCL/SPI_CLK_26" pintype="input"/>
+    </net>
+    <net code="38" name="/SCL_HOST" class="Default">
+      <node ref="R206" pin="1" pintype="passive"/>
+      <node ref="U204" pin="6" pinfunction="B_6" pintype="passive"/>
+      <node ref="U205" pin="2" pinfunction="GPIO20_/_SCL_2" pintype="passive"/>
+      <node ref="U206" pin="3" pinfunction="SCL1_3" pintype="bidirectional"/>
+    </net>
+    <net code="39" name="/SDA_BQ1" class="Default">
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="U206" pin="7" pinfunction="SDA2_7" pintype="bidirectional"/>
+      <node ref="U_BQ1" pin="27" pinfunction="SDA/SPI_MISO_27" pintype="bidirectional"/>
+    </net>
+    <net code="40" name="/SDA_HOST" class="Default">
+      <node ref="R205" pin="1" pintype="passive"/>
+      <node ref="U204" pin="4" pinfunction="A_4" pintype="passive"/>
+      <node ref="U205" pin="1" pinfunction="GPIO21_/_SDA_1" pintype="passive"/>
+      <node ref="U206" pin="2" pinfunction="SDA1_2" pintype="bidirectional"/>
+    </net>
+    <net code="41" name="/TS2_WAKE_BQ1" class="Default">
+      <node ref="Q201" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="U_BQ1" pin="22" pinfunction="TS2/WAKE_22" pintype="input"/>
+    </net>
+    <net code="42" name="/TS2_WAKE_BQ2" class="Default">
+      <node ref="U207" pin="4" pintype="passive"/>
+      <node ref="U_BQ2" pin="22" pinfunction="TS2/WAKE_22" pintype="input"/>
+    </net>
+    <net code="43" name="/Upper I2C isolation/ALERT_BQ2" class="Default">
+      <node ref="U_BQ2" pin="25" pinfunction="HDQ_IO/ALERT_25" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="44" name="/Upper I2C isolation/BUS_OE_N" class="Default">
+      <node ref="R203" pin="1" pintype="passive"/>
+      <node ref="R204" pin="2" pintype="passive"/>
+      <node ref="U204" pin="9" pinfunction="EN_9" pintype="input"/>
+    </net>
+    <net code="45" name="/Upper I2C isolation/GPIO9" class="Default">
+      <node ref="R204" pin="1" pintype="passive"/>
+      <node ref="U205" pin="3" pinfunction="GPIO9_3" pintype="passive"/>
+    </net>
+    <net code="46" name="/Upper I2C isolation/REG1_BQ2" class="Default">
+      <node ref="C122" pin="1" pintype="passive"/>
+      <node ref="C202" pin="2" pintype="passive"/>
+      <node ref="R120" pin="2" pintype="passive"/>
+      <node ref="R121" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="35" pinfunction="REG1_35" pintype="power_out"/>
+      <node ref="U_ISO" pin="8" pinfunction="VCC2_8" pintype="power_in"/>
+    </net>
+    <net code="47" name="/Upper I2C isolation/SCL_BQ2" class="Default">
+      <node ref="R121" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="26" pinfunction="SCL/SPI_CLK_26" pintype="input"/>
+      <node ref="U_ISO" pin="6" pinfunction="SCL2_6" pintype="bidirectional"/>
+    </net>
+    <net code="48" name="/Upper I2C isolation/SCL_ISO_SIDE" class="Default">
+      <node ref="R202" pin="1" pintype="passive"/>
+      <node ref="U204" pin="8" pinfunction="B0_8" pintype="passive"/>
+      <node ref="U_ISO" pin="3" pinfunction="SCL1_3" pintype="bidirectional"/>
+    </net>
+    <net code="49" name="/Upper I2C isolation/SDA_BQ2" class="Default">
+      <node ref="R120" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="27" pinfunction="SDA/SPI_MISO_27" pintype="bidirectional"/>
+      <node ref="U_ISO" pin="7" pinfunction="SDA2_7" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="/Upper I2C isolation/SDA_ISO_SIDE" class="Default">
+      <node ref="R201" pin="1" pintype="passive"/>
+      <node ref="U204" pin="2" pinfunction="A0_2" pintype="passive"/>
+      <node ref="U_ISO" pin="2" pinfunction="SDA1_2" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="/Upper monitor/BAT_PIN" class="Default">
+      <node ref="C118" pin="1" pintype="passive"/>
+      <node ref="C119" pin="1" pintype="passive"/>
+      <node ref="R118" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="46" pinfunction="CP1_46" pintype="power_out"/>
+      <node ref="U_BQ2" pin="47" pinfunction="BAT_47" pintype="power_in"/>
+    </net>
+    <net code="52" name="/Upper monitor/BREG" class="Default">
+      <node ref="Q101" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R119" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="37" pinfunction="BREG_37" pintype="output"/>
+    </net>
+    <net code="53" name="/Upper monitor/LD_PIN" class="Default">
+      <node ref="R124" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="41" pinfunction="LD_41" pintype="passive"/>
+    </net>
+    <net code="54" name="/Upper monitor/LD_WAKE_BQ2" class="Default">
+      <node ref="R124" pin="2" pintype="passive+no_connect"/>
+    </net>
+    <net code="55" name="/Upper monitor/PACK_PIN" class="Default">
+      <node ref="R122" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="42" pinfunction="PACK_42" pintype="input"/>
+    </net>
+    <net code="56" name="/Upper monitor/REG18" class="Default">
+      <node ref="C121" pin="1" pintype="passive"/>
+      <node ref="U_BQ2" pin="24" pinfunction="REG18_24" pintype="power_out"/>
+    </net>
+    <net code="57" name="/Upper monitor/REGIN" class="Default">
+      <node ref="C120" pin="1" pintype="passive"/>
+      <node ref="Q101" pin="3" pinfunction="E_3" pintype="passive"/>
+      <node ref="U_BQ2" pin="36" pinfunction="REGIN_36" pintype="input"/>
+    </net>
+    <net code="58" name="/Upper monitor/RST_SHUT_BQ2" class="Default">
+      <node ref="R123" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="33" pinfunction="RST_SHUT_33" pintype="input"/>
+    </net>
+    <net code="59" name="/Upper monitor/VCF0" class="Default">
+      <node ref="C116" pin="2" pintype="passive"/>
+      <node ref="C117" pin="1" pintype="passive"/>
+      <node ref="R101" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="16" pinfunction="VC0_16" pintype="input"/>
+    </net>
+    <net code="60" name="/Upper monitor/VCF1" class="Default">
+      <node ref="C115" pin="2" pintype="passive"/>
+      <node ref="C116" pin="1" pintype="passive"/>
+      <node ref="R102" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="15" pinfunction="VC1_15" pintype="input"/>
+    </net>
+    <net code="61" name="/Upper monitor/VCF2" class="Default">
+      <node ref="C114" pin="2" pintype="passive"/>
+      <node ref="C115" pin="1" pintype="passive"/>
+      <node ref="R103" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="14" pinfunction="VC2_14" pintype="input"/>
+    </net>
+    <net code="62" name="/Upper monitor/VCF3" class="Default">
+      <node ref="C113" pin="2" pintype="passive"/>
+      <node ref="C114" pin="1" pintype="passive"/>
+      <node ref="R104" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="13" pinfunction="VC3_13" pintype="input"/>
+    </net>
+    <net code="63" name="/Upper monitor/VCF4" class="Default">
+      <node ref="C112" pin="2" pintype="passive"/>
+      <node ref="C113" pin="1" pintype="passive"/>
+      <node ref="R105" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="12" pinfunction="VC4_12" pintype="input"/>
+    </net>
+    <net code="64" name="/Upper monitor/VCF5" class="Default">
+      <node ref="C111" pin="2" pintype="passive"/>
+      <node ref="C112" pin="1" pintype="passive"/>
+      <node ref="R106" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="11" pinfunction="VC5_11" pintype="input"/>
+    </net>
+    <net code="65" name="/Upper monitor/VCF6" class="Default">
+      <node ref="C110" pin="2" pintype="passive"/>
+      <node ref="C111" pin="1" pintype="passive"/>
+      <node ref="R107" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="10" pinfunction="VC6_10" pintype="input"/>
+    </net>
+    <net code="66" name="/Upper monitor/VCF7" class="Default">
+      <node ref="C109" pin="2" pintype="passive"/>
+      <node ref="C110" pin="1" pintype="passive"/>
+      <node ref="R108" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="9" pinfunction="VC7_9" pintype="input"/>
+    </net>
+    <net code="67" name="/Upper monitor/VCF8" class="Default">
+      <node ref="C108" pin="2" pintype="passive"/>
+      <node ref="C109" pin="1" pintype="passive"/>
+      <node ref="R109" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="8" pinfunction="VC8_8" pintype="input"/>
+    </net>
+    <net code="68" name="/Upper monitor/VCF9" class="Default">
+      <node ref="C107" pin="2" pintype="passive"/>
+      <node ref="C108" pin="1" pintype="passive"/>
+      <node ref="R110" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="7" pinfunction="VC9_7" pintype="input"/>
+    </net>
+    <net code="69" name="/Upper monitor/VCF10" class="Default">
+      <node ref="C106" pin="2" pintype="passive"/>
+      <node ref="C107" pin="1" pintype="passive"/>
+      <node ref="R111" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="6" pinfunction="VC10_6" pintype="input"/>
+    </net>
+    <net code="70" name="/Upper monitor/VCF11" class="Default">
+      <node ref="C105" pin="2" pintype="passive"/>
+      <node ref="C106" pin="1" pintype="passive"/>
+      <node ref="R112" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="5" pinfunction="VC11_5" pintype="input"/>
+    </net>
+    <net code="71" name="/Upper monitor/VCF12" class="Default">
+      <node ref="C104" pin="2" pintype="passive"/>
+      <node ref="C105" pin="1" pintype="passive"/>
+      <node ref="R113" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="4" pinfunction="VC12_4" pintype="input"/>
+    </net>
+    <net code="72" name="/Upper monitor/VCF13" class="Default">
+      <node ref="C103" pin="2" pintype="passive"/>
+      <node ref="C104" pin="1" pintype="passive"/>
+      <node ref="R114" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="3" pinfunction="VC13_3" pintype="input"/>
+    </net>
+    <net code="73" name="/Upper monitor/VCF14" class="Default">
+      <node ref="C102" pin="2" pintype="passive"/>
+      <node ref="C103" pin="1" pintype="passive"/>
+      <node ref="R115" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="2" pinfunction="VC14_2" pintype="input"/>
+    </net>
+    <net code="74" name="/Upper monitor/VCF15" class="Default">
+      <node ref="C101" pin="2" pintype="passive"/>
+      <node ref="C102" pin="1" pintype="passive"/>
+      <node ref="R116" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="1" pinfunction="VC15_1" pintype="input"/>
+    </net>
+    <net code="75" name="/Upper monitor/VCF16" class="Default">
+      <node ref="C101" pin="1" pintype="passive"/>
+      <node ref="R117" pin="2" pintype="passive"/>
+      <node ref="U_BQ2" pin="48" pinfunction="VC16_48" pintype="input"/>
+    </net>
+    <net code="76" name="/WAKE_BASE" class="Default">
+      <node ref="Q201" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R207" pin="2" pintype="passive"/>
+      <node ref="R208" pin="1" pintype="passive"/>
+    </net>
+    <net code="77" name="/WAKE_PULSE" class="Default">
+      <node ref="R207" pin="1" pintype="passive"/>
+      <node ref="R209" pin="1" pintype="passive"/>
+      <node ref="SW202" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="78" name="CELL0" class="Default">
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C201" pin="1" pintype="passive"/>
+      <node ref="C203" pin="1" pintype="passive"/>
+      <node ref="C204" pin="1" pintype="passive"/>
+      <node ref="C205" pin="1" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="J201" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="Q201" pin="2" pinfunction="E_2" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R208" pin="2" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="RT1" pin="2" pintype="passive"/>
+      <node ref="RT2" pin="2" pintype="passive"/>
+      <node ref="RT3" pin="2" pintype="passive"/>
+      <node ref="RT4" pin="2" pintype="passive"/>
+      <node ref="RT5" pin="2" pintype="passive"/>
+      <node ref="R_SH" pin="1" pintype="passive"/>
+      <node ref="U204" pin="1" pinfunction="SEL_1" pintype="input"/>
+      <node ref="U204" pin="5" pinfunction="GND_5" pintype="power_in"/>
+      <node ref="U206" pin="4" pinfunction="GND1_4" pintype="power_in"/>
+      <node ref="U206" pin="5" pinfunction="GND2_5" pintype="power_in"/>
+      <node ref="U207" pin="2" pintype="passive"/>
+      <node ref="U_BQ1" pin="17" pinfunction="VSS_17" pintype="power_in"/>
+      <node ref="U_BQ1" pin="29" pinfunction="CFETOFF/SPI_CS_29" pintype="bidirectional"/>
+      <node ref="U_BQ1" pin="30" pinfunction="DFETOFF/BOTHOFF_30" pintype="bidirectional"/>
+      <node ref="U_BQ1" pin="32" pinfunction="DDSG_32" pintype="bidirectional"/>
+      <node ref="U_BQ1" pin="49" pinfunction="EP_49" pintype="power_in"/>
+      <node ref="U_ISO" pin="4" pinfunction="GND1_4" pintype="power_in"/>
+    </net>
+    <net code="79" name="CELL1" class="Default">
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="80" name="CELL2" class="Default">
+      <node ref="R3" pin="1" pintype="passive"/>
+    </net>
+    <net code="81" name="CELL3" class="Default">
+      <node ref="R4" pin="1" pintype="passive"/>
+    </net>
+    <net code="82" name="CELL4" class="Default">
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="83" name="CELL5" class="Default">
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="84" name="CELL6" class="Default">
+      <node ref="R7" pin="1" pintype="passive"/>
+    </net>
+    <net code="85" name="CELL7" class="Default">
+      <node ref="R8" pin="1" pintype="passive"/>
+    </net>
+    <net code="86" name="CELL8" class="Default">
+      <node ref="R9" pin="1" pintype="passive"/>
+    </net>
+    <net code="87" name="CELL9" class="Default">
+      <node ref="R10" pin="1" pintype="passive"/>
+    </net>
+    <net code="88" name="CELL10" class="Default">
+      <node ref="R11" pin="1" pintype="passive"/>
+    </net>
+    <net code="89" name="CELL11" class="Default">
+      <node ref="R12" pin="1" pintype="passive"/>
+    </net>
+    <net code="90" name="CELL12" class="Default">
+      <node ref="R13" pin="1" pintype="passive"/>
+    </net>
+    <net code="91" name="CELL13" class="Default">
+      <node ref="R14" pin="1" pintype="passive"/>
+    </net>
+    <net code="92" name="CELL14" class="Default">
+      <node ref="R15" pin="1" pintype="passive"/>
+    </net>
+    <net code="93" name="CELL15" class="Default">
+      <node ref="R16" pin="1" pintype="passive"/>
+    </net>
+    <net code="94" name="CELL16" class="Default">
+      <node ref="C117" pin="2" pintype="passive"/>
+      <node ref="C118" pin="2" pintype="passive"/>
+      <node ref="C119" pin="2" pintype="passive"/>
+      <node ref="C120" pin="2" pintype="passive"/>
+      <node ref="C121" pin="2" pintype="passive"/>
+      <node ref="C122" pin="2" pintype="passive"/>
+      <node ref="C202" pin="1" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="R101" pin="1" pintype="passive"/>
+      <node ref="R119" pin="2" pintype="passive"/>
+      <node ref="R123" pin="1" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="U207" pin="3" pintype="passive"/>
+      <node ref="U_BQ2" pin="17" pinfunction="VSS_17" pintype="power_in"/>
+      <node ref="U_BQ2" pin="18" pinfunction="SRP_18" pintype="input"/>
+      <node ref="U_BQ2" pin="20" pinfunction="SRN_20" pintype="input"/>
+      <node ref="U_BQ2" pin="21" pinfunction="TS1_21" pintype="input"/>
+      <node ref="U_BQ2" pin="23" pinfunction="TS3_23" pintype="input"/>
+      <node ref="U_BQ2" pin="28" pinfunction="HDQ_IO/SPI_MOSI_28" pintype="bidirectional"/>
+      <node ref="U_BQ2" pin="29" pinfunction="CFETOFF/SPI_CS_29" pintype="bidirectional"/>
+      <node ref="U_BQ2" pin="30" pinfunction="DFETOFF/BOTHOFF_30" pintype="bidirectional"/>
+      <node ref="U_BQ2" pin="31" pinfunction="DCHG_31" pintype="bidirectional"/>
+      <node ref="U_BQ2" pin="32" pinfunction="DDSG_32" pintype="bidirectional"/>
+      <node ref="U_BQ2" pin="49" pinfunction="EP_49" pintype="power_in"/>
+      <node ref="U_ISO" pin="5" pinfunction="GND2_5" pintype="power_in"/>
+    </net>
+    <net code="95" name="CELL17" class="Default">
+      <node ref="R102" pin="1" pintype="passive"/>
+    </net>
+    <net code="96" name="CELL18" class="Default">
+      <node ref="R103" pin="1" pintype="passive"/>
+    </net>
+    <net code="97" name="CELL19" class="Default">
+      <node ref="R104" pin="1" pintype="passive"/>
+    </net>
+    <net code="98" name="CELL20" class="Default">
+      <node ref="R105" pin="1" pintype="passive"/>
+    </net>
+    <net code="99" name="CELL21" class="Default">
+      <node ref="R106" pin="1" pintype="passive"/>
+    </net>
+    <net code="100" name="CELL22" class="Default">
+      <node ref="R107" pin="1" pintype="passive"/>
+    </net>
+    <net code="101" name="CELL23" class="Default">
+      <node ref="R108" pin="1" pintype="passive"/>
+    </net>
+    <net code="102" name="CELL24" class="Default">
+      <node ref="R109" pin="1" pintype="passive"/>
+    </net>
+    <net code="103" name="CELL25" class="Default">
+      <node ref="R110" pin="1" pintype="passive"/>
+    </net>
+    <net code="104" name="CELL26" class="Default">
+      <node ref="R111" pin="1" pintype="passive"/>
+    </net>
+    <net code="105" name="CELL27" class="Default">
+      <node ref="R112" pin="1" pintype="passive"/>
+    </net>
+    <net code="106" name="CELL28" class="Default">
+      <node ref="R113" pin="1" pintype="passive"/>
+    </net>
+    <net code="107" name="CELL29" class="Default">
+      <node ref="R114" pin="1" pintype="passive"/>
+    </net>
+    <net code="108" name="CELL30" class="Default">
+      <node ref="R115" pin="1" pintype="passive"/>
+    </net>
+    <net code="109" name="CELL31" class="Default">
+      <node ref="R116" pin="1" pintype="passive"/>
+    </net>
+    <net code="110" name="CELL32" class="Default">
+      <node ref="D101" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="D102" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="R117" pin="1" pintype="passive"/>
+      <node ref="R122" pin="2" pintype="passive"/>
+    </net>
+    <net code="111" name="HOST_3V3" class="Default">
+      <node ref="C201" pin="2" pintype="passive"/>
+      <node ref="C203" pin="2" pintype="passive"/>
+      <node ref="C204" pin="2" pintype="passive"/>
+      <node ref="R201" pin="2" pintype="passive"/>
+      <node ref="R202" pin="2" pintype="passive"/>
+      <node ref="R203" pin="2" pintype="passive"/>
+      <node ref="R205" pin="2" pintype="passive"/>
+      <node ref="R206" pin="2" pintype="passive"/>
+      <node ref="SW201" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="SW202" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U204" pin="10" pinfunction="VCC_10" pintype="power_in"/>
+      <node ref="U205" pin="4" pinfunction="3V3_4" pintype="passive"/>
+      <node ref="U206" pin="1" pinfunction="VCC1_1" pintype="power_in"/>
+      <node ref="U_ISO" pin="1" pinfunction="VCC1_1" pintype="power_in"/>
+    </net>
+    <net code="112" name="Net-(D1-K)" class="Default">
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+    </net>
+    <net code="113" name="Net-(D2-K)" class="Default">
+      <node ref="D2" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="C_2" pintype="passive"/>
+    </net>
+    <net code="114" name="Net-(D101-K)" class="Default">
+      <node ref="D101" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R118" pin="1" pintype="passive"/>
+    </net>
+    <net code="115" name="Net-(D102-K)" class="Default">
+      <node ref="D102" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="Q101" pin="2" pinfunction="C_2" pintype="passive"/>
+    </net>
+    <net code="116" name="Net-(R27-Pad2)" class="Default">
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="RT1" pin="1" pintype="passive"/>
+    </net>
+    <net code="117" name="Net-(R28-Pad2)" class="Default">
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="RT2" pin="1" pintype="passive"/>
+    </net>
+    <net code="118" name="Net-(R29-Pad2)" class="Default">
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="RT3" pin="1" pintype="passive"/>
+    </net>
+    <net code="119" name="Net-(R30-Pad2)" class="Default">
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="RT4" pin="1" pintype="passive"/>
+    </net>
+    <net code="120" name="Net-(R31-Pad2)" class="Default">
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="RT5" pin="1" pintype="passive"/>
+    </net>
+    <net code="121" name="unconnected-(U204-A2-Pad3)" class="Default">
+      <node ref="U204" pin="3" pinfunction="A2_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="122" name="unconnected-(U204-B1-Pad7)" class="Default">
+      <node ref="U204" pin="7" pinfunction="B1_7" pintype="passive+no_connect"/>
+    </net>
+    <net code="123" name="unconnected-(U_BQ1-CHG-Pad45)" class="Default">
+      <node ref="U_BQ1" pin="45" pinfunction="CHG_45" pintype="output+no_connect"/>
+    </net>
+    <net code="124" name="unconnected-(U_BQ1-DSG-Pad43)" class="Default">
+      <node ref="U_BQ1" pin="43" pinfunction="DSG_43" pintype="output+no_connect"/>
+    </net>
+    <net code="125" name="unconnected-(U_BQ1-FUSE-Pad38)" class="Default">
+      <node ref="U_BQ1" pin="38" pinfunction="FUSE_38" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="126" name="unconnected-(U_BQ1-NC-Pad19)" class="Default">
+      <node ref="U_BQ1" pin="19" pinfunction="NC_19" pintype="no_connect"/>
+    </net>
+    <net code="127" name="unconnected-(U_BQ1-NC-Pad44)" class="Default">
+      <node ref="U_BQ1" pin="44" pinfunction="NC_44" pintype="no_connect"/>
+    </net>
+    <net code="128" name="unconnected-(U_BQ1-PCHG-Pad40)" class="Default">
+      <node ref="U_BQ1" pin="40" pinfunction="PCHG_40" pintype="output+no_connect"/>
+    </net>
+    <net code="129" name="unconnected-(U_BQ1-PDSG-Pad39)" class="Default">
+      <node ref="U_BQ1" pin="39" pinfunction="PDSG_39" pintype="output+no_connect"/>
+    </net>
+    <net code="130" name="unconnected-(U_BQ1-REG2-Pad34)" class="Default">
+      <node ref="U_BQ1" pin="34" pinfunction="REG2_34" pintype="power_out+no_connect"/>
+    </net>
+    <net code="131" name="unconnected-(U_BQ2-CHG-Pad45)" class="Default">
+      <node ref="U_BQ2" pin="45" pinfunction="CHG_45" pintype="output+no_connect"/>
+    </net>
+    <net code="132" name="unconnected-(U_BQ2-DSG-Pad43)" class="Default">
+      <node ref="U_BQ2" pin="43" pinfunction="DSG_43" pintype="output+no_connect"/>
+    </net>
+    <net code="133" name="unconnected-(U_BQ2-FUSE-Pad38)" class="Default">
+      <node ref="U_BQ2" pin="38" pinfunction="FUSE_38" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="134" name="unconnected-(U_BQ2-NC-Pad19)" class="Default">
+      <node ref="U_BQ2" pin="19" pinfunction="NC_19" pintype="no_connect"/>
+    </net>
+    <net code="135" name="unconnected-(U_BQ2-NC-Pad44)" class="Default">
+      <node ref="U_BQ2" pin="44" pinfunction="NC_44" pintype="no_connect"/>
+    </net>
+    <net code="136" name="unconnected-(U_BQ2-PCHG-Pad40)" class="Default">
+      <node ref="U_BQ2" pin="40" pinfunction="PCHG_40" pintype="output+no_connect"/>
+    </net>
+    <net code="137" name="unconnected-(U_BQ2-PDSG-Pad39)" class="Default">
+      <node ref="U_BQ2" pin="39" pinfunction="PDSG_39" pintype="output+no_connect"/>
+    </net>
+    <net code="138" name="unconnected-(U_BQ2-REG2-Pad34)" class="Default">
+      <node ref="U_BQ2" pin="34" pinfunction="REG2_34" pintype="power_out+no_connect"/>
+    </net>
+  </nets>
+</export>

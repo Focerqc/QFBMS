@@ -5323,7 +5323,7 @@
 			(at 66.69 331.24 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "10M"
 			(at 66.69 334.24 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -5727,7 +5727,7 @@
 			(at 269.89 338.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 269.89 341.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -5767,7 +5767,7 @@
 			(at 285.13 338.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 285.13 341.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -6379,7 +6379,7 @@
 		)
 		(uuid "2378dda7-53c1-5075-b098-4574e328ae2c")
 	)
-	(text "OPEN   TS2 is a CELL16-referenced contact port.\nPull low, then release. REG1 can be off.\nWake source, hot leakage and control are unresolved."
+	(text "TS2 contact returns to CELL16.\nPull low, then release. REG1 can be off.\nSee root for driver. Hot leakage OPEN."
 		(at 364.49 359.41 0)
 		(effects
 			(font

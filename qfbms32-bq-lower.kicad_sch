@@ -5591,7 +5591,7 @@
 			(at 66.69 331.24 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "10M"
 			(at 66.69 334.24 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -5908,27 +5908,27 @@
 			)
 		)
 	)
-	(label "REG1_BQ1"
+	(hierarchical_label "REG1_BQ1"
+		(shape bidirectional)
 		(at 328.93 130.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "5b1ae2cd-9182-5a78-884a-41ee93a7758c")
+		(uuid "30c8f656-772e-5080-a1f7-9d986a484d4d")
 	)
-	(label "REG1_BQ1"
+	(hierarchical_label "REG1_BQ1"
+		(shape bidirectional)
 		(at 184.15 323.85 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "01be57c1-d7b9-5f0d-9607-0f79474e4894")
+		(uuid "802ba1aa-7329-514b-b6aa-6742d3e5a764")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5969,16 +5969,16 @@
 			)
 		)
 	)
-	(label "REG1_BQ1"
+	(hierarchical_label "REG1_BQ1"
+		(shape bidirectional)
 		(at 247.65 344.17 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "13288aa6-d25f-55a7-a662-8bc787d9388b")
+		(uuid "c6dfa3b3-a751-504a-be25-e2f30d52ec32")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5995,7 +5995,7 @@
 			(at 269.89 338.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 269.89 341.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -6035,7 +6035,7 @@
 			(at 285.13 338.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 285.13 341.86 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -7454,7 +7454,7 @@
 		)
 		(uuid "d4e7d476-fa0b-580c-a6a0-ed2c255cbad2")
 	)
-	(text "OPEN   TS2 is a CELL0-referenced contact port.\nPull low, then release. REG1 can be off.\nWake source, hot leakage and control are unresolved."
+	(text "TS2 contact returns to CELL0.\nPull low, then release. REG1 can be off.\nSee root for driver. Hot leakage OPEN."
 		(at 364.49 359.41 0)
 		(effects
 			(font
@@ -7514,7 +7514,7 @@
 		)
 		(uuid "b658db58-2459-523d-8ff7-9a39def947cf")
 	)
-	(text "OPEN   SDA_BQ1 and SCL_BQ1 stop at the sheet boundary.\nHost power sequencing and bus thresholds are unresolved."
+	(text "Lower SDA/SCL reach the host via U206.\nHost power sequencing and bus thresholds are unresolved."
 		(at 219.71 204.47 0)
 		(effects
 			(font

@@ -1213,6 +1213,16 @@
 		(uuid "0fe405ae-ba0a-5765-9b0c-1228ee1dd5af")
 	)
 	(wire
+		(pts (xy 71.12 238.76) (xy 60.96 238.76))
+		(stroke (width 0) (type default))
+		(uuid "7671edf0-cc95-5c1a-9039-4dade21bb7d2")
+	)
+	(wire
+		(pts (xy 78.74 238.76) (xy 88.9 238.76))
+		(stroke (width 0) (type default))
+		(uuid "e523c3a7-e724-59df-9562-23511edecc87")
+	)
+	(wire
 		(pts (xy 215.9 219.71) (xy 228.6 219.71))
 		(stroke (width 0) (type default))
 		(uuid "a6d927e2-a589-58bf-b10e-226c00a70d4e")
@@ -1464,16 +1474,16 @@
 			)
 		)
 	)
-	(hierarchical_label "GPIO9"
-		(shape bidirectional)
+	(label "BUS_OE_N"
 		(at 76.2 81.28 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "06d930c4-8491-521c-b193-c2d9f72c8d95")
+		(uuid "511b16aa-8f17-531d-8f2a-9d7bcf6adea7")
 	)
 	(hierarchical_label "HOST_3V3"
 		(shape bidirectional)
@@ -1743,7 +1753,7 @@
 			(at 55.26 178.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 55.26 181.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -1872,7 +1882,7 @@
 			(at 99.71 178.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "4.7k 1%"
 			(at 99.71 181.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -1962,7 +1972,7 @@
 			(at 145.43 178.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "Value" "OPEN"
+		(property "Value" "10k"
 			(at 145.43 181.84 0)
 			(effects (font (size 1.27 1.27)))
 		)
@@ -1987,16 +1997,16 @@
 			)
 		)
 	)
-	(hierarchical_label "GPIO9"
-		(shape bidirectional)
+	(label "BUS_OE_N"
 		(at 133.35 176.53 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "0c5a331d-f27d-59df-94a2-eeedbe1b0e0d")
+		(uuid "014bd6cb-0761-5157-8045-f43f4ebd3f69")
 	)
 	(symbol
 		(lib_id "power:VCC")
@@ -2037,7 +2047,79 @@
 			)
 		)
 	)
-	(text "OPEN   R201/R202: 4.7 kOhm candidate at 100 kHz. Verify rise time, sink current and 80 pF side-1 limit.\nOPEN   R203: size for reset-high GPIO9 and ESP32-C3 boot strapping."
+	(symbol
+		(lib_id "Device:R")
+		(at 74.93 238.76 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f12d47a0-0777-5596-9a24-796e1a60f04d")
+		(property "Reference" "R204"
+			(at 74.93 241.95999999999998 90)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "0R RUN link"
+			(at 74.93 235.56 90)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 74.93 238.76 0)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 74.93 238.76 0)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+				(pin "1" (uuid "3cf2e23e-96b5-54f5-a620-ee9ec7a07f00"))
+		(pin "2" (uuid "bd8d6254-b95f-5abe-bb56-80dd730fd670"))
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001/a18c44e0-6b21-4f55-9d30-2c7e91ab6044"
+					(reference "R204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(hierarchical_label "GPIO9"
+		(shape bidirectional)
+		(at 60.96 238.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5eba3307-7235-55ae-bc6a-d7bd98e14016")
+	)
+	(label "BUS_OE_N"
+		(at 88.9 238.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3ec9bd1c-737b-5ebc-a475-c199b7ccdf53")
+	)
+	(text "Remove R204 before strapping GPIO9 low for download. R203 then holds U204 open."
+		(at 21.59 251.46 0)
+		(effects
+			(font
+				(size 1.45 1.45)
+			)
+			(justify left top)
+		)
+		(uuid "7bd3b3de-55b6-5dfd-93c4-a8b3218f62c8")
+	)
+	(text "OPEN   R201/R202: 4.7 kOhm candidate at 100 kHz. Verify rise time, sink current and 80 pF side-1 limit.\nR203 biases OE high through reset. Install R204 for normal operation."
 		(at 21.59 205.74 0)
 		(effects
 			(font
