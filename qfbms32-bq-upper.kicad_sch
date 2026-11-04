@@ -6379,7 +6379,7 @@
 		)
 		(uuid "2378dda7-53c1-5075-b098-4574e328ae2c")
 	)
-	(text "TS2 contact returns to CELL16.\nPull low, then release. REG1 can be off.\nSee root for driver. Hot leakage OPEN."
+	(text "TS2 contact returns to CELL16.\nPull low, then release. REG1 can be off.\nDrivers: Startup interfaces. Hot leakage OPEN."
 		(at 364.49 359.41 0)
 		(effects
 			(font

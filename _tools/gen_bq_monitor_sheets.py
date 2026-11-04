@@ -325,10 +325,12 @@ class Sch:
         self.wire(a, mid)
         self.wire(mid, b)
 
-    def label(self, name, at, angle=0, kind="local", shape="passive"):
+    def label(self, name, at, angle=0, kind="local", shape="passive", above_wire=False):
         at = rnd(at)
         self.endpoints.append(at)
         justify = "left" if angle == 0 else "right"
+        if above_wire:
+            justify += " bottom"
         effects = f"""(effects
 			(font
 				(size 1.27 1.27)
@@ -425,6 +427,9 @@ class Sch:
         if ref in ("U204", "U_ISO", "U206", "U207", "Q201"):
             ref_at = (at[0], at[1]-21)
             val_at = (at[0], at[1]-18)
+        if ref in ("J201", "SW201", "SW202"):
+            ref_at = (at[0], at[1]-10)
+            val_at = (at[0], at[1]-7)
         if ref == "U205":
             ref_at = (at[0], at[1]-25)
             val_at = (at[0], at[1]-21)
@@ -946,7 +951,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
                         (365, 292, "07   Wake interface")]:
         sch.text((x, y), title, 2)
     sch.text((220, 360), "OPEN   Select pulls at 100 kHz. Check rail limits,\nsink current and rise time for this segment.", 1.5)
-    sch.text((365, 360), f"TS2 contact returns to {vss}.\nPull low, then release. REG1 can be off.\nSee root for driver. Hot leakage OPEN.", 1.5)
+    sch.text((365, 360), f"TS2 contact returns to {vss}.\nPull low, then release. REG1 can be off.\nDrivers: Startup interfaces. Hot leakage OPEN.", 1.5)
     sch.text((30, 390), "OPEN   Select stack-rated diodes, REG0 transistor and passive ratings. Check REGIN headroom and dissipation.", 1.5)
     sch.text((365, 54), "03   Current sense", 2)
     sch.text((365, 185), "04   Temperature inputs", 2)
@@ -1051,10 +1056,13 @@ def build_iso_sheet(catalog):
     return sch
 
 
+STARTUP_NETS = ("HOST_3V3", "SDA_HOST", "SCL_HOST", "SDA_BQ1", "SCL_BQ1", "REG1_BQ1", "TS2_WAKE_BQ1", "TS2_WAKE_BQ2")
+
+
 def build_root(catalog):
     sch = Sch(
         ROOT_UUID,
-        "A2",
+        "A3",
         "QFBMS32 BQ monitor sheets",
         "Schematic increment only. qfbms32.kicad_pcb is not updated from this file.",
         "1",
@@ -1179,7 +1187,7 @@ def build_root(catalog):
         start = host[str(index+1)]
         sch.wire(start, iso[net])
         if index < 2 or net == "HOST_3V3":
-            sch.label(net, start)
+            sch.label(net, start, above_wire=True)
     for net in ("SDA_BQ2", "SCL_BQ2", "ALERT_BQ2", "REG1_BQ2"):
         sch.wire(iso[net], upper[net])
     sch.text((23, 49), "HOST DOMAIN   /   CELL0", 2)
@@ -1188,9 +1196,14 @@ def build_root(catalog):
     sch.text((155, 64), "Domain boundary inside ISO1640", 1.5)
     sch.text((300, 156), "Cells 17-32   |   upper address 0x08", 1.8)
     sch.text((23, 245), "Cells 1-16   |   lower address 0x08 at reset", 1.8)
-    sch.text((145, 175), "Startup sequence", 2.3)
-    sch.text((145, 187), "Required after lower interface closure:\n1   GPIO9 high opens U204. Configure the lower address.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640.", 1.7)
-    sch.text((145,213),"Cold attach: verify both local REG1 rails before the first transfer.\nSHUTDOWN: start host supply, press and release WAKE, wait for both BQs.",1.6)
+    startup = sheet((178, 166), (65, 75), uid("startup-sheet"), "Startup interfaces",
+                    "qfbms32-bq-startup.kicad_sch", "5",
+                    [(name, "bidirectional", False) for name in STARTUP_NETS])
+    for name, pin in startup.items():
+        tip = sch.wire(pin, (pin[0]+10.16, pin[1]))
+        sch.label(name, tip)
+    sch.text((302, 177), "Power and enumeration", 2)
+    sch.text((302, 188), "1   Start host power. Pulse WAKE.\n2   Wait for both local REG1 rails.\n3   Keep GPIO9 high; configure lower.\n4   Verify lower at 0x10.\n5   Drive GPIO9 low; admit upper at 0x08.", 1.55)
     for ports, names, dx in [(lower, ("SDA_BQ1","SCL_BQ1","REG1_BQ1","TS2_WAKE_BQ1"), 10.16),
                              (upper, ("TS2_WAKE_BQ2",), -10.16)]:
         for name in names:
@@ -1199,7 +1212,13 @@ def build_root(catalog):
             sch.wire(pin,tip)
             sch.label(name,tip,0 if dx>0 else 180)
 
-    path = f"/{ROOT_UUID}"
+    return sch
+
+
+def build_startup(catalog):
+    path = f"/{ROOT_UUID}/{uid('startup-sheet')}"
+    sch = Sch(uid("startup-file"), "A3", "Host startup, lower I2C and dual wake",
+              "Bench interfaces only. Production host power and automatic wake remain OPEN.", "5")
     nref = [601]
     def device(ref, key, value, x, y, nets, footprint="", angle=0):
         pins = sch.part(catalog,key,(x,y),angle,ref,value,footprint,GEOM[key],path)
@@ -1213,29 +1232,31 @@ def build_root(catalog):
             if net in ("CELL0","CELL16"):
                 gnd(sch,catalog,net,tip,path,nref)
             else:
-                sch.label(net,tip,0 if dx>0 else 180)
+                sch.label(net,tip,0 if dx>0 else 180,
+                          "hier" if net in STARTUP_NETS else "local", "bidirectional")
 
-    sch.text((400,30),"Lower I2C  /  shared CELL0 return",2.5)
-    device("U206","qfbms:ISO1640_D8","ISO1640BDR",480,80,
+    sch.text((22,20),"Host startup interfaces",3.3)
+    sch.text((22,37),"01   Lower I2C  /  shared CELL0 return",2)
+    device("U206","qfbms:ISO1640_D8","ISO1640BDR",88,85,
            ["HOST_3V3","SDA_HOST","SCL_HOST","CELL0","CELL0","SCL_BQ1","SDA_BQ1","REG1_BQ1"],
            "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
-    for x, ref, net, value in [(405,"R205","SDA_HOST","4.3k 1%"),(505,"R206","SCL_HOST","4.3k 1%"),
-                               (405,"C204","CELL0","100n"),(505,"C205","CELL0","100n")]:
+    for x, ref, net, value in [(165,"R205","SDA_HOST","4.3k 1%"),(220,"R206","SCL_HOST","4.3k 1%"),
+                               (292,"C204","CELL0","100n"),(350,"C205","CELL0","100n")]:
         cap = ref.startswith("C")
-        device(ref,"Device:C" if cap else "Device:R",value,x,155 if cap else 125,
+        device(ref,"Device:C" if cap else "Device:R",value,x,85,
                [net,"REG1_BQ1" if ref=="C205" else "HOST_3V3"],FP_C0603 if cap else FP_R0603)
-    sch.text((25,264),"Host power  /  independent regulated input",2.5)
-    device("J201","Connector:Conn_01x02_Pin","External 3.3 V",65,295,["AUX_3V3","CELL0"])
-    device("SW201","Switch:SW_SPST","Host run",170,295,["AUX_3V3","HOST_3V3"])
-    sch.text((25,316),"Bench source at J201. Close maintained SW201 to start the ESP even with both REG1 rails off.\nProduction auxiliary supply, protection and hold-up OPEN.",1.65)
-    sch.text((250,264),"Manual wake  /  press after host power is valid",2.5)
-    device("SW202","Switch:SW_Push","Wake",290,289,["HOST_3V3","WAKE_PULSE"])
-    device("R207","Device:R","3.3k",400,289,["WAKE_PULSE","WAKE_BASE"],FP_R0603,90)
-    device("R208","Device:R","47k",400,318,["WAKE_BASE","CELL0"],FP_R0603,90)
-    device("Q201","Transistor_BJT:Q_NPN_BEC","BC847BTT1G",495,289,["WAKE_BASE","CELL0","TS2_WAKE_BQ1"])
-    device("R209","Device:R","249R",400,355,["WAKE_PULSE","LED_A"],FP_R0603,90)
-    device("U207","Isolator:PC817","VOMA617A-3X001T",495,355,["LED_A","CELL0","CELL16","TS2_WAKE_BQ2"])
-    sch.text((25,350),"SW202 owns both wake paths. Release before requesting SHUTDOWN.\nNo ESP output drives the base or LED. Hot released leakage OPEN.",1.65)
+    sch.text((22,119),"02   Bench host power",2.5)
+    device("J201","Connector:Conn_01x02_Pin","External 3.3 V",48,153,["AUX_3V3","CELL0"])
+    device("SW201","Switch:SW_SPST","Host run",140,153,["AUX_3V3","HOST_3V3"])
+    sch.text((22,173),"Close SW201 to start the host with both REG1 rails off.\nProduction auxiliary supply, protection and hold-up OPEN.",1.65)
+    sch.text((214,119),"03   Manual wake  /  host power must be valid",2.5)
+    device("SW202","Switch:SW_Push","Wake",239,149,["HOST_3V3","WAKE_PULSE"])
+    device("R207","Device:R","3.3k",259,184,["WAKE_PULSE","WAKE_BASE"],FP_R0603,90)
+    device("R208","Device:R","47k",259,207,["WAKE_BASE","CELL0"],FP_R0603,90)
+    device("Q201","Transistor_BJT:Q_NPN_BEC","BC847BTT1G",343,185,["WAKE_BASE","CELL0","TS2_WAKE_BQ1"])
+    device("R209","Device:R","249R",259,231,["WAKE_PULSE","LED_A"],FP_R0603,90)
+    device("U207","Isolator:PC817","VOMA617A-3X001T",343,231,["LED_A","CELL0","CELL16","TS2_WAKE_BQ2"])
+    sch.text((22,207),"SW202 owns both wake paths. Release before requesting SHUTDOWN.\nNo ESP output drives the base or LED. Hot released leakage OPEN.",1.65)
     return sch
 
 
@@ -1245,6 +1266,8 @@ def main():
     upper = build_monitor_sheet(True, catalog, bq_pins)
     iso = build_iso_sheet(catalog)
     root = build_root(catalog)
+    startup = build_startup(catalog)
+    (ROOT / "qfbms32-bq-startup.kicad_sch").write_text(startup.finish(), encoding="utf-8", newline="\r\n")
     (ROOT / "qfbms32-bq-lower.kicad_sch").write_text(lower.finish(), encoding="utf-8", newline="\r\n")
     (ROOT / "qfbms32-bq-upper.kicad_sch").write_text(upper.finish(), encoding="utf-8", newline="\r\n")
     (ROOT / "qfbms32-bq-iso-i2c.kicad_sch").write_text(iso.finish(), encoding="utf-8", newline="\r\n")

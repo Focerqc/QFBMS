@@ -1,0 +1,1 @@
+PASS: address-write failure, failed/retried 0x10 verification, successful startup, and repeated Lisp GPIO9 gating.

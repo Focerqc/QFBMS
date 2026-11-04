@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NAMES = ('qfbms32-bq-lower.kicad_sch', 'qfbms32-bq-upper.kicad_sch',
-         'qfbms32-bq-iso-i2c.kicad_sch', 'qfbms32-bq-monitors.kicad_sch')
+         'qfbms32-bq-startup.kicad_sch', 'qfbms32-bq-iso-i2c.kicad_sch', 'qfbms32-bq-monitors.kicad_sch')
 
 
 def snapshot(directory):
@@ -34,7 +34,7 @@ def main():
         assert first == expected, 'checked-in sheets differ from clean regeneration'
         for name, data in first.items():
             print(hashlib.sha256(data).hexdigest(), name)
-    print('PASS: clean inputs reproduce all four sheets; second run is byte-identical')
+    print('PASS: clean inputs reproduce all five sheets; second run is byte-identical')
 
 
 if __name__ == '__main__':

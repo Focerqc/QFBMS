@@ -1,0 +1,6 @@
+a2e21f8ba91576ded9439dca80c187c3dad1f4f25e02ebfce3e9fc865aab944e qfbms32-bq-lower.kicad_sch
+707d9192766940dc0f2e220b218d36bdb5f4a3a1889145dbf93f2e8c12358604 qfbms32-bq-upper.kicad_sch
+dd4772312f38eb603e0fd47391501586bc5ebe46fd26666fcdc40d3e7d34f4c3 qfbms32-bq-startup.kicad_sch
+08eb2fb47e869adec9b94c30530d77c0b8b0dff1cc7e8956bbff2ae33d440972 qfbms32-bq-iso-i2c.kicad_sch
+22d7ee46540d1b0ba6a8873d03ad90f699bc962bff17c182221d4a183353ea02 qfbms32-bq-monitors.kicad_sch
+PASS: clean inputs reproduce all five sheets; second run is byte-identical
