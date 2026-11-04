@@ -1,6 +1,6 @@
 # BQ monitor schematic increment — November 3, 2026
 
-Charge-only schematic increment for the two BQ7695202 monitors. Discharge protection is out of scope. There is no heatsink. This pass stops at these two monitor sheets. The next pass is the isolated upper-I2C sheet. GPIO9 must be pulled high at reset on that sheet, because GPIO9 low selects ESP32-C3 download mode.
+Charge-only schematic increment for the two BQ7695202 monitors. Discharge protection is out of scope. There is no heatsink. This pass stops at these two monitor sheets. The upper-I2C isolation sheet is documented in [bq-iso-i2c-2026-11-03.md](bq-iso-i2c-2026-11-03.md). GPIO9 must be pulled high at reset on that sheet, because GPIO9 low selects ESP32-C3 download mode.
 
 `qfbms32.kicad_pcb`, `qfbms32.kicad_sch`, and `qfbms32.kicad_pro` were not modified. No netlist was imported, no historical generator was run, and no zones were refilled. `qfbms32-charge-only-draft.kicad_sch` was not imported. Its heatsink sentence and H2440 note have no authority.
 
@@ -131,8 +131,8 @@ A value is OPEN when the datasheet or the firmware interface does not fix it. No
 | C118, C119 | BAT 1 µF and 100 pF. Footprint and MPN are open. |
 | C120–C122 | 22 nF REGIN, 2.2 µF REG18, and 1 µF REG1. 0603 footprints; MPNs are open. |
 | — | External balance network. |
-| — | Upstream wake sources, and the isolator side of `SDA_BQ2`, `SCL_BQ2`, and `ALERT_BQ2`. |
+| — | Upstream wake sources. `SDA_BQ2`, `SCL_BQ2`, `ALERT_BQ2`, and `REG1_BQ2` continue on the isolation sheet; see [bq-iso-i2c-2026-11-03.md](bq-iso-i2c-2026-11-03.md). |
 
-### Root sheet ports left for the next sheets
+### Root sheet ports left for later sheets
 
-`SDA_HOST`, `SCL_HOST`, `CHG_NEG`, `RST_SHUT_BQ1`, `TS2_WAKE_BQ1`, `LD_WAKE_BQ1`, `SDA_BQ2`, `SCL_BQ2`, `ALERT_BQ2`, `RST_SHUT_BQ2`, `TS2_WAKE_BQ2`, and `LD_WAKE_BQ2` are no-connects on the root because the peer sheet does not exist yet. They are open interfaces, not unused silicon pins.
+`CHG_NEG`, `RST_SHUT_BQ1`, `TS2_WAKE_BQ1`, `LD_WAKE_BQ1`, `RST_SHUT_BQ2`, `TS2_WAKE_BQ2`, `LD_WAKE_BQ2`, `GPIO9`, and `HOST_3V3` remain open on the root where the peer sheet does not exist yet. `SDA_HOST`, `SCL_HOST`, `SDA_BQ2`, `SCL_BQ2`, `ALERT_BQ2`, and `REG1_BQ2` are wired to the isolation sheet. They are open interfaces or isolation-sheet nets, not unused silicon pins.
