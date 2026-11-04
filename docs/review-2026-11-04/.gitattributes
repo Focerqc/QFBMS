@@ -1,0 +1,3 @@
+*.xml -text
+*.pdf -text
+*.json -text

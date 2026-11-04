@@ -1,0 +1,763 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-04T10:56:17",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001",
+            "violations": [
+                {
+                    "description": "The current configuration does not include the symbol library 'qfbms'",
+                    "items": [
+                        {
+                            "description": "Symbol U205 [Host_interface]",
+                            "pos": {
+                                "x": 0.5334,
+                                "y": 1.016
+                            },
+                            "uuid": "e30a3f40-d418-5b09-ae73-566ff4d9f298"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL15'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.7366
+                            },
+                            "uuid": "b69d712b-3921-5798-9753-ee2c2ad4f4bf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL14'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.8636
+                            },
+                            "uuid": "9382ae86-f77b-56ec-8fc9-aecff26d12dc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL13'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.9906
+                            },
+                            "uuid": "30448116-b34e-526f-beb7-a8cbb226d1cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL12'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.1176
+                            },
+                            "uuid": "2e67b19c-0718-563f-9acc-9ca534737f07"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL11'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.2446
+                            },
+                            "uuid": "3d233fb6-0f8b-5a31-8a5f-8b1086d25841"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL10'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.3716
+                            },
+                            "uuid": "993320b7-8e50-54f2-ac3c-6e3059d20cf0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL9'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4986
+                            },
+                            "uuid": "635ff69a-480e-5cda-91bf-64c74a107662"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL8'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.6256
+                            },
+                            "uuid": "d56b6f32-b0da-5843-b222-3b928c1b081c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL7'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.7526
+                            },
+                            "uuid": "a3a58be0-a9aa-5e5d-9960-9973dfe94366"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL6'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.8796
+                            },
+                            "uuid": "56626ef7-7caf-5708-92a5-c6e847b525ca"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL5'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.0066
+                            },
+                            "uuid": "9be1deb6-7001-5b48-9778-0ea9b32b981d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL4'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.1336
+                            },
+                            "uuid": "6b0f285d-7893-5e8f-883e-06cd0604396c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL3'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.2606
+                            },
+                            "uuid": "dbd90a55-d75d-5abb-acc2-b4e0296813b8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL2'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.3876
+                            },
+                            "uuid": "14f76cf3-89ff-56da-ac0f-071a42b65aff"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL1'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.5146
+                            },
+                            "uuid": "19be48ac-3fe0-5dfe-bb86-0206240cdcfb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'qfbms'",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ1 [BQ7695202PFB]",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.2827
+                            },
+                            "uuid": "ddf74ac1-c607-4e9a-af11-19e7c9f1a190"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'qfbms'",
+                    "items": [
+                        {
+                            "description": "Symbol U204 [TMUX154E]",
+                            "pos": {
+                                "x": 0.9144,
+                                "y": 0.9398
+                            },
+                            "uuid": "7cf78116-52a3-5f19-b0ef-27c85bb6f473"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'qfbms'",
+                    "items": [
+                        {
+                            "description": "Symbol U_ISO [ISO1640_D8]",
+                            "pos": {
+                                "x": 2.5654,
+                                "y": 0.9398
+                            },
+                            "uuid": "d3e61906-f115-4a48-b301-c8413113563f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL31'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.7366
+                            },
+                            "uuid": "2f47537e-e24f-56be-8ac4-e82e7d656134"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL30'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.8636
+                            },
+                            "uuid": "8d814fee-70a9-5393-8cfa-29001c59c1f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL29'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 0.9906
+                            },
+                            "uuid": "78c2bb94-3cac-54bc-906f-b06873f1033c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL28'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.1176
+                            },
+                            "uuid": "a3db872b-72aa-5e5d-a2f8-22b41f835fea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL27'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.2446
+                            },
+                            "uuid": "a1860258-aa1d-5acd-8bc1-9b28a9736b2e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL26'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.3716
+                            },
+                            "uuid": "c2e4a6f8-88f1-5cba-a1ca-6f33143f8e5a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL25'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4986
+                            },
+                            "uuid": "5dea8704-73bf-5d84-a68a-2676e670a3e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL24'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.6256
+                            },
+                            "uuid": "f6de3180-e7a4-5ddf-ae70-d41acab4b93f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL23'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.7526
+                            },
+                            "uuid": "360c8747-c0e6-535d-bae3-7837b6662702"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL22'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.8796
+                            },
+                            "uuid": "a193880b-f2d8-581b-92be-68a312a04e0b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL21'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.0066
+                            },
+                            "uuid": "7c8cdaa0-c13e-5a30-9c74-d3c2cadb2aed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL20'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.1336
+                            },
+                            "uuid": "ec6fb4f1-37ff-508f-be5f-9e4ba92e4650"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL19'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.2606
+                            },
+                            "uuid": "0dcab257-1b22-569b-abde-ded34f0fdf20"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL18'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.3876
+                            },
+                            "uuid": "8ebfac4e-3595-535e-ad0e-ee49cd5056cd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'CELL17'",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 2.5146
+                            },
+                            "uuid": "51deecee-7617-562a-b803-b1364e9b8fcc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'qfbms'",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 [BQ7695202PFB]",
+                            "pos": {
+                                "x": 2.9591,
+                                "y": 1.2827
+                            },
+                            "uuid": "6137ce48-0141-4558-a30b-b95c79b1e7a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        },
+        {
+            "path": "/Lower monitor/",
+            "uuid_path": "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001/c4e8b21a-7f63-4d18-a902-11d6e5a72011",
+            "violations": [
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ1 Pin 29 [CFETOFF/SPI_CS, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.4097
+                            },
+                            "uuid": "e8919f32-48cd-45fe-bef6-78ddcc8b4cea"
+                        },
+                        {
+                            "description": "Symbol #FLG0003 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "89f9871f-5697-5e31-ac1b-d394a70e3d3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ1 Pin 32 [DDSG, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.5875
+                            },
+                            "uuid": "52b927f1-0231-4676-a055-dc5f9b494188"
+                        },
+                        {
+                            "description": "Symbol #FLG0003 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "89f9871f-5697-5e31-ac1b-d394a70e3d3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ1 Pin 30 [DFETOFF/BOTHOFF, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.6383
+                            },
+                            "uuid": "048753fa-d585-4335-b723-9d1c7e676435"
+                        },
+                        {
+                            "description": "Symbol #FLG0003 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "89f9871f-5697-5e31-ac1b-d394a70e3d3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        },
+        {
+            "path": "/Upper monitor/",
+            "uuid_path": "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001/d91f06c4-2ab8-4e77-b5c3-88a14f903022",
+            "violations": [
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 Pin 29 [CFETOFF/SPI_CS, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.4097
+                            },
+                            "uuid": "ea1121cc-ca37-4db2-afad-4eb40e2e28de"
+                        },
+                        {
+                            "description": "Symbol #FLG0303 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "b4af6486-ff7d-5926-99f9-2bd453234e8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 Pin 28 [HDQ_IO/SPI_MOSI, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.4351
+                            },
+                            "uuid": "b36bb1d1-0868-4ab6-8251-e20100fd4101"
+                        },
+                        {
+                            "description": "Symbol #FLG0303 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "b4af6486-ff7d-5926-99f9-2bd453234e8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 Pin 32 [DDSG, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.5875
+                            },
+                            "uuid": "16b405b0-4a0b-4717-910b-2dd70c68b7da"
+                        },
+                        {
+                            "description": "Symbol #FLG0303 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "b4af6486-ff7d-5926-99f9-2bd453234e8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 Pin 31 [DCHG, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.6129
+                            },
+                            "uuid": "89962747-8ed5-40c5-a0de-273694ff5a89"
+                        },
+                        {
+                            "description": "Symbol #FLG0303 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "b4af6486-ff7d-5926-99f9-2bd453234e8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U_BQ2 Pin 30 [DFETOFF/BOTHOFF, Bidirectional, Line]",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.6383
+                            },
+                            "uuid": "f561924e-2635-4343-8ab8-a7fb421a01dd"
+                        },
+                        {
+                            "description": "Symbol #FLG0303 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 3.2385,
+                                "y": 1.8161
+                            },
+                            "uuid": "b4af6486-ff7d-5926-99f9-2bd453234e8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        },
+        {
+            "path": "/Upper I2C isolation/",
+            "uuid_path": "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001/a18c44e0-6b21-4f55-9d30-2c7e91ab6044",
+            "violations": []
+        }
+    ],
+    "source": "qfbms32-bq-monitors.kicad_sch"
+}
