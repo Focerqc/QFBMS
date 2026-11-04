@@ -16,97 +16,97 @@
 	(wire
 		(pts (xy 195.58 299.72) (xy 220.98 299.72))
 		(stroke (width 0) (type default))
-		(uuid "9d646dee-ca75-4b3c-9d3e-1c80be77cf69")
+		(uuid "ba51bfd3-075f-5fb3-a03d-ef1d4243c19c")
 	)
 	(wire
 		(pts (xy 220.98 299.72) (xy 220.98 78.74))
 		(stroke (width 0) (type default))
-		(uuid "74650e28-a54f-46c3-823c-bb416f83bb93")
+		(uuid "99df6de1-b349-5bf9-a376-ca670aee8335")
 	)
 	(wire
 		(pts (xy 220.98 78.74) (xy 195.58 78.74))
 		(stroke (width 0) (type default))
-		(uuid "7fbebb38-669c-4e97-a66f-7f6e4d32d161")
+		(uuid "8185b1b3-7256-5f04-9e4e-e8aa44918f0f")
 	)
 	(wire
 		(pts (xy 195.58 307.34) (xy 223.52 307.34))
 		(stroke (width 0) (type default))
-		(uuid "6a0cbc31-d965-462e-921c-b9621eea7c64")
+		(uuid "f265c9f5-a4d0-5374-89f1-6808240f7ca4")
 	)
 	(wire
 		(pts (xy 223.52 307.34) (xy 223.52 86.36))
 		(stroke (width 0) (type default))
-		(uuid "538df648-c8aa-477c-807d-62c672ea6ca4")
+		(uuid "ad112d79-bf25-5ae7-9a07-456f6ed3f5df")
 	)
 	(wire
 		(pts (xy 223.52 86.36) (xy 195.58 86.36))
 		(stroke (width 0) (type default))
-		(uuid "b8c88ac1-8fe2-4429-9e7a-0ef5a1ae7dfa")
+		(uuid "2d7c5c14-eab0-509b-a9d0-f67a0a87d6f7")
 	)
 	(wire
 		(pts (xy 195.58 198.12) (xy 226.06 198.12))
 		(stroke (width 0) (type default))
-		(uuid "13dd6c59-d2bc-4468-954f-970e30a583fa")
+		(uuid "da19fc06-b59e-5fee-876c-717e86e3a057")
 	)
 	(wire
 		(pts (xy 226.06 198.12) (xy 226.06 48.26))
 		(stroke (width 0) (type default))
-		(uuid "2f23e0e3-ff3e-4531-ab0a-f57a273c5da7")
+		(uuid "9b81656d-78be-58b1-b0ac-b3e1baf8fc63")
 	)
 	(wire
 		(pts (xy 226.06 48.26) (xy 195.58 48.26))
 		(stroke (width 0) (type default))
-		(uuid "a1a33b70-c84a-4a4b-8684-2bb597aae7ee")
+		(uuid "5cc6808b-14cc-5644-9f94-521f1f38ffa8")
 	)
 	(wire
 		(pts (xy 195.58 205.74) (xy 228.6 205.74))
 		(stroke (width 0) (type default))
-		(uuid "17ac9b8b-dd62-40b7-96d8-b9e1ecc56481")
+		(uuid "f70d7daa-1e51-5c61-8dcb-121af0b85e3d")
 	)
 	(wire
 		(pts (xy 228.6 205.74) (xy 228.6 55.88))
 		(stroke (width 0) (type default))
-		(uuid "57b1cd5c-59f6-4dd5-b41b-532158beb956")
+		(uuid "122b239d-2dcc-5b2c-9652-9e4a939f2aa0")
 	)
 	(wire
 		(pts (xy 228.6 55.88) (xy 195.58 55.88))
 		(stroke (width 0) (type default))
-		(uuid "5d9bee12-3c6c-48c7-8bc1-fab652b77833")
+		(uuid "bcd35c44-eea3-5809-b4c6-d92afc2be21c")
 	)
 	(wire
 		(pts (xy 195.58 213.36) (xy 231.14 213.36))
 		(stroke (width 0) (type default))
-		(uuid "88a9b573-18eb-4bb7-a762-e01b94372a98")
+		(uuid "5c3363ac-5fb5-549a-be8d-0349f93d2f22")
 	)
 	(wire
 		(pts (xy 231.14 213.36) (xy 231.14 63.5))
 		(stroke (width 0) (type default))
-		(uuid "7eedf26a-cb1f-48b2-9e5f-8215caedb03c")
+		(uuid "ef750283-7a0c-5006-af11-d288a8a48357")
 	)
 	(wire
 		(pts (xy 231.14 63.5) (xy 195.58 63.5))
 		(stroke (width 0) (type default))
-		(uuid "d2f3c576-0305-4d27-b3d5-79c77cc305b7")
+		(uuid "bc96d582-f0c3-5d37-a303-d47a5f9e371d")
 	)
 	(wire
 		(pts (xy 195.58 220.98) (xy 233.68 220.98))
 		(stroke (width 0) (type default))
-		(uuid "14485a1d-273b-4ea9-904b-947c504cd2a1")
+		(uuid "142581b8-6695-59f6-b94b-e1224aa6220b")
 	)
 	(wire
 		(pts (xy 233.68 220.98) (xy 233.68 71.12))
 		(stroke (width 0) (type default))
-		(uuid "c5ededaa-aedc-4671-9877-b9c527bdf89d")
+		(uuid "ec15704c-d4e7-5679-b177-377789bab826")
 	)
 	(wire
 		(pts (xy 233.68 71.12) (xy 195.58 71.12))
 		(stroke (width 0) (type default))
-		(uuid "4710b3ea-0b88-4eda-8510-a7778543a7b1")
+		(uuid "440812de-a277-5a21-b2b6-12633234a4fd")
 	)
-	(no_connect (at 195.58 314.96) (uuid "6e103ecc-04fe-48c8-966a-7187d6676a27"))
-	(no_connect (at 195.58 322.58) (uuid "60e222c4-f766-4236-831f-ddb69c72fd09"))
-	(no_connect (at 195.58 330.2) (uuid "be66f3dd-d00d-48d0-98c5-8da3ab0d6196"))
-	(no_connect (at 195.58 337.82) (uuid "95fb32c7-c794-43f4-8680-932d6ad027a4"))
+	(no_connect (at 195.58 314.96) (uuid "c01bf2e7-b888-591c-804a-890a055241cb"))
+	(no_connect (at 195.58 322.58) (uuid "786d6774-e2bb-571a-836d-d3136b1ccc4c"))
+	(no_connect (at 195.58 330.2) (uuid "352cfb94-10ce-52ec-aebf-8929eef24093"))
+	(no_connect (at 195.58 337.82) (uuid "c2698b29-5432-5590-ba65-0972b13aa19f"))
 	(sheet
 		(at 25.4 292.1)
 		(size 170.18 60.96)
@@ -128,7 +128,7 @@
 		)
 		(pin "SDA_HOST" bidirectional
 			(at 195.58 299.72 0)
-			(uuid "f71dfbbd-fc1f-4954-93c5-675b23d5d90d")
+			(uuid "516c0a49-3c2b-55de-ac3d-1f734278c1eb")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -136,7 +136,7 @@
 		)
 		(pin "SCL_HOST" bidirectional
 			(at 195.58 307.34 0)
-			(uuid "d743a152-c269-4e7b-8652-efb82b993b46")
+			(uuid "a01e9505-92d0-581b-953a-3ff9dc10c84b")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -144,7 +144,7 @@
 		)
 		(pin "CHG_NEG" bidirectional
 			(at 195.58 314.96 0)
-			(uuid "74d02e18-60a3-47f2-ba4b-f542df29e314")
+			(uuid "8330f256-9652-5b3e-9999-547bbc7229ff")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -152,7 +152,7 @@
 		)
 		(pin "RST_SHUT_BQ1" bidirectional
 			(at 195.58 322.58 0)
-			(uuid "3b11390b-8a2e-41d4-b130-df24929a4b36")
+			(uuid "a0a44d0f-4ae3-53e9-a99d-2244e2adc7bb")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -160,7 +160,7 @@
 		)
 		(pin "TS2_WAKE_BQ1" bidirectional
 			(at 195.58 330.2 0)
-			(uuid "c83fb00f-2e72-4560-b8a3-c1cd43a87c6c")
+			(uuid "277df7fc-6ad3-5e7f-87c9-eef98834b45c")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -168,7 +168,7 @@
 		)
 		(pin "LD_WAKE_BQ1" bidirectional
 			(at 195.58 337.82 0)
-			(uuid "5574651d-1759-4dc6-867f-ee3612ca9935")
+			(uuid "276c9df3-7c00-5a4b-a3f0-097a43599236")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -182,9 +182,9 @@
 			)
 		)
 	)
-	(no_connect (at 195.58 228.6) (uuid "6e773e98-5aab-43d5-8343-635aed35bf93"))
-	(no_connect (at 195.58 236.22) (uuid "88406a57-5fc9-49f3-88a0-6a748eda6e72"))
-	(no_connect (at 195.58 243.84) (uuid "4c93e8a9-904e-43c6-a8cc-675a804fc8b1"))
+	(no_connect (at 195.58 228.6) (uuid "792deac1-185c-55ff-88d2-b7fc7c6281eb"))
+	(no_connect (at 195.58 236.22) (uuid "529aa375-b434-5d2c-afba-1e649973084f"))
+	(no_connect (at 195.58 243.84) (uuid "5aacbe06-9d74-577d-90bb-733b4e555eb6"))
 	(sheet
 		(at 25.4 190.5)
 		(size 170.18 76.2)
@@ -206,7 +206,7 @@
 		)
 		(pin "SDA_BQ2" bidirectional
 			(at 195.58 198.12 0)
-			(uuid "700727e9-cda6-4136-9b4a-5be45c01da4e")
+			(uuid "1a0a1aee-2413-5900-94b0-6a44a0a6c7a8")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -214,7 +214,7 @@
 		)
 		(pin "SCL_BQ2" bidirectional
 			(at 195.58 205.74 0)
-			(uuid "d20debf8-f7de-4ae6-a8e8-1cc40ee9fa1c")
+			(uuid "b0dc2cab-5b2c-5e6c-9313-8f8ff3c591e5")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -222,7 +222,7 @@
 		)
 		(pin "ALERT_BQ2" bidirectional
 			(at 195.58 213.36 0)
-			(uuid "0632455c-d50f-4e14-94b8-4aedf452d50b")
+			(uuid "cc04e8e6-fef8-5b8b-947b-058941da2b61")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -230,7 +230,7 @@
 		)
 		(pin "REG1_BQ2" bidirectional
 			(at 195.58 220.98 0)
-			(uuid "03ed2bc4-766d-45e4-8c0f-531d37e5de3f")
+			(uuid "453611f3-453c-5bfb-9e89-beedb613366b")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -238,7 +238,7 @@
 		)
 		(pin "RST_SHUT_BQ2" bidirectional
 			(at 195.58 228.6 0)
-			(uuid "dead48f8-a640-4caa-bb2e-572095020b4a")
+			(uuid "0fd60bed-98d4-52b2-9a46-7cd7c83d5f45")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -246,7 +246,7 @@
 		)
 		(pin "TS2_WAKE_BQ2" bidirectional
 			(at 195.58 236.22 0)
-			(uuid "a66416b7-80a3-4ae5-b22b-89e4b3053107")
+			(uuid "8a9ae6c4-4d67-5253-82a5-ff6982680cea")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -254,7 +254,7 @@
 		)
 		(pin "LD_WAKE_BQ2" bidirectional
 			(at 195.58 243.84 0)
-			(uuid "9efa720f-474d-4aba-9d38-51fd0cb3d114")
+			(uuid "e526d24a-4729-5002-9158-07bf694a2adc")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -268,8 +268,8 @@
 			)
 		)
 	)
-	(no_connect (at 195.58 93.98) (uuid "bf2a1576-7d6c-4fe7-9fb7-98da0d6cbe3d"))
-	(no_connect (at 195.58 101.6) (uuid "9dbd09dc-6ebf-4e99-b550-2525684bef9a"))
+	(no_connect (at 195.58 93.98) (uuid "c1e33750-9227-5ad8-bf16-55523b87280a"))
+	(no_connect (at 195.58 101.6) (uuid "2bbb624d-3b10-59d3-bf42-408c329b567b"))
 	(sheet
 		(at 25.4 40.64)
 		(size 170.18 83.82)
@@ -291,7 +291,7 @@
 		)
 		(pin "SDA_BQ2" bidirectional
 			(at 195.58 48.26 0)
-			(uuid "4fe23c9c-11cc-419c-891d-7d41cb6d8009")
+			(uuid "2ac02d9e-698a-5a1e-8262-7fe239d3b29f")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -299,7 +299,7 @@
 		)
 		(pin "SCL_BQ2" bidirectional
 			(at 195.58 55.88 0)
-			(uuid "e473c485-91e1-4a2d-8add-7ef959aa4826")
+			(uuid "e4915639-8c4b-501c-a89b-42aa27db3c91")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -307,7 +307,7 @@
 		)
 		(pin "ALERT_BQ2" bidirectional
 			(at 195.58 63.5 0)
-			(uuid "04a0ac53-3834-4331-916d-c18951c61266")
+			(uuid "08c05ef2-14ac-539f-824d-b21b63412238")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -315,7 +315,7 @@
 		)
 		(pin "REG1_BQ2" bidirectional
 			(at 195.58 71.12 0)
-			(uuid "a26f9ad5-6014-4f65-b459-7832c6ef13a0")
+			(uuid "14f8f1a9-b59a-54c0-97c3-ca6dc6978889")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -323,7 +323,7 @@
 		)
 		(pin "SDA_HOST" bidirectional
 			(at 195.58 78.74 0)
-			(uuid "b02c30e4-be4e-4c63-8973-fd9ca35f90e9")
+			(uuid "8f68e4be-adf5-5a15-a9ba-882ec3425033")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -331,7 +331,7 @@
 		)
 		(pin "SCL_HOST" bidirectional
 			(at 195.58 86.36 0)
-			(uuid "015acec2-e8cd-4a15-b0e3-656da1ef6f75")
+			(uuid "2a108a2b-f7da-5410-8a0e-d30b05b7d339")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -339,7 +339,7 @@
 		)
 		(pin "GPIO9" bidirectional
 			(at 195.58 93.98 0)
-			(uuid "24320390-61d7-4cc0-8b90-6a2d8f250f90")
+			(uuid "d3776476-91db-5475-93bc-9ed98d78e939")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -347,7 +347,7 @@
 		)
 		(pin "HOST_3V3" bidirectional
 			(at 195.58 101.6 0)
-			(uuid "d4b87b71-093b-4b68-9d01-49be8f97a25e")
+			(uuid "04e14c54-0571-5933-94bc-5a2b0fa8f817")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -361,15 +361,15 @@
 			)
 		)
 	)
-	(text "Host I2C is SDA_HOST and SCL_HOST: GPIO21 and GPIO20, 100 kHz.\nGPIO9 is pulled high on the isolation sheet. GPIO9 low selects ESP32-C3 download mode.\nGPIO9 high opens the host-side upper-bus switch. GPIO9 low connects upper address 0x08.\nThat connection is allowed only after the lower device has been verified at 0x10.\nCHG_NEG and the wake ports remain open. No charge FET, USB, or CAN is on these sheets.\nCELL0 and CELL16 stay separate. CELL16 is the upper reference, not the lower ground.\nIsolation OPEN items:\nU_ISO: Bidirectional I2C isolator using the ISO1640 8-D pin map (VCC1, SDA1, SCL1, GND1, GND2, SCL2, SDA2, VCC2). No enable pin. Orderable suffix is OPEN; the 16-DW package has different pin numbers and is not this symbol.\nSW_SDA: Host-side SDA disconnect. MPN and footprint are OPEN. GPIO9 high = open, GPIO9 low = closed. Must isolate when unpowered and must not back-power the host rail.\nSW_SCL: Host-side SCL disconnect. Same requirements as SW_SDA.\nR201: Side-1 SDA pull-up to HOST_3V3. Resistance is OPEN at 100 kHz.\nR202: Side-1 SCL pull-up to HOST_3V3. Resistance is OPEN at 100 kHz.\nALERT_BQ2: Upper ALERT stays on the upper side and ends at a no-connect on this sheet. Do not tie it to CELL0. Firmware does not consume upper ALERT. A unidirectional isolator MPN across the barrier is OPEN; do not invent that part.\nR203: GPIO9 reset pull-up to HOST_3V3. Value is OPEN. GPIO9 must be high at reset because GPIO9 low selects ESP32-C3 download mode."
-		(at 299.72 389.89 0)
+	(text "Host I2C is SDA_HOST and SCL_HOST: GPIO21 and GPIO20, 100 kHz.\nGPIO9 is pulled high on the isolation sheet. GPIO9 low selects ESP32-C3 download mode.\nUpper-bus disconnect uses U204 TMUX154E; GPIO9 high opens, low connects after the lower address\ncheck.\nThat connection is allowed only after the lower device has been verified at 0x10.\nCHG_NEG and the wake ports remain open. No charge FET, USB, or CAN is on these sheets.\nCELL0 and CELL16 stay separate. CELL16 is the upper reference, not the lower ground.\nIsolation OPEN items:\nU_ISO: Bidirectional I2C isolator using the ISO1640 8-D pin map (VCC1, SDA1, SCL1, GND1, GND2, SCL2,\nSDA2, VCC2). No enable pin. Orderable suffix is OPEN; the 16-DW package has different pin numbers\nand is not this symbol.\nU204: TI TMUX154EDGSR, 2-channel SPDT switch in VSSOP-10. Pin 4 A and pin 6 B are the host-side\nSDA/SCL commons; pins 2 A0 and 8 B0 face ISO1640 SDA1/SCL1. Pins 3 A1 and 7 B1 are unused; pin 1 SEL\nis held low to select A0/B0; pin 9 EN is active low and goes directly to GPIO9; pin 10 VCC is\nHOST_3V3; pin 5 GND is CELL0. TI specifies 3.0-4.3 V supply, I/O to 5.25 V, and high-impedance I/O\nwhen unpowered.\nR201: Switch/ISO1640 side-1 SDA pull-up to HOST_3V3. Resistance remains OPEN pending rail-\ndifference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.\nR202: Switch/ISO1640 side-1 SCL pull-up to HOST_3V3. Resistance remains OPEN pending rail-\ndifference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.\nC203: 100 nF local bypass from HOST_3V3 to CELL0.\nALERT_BQ2: Upper ALERT stays on the upper side and ends at a no-connect on this sheet. Do not tie it\nto CELL0. Firmware does not consume upper ALERT. A unidirectional isolator MPN across the barrier is\nOPEN; do not invent that part.\nR203: GPIO9 reset pull-up to HOST_3V3. Value is OPEN. GPIO9 must be high at reset because GPIO9 low\nselects ESP32-C3 download mode; that level disables U204."
+		(at 279.4 49.53 0)
 		(effects
 			(font
 				(size 1.15 1.15)
 			)
 			(justify left top)
 		)
-		(uuid "343b49d7-ee6b-4523-8344-5ed9cbc2b526")
+		(uuid "cf9c1864-aa91-522c-a837-b561bbc0676f")
 	)
 	(sheet_instances
 		(path "/"

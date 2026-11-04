@@ -1,6 +1,6 @@
 # BQ monitor schematic increment — November 3, 2026
 
-Charge-only schematic increment for the two BQ7695202 monitors. Discharge protection is out of scope. There is no heatsink. This pass stops at these two monitor sheets. The upper-I2C isolation sheet is documented in [bq-iso-i2c-2026-11-03.md](bq-iso-i2c-2026-11-03.md). GPIO9 must be pulled high at reset on that sheet, because GPIO9 low selects ESP32-C3 download mode.
+Charge-only schematic increment for the two BQ7695202 monitors. Discharge protection is out of scope. There is no heatsink. Current status is recorded in the [repair note](bq-repair-2026-11-03.md), which supersedes this original increment. The upper-I2C isolation sheet is documented in [bq-iso-i2c-2026-11-03.md](bq-iso-i2c-2026-11-03.md). GPIO9 must be pulled high at reset on that sheet, because GPIO9 low selects ESP32-C3 download mode.
 
 `qfbms32.kicad_pcb`, `qfbms32.kicad_sch`, and `qfbms32.kicad_pro` were not modified. No netlist was imported, no historical generator was run, and no zones were refilled. `qfbms32-charge-only-draft.kicad_sch` was not imported. Its heatsink sentence and H2440 note have no authority.
 
@@ -22,11 +22,11 @@ Cell inputs copy the TI filter from SLUSE13B section 7.3 and EVM user's guide SL
 
 BQ7695202 is CRC I2C, and REG1 defaults to enabled at 3.3 V (SLUSE13B section 5). That default does not replace the REG0 preregulator or the wake pins. REG18 uses 2.2 µF, inside the 1.8–22 µF range in section 7.10. REG1 uses 1 µF (section 7.12). REGIN uses 22 nF (section 7.11; allowed 15–27 nF). The 150 pF BREG figure in section 7.11 is the table maximum, not a fitted capacitor. The BAT pin uses the Figure 16-2 series 100 Ω, 1 µF, and 100 pF, through its own diode. The REG0 collector diode is a second diode, as section 16.2 requires. CP1 is tied to BAT because the charge pump is unused (Table 16-3). Enabling the charge pump with that connection adds about 200 µA.
 
-SRP and SRN are one Kelvin pair for the charge shunt. The filter is 100 Ω and 100 nF at the device (sections 16.2 and 18.1). The optional 100 pF and 0.1 µF-to-VSS capacitors in those sections are not fitted. SRP is the `CELL0` end and SRN is the `CHG-` end, so charging current makes SRP positive relative to SRN (pin descriptions in section 6). The shunt is one part. Its value is not taken from the R001 silkscreen, and the two existing shunt footprints are not placed in series. `CHG-` is a sheet port.
+SRP and SRN are one Kelvin pair for the charge shunt. The filter is 100 Ω and 100 nF at the device (sections 16.2 and 18.1). The optional 100 pF and 0.1 µF-to-VSS capacitors in those sections are not fitted. SRP is the `CELL0` end and SRN is the `CHG-` end, so charging current makes SRP positive relative to SRN (pin descriptions in section 6). The separate schematic provisionally draws one shunt. Existing working-board shunt topology, Kelvin pickup and combined C/Lisp calibration remain provisional. This drawing does not authorize a board topology change or establish a purchased resistance. `CHG-` is a sheet port.
 
 I2C is the host bus at 100 kHz: SDA is ESP32 GPIO21 and SCL is GPIO20. Startup 7-bit address is 0x08. Firmware then moves this device to 0x10. Pull-ups are on this domain's REG1.
 
-TS1, TS3, ALERT, DCHG, and HDQ are the firmware temperature inputs. The firmware uses the internal 18 kΩ pull-up and assumes a 10 kΩ, beta-3380 NTC minus 500 Ω of series resistance. No EVM external thermistor-bias resistor is fitted. The optional thermistor capacitor under 4 nF (section 16.2) is not fitted.
+TS1, TS3, ALERT, DCHG, and HDQ are the firmware temperature inputs. The firmware uses the internal 18 kΩ pull-up and assumes a 10 kΩ, beta-3380 NTC with a 500 Ω subtraction from inferred resistance. R27–R31 now connect in series to RT1–RT5 after the repair. Fitted resistance and sensor MPN remain OPEN; the subtraction is a compatibility assumption, not a verified part value. No EVM external thermistor-bias resistor is fitted. The optional thermistor capacitor under 4 nF (section 16.2) is not fitted.
 
 RST_SHUT has a pulldown to local VSS because section 12.6 requires the pin low in normal operation. TS2 is the shutdown wake pin and has no thermistor (section 13.5). LD is the other wake input from SSZT191. The upstream driver for RST_SHUT, TS2, and LD is a sheet port. LD must stay inside the section 7.3 voltage range versus this domain's VSS.
 
@@ -42,7 +42,7 @@ Unused current inputs are terminated as TI specifies for unused current measurem
 
 Upper VSS is `CELL16`, so upper SRP and SRN connect to `CELL16`.
 
-SDA, SCL, and ALERT leave this sheet as ports for the later isolation sheet. The isolator and the GPIO9 circuit are not drawn. Local SDA and SCL pull-ups are on this domain's REG1. The upper 7-bit address is 0x08, and only after the lower device has been verified at 0x10. That gating is the next sheet.
+SDA, SCL, and ALERT leave this sheet for the isolation sheet. ISO1640 is drawn there, but GPIO9 only reaches R203; the host-side disconnect is PENDING with both paths separated. Local SDA and SCL pull-ups are on this domain's REG1. The upper 7-bit address is 0x08, and only after the lower device has been verified at 0x10. That gating remains PENDING and is not implemented.
 
 Upper TS1, TS3, HDQ, DCHG, CFETOFF, DFETOFF, and DDSG are tied to upper VSS. The firmware temperature map does not consume those upper pins. TS2 remains the wake pin and is not tied to VSS.
 
@@ -63,7 +63,7 @@ KiCad 10.0.6:
 kicad-cli sch erc --severity-all --format json --output exports/bq-monitors-erc.json qfbms32-bq-monitors.kicad_sch
 ```
 
-Result: 40 violations, 0 errors, 40 warnings.
+Historical two-sheet result: 40 violations, 0 errors, 40 warnings. Current repair result: zero errors and 43 warnings; see the [repair note](bq-repair-2026-11-03.md).
 
 | Sheet | Warnings |
 | --- | ---: |
