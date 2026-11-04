@@ -5908,7 +5908,7 @@
 			)
 		)
 	)
-	(label "REG1"
+	(label "REG1_BQ1"
 		(at 328.93 130.81 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5917,9 +5917,9 @@
 			)
 			(justify left)
 		)
-		(uuid "203c9601-6d37-53fe-a00d-e50c6b7232e0")
+		(uuid "5b1ae2cd-9182-5a78-884a-41ee93a7758c")
 	)
-	(label "REG1"
+	(label "REG1_BQ1"
 		(at 184.15 323.85 180)
 		(fields_autoplaced yes)
 		(effects
@@ -5928,7 +5928,7 @@
 			)
 			(justify right)
 		)
-		(uuid "8fe20158-4367-5430-a7b7-02edfccc4a36")
+		(uuid "01be57c1-d7b9-5f0d-9607-0f79474e4894")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5969,7 +5969,7 @@
 			)
 		)
 	)
-	(label "REG1"
+	(label "REG1_BQ1"
 		(at 247.65 344.17 180)
 		(fields_autoplaced yes)
 		(effects
@@ -5978,7 +5978,7 @@
 			)
 			(justify right)
 		)
-		(uuid "423046b3-bf47-5767-bf67-70dfb08443a0")
+		(uuid "13288aa6-d25f-55a7-a662-8bc787d9388b")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6060,7 +6060,7 @@
 			)
 		)
 	)
-	(hierarchical_label "SDA_HOST"
+	(hierarchical_label "SDA_BQ1"
 		(shape bidirectional)
 		(at 262.89 328.93 270)
 		(effects
@@ -6069,9 +6069,9 @@
 			)
 			(justify right)
 		)
-		(uuid "efb6ceb5-0b18-5b8a-849a-656dad14a341")
+		(uuid "ce3b4bd9-f0cb-5ec0-a623-ce202da33bcc")
 	)
-	(hierarchical_label "SCL_HOST"
+	(hierarchical_label "SCL_BQ1"
 		(shape bidirectional)
 		(at 278.13 328.93 270)
 		(effects
@@ -6080,9 +6080,9 @@
 			)
 			(justify right)
 		)
-		(uuid "9da7e451-4af1-5642-8717-96815f01cccd")
+		(uuid "da95795d-9e95-5e86-8628-d6c35ee2a1f2")
 	)
-	(hierarchical_label "SDA_HOST"
+	(hierarchical_label "SDA_BQ1"
 		(shape bidirectional)
 		(at 341.63 146.05 0)
 		(effects
@@ -6091,9 +6091,9 @@
 			)
 			(justify left)
 		)
-		(uuid "31e6b409-ea0d-56ee-8bfb-53d1e1fc8e0a")
+		(uuid "4aa32abb-80c5-5f91-aab6-f7ef21f5dcca")
 	)
-	(hierarchical_label "SCL_HOST"
+	(hierarchical_label "SCL_BQ1"
 		(shape bidirectional)
 		(at 341.63 148.59 0)
 		(effects
@@ -6102,7 +6102,7 @@
 			)
 			(justify left)
 		)
-		(uuid "3389d7f1-8c8b-5288-bbac-3350ad252668")
+		(uuid "2c076a0b-db8f-54ad-9abd-b89e09740e45")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7454,7 +7454,7 @@
 		)
 		(uuid "d4e7d476-fa0b-580c-a6a0-ed2c255cbad2")
 	)
-	(text "OPEN   TS2 wake driver: pulse to CELL0, then release.\nCandidate: optical output powered from the host LED side.\nVerify leakage, pulse width and GPIO availability."
+	(text "OPEN   TS2 is a CELL0-referenced contact port.\nPull low, then release. REG1 can be off.\nWake source, hot leakage and control are unresolved."
 		(at 364.49 359.41 0)
 		(effects
 			(font
@@ -7514,7 +7514,7 @@
 		)
 		(uuid "b658db58-2459-523d-8ff7-9a39def947cf")
 	)
-	(text "OPEN   SDA/SCL connect directly to host. Lower powered-off isolation\nrequires a hardware decision; a second isolator is a candidate."
+	(text "OPEN   SDA_BQ1 and SCL_BQ1 stop at the sheet boundary.\nHost power sequencing and bus thresholds are unresolved."
 		(at 219.71 204.47 0)
 		(effects
 			(font

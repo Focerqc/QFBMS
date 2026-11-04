@@ -6379,7 +6379,7 @@
 		)
 		(uuid "2378dda7-53c1-5075-b098-4574e328ae2c")
 	)
-	(text "OPEN   TS2 wake driver: pulse to CELL16, then release.\nCandidate: optical output powered from the host LED side.\nVerify leakage, pulse width and GPIO availability."
+	(text "OPEN   TS2 is a CELL16-referenced contact port.\nPull low, then release. REG1 can be off.\nWake source, hot leakage and control are unresolved."
 		(at 364.49 359.41 0)
 		(effects
 			(font

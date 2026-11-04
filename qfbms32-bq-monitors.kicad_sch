@@ -19,19 +19,9 @@
 		(uuid "c2b971a8-78f0-5153-b6ef-4ca6bffce0e1")
 	)
 	(wire
-		(pts (xy 88.9 179.07) (xy 104.14 179.07))
-		(stroke (width 0) (type default))
-		(uuid "a5410521-5fb1-59b9-a614-0ca2dacec7d1")
-	)
-	(wire
 		(pts (xy 87.63 97.79) (xy 152.4 97.79))
 		(stroke (width 0) (type default))
 		(uuid "9ac1288e-9f2b-5900-becc-b0d32dfe6b0f")
-	)
-	(wire
-		(pts (xy 88.9 186.69) (xy 104.14 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1910e6b1-4d36-5ab4-b39a-f9c8085b038a")
 	)
 	(wire
 		(pts (xy 87.63 105.41) (xy 152.4 105.41))
@@ -312,6 +302,8 @@
 			)
 		)
 	)
+	(no_connect (at 88.9 179.07) (uuid "519f7732-3410-5b3f-8003-31f04ad50bf1"))
+	(no_connect (at 88.9 186.69) (uuid "77c5b94d-c91c-5ded-b896-0e32e25452a1"))
 	(no_connect (at 88.9 194.31) (uuid "cf928840-c4de-5f23-8059-054d1f9a471f"))
 	(no_connect (at 88.9 201.93) (uuid "045920a7-893a-555e-a11c-1e710ebca1a0"))
 	(no_connect (at 88.9 209.55) (uuid "53c855fd-2b97-51ff-8ddb-5226a0876c8a"))
@@ -335,17 +327,17 @@
 			(at 22.86 224.51999999999998 0)
 			(effects (font (size 1.27 1.27)) (justify left top))
 		)
-		(pin "SDA_HOST" bidirectional
+		(pin "SDA_BQ1" bidirectional
 			(at 88.9 179.07 0)
-			(uuid "516c0a49-3c2b-55de-ac3d-1f734278c1eb")
+			(uuid "487bcbe8-0434-5451-9a84-ef18fdec0e37")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
 			)
 		)
-		(pin "SCL_HOST" bidirectional
+		(pin "SCL_BQ1" bidirectional
 			(at 88.9 186.69 0)
-			(uuid "a01e9505-92d0-581b-953a-3ff9dc10c84b")
+			(uuid "6d18753f-45ea-5186-9601-0b622662ed63")
 			(effects
 				(font (size 1.27 1.27))
 				(justify right)
@@ -402,17 +394,6 @@
 		)
 		(uuid "b77736bc-93a3-586e-b7d4-7bf996704985")
 	)
-	(label "SDA_HOST"
-		(at 104.14 179.07 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "339d8e2e-489a-5651-8cfd-f15ada0733ae")
-	)
 	(label "SCL_HOST"
 		(at 87.63 97.79 0)
 		(fields_autoplaced yes)
@@ -423,17 +404,6 @@
 			(justify left)
 		)
 		(uuid "33d22a7f-3808-5506-8a33-c0d9e9039a93")
-	)
-	(label "SCL_HOST"
-		(at 104.14 186.69 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8e45d9c5-4799-5086-9bbf-72625f95f4ba")
 	)
 	(text "HOST DOMAIN   /   CELL0"
 		(at 22.86 49.53 0)
@@ -505,7 +475,7 @@
 		)
 		(uuid "3a47ab55-eca8-5b03-85c7-4d1adc989bc7")
 	)
-	(text "1   GPIO9 high opens U204. Configure lower BQ on the direct host bus.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640."
+	(text "Required after lower interface closure:\n1   GPIO9 high opens U204. Configure the lower address.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640."
 		(at 144.78 186.69 0)
 		(effects
 			(font
@@ -515,7 +485,7 @@
 		)
 		(uuid "ed202e1e-688b-56b8-8c9b-14c81c0fbfa3")
 	)
-	(text "OPEN   Lower BQ remains connected with its rail off. See lower sheet.\nOPEN   Both TS2 wake drivers require local VSS switching with REG1 off."
+	(text "OPEN   Lower SDA/SCL are disconnected from host.\nTS2 ports require independent wake power and reset-off control.\nUpper TS2 is referenced to CELL16. Do not connect a host GPIO."
 		(at 144.78 213.36 0)
 		(effects
 			(font

@@ -772,7 +772,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
         catalog, "Device:C", (184, 328), 0,
         f"C{cbase + 21}", "1uF", FP_C0603, GEOM["Device:C"], path,
     )
-    reg1_net = "REG1_BQ2" if upper else "REG1"
+    reg1_net = "REG1_BQ2" if upper else "REG1_BQ1"
     reg1_kind = "hier" if upper else "local"
     reg1 = stub("35", reg1_net, 12.7, reg1_kind, "bidirectional" if upper else "passive")
     lab(reg1_net, c_reg1["1"], 180, reg1_kind, "bidirectional")
@@ -799,7 +799,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     if upper:
         sda_name, scl_name = "SDA_BQ2", "SCL_BQ2"
     else:
-        sda_name, scl_name = "SDA_HOST", "SCL_HOST"
+        sda_name, scl_name = "SDA_BQ1", "SCL_BQ1"
     sda_h = lab(sda_name, (sda_r["1"][0], sda_r["1"][1] - 7.62), 270, "hier", "bidirectional")
     scl_h = lab(scl_name, (scl_r["1"][0], scl_r["1"][1] - 7.62), 270, "hier", "bidirectional")
     sch.wire(sda_r["1"], sda_h)
@@ -940,7 +940,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
                         (365, 292, "07   Wake interface")]:
         sch.text((x, y), title, 2)
     sch.text((220, 360), "OPEN   Select pulls at 100 kHz. Check rail limits,\nsink current and rise time for this segment.", 1.5)
-    sch.text((365, 360), f"OPEN   TS2 wake driver: pulse to {vss}, then release.\nCandidate: optical output powered from the host LED side.\nVerify leakage, pulse width and GPIO availability.", 1.5)
+    sch.text((365, 360), f"OPEN   TS2 is a {vss}-referenced contact port.\nPull low, then release. REG1 can be off.\nWake source, hot leakage and control are unresolved.", 1.5)
     sch.text((30, 390), "OPEN   Select stack-rated diodes, REG0 transistor and passive ratings. Check REGIN headroom and dissipation.", 1.5)
     sch.text((365, 54), "03   Current sense", 2)
     sch.text((365, 185), "04   Temperature inputs", 2)
@@ -950,7 +950,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     else:
         sch.text((365, 125), "OPEN   Confirm Kelvin pickup, shunt value and firmware sign/gain.", 1.5)
         sch.text((365, 265), "OPEN   Firmware assumes 10 kOhm / beta 3380 and 500 ohm series correction.", 1.5)
-        sch.text((220, 204), "OPEN   SDA/SCL connect directly to host. Lower powered-off isolation\nrequires a hardware decision; a second isolator is a candidate.", 1.5)
+        sch.text((220, 204), "OPEN   SDA_BQ1 and SCL_BQ1 stop at the sheet boundary.\nHost power sequencing and bus thresholds are unresolved.", 1.5)
     sch.opens = opens
     return sch
 
@@ -1108,8 +1108,8 @@ def build_root():
         return positions
 
     lower_pins = [
-        ("SDA_HOST", "bidirectional", False),
-        ("SCL_HOST", "bidirectional", False),
+        ("SDA_BQ1", "bidirectional", True),
+        ("SCL_BQ1", "bidirectional", True),
         ("CHG_NEG", "bidirectional", True),
         ("RST_SHUT_BQ1", "bidirectional", True),
         ("TS2_WAKE_BQ1", "bidirectional", True),
@@ -1169,10 +1169,6 @@ def build_root():
         sch.wire(start, iso[net])
         if index < 2:
             sch.label(net, start)
-        if index < 2:
-            end = (lower[net][0]+15.24, lower[net][1])
-            sch.wire(lower[net], end)
-            sch.label(net, end)
     for net in ("SDA_BQ2", "SCL_BQ2", "ALERT_BQ2", "REG1_BQ2"):
         sch.wire(iso[net], upper[net])
     sch.text((23, 49), "HOST DOMAIN   /   CELL0", 2)
@@ -1182,8 +1178,8 @@ def build_root():
     sch.text((300, 156), "Cells 17-32   |   upper address 0x08", 1.8)
     sch.text((23, 239), "Cells 1-16   |   lower address 0x08 at reset", 1.8)
     sch.text((145, 175), "Startup sequence", 2.3)
-    sch.text((145, 187), "1   GPIO9 high opens U204. Configure lower BQ on the direct host bus.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640.", 1.7)
-    sch.text((145, 213), "OPEN   Lower BQ remains connected with its rail off. See lower sheet.\nOPEN   Both TS2 wake drivers require local VSS switching with REG1 off.", 1.6)
+    sch.text((145, 187), "Required after lower interface closure:\n1   GPIO9 high opens U204. Configure the lower address.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640.", 1.7)
+    sch.text((145, 213), "OPEN   Lower SDA/SCL are disconnected from host.\nTS2 ports require independent wake power and reset-off control.\nUpper TS2 is referenced to CELL16. Do not connect a host GPIO.", 1.6)
     return sch
 
 
