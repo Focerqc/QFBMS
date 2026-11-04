@@ -15,6 +15,8 @@ import socketserver
 import subprocess
 import urllib.parse
 from PIL import Image
+from pypdf import PdfReader, PdfWriter
+import tempfile
 
 PORT = 5180
 TOOL_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -147,6 +149,50 @@ def render_schematic(board_full):
     if res.returncode != 0 or not os.path.isfile(out_pdf):
         raise RuntimeError(f"kicad-cli schematic export failed: {res.stderr or res.stdout}")
     return {"status": "ok", "pdf": rel(out_pdf), "timestamp": datetime.datetime.fromtimestamp(os.path.getmtime(out_pdf)).strftime("%b %d, %I:%M:%S %p")}
+
+
+def full_schematic_pdf_file(board_full):
+    key = hashlib.sha256(os.path.abspath(board_full).encode("utf-8")).hexdigest()[:12]
+    return os.path.join(REPO_ROOT, "exports", f"full-system-schematic-{key}.pdf")
+
+
+def render_full_schematic(board_full):
+    if not board_full.lower().endswith(".kicad_pcb"):
+        raise ValueError("path must be a .kicad_pcb")
+    main_schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
+    monitor_schematic = os.path.join(REPO_ROOT, "qfbms32-bq-monitors.kicad_sch")
+    if not os.path.isfile(main_schematic) or not os.path.isfile(monitor_schematic):
+        raise FileNotFoundError("Both the PCB-matched schematic and monitor project are required")
+
+    output_pdf = full_schematic_pdf_file(board_full)
+    os.makedirs(os.path.dirname(output_pdf), exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="qfbms-schematic-") as temp_dir:
+        parts = []
+        for name, schematic in (("Main schematic", main_schematic), ("Monitor project", monitor_schematic)):
+            part_pdf = os.path.join(temp_dir, name.replace(" ", "-") + ".pdf")
+            result = subprocess.run(
+                [KICAD_CLI, "sch", "export", "pdf", "--output", part_pdf, schematic],
+                capture_output=True, text=True, timeout=120,
+            )
+            if result.returncode or not os.path.isfile(part_pdf):
+                raise RuntimeError(f"{name} export failed: {result.stderr or result.stdout}")
+            parts.append((name, part_pdf))
+
+        writer = PdfWriter()
+        for title, part_pdf in parts:
+            start_page = len(writer.pages)
+            reader = PdfReader(part_pdf)
+            for page in reader.pages:
+                writer.add_page(page)
+            writer.add_outline_item(title, start_page)
+        writer.add_metadata({
+            "/Title": "QFBMS system schematic preview",
+            "/Subject": "Main schematic followed by the separate BQ monitor project. Monitor circuitry is not reconciled into the main schematic.",
+        })
+        with open(output_pdf, "wb") as stream:
+            writer.write(stream)
+    return {"status": "ok", "pdf": rel(output_pdf), "pages": len(PdfReader(output_pdf).pages),
+            "timestamp": datetime.datetime.fromtimestamp(os.path.getmtime(output_pdf)).strftime("%b %d, %I:%M:%S %p")}
 
 
 def get_render_3d_status(board_full, kind=None):
@@ -301,6 +347,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(data)
                 return
 
+            if u.path == "/api/full_schematic_pdf":
+                full = safe_path(q.get("path", [""])[0])
+                if not full.lower().endswith(".kicad_pcb"):
+                    raise ValueError("path must be a .kicad_pcb")
+                pdf = full_schematic_pdf_file(full)
+                if not os.path.isfile(pdf):
+                    return self.send_error(404)
+                with open(pdf, "rb") as f:
+                    data = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/pdf")
+                self.send_header("Content-Length", str(len(data)))
+                self.send_header("Content-Disposition", "inline; filename=qfbms-full-system-schematic.pdf")
+                self.end_headers()
+                self.wfile.write(data)
+                return
+
             if u.path == "/api/image":
                 full = safe_path(q.get("path", [""])[0])
                 if not os.path.isfile(full):
@@ -330,6 +393,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if u.path == "/api/render_schematic":
                 full = safe_path(q.get("path", [""])[0])
                 return self.send_json(render_schematic(full))
+
+            if u.path == "/api/render_full_schematic":
+                full = safe_path(q.get("path", [""])[0])
+                return self.send_json(render_full_schematic(full))
 
             if u.path == "/api/render_3d":
                 full = safe_path(q.get("path", [""])[0])

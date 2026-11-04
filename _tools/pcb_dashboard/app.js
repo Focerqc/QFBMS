@@ -1008,7 +1008,8 @@
     }
   }
 
-  async function triggerRenderSchematic() {
+  let fullSchematicView = false;
+  async function triggerRenderSchematic(fullSystem = false) {
     if (!S.boardPath) return toast('No board selected', 'warn');
     const btn = $('btnSchematic');
     const oldHtml = btn ? btn.innerHTML : '';
@@ -1018,7 +1019,8 @@
       btn.textContent = 'Rendering schematic…';
     }
     try {
-      const response = await fetch(`/api/render_schematic?path=${encodeURIComponent(S.boardPath)}`, { method: 'POST' });
+      const endpoint = fullSystem ? 'render_full_schematic' : 'render_schematic';
+      const response = await fetch(`/api/${endpoint}?path=${encodeURIComponent(S.boardPath)}`, { method: 'POST' });
       const responseText = await response.text();
       let res;
       try {
@@ -1031,8 +1033,12 @@
       }
       if (!response.ok && !res.error) throw new Error(`Dashboard returned HTTP ${response.status}.`);
       if (res.error) throw new Error(res.error);
-      $('schematicFrame').src = `/api/schematic_pdf?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`;
-      $('schematicSubTitle').textContent = `Rendered ${res.timestamp} · scroll to navigate sheets`;
+      fullSchematicView = fullSystem;
+      const pdfEndpoint = fullSystem ? 'full_schematic_pdf' : 'schematic_pdf';
+      $('schematicFrame').src = `/api/${pdfEndpoint}?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`;
+      $('schematicSubTitle').textContent = fullSystem
+        ? `Main schematic, then separate monitor project · ${res.pages} pages · ${res.timestamp}`
+        : `Rendered ${res.timestamp} · scroll to navigate sheets`;
       $('schematicModal').classList.add('open');
     } catch (err) {
       toast(`Schematic render failed: ${err.message}`, 'error');
@@ -2444,8 +2450,10 @@
     if (btnTop) btnTop.onclick = () => triggerRender3D('top');
     const btnSchematic = $('btnSchematic');
     if (btnSchematic) btnSchematic.onclick = triggerRenderSchematic;
+    const btnFullSchematic = $('btnFullSchematic');
+    if (btnFullSchematic) btnFullSchematic.onclick = () => triggerRenderSchematic(true);
     const btnSchematicRerender = $('btnSchematicRerender');
-    if (btnSchematicRerender) btnSchematicRerender.onclick = triggerRenderSchematic;
+    if (btnSchematicRerender) btnSchematicRerender.onclick = () => triggerRenderSchematic(fullSchematicView);
     const btnSchematicClose = $('btnSchematicClose');
     if (btnSchematicClose) btnSchematicClose.onclick = closeSchematicViewer;
     $('schematicModal')?.addEventListener('click', e => { if (e.target === $('schematicModal')) closeSchematicViewer(); });
