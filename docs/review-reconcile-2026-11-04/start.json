@@ -1,0 +1,7 @@
+{
+  "commit": "4575007f85af5ec796bccab51e511531217a5d9e\n",
+  "branch": "feature/bq-monitors\n",
+  "worktrees": "worktree C:/Users/quinn/Documents/GitHub/QFBMS\nHEAD 4575007f85af5ec796bccab51e511531217a5d9e\nbranch refs/heads/feature/bq-monitors\n\nworktree /home/quinn/Documents/GitHub/QFBMS-monitor-review-f056722\nHEAD f056722b5af52c7b604633354ede1dbadf246c85\ndetached\nprunable gitdir file points to non-existent location\n\n",
+  "status_after_creating_review_directory": "?? docs/review-reconcile-2026-11-04/\n",
+  "initial_status_porcelain_v1": ""
+}

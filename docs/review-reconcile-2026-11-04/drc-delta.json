@@ -1,0 +1,1675 @@
+{
+  "violations": {
+    "before": 651,
+    "after": 630,
+    "added": [
+      {
+        "description": "Items shorting two nets (nets  and SHUNT_MID)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 22.5
+            },
+            "uuid": "13117129-2788-4eff-b198-89be1cace834"
+          },
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and SHUNT_MID)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R_S1 on F.Cu",
+            "pos": {
+              "x": 18.5425,
+              "y": 15.0
+            },
+            "uuid": "b63c458b-e766-4530-92c6-81c8e2d07dec"
+          },
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of D_CHG3 on F.Cu",
+            "pos": {
+              "x": 6.75,
+              "y": 14.4
+            },
+            "uuid": "5cfe49c0-38cc-4feb-b7a1-fa56a95b3141"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and SHUNT_MID)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R_S2 on F.Cu",
+            "pos": {
+              "x": 18.4125,
+              "y": 17.0
+            },
+            "uuid": "be05795c-4eb6-4b52-bf5c-b85aea4b099f"
+          },
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_CHG2 on F.Cu",
+            "pos": {
+              "x": 4.88,
+              "y": 14.25
+            },
+            "uuid": "d0bcf034-5863-4c29-894b-9019b5c39273"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets SHUNT_MID and )",
+        "items": [
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 19.2
+            },
+            "uuid": "d86a1c9d-8973-475b-bb2a-7f8a259757fc"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "PTH pad TAB1 [<no net>] of J_BAT1",
+            "pos": {
+              "x": 3.4,
+              "y": 19.3
+            },
+            "uuid": "916b89f8-97b1-4d00-a33e-79b6f839ee99"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of D_CHG2 on F.Cu",
+            "pos": {
+              "x": 4.88,
+              "y": 17.05
+            },
+            "uuid": "89e195e0-0f3a-4382-a3a6-e1cd87695812"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and CHG-)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          },
+          {
+            "description": "PTH pad 2 [CHG-] of J_CHG1",
+            "pos": {
+              "x": 14.342,
+              "y": 9.5
+            },
+            "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on B.Cu",
+            "pos": {
+              "x": 12.0,
+              "y": 1.0
+            },
+            "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+          },
+          {
+            "description": "PTH pad 2 [CHG-] of J_CHG1",
+            "pos": {
+              "x": 14.342,
+              "y": 9.5
+            },
+            "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 19.2
+            },
+            "uuid": "d86a1c9d-8973-475b-bb2a-7f8a259757fc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 22.5
+            },
+            "uuid": "13117129-2788-4eff-b198-89be1cace834"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R_S2 on F.Cu",
+            "pos": {
+              "x": 18.4125,
+              "y": 17.0
+            },
+            "uuid": "be05795c-4eb6-4b52-bf5c-b85aea4b099f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [SHUNT_MID] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R_S1 on F.Cu",
+            "pos": {
+              "x": 18.5425,
+              "y": 15.0
+            },
+            "uuid": "b63c458b-e766-4530-92c6-81c8e2d07dec"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      }
+    ],
+    "removed": [
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 22.5
+            },
+            "uuid": "13117129-2788-4eff-b198-89be1cace834"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets CELL32_FUSED and )",
+        "items": [
+          {
+            "description": "Pad D [CELL32_FUSED] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.7,
+              "y": 26.5
+            },
+            "uuid": "4a75870a-e7fa-4706-b4ee-a2f6a2afa29f"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 15.5,
+              "y": 23.5
+            },
+            "uuid": "a05370c4-ce60-4d6b-bed9-fdd6899c39a5"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and SHUNT_MID)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [SHUNT_MID] of R_SH2 on F.Cu",
+            "pos": {
+              "x": 20.9375,
+              "y": 15.8
+            },
+            "uuid": "cdf33bb8-1d0d-42ed-9d68-ce129846c03f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R_S1 on F.Cu",
+            "pos": {
+              "x": 18.5425,
+              "y": 15.0
+            },
+            "uuid": "b63c458b-e766-4530-92c6-81c8e2d07dec"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and CHG-)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on B.Cu",
+            "pos": {
+              "x": 12.0,
+              "y": 1.0
+            },
+            "uuid": "ecadddc8-e4f9-4921-88fe-14e10bc5a686"
+          },
+          {
+            "description": "PTH pad 2 [CHG-] of J_CHG1",
+            "pos": {
+              "x": 14.342,
+              "y": 9.5
+            },
+            "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R_S2 on F.Cu",
+            "pos": {
+              "x": 18.4125,
+              "y": 17.0
+            },
+            "uuid": "be05795c-4eb6-4b52-bf5c-b85aea4b099f"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets PACK+ and )",
+        "items": [
+          {
+            "description": "Pad 5 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.1,
+              "y": 20.25
+            },
+            "uuid": "5bacc91b-a6be-40b9-972f-19d1ff085e9a"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets  and )",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 19.2
+            },
+            "uuid": "d86a1c9d-8973-475b-bb2a-7f8a259757fc"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Items shorting two nets (nets PACK+ and )",
+        "items": [
+          {
+            "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 25.3,
+              "y": 20.25
+            },
+            "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 22.9,
+              "y": 20.25
+            },
+            "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of D_CHG3 on F.Cu",
+            "pos": {
+              "x": 6.75,
+              "y": 14.4
+            },
+            "uuid": "5cfe49c0-38cc-4feb-b7a1-fa56a95b3141"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_CHG2 on F.Cu",
+            "pos": {
+              "x": 4.88,
+              "y": 14.25
+            },
+            "uuid": "d0bcf034-5863-4c29-894b-9019b5c39273"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 7 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 21.7,
+              "y": 20.25
+            },
+            "uuid": "e0ddbd22-5248-471d-a2a3-9a875087365c"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Pad 8 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 20.5,
+              "y": 20.25
+            },
+            "uuid": "61105240-ce7d-466c-b56f-56882f07e847"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "PTH pad TAB1 [<no net>] of J_BAT1",
+            "pos": {
+              "x": 3.4,
+              "y": 19.3
+            },
+            "uuid": "916b89f8-97b1-4d00-a33e-79b6f839ee99"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of D_CHG2 on F.Cu",
+            "pos": {
+              "x": 4.88,
+              "y": 17.05
+            },
+            "uuid": "89e195e0-0f3a-4382-a3a6-e1cd87695812"
+          },
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0000 mm)",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 3.5,
+              "y": 8.5
+            },
+            "uuid": "b1145db9-14c1-4999-ab3f-bca64a976399"
+          },
+          {
+            "description": "PTH pad 2 [CHG-] of J_CHG1",
+            "pos": {
+              "x": 14.342,
+              "y": 9.5
+            },
+            "uuid": "ed6c4012-895f-4c82-809a-c37a2deda6c2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 15.5,
+              "y": 23.5
+            },
+            "uuid": "a05370c4-ce60-4d6b-bed9-fdd6899c39a5"
+          },
+          {
+            "description": "Pad D [CELL32_FUSED] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.7,
+              "y": 26.5
+            },
+            "uuid": "4a75870a-e7fa-4706-b4ee-a2f6a2afa29f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 19.2
+            },
+            "uuid": "d86a1c9d-8973-475b-bb2a-7f8a259757fc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of D_S1 on F.Cu",
+            "pos": {
+              "x": 17.68,
+              "y": 22.5
+            },
+            "uuid": "13117129-2788-4eff-b198-89be1cace834"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 1 [SHUNT_MID] of R_SH2 on F.Cu",
+            "pos": {
+              "x": 20.9375,
+              "y": 15.8
+            },
+            "uuid": "cdf33bb8-1d0d-42ed-9d68-ce129846c03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R_S1 on F.Cu",
+            "pos": {
+              "x": 18.5425,
+              "y": 15.0
+            },
+            "uuid": "b63c458b-e766-4530-92c6-81c8e2d07dec"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R_S2 on F.Cu",
+            "pos": {
+              "x": 18.4125,
+              "y": 17.0
+            },
+            "uuid": "be05795c-4eb6-4b52-bf5c-b85aea4b099f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 25.3,
+              "y": 20.25
+            },
+            "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 5 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.1,
+              "y": 20.25
+            },
+            "uuid": "5bacc91b-a6be-40b9-972f-19d1ff085e9a"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 22.9,
+              "y": 20.25
+            },
+            "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 7 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 21.7,
+              "y": 20.25
+            },
+            "uuid": "e0ddbd22-5248-471d-a2a3-9a875087365c"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Polygon [<no net>] on F.Cu",
+            "pos": {
+              "x": 18.0,
+              "y": 14.6
+            },
+            "uuid": "cad39c70-0b10-448b-a789-0bdbc12c340d"
+          },
+          {
+            "description": "Pad 8 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 20.5,
+              "y": 20.25
+            },
+            "uuid": "61105240-ce7d-466c-b56f-56882f07e847"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "Footprint R_DSG1",
+            "pos": {
+              "x": 30.78,
+              "y": 29.83
+            },
+            "uuid": "21397b10-2728-4e10-889a-f1fcb338716e"
+          },
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "courtyards_overlap"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "Footprint F1",
+            "pos": {
+              "x": 17.43,
+              "y": 27.48
+            },
+            "uuid": "2cc253d6-50fe-463e-a6d1-e2982817e05b"
+          },
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "courtyards_overlap"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "Footprint FB1",
+            "pos": {
+              "x": 30.9,
+              "y": 26.58
+            },
+            "uuid": "8e948ea7-f5f9-434f-88b1-22796567eeaf"
+          },
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "courtyards_overlap"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "Footprint J_COMM1",
+            "pos": {
+              "x": 34.1,
+              "y": 22.8
+            },
+            "uuid": "c886e845-e905-4972-b1f3-291fc13c0b84"
+          },
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "courtyards_overlap"
+      },
+      {
+        "description": "Silkscreen clipped by board edge",
+        "items": [
+          {
+            "description": "Segment on Edge.Cuts",
+            "pos": {
+              "x": 129.0,
+              "y": 32.0
+            },
+            "uuid": "bd71a383-2692-4bc1-a052-0a29afcb42ca"
+          },
+          {
+            "description": "Reference field of Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 32.1
+            },
+            "uuid": "22f8daac-4fc3-45d1-8ba6-51e6306e9157"
+          }
+        ],
+        "severity": "warning",
+        "type": "silk_edge_clearance"
+      },
+      {
+        "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6500 mm)",
+        "items": [
+          {
+            "description": "Reference field of Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 32.1
+            },
+            "uuid": "22f8daac-4fc3-45d1-8ba6-51e6306e9157"
+          }
+        ],
+        "severity": "warning",
+        "type": "text_height"
+      },
+      {
+        "description": "Silkscreen clipped by solder mask",
+        "items": [
+          {
+            "description": "Segment of Q2 on F.Silkscreen",
+            "pos": {
+              "x": 19.75,
+              "y": 19.06
+            },
+            "uuid": "4e61e6b3-d0b1-4a75-9b29-0e055ff3c5d7"
+          }
+        ],
+        "severity": "warning",
+        "type": "silk_over_copper"
+      }
+    ],
+    "remaining_by_type": {
+      "tracks_crossing": 60,
+      "shorting_items": 199,
+      "clearance": 23,
+      "hole_clearance": 15,
+      "copper_edge_clearance": 4,
+      "drill_out_of_range": 56,
+      "solder_mask_bridge": 188,
+      "courtyards_overlap": 19,
+      "silk_edge_clearance": 4,
+      "lib_footprint_mismatch": 1,
+      "text_height": 23,
+      "silk_over_copper": 20,
+      "silk_overlap": 18
+    }
+  },
+  "unconnected_items": {
+    "before": 146,
+    "after": 139,
+    "added": [
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Track [CELL32] on F.Cu, length 2.7750 mm",
+            "pos": {
+              "x": 36.89,
+              "y": 27.525
+            },
+            "uuid": "c659ec06-221b-4f22-ac53-9cc23e0ade5d"
+          },
+          {
+            "description": "Polygon [CELL32] on B.Cu",
+            "pos": {
+              "x": 10.5,
+              "y": 24.0
+            },
+            "uuid": "7d84e315-9df7-4058-937b-9f7c74a99c98"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      }
+    ],
+    "removed": [
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Track [CELL32] on F.Cu, length 4.2850 mm",
+            "pos": {
+              "x": 41.175,
+              "y": 27.525
+            },
+            "uuid": "23d35eea-026b-47ae-a711-9465245678fc"
+          },
+          {
+            "description": "Polygon [CELL32] on B.Cu",
+            "pos": {
+              "x": 10.5,
+              "y": 24.0
+            },
+            "uuid": "7d84e315-9df7-4058-937b-9f7c74a99c98"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 2 [CELL32_FUSED] of F1 on F.Cu",
+            "pos": {
+              "x": 17.43,
+              "y": 24.58
+            },
+            "uuid": "844fc8f1-cedb-4f70-836d-743029ed79ac"
+          },
+          {
+            "description": "Pad D [CELL32_FUSED] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.7,
+              "y": 26.5
+            },
+            "uuid": "4a75870a-e7fa-4706-b4ee-a2f6a2afa29f"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 8 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 20.5,
+              "y": 20.25
+            },
+            "uuid": "61105240-ce7d-466c-b56f-56882f07e847"
+          },
+          {
+            "description": "Pad 7 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 21.7,
+              "y": 20.25
+            },
+            "uuid": "e0ddbd22-5248-471d-a2a3-9a875087365c"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 7 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 21.7,
+              "y": 20.25
+            },
+            "uuid": "e0ddbd22-5248-471d-a2a3-9a875087365c"
+          },
+          {
+            "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 22.9,
+              "y": 20.25
+            },
+            "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 22.9,
+              "y": 20.25
+            },
+            "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+          },
+          {
+            "description": "Pad 5 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.1,
+              "y": 20.25
+            },
+            "uuid": "5bacc91b-a6be-40b9-972f-19d1ff085e9a"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 5 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.1,
+              "y": 20.25
+            },
+            "uuid": "5bacc91b-a6be-40b9-972f-19d1ff085e9a"
+          },
+          {
+            "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 25.3,
+              "y": 20.25
+            },
+            "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 25.3,
+              "y": 20.25
+            },
+            "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+          },
+          {
+            "description": "Pad 3 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 26.5,
+              "y": 20.25
+            },
+            "uuid": "02150674-f791-473e-b6b7-b5a5abea8f1a"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      },
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "Pad 3 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 26.5,
+              "y": 20.25
+            },
+            "uuid": "02150674-f791-473e-b6b7-b5a5abea8f1a"
+          },
+          {
+            "description": "Pad 2 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 27.7,
+              "y": 20.25
+            },
+            "uuid": "e38e4688-a29a-4868-bd5c-ee81bfc820e4"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      }
+    ],
+    "remaining_by_type": {
+      "unconnected_items": 139
+    }
+  },
+  "schematic_parity": {
+    "before": 366,
+    "after": 365,
+    "added": [
+      {
+        "description": "Missing footprint Q2 (AGM15T03LL (DSG FET))",
+        "items": [],
+        "severity": "warning",
+        "type": "missing_footprint"
+      },
+      {
+        "description": "Pad net (CELL5) doesn't match net given by schematic (/BQ1_VC5)",
+        "items": [
+          {
+            "description": "Pad 1 [CELL5] of R_F28 on F.Cu",
+            "pos": {
+              "x": 90.971,
+              "y": 30.3
+            },
+            "uuid": "5a9a7f83-444c-4652-876f-ad6b7b47250b"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (BQ1_VC5) doesn't match net given by schematic (/CELL5)",
+        "items": [
+          {
+            "description": "Pad 2 [BQ1_VC5] of R_F28 on F.Cu",
+            "pos": {
+              "x": 91.991,
+              "y": 30.3
+            },
+            "uuid": "ba581cdc-4e06-4764-bb4d-e1ab4d46c89b"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (CELL4) doesn't match net given by schematic (/BQ1_VC4)",
+        "items": [
+          {
+            "description": "Pad 1 [CELL4] of R_F29 on F.Cu",
+            "pos": {
+              "x": 92.974,
+              "y": 30.3
+            },
+            "uuid": "3ea8321e-9470-4258-9b21-66cd43650db7"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (BQ1_VC4) doesn't match net given by schematic (/CELL4)",
+        "items": [
+          {
+            "description": "Pad 2 [BQ1_VC4] of R_F29 on F.Cu",
+            "pos": {
+              "x": 93.994,
+              "y": 30.3
+            },
+            "uuid": "dbcbf714-456d-4b99-8b0a-72e4b7ba0b55"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (CELL3) doesn't match net given by schematic (/BQ1_VC3)",
+        "items": [
+          {
+            "description": "Pad 1 [CELL3] of R_F30 on F.Cu",
+            "pos": {
+              "x": 94.977,
+              "y": 30.3
+            },
+            "uuid": "550e051b-a776-4805-8323-2fd26dd7b2ac"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (BQ1_VC3) doesn't match net given by schematic (/CELL3)",
+        "items": [
+          {
+            "description": "Pad 2 [BQ1_VC3] of R_F30 on F.Cu",
+            "pos": {
+              "x": 95.997,
+              "y": 30.3
+            },
+            "uuid": "b4b956a1-bc5b-4102-b95d-bd8bd64e6172"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (CELL2) doesn't match net given by schematic (/BQ1_VC2)",
+        "items": [
+          {
+            "description": "Pad 1 [CELL2] of R_F31 on F.Cu",
+            "pos": {
+              "x": 96.98,
+              "y": 30.3
+            },
+            "uuid": "223b4955-02b3-4102-8c38-49e90406ff2f"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (BQ1_VC2) doesn't match net given by schematic (/CELL2)",
+        "items": [
+          {
+            "description": "Pad 2 [BQ1_VC2] of R_F31 on F.Cu",
+            "pos": {
+              "x": 98.0,
+              "y": 30.3
+            },
+            "uuid": "025bfcd2-d87c-4d29-99de-d2df850b4df4"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (CELL1) doesn't match net given by schematic (/BQ1_VC1)",
+        "items": [
+          {
+            "description": "Pad 1 [CELL1] of R_F32 on F.Cu",
+            "pos": {
+              "x": 98.983,
+              "y": 30.3
+            },
+            "uuid": "1bae9b26-f353-43e3-b724-587088097312"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      }
+    ],
+    "removed": [
+      {
+        "description": "Value (Q2) doesn't match symbol value (AGM15T03LL)",
+        "items": [
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "footprint_symbol_mismatch"
+      },
+      {
+        "description": "TOLL-8_AGM15T03LL doesn't match footprint given by symbol (qfbms:TOLL-8_AGM15T03LL)",
+        "items": [
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 24.7,
+              "y": 24.9
+            },
+            "uuid": "d2561192-7e11-47fc-b9c6-24231101a253"
+          }
+        ],
+        "severity": "warning",
+        "type": "footprint_symbol_mismatch"
+      },
+      {
+        "description": "Pad net (Q2_GATE) doesn't match net given by schematic (/Q2_GATE)",
+        "items": [
+          {
+            "description": "Pad 1 [Q2_GATE] of Q2 on F.Cu",
+            "pos": {
+              "x": 28.9,
+              "y": 20.25
+            },
+            "uuid": "fbd29ac7-6511-4479-86e1-56eb85a26a80"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (PACK+) doesn't match net given by schematic (/PACK+)",
+        "items": [
+          {
+            "description": "Pad 2 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 27.7,
+              "y": 20.25
+            },
+            "uuid": "e38e4688-a29a-4868-bd5c-ee81bfc820e4"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 3 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 26.5,
+              "y": 20.25
+            },
+            "uuid": "02150674-f791-473e-b6b7-b5a5abea8f1a"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 4 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 25.3,
+              "y": 20.25
+            },
+            "uuid": "ae05c421-70cf-42da-a29b-545d4c686cb9"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 5 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.1,
+              "y": 20.25
+            },
+            "uuid": "5bacc91b-a6be-40b9-972f-19d1ff085e9a"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 6 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 22.9,
+              "y": 20.25
+            },
+            "uuid": "55ea4560-eae9-4444-b07e-d7e77d7b3f28"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 7 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 21.7,
+              "y": 20.25
+            },
+            "uuid": "e0ddbd22-5248-471d-a2a3-9a875087365c"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "No corresponding pin found in schematic",
+        "items": [
+          {
+            "description": "Pad 8 [PACK+] of Q2 on F.Cu",
+            "pos": {
+              "x": 20.5,
+              "y": 20.25
+            },
+            "uuid": "61105240-ce7d-466c-b56f-56882f07e847"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      {
+        "description": "Pad net (CELL32_FUSED) doesn't match net given by schematic (/CELL32_FUSED)",
+        "items": [
+          {
+            "description": "Pad D [CELL32_FUSED] of Q2 on F.Cu",
+            "pos": {
+              "x": 24.7,
+              "y": 26.5
+            },
+            "uuid": "4a75870a-e7fa-4706-b4ee-a2f6a2afa29f"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      }
+    ],
+    "remaining_by_type": {
+      "footprint_symbol_mismatch": 103,
+      "net_conflict": 199,
+      "missing_footprint": 3,
+      "footprint_symbol_field_mismatch": 4,
+      "extra_footprint": 56
+    }
+  }
+}

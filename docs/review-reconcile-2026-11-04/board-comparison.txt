@@ -1,0 +1,8 @@
+Only effective copper-net change: unchanged F.Cu polygon cad39c70 now resolves to SHUNT_MID.
+Footprints 150 -> 149 ; physical pads 655 -> 646
+Only Q2 removed. All 45 protected footprint blocks identical, 0 changed retained pad assignments.
+Identical copper geometry, all remaining direct pad contacts and zone: Counter({'track': 107, 'copper graphic': 9}) [{'uuid': '8b9424b3-de73-4dd4-a4b8-4eb909b74ace', 'owner': 'U_ESP1', 'name': 'antenna keepout', 'net': '', 'rule_area': True}]
+Main schematic, supplied/maintained firmware and custom footprints match starting SHA-256.
+violations 651 -> 630 added 14 removed 35
+unconnected_items 146 -> 139 added 1 removed 8
+schematic_parity 366 -> 365 added 10 removed 11
