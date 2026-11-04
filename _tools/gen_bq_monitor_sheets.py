@@ -5,7 +5,6 @@ import json
 import math
 import re
 import uuid
-import textwrap
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -229,7 +228,7 @@ def make_tmux154e_symbol():
     """Small explicit symbol using the TI TMUX154E DGS 10-pin map."""
     pins = [
         ("passive", "A0", "2", -15.24, 5.08, 0),
-        ("passive", "A1", "3", -15.24, 0, 0),
+        ("passive", "A2", "3", -15.24, 0, 0),
         ("passive", "A", "4", 15.24, 5.08, 180),
         ("power_in", "GND", "5", -5.08, -12.7, 90),
         ("passive", "B", "6", 15.24, -2.54, 180),
@@ -408,6 +407,23 @@ class Sch:
         if rot == 90:
             ref_at = (at[0], at[1] + 3.2)
             val_at = (at[0], at[1] - 3.2)
+        if lib_id in ("Device:R", "Device:C", "Device:Thermistor") and rot == 0:
+            ref_at = (at[0] + 7, at[1] - 1.5)
+            val_at = (at[0] + 7, at[1] + 1.5)
+        if lib_id == "Transistor_BJT:Q_NPN_BCE":
+            ref_at = (at[0]+11,at[1]-2)
+            val_at = (at[0]+11,at[1]+1)
+        if lib_id == "Device:D":
+            ref_at = (at[0], at[1] - 3)
+            val_at = (at[0], at[1] + 3)
+        if ref in ("U204", "U_ISO"):
+            ref_at = (at[0], at[1]-21)
+            val_at = (at[0], at[1]-18)
+        if ref == "U205":
+            ref_at = (at[0], at[1]-25)
+            val_at = (at[0], at[1]-21)
+        elif not bom:
+            val_at = (at[0], at[1] + (5 if lib_id == "power:GND" else -5))
         bom_s = "yes" if bom else "no"
         board_s = "yes" if bom else "no"
         self.add(
@@ -423,11 +439,11 @@ class Sch:
 		(dnp no)
 		(uuid "{uid(f"{self.file_uuid}:part:{identity}")}")
 		(property "Reference" "{ref}"
-			(at {ref_at[0]} {ref_at[1]} 0)
+			(at {ref_at[0]} {ref_at[1]} {rot % 180})
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Value" "{value}"
-			(at {val_at[0]} {val_at[1]} 0)
+			(at {val_at[0]} {val_at[1]} {rot % 180})
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Footprint" "{footprint}"
@@ -451,7 +467,7 @@ class Sch:
 		)
 	)"""
         )
-        if not bom:
+        if not bom and ref != "U205":
             self.body[-1] = self.body[-1].replace('(effects (font (size 1.27 1.27)))', '(effects (font (size 1.27 1.27)) (hide yes))', 1)
         return world
 
@@ -492,8 +508,8 @@ class Sch:
 	(paper "{self.paper}")
 	(title_block
 		(title {sexpr_str(self.title)})
-		(date "2026-11-03")
-		(rev "0.1")
+		(date "2026-11-04")
+		(rev "0.2")
 		(comment 1 {sexpr_str(self.comment)})
 	)
 	(lib_symbols
@@ -578,7 +594,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
         rt_base = 1
     sch = Sch(
         file_uuid,
-        "A1",
+        "A2",
         title,
         "Charge-only monitor sheet. Do not import this netlist into qfbms32.kicad_pcb.",
         page,
@@ -589,7 +605,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     def mark(ref, function):
         opens.append(f"{ref}: {function}")
 
-    ic = (368.3, 228.6)
+    ic = (295.91, 128.27)
     sch.part(
         catalog,
         "qfbms:BQ7695202PFB",
@@ -628,11 +644,11 @@ def build_monitor_sheet(upper, catalog, bq_pins):
         return dest
 
     # --- cell filters: 20 ohm + 220 nF, copied from SLUSE13B 7.3 and EVM 5.4 ---
-    base_y = 88.9
+    base_y = 60.96
     step = 12.7
-    y_of = {n: round(base_y + n * step, 2) for n in range(17)}
-    rx = 127.0
-    cap_x = 165.1
+    y_of = {n: round(base_y + (16 - n) * step, 2) for n in range(17)}
+    rx = 63.5
+    cap_x = 100.33
     for n in range(17):
         y = y_of[n]
         pins = sch.part(
@@ -671,18 +687,15 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     # VSS and exposed pad.
     vss_pt = bq["17"]
     ep = bq["49"]
-    bus_x = vss_pt[0] - 20.32
-    sch.wire(vss_pt, (vss_pt[0], vss_pt[1] - 7.62))
-    sch.wire((vss_pt[0], vss_pt[1] - 7.62), (bus_x, vss_pt[1] - 7.62))
-    sch.wire(ep, (ep[0], vss_pt[1] - 7.62))
-    g_ic = pwr(vss, (bus_x, vss_pt[1] - 12.7))
-    sch.wire((bus_x, vss_pt[1] - 7.62), g_ic)
-    flag(sch, catalog, (bus_x - 10.16, vss_pt[1] - 12.7), path, nref)
-    sch.wire((bus_x - 10.16, vss_pt[1] - 12.7), g_ic)
+    g_ic = pwr(vss, (ep[0], ep[1] + 7.62))
+    sch.wire(vss_pt, g_ic)
+    flag_pt = (g_ic[0] + 27.94, g_ic[1])
+    flag(sch, catalog, flag_pt, path, nref)
+    sch.wire(g_ic, flag_pt)
 
     # --- supply: BAT, REG0, REG18, REG1, CP1 ---
     stack = f"CELL{cell0 + 16}"
-    sx, sy = 470.0, 470.0
+    sx, sy = 50.8, 360.68
     stack_pt = lab(stack, (sx, sy), 180, "global")
     d_bat = sch.part(
         catalog, "Device:D", (sx + 25.4, sy), 180,
@@ -700,13 +713,13 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     lab("BAT_PIN", bat_node, 0, "local")
     for i, (val, fp, dx) in enumerate((("1uF", "", 0), ("100pF", "", 12))):
         cap = sch.part(
-            catalog, "Device:C", (bat_node[0] + dx, sy - 12), 0,
+            catalog, "Device:C", (bat_node[0] + dx, sy + 12), 0,
             f"C{cbase + 17 + i}", val, fp, GEOM["Device:C"], path,
         )
         sch.wire((bat_node[0] + dx, sy), cap["1"])
         if dx:
             sch.wire(bat_node, (bat_node[0] + dx, sy))
-        gg = pwr(vss, (cap["2"][0], cap["2"][1] - 6))
+        gg = pwr(vss, (cap["2"][0], cap["2"][1] + 6))
         sch.wire(cap["2"], gg)
     stub("47", "BAT_PIN", 15.24)
     stub("46", "BAT_PIN", 15.24)
@@ -718,7 +731,7 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     )
     mark(qref, "REG0 NPN. MPN and footprint are OPEN. Collector-emitter must tolerate this monitor's own stack, not the full 32s pack.")
     d_col = sch.part(
-        catalog, "Device:D", (q["2"][0] - 3.81, q["2"][1] + 12), 180,
+        catalog, "Device:D", (q["2"][0] - 3.81, q["2"][1] - 12), 180,
         f"D{dbase + 1}", "OPEN", "", GEOM["Device:D"], path,
     )
     mark(f"D{dbase + 1}", "REG0 collector diode. MPN, voltage rating, and footprint are OPEN.")
@@ -727,49 +740,49 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     breg = lab("BREG", (q["1"][0] - 12, q["1"][1]), 180, "local")
     sch.wire(breg, q["1"])
     r_breg = sch.part(
-        catalog, "Device:R", (q["1"][0] - 12, q["1"][1] - 12), 0,
+        catalog, "Device:R", (q["1"][0] - 12, q["1"][1] + 12), 0,
         f"R{rbase + 18}", "OPEN", FP_R0603, GEOM["Device:R"], path,
     )
     mark(f"R{rbase + 18}", "BREG-to-VSS resistor. SLUSE13B 16.2.2 says a large resistor such as 10 MOhm; the value is not otherwise fixed.")
     sch.wire(breg, r_breg["1"])
-    gg = pwr(vss, (r_breg["2"][0], r_breg["2"][1] - 6))
+    gg = pwr(vss, (r_breg["2"][0], r_breg["2"][1] + 6))
     sch.wire(r_breg["2"], gg)
     regin = lab("REGIN", (q["3"][0] + 12, q["3"][1]), 0, "local")
     sch.wire(q["3"], regin)
     c_regin = sch.part(
-        catalog, "Device:C", (q["3"][0] + 12, q["3"][1] - 12), 0,
+        catalog, "Device:C", (q["3"][0] + 12, q["3"][1] + 12), 0,
         f"C{cbase + 19}", "22nF", FP_C0603, GEOM["Device:C"], path,
     )
     sch.wire(regin, c_regin["1"])
-    gg = pwr(vss, (c_regin["2"][0], c_regin["2"][1] - 6))
+    gg = pwr(vss, (c_regin["2"][0], c_regin["2"][1] + 6))
     sch.wire(c_regin["2"], gg)
     stub("37", "BREG", 20.32)
     stub("36", "REGIN", 20.32)
 
     c_reg18 = sch.part(
-        catalog, "Device:C", (bq["24"][0] + 28, bq["24"][1] - 10), 0,
+        catalog, "Device:C", (154, 328), 0,
         f"C{cbase + 20}", "2.2uF", FP_C0603, GEOM["Device:C"], path,
     )
     reg18 = stub("24", "REG18", 12.7)
-    sch.elbow(reg18, c_reg18["1"])
-    gg = pwr(vss, (c_reg18["2"][0], c_reg18["2"][1] - 6))
+    lab("REG18", c_reg18["1"], 180)
+    gg = pwr(vss, (c_reg18["2"][0], c_reg18["2"][1] + 6))
     sch.wire(c_reg18["2"], gg)
 
     c_reg1 = sch.part(
-        catalog, "Device:C", (bq["35"][0] + 36, bq["35"][1] - 10), 0,
+        catalog, "Device:C", (184, 328), 0,
         f"C{cbase + 21}", "1uF", FP_C0603, GEOM["Device:C"], path,
     )
     reg1_net = "REG1_BQ2" if upper else "REG1"
     reg1_kind = "hier" if upper else "local"
     reg1 = stub("35", reg1_net, 12.7, reg1_kind, "bidirectional" if upper else "passive")
-    sch.elbow(reg1, c_reg1["1"])
-    gg = pwr(vss, (c_reg1["2"][0], c_reg1["2"][1] - 6))
+    lab(reg1_net, c_reg1["1"], 180, reg1_kind, "bidirectional")
+    gg = pwr(vss, (c_reg1["2"][0], c_reg1["2"][1] + 6))
     sch.wire(c_reg1["2"], gg)
 
     # I2C pull-ups on this domain's REG1.
     # Angle 0 places pin 2 above the symbol center and pin 1 below it.
-    i2c_x = 558.8
-    i2c_y = 360.68
+    i2c_x = 247.65
+    i2c_y = 344.17
     lab(reg1_net, (i2c_x, i2c_y), 180, reg1_kind, "bidirectional" if upper else "passive")
     sda_r = sch.part(
         catalog, "Device:R", (i2c_x + 15.24, i2c_y - 3.81), 0,
@@ -796,50 +809,56 @@ def build_monitor_sheet(upper, catalog, bq_pins):
 
     # PACK through 10k to local top of stack.
     r_pack = sch.part(
-        catalog, "Device:R", (bq["42"][0] + 25, bq["42"][1]), 90,
+        catalog, "Device:R", (160, 365), 90,
         f"R{rbase + 21}", "10k", "", GEOM["Device:R"], path,
     )
-    sch.wire(bq["42"], r_pack["1"])
+    stub("42", "PACK_PIN", 12.7)
+    lab("PACK_PIN", r_pack["1"], 180)
     pack_stack = lab(stack, (r_pack["2"][0] + 12, r_pack["2"][1]), 0, "global")
     sch.wire(r_pack["2"], pack_stack)
 
     # Wake pins. Upstream sources are sheet ports.
     r_rst = sch.part(
-        catalog, "Device:R", (bq["33"][0] - 20, bq["33"][1]), 90,
+        catalog, "Device:R", (391, 320), 90,
         f"R{rbase + 22}", "OPEN", FP_R0603, GEOM["Device:R"], path,
     )
     mark(f"R{rbase + 22}", "RST_SHUT pulldown to local VSS. SLUSE13B 12.6 requires the pin low in normal operation; the resistor value is not specified. The upstream driver is the sheet port.")
-    sch.wire(bq["33"], r_rst["2"])
+
     gg = pwr(vss, (r_rst["1"][0], r_rst["1"][1] + 6))
     sch.wire(r_rst["1"], gg)
     rst_name = "RST_SHUT_BQ2" if upper else "RST_SHUT_BQ1"
     rst_h = lab(rst_name, (bq["33"][0] - 35, bq["33"][1]), 180, "hier", "bidirectional")
     sch.wire(rst_h, bq["33"])
+    lab(rst_name, r_rst["2"], 0, "hier", "bidirectional")
 
     ts2_name = "TS2_WAKE_BQ2" if upper else "TS2_WAKE_BQ1"
     ts2_h = lab(ts2_name, (bq["22"][0] - 20, bq["22"][1]), 180, "hier", "bidirectional")
     sch.wire(bq["22"], ts2_h)
 
     r_ld = sch.part(
-        catalog, "Device:R", (bq["41"][0] + 18, bq["41"][1]), 90,
+        catalog, "Device:R", (391, 345), 90,
         f"R{rbase + 23}", "OPEN", "", GEOM["Device:R"], path,
     )
     mark(f"R{rbase + 23}", "LD series resistor. Value, MPN, and footprint are OPEN. SSZT191 allows wake from LD only with the voltage limited to the datasheet range versus this domain's VSS.")
-    sch.wire(bq["41"], r_ld["1"])
+    stub("41", "LD_PIN", 12.7)
+    lab("LD_PIN", r_ld["1"], 180)
     ld_name = "LD_WAKE_BQ2" if upper else "LD_WAKE_BQ1"
     ld_h = lab(ld_name, (r_ld["2"][0] + 12, r_ld["2"][1]), 0, "hier", "bidirectional")
     sch.wire(r_ld["2"], ld_h)
 
     # Current inputs.
     if upper:
+        common_x = bq["18"][0] - 17.78
         for number in ("18", "20"):
             pt = bq[number]
-            gg = pwr(vss, (pt[0] - 15, pt[1]))
-            sch.wire(pt, gg)
+            sch.wire(pt, (common_x, pt[1]))
+        sch.wire((common_x, bq["18"][1]), (common_x, bq["20"][1]))
+        ground = pwr(vss, (common_x - 12.7, bq["18"][1]))
+        sch.wire((common_x, bq["18"][1]), ground)
     else:
         # One shunt. SRP is the CELL0 end and SRN is the CHG- end.
         shunt = sch.part(
-            catalog, "Device:R", (222.25, 50.8), 90,
+            catalog, "Device:R", (451, 81), 90,
             "R_SH", "OPEN", "", GEOM["Device:R"], path,
         )
         mark("R_SH", "Single charge-current shunt. Value, MPN, and footprint are OPEN. Do not copy the R001 silkscreen and do not put the existing shunt footprints in series.")
@@ -848,15 +867,15 @@ def build_monitor_sheet(upper, catalog, bq_pins):
         chg = lab("CHG_NEG", (shunt["2"][0] + 12.7, shunt["2"][1]), 0, "hier", "bidirectional")
         sch.wire(shunt["2"], chg)
         r_srp = sch.part(
-            catalog, "Device:R", (shunt["1"][0], shunt["1"][1] + 15.24), 0,
+            catalog, "Device:R", (shunt["1"][0]-15.24, shunt["1"][1] + 17.78), 0,
             f"R{rbase + 24}", "100", FP_R0603, GEOM["Device:R"], path,
         )
         r_srn = sch.part(
-            catalog, "Device:R", (shunt["2"][0], shunt["2"][1] + 15.24), 0,
+            catalog, "Device:R", (shunt["2"][0]+15.24, shunt["2"][1] + 17.78), 0,
             f"R{rbase + 25}", "100", FP_R0603, GEOM["Device:R"], path,
         )
-        sch.wire(shunt["1"], r_srp["1"])
-        sch.wire(shunt["2"], r_srn["1"])
+        sch.elbow(shunt["1"], r_srp["1"], False)
+        sch.elbow(shunt["2"], r_srn["1"], False)
         srp = lab("SRP_NET", (r_srp["2"][0], r_srp["2"][1] + 7.62), 90, "local")
         srn = lab("SRN_NET", (r_srn["2"][0], r_srn["2"][1] + 7.62), 90, "local")
         sch.wire(r_srp["2"], srp)
@@ -883,8 +902,8 @@ def build_monitor_sheet(upper, catalog, bq_pins):
             net = f"{name}_NTC"
             dx = -18 if bq[pin][0] < ic[0] else 18
             stub(pin, net, dx)
-            col_x = 620 + idx * 28
-            col_y = 200
+            col_x = 390 + idx * 30
+            col_y = 225
             series = sch.part(
                 catalog, "Device:R", (col_x, col_y), 0,
                 f"R{rnum}", "OPEN", FP_R0603, GEOM["Device:R"], path,
@@ -907,53 +926,31 @@ def build_monitor_sheet(upper, catalog, bq_pins):
     for number in vss_pins:
         pt = bq[number]
         dest = (pt[0] - 12, pt[1]) if pt[0] < ic[0] else (pt[0] + 12, pt[1])
-        gg = pwr(vss, dest)
-        sch.wire(pt, gg)
+        lab(vss, dest, 180 if pt[0] < ic[0] else 0, "global")
+        sch.wire(pt, dest)
 
     # Intentional no-connects.
     for number in ("19", "44", "34", "38", "39", "40", "43", "45"):
         sch.noconn(bq[number])
 
     domain = "Upper" if upper else "Lower"
-    addr = (
-        "Upper 7-bit address is 0x08, and only after the lower device has been verified at 0x10. TMUX154E host-side gating is on the isolation sheet."
-        if upper
-        else "CRC I2C at 100 kHz. SDA is ESP32 GPIO21 and SCL is GPIO20. Startup 7-bit address is 0x08. Firmware then moves this device to 0x10."
-    )
-    current = (
-        "SLUSE13B section 16.6 Table 16-3, pins 18 and 20: If not used, these pins should be connected to pin 17 (VSS). Upper VSS is CELL16. No net here joins lower ground, lower SRP, or lower SRN."
-        if upper
-        else "SRP and SRN are one Kelvin pair for the charge shunt. Place the 100 ohm / 100 nF filter at the device (SLUSE13B 16.2 and 18.1). Optional 100 pF and 0.1 uF-to-VSS parts are not fitted. Charging current must make SRP positive relative to SRN. CHG- is a sheet port."
-    )
-    note = "\n".join([
-        f"{domain} monitor {ref_ic}, BQ7695202. Local reference and exposed pad are {vss}.",
-        "Cell filter copied from SLUSE13B 7.3 and EVM guide section 5.4 Figure 5-9:",
-        "20 ohm in series with each VC pin, 220 nF between adjacent filtered nodes, and 220 nF from the VC0 node to local VSS.",
-        "Section 7.3 allows 20-100 ohm and 0.1-1 uF. Cell-resistor footprint and power rating are OPEN.",
-        "VC pins are also the internal balance pins (Table 6-1). Host balancing is the firmware mode.",
-        "External balance network is OPEN. R_B1-R_B33 stay fixed for the case and are not drawn.",
-        "Those 33 resistors are not a 33-cell stack.",
-        "BQ7695202 REG1 defaults to 3.3 V (section 5). That default does not replace REG0 or the wake pins.",
-        "REG18 capacitor is 2.2 uF, inside the 1.8-22 uF range in section 7.10. REG1 capacitor is 1 uF (section 7.12).",
-        "REGIN capacitor is 22 nF (section 7.11, allowed 15-27 nF). CBREG 150 pF is the table maximum, not a fitted part.",
-        "BAT 100 ohm, 1 uF, and 100 pF follow Figure 16-2. High-voltage footprints are OPEN.",
-        "CP1 is tied to BAT because the charge pump is unused (Table 16-3). Enabling it with that tie adds about 200 uA.",
-        "CHG, DSG, PCHG, and PDSG are left floating (Table 16-3). Discharge protection is out of scope.",
-        "FUSE and REG2 are left floating (Table 16-3). Pins 19 and 44 are not connected to silicon.",
-        "PACK uses 10 kOhm to this monitor's top of stack, the no-high-side-FET connection in section 16.2.",
-        "RST_SHUT, TS2, and LD wake sources are sheet ports marked OPEN. Do not put a thermistor on TS2 (section 13.5).",
-        "SSZT191: every monitor needs a wake path. TS2 is pulled to this domain's VSS to wake; LD voltage must stay inside section 7.3.",
-        addr,
-        current,
-        "Connector value labels are wrong. These are assigned PCB nets, not harness proof, and no connector is relabeled here.",
-        "J_CELL1 pins 1-10 = CELL9 down to CELL0. J_CELL2 pins 1-9 = CELL18 down to CELL10.",
-        "J_CELL3 pins 1-8 = CELL26 down to CELL19. J_CELL4 pins 1-6 = CELL32 down to CELL27.",
-        "Pin 49 is the exposed pad of footprint TQFP-48-1EP and is tied to the local reference.",
-        "SLUSE13B package outline PFB0048A shows no exposed thermal pad. Pad 49 keeps that footprint copper on the local reference.",
-        "OPEN parts:",
-        *opens,
-    ])
-    sch.text((20.32, 575), note, 1.05)
+    sch.text((28, 20), f"{domain} monitor   /   cells {cell0+1} to {cell0+16}   /   reference {vss}", 3.5)
+    for x, y, title in [(28, 43, "01   Cell input filters"), (222, 60, "02   Monitor pinout"),
+                        (30, 282, "05   BAT and local regulators"), (220, 292, "06   I2C pull-ups"),
+                        (365, 292, "07   Wake interface")]:
+        sch.text((x, y), title, 2)
+    sch.text((220, 360), "OPEN   Select pulls at 100 kHz. Check rail limits,\nsink current and rise time for this segment.", 1.5)
+    sch.text((365, 360), f"OPEN   TS2 wake driver: pulse to {vss}, then release.\nCandidate: optical output powered from the host LED side.\nVerify leakage, pulse width and GPIO availability.", 1.5)
+    sch.text((30, 390), "OPEN   Select stack-rated diodes, REG0 transistor and passive ratings. Check REGIN headroom and dissipation.", 1.5)
+    sch.text((365, 54), "03   Current sense", 2)
+    sch.text((365, 185), "04   Temperature inputs", 2)
+    if upper:
+        sch.text((365, 68), "SRP (18) and SRN (20) share upper VSS (17).\nThe current shunt is on the lower monitor.", 1.6)
+        sch.text((365, 200), "Internal temperature only. Unused sensor inputs return to CELL16.\nALERT terminates on the interface sheet.", 1.6)
+    else:
+        sch.text((365, 125), "OPEN   Confirm Kelvin pickup, shunt value and firmware sign/gain.", 1.5)
+        sch.text((365, 265), "OPEN   Firmware assumes 10 kOhm / beta 3380 and 500 ohm series correction.", 1.5)
+        sch.text((220, 204), "OPEN   SDA/SCL connect directly to host. Lower powered-off isolation\nrequires a hardware decision; a second isolator is a candidate.", 1.5)
     sch.opens = opens
     return sch
 
@@ -984,154 +981,70 @@ def build_iso_sheet(catalog):
         nref[0] += 1
         return pins["1"]
 
-    iso = sch.part(
-        catalog, "qfbms:ISO1640_D8", (165.1, 120), 0, "U_ISO", "OPEN",
-        "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
-        GEOM["qfbms:ISO1640_D8"], path,
-    )
-    # Keep reference and unresolved value clear of the isolator signal pins.
-    sch.body[-1] = sch.body[-1].replace('(at 169.1 120.88 0)', '(at 165.1 96.52 0)').replace('(at 169.1 117.88 0)', '(at 165.1 100.33 0)')
-    mark("U_ISO", "Bidirectional I2C isolator using the ISO1640 8-D pin map (VCC1, SDA1, SCL1, GND1, GND2, SCL2, SDA2, VCC2). No enable pin. Orderable suffix is OPEN; the 16-DW package has different pin numbers and is not this symbol.")
-    # Side 1 is the host side. Side 2 is the upper-BQ bus.
-    sda1, scl1 = iso["2"], iso["3"]
-    gnd1, gnd2 = iso["4"], iso["5"]
-    scl2, sda2 = iso["6"], iso["7"]
-    vcc1, vcc2 = iso["1"], iso["8"]
+    def port(pins, num, net, dx, kind="local"):
+        x,y = pins[num]
+        end = (x+dx,y)
+        sch.wire((x,y),end)
+        sch.label(net,end,0 if dx>0 else 180,kind,"bidirectional")
 
-    # TI TMUX154E uses its active-low enable directly: GPIO9 high disconnects;
-    # GPIO9 low connects the selected A0/B0 pair to the common A/B pair.
-    sw = sch.part(
-        catalog, "qfbms:TMUX154E", (110, 96.52), 0,
-        "U204", "TMUX154EDGSR", FP_VSSOP10,
-        GEOM["qfbms:TMUX154E"], path,
-    )
-    mark("U204", "TI TMUX154EDGSR, 2-channel SPDT switch in VSSOP-10. Pin 4 A and pin 6 B are the host-side SDA/SCL commons; pins 2 A0 and 8 B0 face ISO1640 SDA1/SCL1. Pins 3 A1 and 7 B1 are unused; pin 1 SEL is held low to select A0/B0; pin 9 EN is active low and goes directly to GPIO9; pin 10 VCC is HOST_3V3; pin 5 GND is CELL0. TI specifies 3.0-4.3 V supply, I/O to 5.25 V, and high-impedance I/O when unpowered.")
-    for pin, name, direction, kind in (
-        ("4", "SDA_HOST", 0, "bidirectional"),
-        ("2", "SDA_ISO_SIDE", 180, None),
-        ("6", "SCL_HOST", 0, "bidirectional"),
-        ("8", "SCL_ISO_SIDE", 180, None),
-    ):
-        endpoint = (sw[pin][0] + (7.62 if direction == 0 else -7.62), sw[pin][1])
-        sch.wire(sw[pin], endpoint)
-        if kind:
-            sch.label(name, endpoint, direction, "hier", kind)
-        else:
-            sch.label(name, endpoint, direction)
-    sch.noconn(sw["3"])
-    sch.noconn(sw["7"])
-    pwr_gnd("CELL0", sw["1"])
-    sch.label("GPIO9", sw["9"], 0, "hier", "bidirectional")
-    sch.label("HOST_3V3", sw["10"], 0)
-    pwr_gnd("CELL0", sw["5"])
-
-    # The switch connects both upper pull-ups to lower-side pulls when enabled.
-    sch.label("SDA_ISO_SIDE", sda1, 0)
-    sch.label("SCL_ISO_SIDE", scl1, 0)
-
-    r_sda = sch.part(
-        catalog, "Device:R", (100.33, 146.05), 0,
-        "R201", "OPEN", FP_R0603, GEOM["Device:R"], path,
-    )
-    r_scl = sch.part(
-        catalog, "Device:R", (124.46, 146.05), 0,
-        "R202", "OPEN", FP_R0603, GEOM["Device:R"], path,
-    )
-    mark("R201", "Switch/ISO1640 side-1 SDA pull-up to HOST_3V3. Resistance remains OPEN pending rail-difference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.")
-    mark("R202", "Switch/ISO1640 side-1 SCL pull-up to HOST_3V3. Resistance remains OPEN pending rail-difference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.")
-    # Angle 0: pin 2 is above the resistor center, pin 1 is below.
-    sch.label("SDA_ISO_SIDE", r_sda["1"], 0)
-    sch.label("SCL_ISO_SIDE", r_scl["1"], 0)
-    vcc_rail = (r_sda["2"][0] - 12.7, r_sda["2"][1])
-    sch.wire(r_sda["2"], r_scl["2"])
-    host = pwr_vcc(vcc_rail)
-    sch.wire(r_sda["2"], host)
-    supply_stub = (vcc1[0], vcc1[1] - 10.16)
-    sch.wire(vcc1, supply_stub)
-    sch.label("HOST_3V3", supply_stub)
-    flag(sch, catalog, (host[0] - 7.62, host[1]), path, nref)
-    sch.wire((host[0] - 7.62, host[1]), host)
-    host_port = sch.label("HOST_3V3", (host[0] - 20.32, host[1]), 180, "hier", "bidirectional")
-    sch.wire(host_port, host)
-
-    # Local supply bypassing for the bus switch.
-    for ref, center in (("C203", (93.98, 85.09)),):
-        c = sch.part(catalog, "Device:C", center, 0, ref, "100nF", FP_C0603,
-                     GEOM["Device:C"], path)
-        mark(ref, "100 nF local bypass from HOST_3V3 to CELL0.")
-        sch.label("HOST_3V3", c["2"], 0)
-        pwr_gnd("CELL0", c["1"])
-
-    c_vcc1 = sch.part(
-        catalog, "Device:C", (vcc1[0] - 12.7, vcc1[1]), 0,
-        "C201", "100nF", FP_C0603, GEOM["Device:C"], path,
-    )
-    sch.elbow(c_vcc1["2"], vcc1)
-    g1 = pwr_gnd("CELL0", (c_vcc1["1"][0], c_vcc1["1"][1] - 7.62))
-    sch.wire(c_vcc1["1"], g1)
-    sch.wire(gnd1, (gnd1[0] - 7.62, gnd1[1]))
-    g1b = pwr_gnd("CELL0", (gnd1[0] - 12.7, gnd1[1]))
-    sch.wire((gnd1[0] - 7.62, gnd1[1]), g1b)
-
-    bq_sda = sch.label("SDA_BQ2", (sda2[0] + 20.32, sda2[1]), 0, "hier", "bidirectional")
-    bq_scl = sch.label("SCL_BQ2", (scl2[0] + 20.32, scl2[1]), 0, "hier", "bidirectional")
-    sch.wire(sda2, bq_sda)
-    sch.wire(scl2, bq_scl)
-    reg1 = sch.label("REG1_BQ2", (vcc2[0] + 20.32, vcc2[1]), 0, "hier", "bidirectional")
-    sch.wire(vcc2, reg1)
-    c_vcc2 = sch.part(
-        catalog, "Device:C", (vcc2[0] + 12.7, vcc2[1] - 12.7), 0,
-        "C202", "100nF", FP_C0603, GEOM["Device:C"], path,
-    )
-    sch.elbow(vcc2, c_vcc2["2"])
-    g2 = pwr_gnd("CELL16", (c_vcc2["1"][0], c_vcc2["1"][1] - 7.62))
-    sch.wire(c_vcc2["1"], g2)
-    g2b = pwr_gnd("CELL16", (gnd2[0] + 12.7, gnd2[1]))
-    sch.wire(gnd2, g2b)
-
-    alert = sch.label("ALERT_BQ2", (40.64, 40.64), 180, "hier", "bidirectional")
-    sch.wire(alert, (55.88, 40.64))
-    sch.noconn((55.88, 40.64))
-    mark(
-        "ALERT_BQ2",
-        "Upper ALERT stays on the upper side and ends at a no-connect on this sheet. Do not tie it to CELL0. Firmware does not consume upper ALERT. A unidirectional isolator MPN across the barrier is OPEN; do not invent that part.",
-    )
-    sch.text((58, 42), "ALERT_BQ2 stops here. Do not tie it to CELL0. A unidirectional isolator MPN is OPEN. Firmware does not consume upper ALERT.", 1.05)
-
-    gpio = sch.label("GPIO9", (40.64, 165.1), 180, "hier", "bidirectional")
-    r_gpio = sch.part(
-        catalog, "Device:R", (70, 165.1), 90,
-        "R203", "OPEN", FP_R0603, GEOM["Device:R"], path,
-    )
-    mark("R203", "GPIO9 reset pull-up to HOST_3V3. Value is OPEN. GPIO9 must be high at reset because GPIO9 low selects ESP32-C3 download mode; that level disables U204.")
-    sch.wire(gpio, r_gpio["1"])
-    v_gpio = pwr_vcc((r_gpio["2"][0] + 10.16, r_gpio["2"][1]))
-    sch.wire(r_gpio["2"], v_gpio)
-
-    sch.text((20.32, 230), "\n".join([
-        "Upper I2C isolation. Discharge protection is out of scope. No charge FET, USB, or CAN.",
-        "U_ISO is the ISO1640 8-pin D pin map from the ISO1640 datasheet Table 5-1. It has no enable pin.",
-        "Side 1 (SDA1/SCL1) faces the host and is limited to 80 pF. Side 2 faces the upper BQ bus and allows 400 pF.",
-        "VCC1 is HOST_3V3, 3 V to 5.5 V. VCC2 is upper REG1, 2.25 V to 5.5 V. Each supply gets 100 nF to its own ground (datasheet 9.2.1).",
-        "GND1 is CELL0. GND2 is CELL16. Those grounds are not connected.",
-        "TMUX154E U204 uses pins 4/2 for SDA host/ISO-side and pins 6/8 for SCL host/ISO-side; pins 3/7 are unused. Pin 1 SEL is low, pin 9 EN is GPIO9, pin 10 VCC is HOST_3V3, pin 5 GND is CELL0.",
-        "U204 EN low connects A/B to A0/B0 (SEL low); EN high opens. GPIO9 high therefore opens at reset, GPIO9 low connects after lower address verification. U204 I/O is high impedance when VCC=0.",
-        "U204 needs VCC 3.0-4.3 V. Powered I/O must stay within 0..VCC; powered-off I/O is rated to 5.25 V. Rail envelope must be checked against HOST_3V3 and lower REG1.",
-        "R201/R202 and lower R20/R21 are pull-ups on opposite sides. Values remain OPEN pending rail-difference current, combined sink current, 80 pF ISO1640 side-1 loading, rise-time and 100 kHz analysis.",
-        "Host/lower-REG1 sequencing and lower-BQ back-power behavior remain OPEN. Baseline C enables ESP32 internal I2C pullups on the same lower bus.",
-        "Firmware must verify lower BQ at 0x10 before GPIO9 low enables upper 0x08.",
-        "Upper SDA/SCL pull-ups already sit on the upper sheet, on REG1_BQ2.",
-        "OPEN parts:",
-        *opens,
-    ]), 1.05)
+    sch.text((22, 20), "Upper monitor communication", 3.3)
+    sch.text((22, 30), "CELL0 host domain", 2)
+    sch.text((280, 30), "CELL16 upper domain", 2)
+    sch.text((22, 52), "01   GPIO9-controlled disconnect", 2)
+    sch.text((201, 52), "02   ISO1640 domain boundary", 2)
+    sw = sch.part(catalog, "qfbms:TMUX154E", (91.44, 93.98), 0,
+                  "U204", "TMUX154EDGSR", FP_VSSOP10, GEOM["qfbms:TMUX154E"], path)
+    for pin, net, dx, kind in [("4","SDA_HOST",12.7,"hier"),("6","SCL_HOST",12.7,"hier"),
+                               ("2","SDA_ISO_SIDE",-12.7,"local"),("8","SCL_ISO_SIDE",-12.7,"local")]:
+        port(sw,pin,net,dx,kind)
+    for num in ("3","7"):
+        sch.noconn(sw[num])
+    for num in ("1","5"):
+        g = pwr_gnd("CELL0",(sw[num][0],sw[num][1]+7.62))
+        sch.wire(sw[num],g)
+    for num, net, dx, kind in [("9","GPIO9",-10.16,"hier"),("10","HOST_3V3",10.16,"hier")]:
+        port(sw,num,net,dx,kind)
+    sch.text((22, 128), "GPIO9 high opens both lines. Low selects A0/B0 after the lower address check.",1.4)
+    iso = sch.part(catalog,"qfbms:ISO1640_D8",(256.54,93.98),0,"U_ISO","ISO1640",
+                   "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",GEOM["qfbms:ISO1640_D8"],path)
+    for num, net, dx, kind in [("2","SDA_ISO_SIDE",-12.7,"local"),("3","SCL_ISO_SIDE",-12.7,"local"),
+                               ("7","SDA_BQ2",12.7,"hier"),("6","SCL_BQ2",12.7,"hier"),
+                               ("1","HOST_3V3",-12.7,"hier"),("8","REG1_BQ2",12.7,"hier")]:
+        port(iso,num,net,dx,kind)
+    for num, net, dx in [("4","CELL0",-12.7),("5","CELL16",12.7)]:
+        g = pwr_gnd(net,(iso[num][0]+dx,iso[num][1]))
+        sch.wire(iso[num],g)
+    sch.text((201,128),"OPEN   Select ISO1640 orderable 8-D suffix. Check rail margins and sequencing.",1.4)
+    alert = sch.label("ALERT_BQ2",(332,154),180,"hier","bidirectional")
+    end = (alert[0]+10.16,alert[1])
+    sch.wire(alert,end)
+    sch.noconn(end)
+    sch.text((280,163),"Upper ALERT stops here; host firmware does not read it.",1.35)
+    sch.text((22,149),"03   Host pull-ups and reset bias",2)
+    for i,(ref,net) in enumerate([("R201","SDA_ISO_SIDE"),("R202","SCL_ISO_SIDE"),("R203","GPIO9")]):
+        pins = sch.part(catalog,"Device:R",(48+45*i,180),0,ref,"OPEN",FP_R0603,GEOM["Device:R"],path)
+        port(pins,"1",net,-5.08,"hier" if i==2 else "local")
+        rail = pwr_vcc((pins["2"][0]-12.7,pins["2"][1]+5.08))
+        sch.elbow(pins["2"],rail,False)
+        if i==0:
+            pt=(rail[0]-10.16,rail[1])
+            flag(sch,catalog,pt,path,nref)
+            sch.wire(pt,rail)
+    sch.text((22,206),"OPEN   R201/R202: 4.7 kOhm candidate at 100 kHz. Verify rise time, sink current and 80 pF side-1 limit.\nOPEN   R203: size for reset-high GPIO9 and ESP32-C3 boot strapping.",1.45)
+    sch.text((201,187),"04   Local bypass",2)
+    for x,ref,rail,ground in [(216,"C203","HOST_3V3","CELL0"),(274,"C201","HOST_3V3","CELL0"),(336,"C202","REG1_BQ2","CELL16")]:
+        pins=sch.part(catalog,"Device:C",(x,216),0,ref,"100nF",FP_C0603,GEOM["Device:C"],path)
+        port(pins,"2",rail,12.7,"hier")
+        g=pwr_gnd(ground,(pins["1"][0]-12.7,pins["1"][1]))
+        sch.wire(pins["1"],g)
     sch.opens = opens
     return sch
 
 
-def build_root(lower_opens, upper_opens, iso_opens):
+def build_root():
     sch = Sch(
         ROOT_UUID,
-        "A2",
+        "A3",
         "QFBMS32 BQ monitor sheets",
         "Schematic increment only. qfbms32.kicad_pcb is not updated from this file.",
         "1",
@@ -1145,16 +1058,18 @@ def build_root(lower_opens, upper_opens, iso_opens):
             pname, shape = entry[0], entry[1]
             leave_open = entry[2] if len(entry) > 2 else True
             py = snap(y + 7.62 + i * 7.62)
-            # Right edge.
-            px = snap(x + w)
+            left = sheet_uuid == UPPER_SHEET or (sheet_uuid == ISO_SHEET and i >= 4)
+            if sheet_uuid == ISO_SHEET and left:
+                py = snap(y + 7.62 + (i - 4) * 7.62)
+            px = x if left else snap(x + w)
             positions[pname] = (px, py)
             pin_txt.append(
                 f"""		(pin "{pname}" {shape}
-			(at {px} {py} 0)
+			(at {px} {py} {180 if left else 0})
 			(uuid "{uid(f"{sheet_uuid}:sheet-pin:{pname}")}")
 			(effects
 				(font (size 1.27 1.27))
-				(justify right)
+				(justify {"left" if left else "right"})
 			)
 		)"""
             )
@@ -1173,11 +1088,11 @@ def build_root(lower_opens, upper_opens, iso_opens):
 		(fill (color 0 0 0 0.0000))
 		(uuid "{sheet_uuid}")
 		(property "Sheetname" "{name}"
-			(at {x} {y + h + 2} 0)
+			(at {x} {y - 1} 0)
 			(effects (font (size 1.524 1.524)) (justify left bottom))
 		)
 		(property "Sheetfile" "{filename}"
-			(at {x} {y - 2} 0)
+			(at {x} {y + h + 1} 0)
 			(effects (font (size 1.27 1.27)) (justify left top))
 		)
 {chr(10).join(pin_txt)}
@@ -1216,33 +1131,59 @@ def build_root(lower_opens, upper_opens, iso_opens):
         ("REG1_BQ2", "bidirectional", False),
         ("SDA_HOST", "bidirectional", False),
         ("SCL_HOST", "bidirectional", False),
-        ("GPIO9", "bidirectional", True),
-        ("HOST_3V3", "bidirectional", True),
+        ("GPIO9", "bidirectional", False),
+        ("HOST_3V3", "bidirectional", False),
     ]
-    lower = sheet((25.4, 292.1), (170.18, 60.96), LOWER_SHEET, "Lower monitor", "qfbms32-bq-lower.kicad_sch", "2", lower_pins)
-    upper = sheet((25.4, 190.5), (170.18, 76.2), UPPER_SHEET, "Upper monitor", "qfbms32-bq-upper.kicad_sch", "3", upper_pins)
-    iso = sheet((25.4, 40.64), (170.18, 83.82), ISO_SHEET, "Upper I2C isolation", "qfbms32-bq-iso-i2c.kicad_sch", "4", iso_pins)
-    bus = 220.98
-    for name in ("SDA_HOST", "SCL_HOST"):
-        sch.wire(lower[name], (bus, lower[name][1]))
-        sch.wire((bus, lower[name][1]), (bus, iso[name][1]))
-        sch.wire((bus, iso[name][1]), iso[name])
-        bus = snap(bus + 2.54)
-    for name in ("SDA_BQ2", "SCL_BQ2", "ALERT_BQ2", "REG1_BQ2"):
-        sch.wire(upper[name], (bus, upper[name][1]))
-        sch.wire((bus, upper[name][1]), (bus, iso[name][1]))
-        sch.wire((bus, iso[name][1]), iso[name])
-        bus = snap(bus + 2.54)
-    sch.text((280, 50), "\n".join(textwrap.fill(line, width=100) for line in [
-        "Host I2C is SDA_HOST and SCL_HOST: GPIO21 and GPIO20, 100 kHz.",
-        "GPIO9 is pulled high on the isolation sheet. GPIO9 low selects ESP32-C3 download mode.",
-        "Upper-bus disconnect uses U204 TMUX154E; GPIO9 high opens, low connects after the lower address check.",
-        "That connection is allowed only after the lower device has been verified at 0x10.",
-        "CHG_NEG and the wake ports remain open. No charge FET, USB, or CAN is on these sheets.",
-        "CELL0 and CELL16 stay separate. CELL16 is the upper reference, not the lower ground.",
-        "Isolation OPEN items:",
-        *iso_opens,
-    ]), 1.15)
+    sch.text((23, 21), "32-cell monitor interface", 4)
+    sch.text((23, 32), "Charge-only BMS   /   100 kHz I2C   /   ESP32-C3 host", 2)
+    host_at = (53.34, 101.6)
+    signals = [("21","SDA","SDA_HOST"), ("20","SCL","SCL_HOST"),
+               ("9","GPIO9","GPIO9"), ("3V3","3V3","HOST_3V3")]
+    host_pins = {}
+    pin_defs = []
+    for i,(gpio,name,net) in enumerate(signals):
+        y = 11.43 - i * 7.62
+        number = str(i + 1)  # Logical interface port, not an ESP32 package pad.
+        host_pins[number] = (34.29,y)
+        caption = f"GPIO{gpio} / {name}" if i < 2 else name
+        pin_defs.append(f'(pin passive line (at 34.29 {y} 180) (length 5.08) '
+                        f'(name "{caption}" (effects (font (size 1.524 1.524)))) '
+                        f'(number "{number}" (effects (font (size 1 1)))))')
+    lib = "qfbms:Host_interface"
+    symbol = (f'(symbol "{lib}" (pin_numbers (hide yes)) (in_bom no) (on_board no) '
+              '(property "Reference" "U" (at 0 24 0) (effects (font (size 1.5 1.5)))) '
+              '(property "Value" "ESP32-C3 interface" (at 0 20 0) (effects (font (size 1.5 1.5)))) '
+              '(symbol "Host_interface_0_1" (rectangle (start -27.94 17.78) (end 29.21 -17.78) '
+              '(stroke (width 0.25) (type default)) (fill (type background)))) '
+              '(symbol "Host_interface_1_1" ' + " ".join(pin_defs) + '))')
+    host = sch.part({lib:symbol}, lib, host_at, 0, "U205", "ESP32-C3 interface", "",
+                    host_pins, f"/{ROOT_UUID}", False)
+    sch.text((25, 128), "External host   /   logical ports", 1.6)
+    iso = sheet((152.4, 82.55), (86.36, 45.72), ISO_SHEET, "Upper I2C isolation", "qfbms32-bq-iso-i2c.kicad_sch", "4", iso_pins)
+    upper = sheet((305, 82.55), (75, 62), UPPER_SHEET, "Upper monitor", "qfbms32-bq-upper.kicad_sch", "3", upper_pins)
+    lower = sheet((23, 172), (66, 52), LOWER_SHEET, "Lower monitor", "qfbms32-bq-lower.kicad_sch", "2", lower_pins)
+    for index, (net, pin) in enumerate([("SDA_HOST", "GPIO21"), ("SCL_HOST", "GPIO20"),
+                                        ("GPIO9", "GPIO9"), ("HOST_3V3", "3V3")]):
+        y = iso[net][1]
+        start = host[str(index+1)]
+        sch.wire(start, iso[net])
+        if index < 2:
+            sch.label(net, start)
+        if index < 2:
+            end = (lower[net][0]+15.24, lower[net][1])
+            sch.wire(lower[net], end)
+            sch.label(net, end)
+    for net in ("SDA_BQ2", "SCL_BQ2", "ALERT_BQ2", "REG1_BQ2"):
+        sch.wire(iso[net], upper[net])
+    sch.text((23, 49), "HOST DOMAIN   /   CELL0", 2)
+    sch.text((274, 49), "UPPER DOMAIN   /   CELL16", 2)
+    sch.text((155, 56), "U204  TMUX154E   >   U_ISO  ISO1640", 1.8)
+    sch.text((155, 64), "Domain boundary inside ISO1640", 1.5)
+    sch.text((300, 156), "Cells 17-32   |   upper address 0x08", 1.8)
+    sch.text((23, 239), "Cells 1-16   |   lower address 0x08 at reset", 1.8)
+    sch.text((145, 175), "Startup sequence", 2.3)
+    sch.text((145, 187), "1   GPIO9 high opens U204. Configure lower BQ on the direct host bus.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640.", 1.7)
+    sch.text((145, 213), "OPEN   Lower BQ remains connected with its rail off. See lower sheet.\nOPEN   Both TS2 wake drivers require local VSS switching with REG1 off.", 1.6)
     return sch
 
 
@@ -1251,7 +1192,7 @@ def main():
     lower = build_monitor_sheet(False, catalog, bq_pins)
     upper = build_monitor_sheet(True, catalog, bq_pins)
     iso = build_iso_sheet(catalog)
-    root = build_root(lower.opens, upper.opens, iso.opens)
+    root = build_root()
     (ROOT / "qfbms32-bq-lower.kicad_sch").write_text(lower.finish(), encoding="utf-8", newline="\r\n")
     (ROOT / "qfbms32-bq-upper.kicad_sch").write_text(upper.finish(), encoding="utf-8", newline="\r\n")
     (ROOT / "qfbms32-bq-iso-i2c.kicad_sch").write_text(iso.finish(), encoding="utf-8", newline="\r\n")

@@ -3,113 +3,322 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001")
-	(paper "A2")
+	(paper "A3")
 	(title_block
 		(title "QFBMS32 BQ monitor sheets")
-		(date "2026-11-03")
-		(rev "0.1")
+		(date "2026-11-04")
+		(rev "0.2")
 		(comment 1 "Schematic increment only. qfbms32.kicad_pcb is not updated from this file.")
 	)
 	(lib_symbols
-
+		(symbol "qfbms:Host_interface" (pin_numbers (hide yes)) (in_bom no) (on_board no) (property "Reference" "U" (at 0 24 0) (effects (font (size 1.5 1.5)))) (property "Value" "ESP32-C3 interface" (at 0 20 0) (effects (font (size 1.5 1.5)))) (symbol "Host_interface_0_1" (rectangle (start -27.94 17.78) (end 29.21 -17.78) (stroke (width 0.25) (type default)) (fill (type background)))) (symbol "Host_interface_1_1" (pin passive line (at 34.29 11.43 180) (length 5.08) (name "GPIO21 / SDA" (effects (font (size 1.524 1.524)))) (number "1" (effects (font (size 1 1))))) (pin passive line (at 34.29 3.8099999999999996 180) (length 5.08) (name "GPIO20 / SCL" (effects (font (size 1.524 1.524)))) (number "2" (effects (font (size 1 1))))) (pin passive line (at 34.29 -3.8100000000000005 180) (length 5.08) (name "GPIO9" (effects (font (size 1.524 1.524)))) (number "3" (effects (font (size 1 1))))) (pin passive line (at 34.29 -11.43 180) (length 5.08) (name "3V3" (effects (font (size 1.524 1.524)))) (number "4" (effects (font (size 1 1)))))))
 	)
 	(wire
-		(pts (xy 195.58 299.72) (xy 220.98 299.72))
+		(pts (xy 87.63 90.17) (xy 152.4 90.17))
 		(stroke (width 0) (type default))
-		(uuid "ba51bfd3-075f-5fb3-a03d-ef1d4243c19c")
+		(uuid "c2b971a8-78f0-5153-b6ef-4ca6bffce0e1")
 	)
 	(wire
-		(pts (xy 220.98 299.72) (xy 220.98 78.74))
+		(pts (xy 88.9 179.07) (xy 104.14 179.07))
 		(stroke (width 0) (type default))
-		(uuid "99df6de1-b349-5bf9-a376-ca670aee8335")
+		(uuid "a5410521-5fb1-59b9-a614-0ca2dacec7d1")
 	)
 	(wire
-		(pts (xy 220.98 78.74) (xy 195.58 78.74))
+		(pts (xy 87.63 97.79) (xy 152.4 97.79))
 		(stroke (width 0) (type default))
-		(uuid "8185b1b3-7256-5f04-9e4e-e8aa44918f0f")
+		(uuid "9ac1288e-9f2b-5900-becc-b0d32dfe6b0f")
 	)
 	(wire
-		(pts (xy 195.58 307.34) (xy 223.52 307.34))
+		(pts (xy 88.9 186.69) (xy 104.14 186.69))
 		(stroke (width 0) (type default))
-		(uuid "f265c9f5-a4d0-5374-89f1-6808240f7ca4")
+		(uuid "1910e6b1-4d36-5ab4-b39a-f9c8085b038a")
 	)
 	(wire
-		(pts (xy 223.52 307.34) (xy 223.52 86.36))
+		(pts (xy 87.63 105.41) (xy 152.4 105.41))
 		(stroke (width 0) (type default))
-		(uuid "ad112d79-bf25-5ae7-9a07-456f6ed3f5df")
+		(uuid "01458b97-98dd-5388-93bb-05a348b69d13")
 	)
 	(wire
-		(pts (xy 223.52 86.36) (xy 195.58 86.36))
+		(pts (xy 87.63 113.03) (xy 152.4 113.03))
 		(stroke (width 0) (type default))
-		(uuid "2d7c5c14-eab0-509b-a9d0-f67a0a87d6f7")
+		(uuid "09ed84e2-4902-5d70-b0a8-3ad7615f16e7")
 	)
 	(wire
-		(pts (xy 195.58 198.12) (xy 226.06 198.12))
+		(pts (xy 238.76 90.17) (xy 304.8 90.17))
 		(stroke (width 0) (type default))
-		(uuid "da19fc06-b59e-5fee-876c-717e86e3a057")
+		(uuid "0c1a3f99-2b53-5bcb-9ffa-3849526d0c7c")
 	)
 	(wire
-		(pts (xy 226.06 198.12) (xy 226.06 48.26))
+		(pts (xy 238.76 97.79) (xy 304.8 97.79))
 		(stroke (width 0) (type default))
-		(uuid "9b81656d-78be-58b1-b0ac-b3e1baf8fc63")
+		(uuid "f29d2002-95ff-5780-86aa-6cec1cb03240")
 	)
 	(wire
-		(pts (xy 226.06 48.26) (xy 195.58 48.26))
+		(pts (xy 238.76 105.41) (xy 304.8 105.41))
 		(stroke (width 0) (type default))
-		(uuid "5cc6808b-14cc-5644-9f94-521f1f38ffa8")
+		(uuid "0ce6623b-eecd-5610-93c1-dc10d5c93d54")
 	)
 	(wire
-		(pts (xy 195.58 205.74) (xy 228.6 205.74))
+		(pts (xy 238.76 113.03) (xy 304.8 113.03))
 		(stroke (width 0) (type default))
-		(uuid "f70d7daa-1e51-5c61-8dcb-121af0b85e3d")
+		(uuid "596fccd1-ca0d-559e-b3fc-9534faa9b10e")
 	)
-	(wire
-		(pts (xy 228.6 205.74) (xy 228.6 55.88))
-		(stroke (width 0) (type default))
-		(uuid "122b239d-2dcc-5b2c-9652-9e4a939f2aa0")
+	(text "32-cell monitor interface"
+		(at 22.86 21.59 0)
+		(effects
+			(font
+				(size 4 4)
+			)
+			(justify left top)
+		)
+		(uuid "5b25c62e-442e-56f7-8168-3aac7035da7f")
 	)
-	(wire
-		(pts (xy 228.6 55.88) (xy 195.58 55.88))
-		(stroke (width 0) (type default))
-		(uuid "bcd35c44-eea3-5809-b4c6-d92afc2be21c")
+	(text "Charge-only BMS   /   100 kHz I2C   /   ESP32-C3 host"
+		(at 22.86 31.75 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left top)
+		)
+		(uuid "14e211a5-b3eb-5a75-b689-e2daf7ca6aac")
 	)
-	(wire
-		(pts (xy 195.58 213.36) (xy 231.14 213.36))
-		(stroke (width 0) (type default))
-		(uuid "5c3363ac-5fb5-549a-be8d-0349f93d2f22")
+	(symbol
+		(lib_id "qfbms:Host_interface")
+		(at 53.34 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "e30a3f40-d418-5b09-ae73-566ff4d9f298")
+		(property "Reference" "U205"
+			(at 53.34 76.6 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "ESP32-C3 interface"
+			(at 53.34 80.6 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" ""
+			(at 53.34 101.6 0)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "~"
+			(at 53.34 101.6 0)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+				(pin "1" (uuid "2bb6e349-0dfd-53c7-90f2-f58d1c93fece"))
+		(pin "2" (uuid "42c92c05-f1af-5e1c-88f8-255d0d76231e"))
+		(pin "3" (uuid "a1f9e1ff-a7e4-5214-89e5-6ee22ff2c572"))
+		(pin "4" (uuid "2fb3211e-b73f-5fb9-80ba-cc418199da6f"))
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(reference "U205")
+					(unit 1)
+				)
+			)
+		)
 	)
-	(wire
-		(pts (xy 231.14 213.36) (xy 231.14 63.5))
-		(stroke (width 0) (type default))
-		(uuid "ef750283-7a0c-5006-af11-d288a8a48357")
+	(text "External host   /   logical ports"
+		(at 25.4 128.27 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left top)
+		)
+		(uuid "72682dff-24c6-512f-b2d1-f3eac077ce2e")
 	)
-	(wire
-		(pts (xy 231.14 63.5) (xy 195.58 63.5))
-		(stroke (width 0) (type default))
-		(uuid "bc96d582-f0c3-5d37-a303-d47a5f9e371d")
-	)
-	(wire
-		(pts (xy 195.58 220.98) (xy 233.68 220.98))
-		(stroke (width 0) (type default))
-		(uuid "142581b8-6695-59f6-b94b-e1224aa6220b")
-	)
-	(wire
-		(pts (xy 233.68 220.98) (xy 233.68 71.12))
-		(stroke (width 0) (type default))
-		(uuid "ec15704c-d4e7-5679-b177-377789bab826")
-	)
-	(wire
-		(pts (xy 233.68 71.12) (xy 195.58 71.12))
-		(stroke (width 0) (type default))
-		(uuid "440812de-a277-5a21-b2b6-12633234a4fd")
-	)
-	(no_connect (at 195.58 314.96) (uuid "c01bf2e7-b888-591c-804a-890a055241cb"))
-	(no_connect (at 195.58 322.58) (uuid "786d6774-e2bb-571a-836d-d3136b1ccc4c"))
-	(no_connect (at 195.58 330.2) (uuid "352cfb94-10ce-52ec-aebf-8929eef24093"))
-	(no_connect (at 195.58 337.82) (uuid "c2698b29-5432-5590-ba65-0972b13aa19f"))
 	(sheet
-		(at 25.4 292.1)
-		(size 170.18 60.96)
+		(at 152.4 82.55)
+		(size 86.36 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "a18c44e0-6b21-4f55-9d30-2c7e91ab6044")
+		(property "Sheetname" "Upper I2C isolation"
+			(at 152.4 81.55 0)
+			(effects (font (size 1.524 1.524)) (justify left bottom))
+		)
+		(property "Sheetfile" "qfbms32-bq-iso-i2c.kicad_sch"
+			(at 152.4 129.26999999999998 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "SDA_BQ2" bidirectional
+			(at 238.76 90.17 0)
+			(uuid "2ac02d9e-698a-5a1e-8262-7fe239d3b29f")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SCL_BQ2" bidirectional
+			(at 238.76 97.79 0)
+			(uuid "e4915639-8c4b-501c-a89b-42aa27db3c91")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "ALERT_BQ2" bidirectional
+			(at 238.76 105.41 0)
+			(uuid "08c05ef2-14ac-539f-824d-b21b63412238")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "REG1_BQ2" bidirectional
+			(at 238.76 113.03 0)
+			(uuid "14f8f1a9-b59a-54c0-97c3-ca6dc6978889")
+			(effects
+				(font (size 1.27 1.27))
+				(justify right)
+			)
+		)
+		(pin "SDA_HOST" bidirectional
+			(at 152.4 90.17 180)
+			(uuid "8f68e4be-adf5-5a15-a9ba-882ec3425033")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "SCL_HOST" bidirectional
+			(at 152.4 97.79 180)
+			(uuid "2a108a2b-f7da-5410-8a0e-d30b05b7d339")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "GPIO9" bidirectional
+			(at 152.4 105.41 180)
+			(uuid "d3776476-91db-5475-93bc-9ed98d78e939")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "HOST_3V3" bidirectional
+			(at 152.4 113.03 180)
+			(uuid "04e14c54-0571-5933-94bc-5a2b0fa8f817")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(page "4")
+				)
+			)
+		)
+	)
+	(no_connect (at 304.8 120.65) (uuid "fa32b6c6-bba0-5381-832b-a8bafa59c968"))
+	(no_connect (at 304.8 128.27) (uuid "4a6460d0-d32c-5e7e-9bfd-a1509d74244e"))
+	(no_connect (at 304.8 135.89) (uuid "6e0aaa30-486a-5541-bb2b-fe93a911036b"))
+	(sheet
+		(at 304.8 82.55)
+		(size 74.93 62.23)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "d91f06c4-2ab8-4e77-b5c3-88a14f903022")
+		(property "Sheetname" "Upper monitor"
+			(at 304.8 81.55 0)
+			(effects (font (size 1.524 1.524)) (justify left bottom))
+		)
+		(property "Sheetfile" "qfbms32-bq-upper.kicad_sch"
+			(at 304.8 145.78 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "SDA_BQ2" bidirectional
+			(at 304.8 90.17 180)
+			(uuid "1a0a1aee-2413-5900-94b0-6a44a0a6c7a8")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "SCL_BQ2" bidirectional
+			(at 304.8 97.79 180)
+			(uuid "b0dc2cab-5b2c-5e6c-9313-8f8ff3c591e5")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "ALERT_BQ2" bidirectional
+			(at 304.8 105.41 180)
+			(uuid "cc04e8e6-fef8-5b8b-947b-058941da2b61")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "REG1_BQ2" bidirectional
+			(at 304.8 113.03 180)
+			(uuid "453611f3-453c-5bfb-9e89-beedb613366b")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "RST_SHUT_BQ2" bidirectional
+			(at 304.8 120.65 180)
+			(uuid "0fd60bed-98d4-52b2-9a46-7cd7c83d5f45")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "TS2_WAKE_BQ2" bidirectional
+			(at 304.8 128.27 180)
+			(uuid "8a9ae6c4-4d67-5253-82a5-ff6982680cea")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(pin "LD_WAKE_BQ2" bidirectional
+			(at 304.8 135.89 180)
+			(uuid "e526d24a-4729-5002-9158-07bf694a2adc")
+			(effects
+				(font (size 1.27 1.27))
+				(justify left)
+			)
+		)
+		(instances
+			(project "qfbms32-bq-monitors"
+				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
+					(page "3")
+				)
+			)
+		)
+	)
+	(no_connect (at 88.9 194.31) (uuid "cf928840-c4de-5f23-8059-054d1f9a471f"))
+	(no_connect (at 88.9 201.93) (uuid "045920a7-893a-555e-a11c-1e710ebca1a0"))
+	(no_connect (at 88.9 209.55) (uuid "53c855fd-2b97-51ff-8ddb-5226a0876c8a"))
+	(no_connect (at 88.9 217.17) (uuid "0e8303a3-e15f-5365-a9ad-01c0ff01e598"))
+	(sheet
+		(at 22.86 171.45)
+		(size 66.04 52.07)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -119,15 +328,15 @@
 		(fill (color 0 0 0 0.0000))
 		(uuid "c4e8b21a-7f63-4d18-a902-11d6e5a72011")
 		(property "Sheetname" "Lower monitor"
-			(at 25.4 355.06 0)
+			(at 22.86 170.45 0)
 			(effects (font (size 1.524 1.524)) (justify left bottom))
 		)
 		(property "Sheetfile" "qfbms32-bq-lower.kicad_sch"
-			(at 25.4 290.1 0)
+			(at 22.86 224.51999999999998 0)
 			(effects (font (size 1.27 1.27)) (justify left top))
 		)
 		(pin "SDA_HOST" bidirectional
-			(at 195.58 299.72 0)
+			(at 88.9 179.07 0)
 			(uuid "516c0a49-3c2b-55de-ac3d-1f734278c1eb")
 			(effects
 				(font (size 1.27 1.27))
@@ -135,7 +344,7 @@
 			)
 		)
 		(pin "SCL_HOST" bidirectional
-			(at 195.58 307.34 0)
+			(at 88.9 186.69 0)
 			(uuid "a01e9505-92d0-581b-953a-3ff9dc10c84b")
 			(effects
 				(font (size 1.27 1.27))
@@ -143,7 +352,7 @@
 			)
 		)
 		(pin "CHG_NEG" bidirectional
-			(at 195.58 314.96 0)
+			(at 88.9 194.31 0)
 			(uuid "8330f256-9652-5b3e-9999-547bbc7229ff")
 			(effects
 				(font (size 1.27 1.27))
@@ -151,7 +360,7 @@
 			)
 		)
 		(pin "RST_SHUT_BQ1" bidirectional
-			(at 195.58 322.58 0)
+			(at 88.9 201.93 0)
 			(uuid "a0a44d0f-4ae3-53e9-a99d-2244e2adc7bb")
 			(effects
 				(font (size 1.27 1.27))
@@ -159,7 +368,7 @@
 			)
 		)
 		(pin "TS2_WAKE_BQ1" bidirectional
-			(at 195.58 330.2 0)
+			(at 88.9 209.55 0)
 			(uuid "277df7fc-6ad3-5e7f-87c9-eef98834b45c")
 			(effects
 				(font (size 1.27 1.27))
@@ -167,7 +376,7 @@
 			)
 		)
 		(pin "LD_WAKE_BQ1" bidirectional
-			(at 195.58 337.82 0)
+			(at 88.9 217.17 0)
 			(uuid "276c9df3-7c00-5a4b-a3f0-097a43599236")
 			(effects
 				(font (size 1.27 1.27))
@@ -182,194 +391,139 @@
 			)
 		)
 	)
-	(no_connect (at 195.58 228.6) (uuid "792deac1-185c-55ff-88d2-b7fc7c6281eb"))
-	(no_connect (at 195.58 236.22) (uuid "529aa375-b434-5d2c-afba-1e649973084f"))
-	(no_connect (at 195.58 243.84) (uuid "5aacbe06-9d74-577d-90bb-733b4e555eb6"))
-	(sheet
-		(at 25.4 190.5)
-		(size 170.18 76.2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+	(label "SDA_HOST"
+		(at 87.63 90.17 0)
 		(fields_autoplaced yes)
-		(stroke (width 0.1524) (type solid))
-		(fill (color 0 0 0 0.0000))
-		(uuid "d91f06c4-2ab8-4e77-b5c3-88a14f903022")
-		(property "Sheetname" "Upper monitor"
-			(at 25.4 268.7 0)
-			(effects (font (size 1.524 1.524)) (justify left bottom))
-		)
-		(property "Sheetfile" "qfbms32-bq-upper.kicad_sch"
-			(at 25.4 188.5 0)
-			(effects (font (size 1.27 1.27)) (justify left top))
-		)
-		(pin "SDA_BQ2" bidirectional
-			(at 195.58 198.12 0)
-			(uuid "1a0a1aee-2413-5900-94b0-6a44a0a6c7a8")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "SCL_BQ2" bidirectional
-			(at 195.58 205.74 0)
-			(uuid "b0dc2cab-5b2c-5e6c-9313-8f8ff3c591e5")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "ALERT_BQ2" bidirectional
-			(at 195.58 213.36 0)
-			(uuid "cc04e8e6-fef8-5b8b-947b-058941da2b61")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "REG1_BQ2" bidirectional
-			(at 195.58 220.98 0)
-			(uuid "453611f3-453c-5bfb-9e89-beedb613366b")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "RST_SHUT_BQ2" bidirectional
-			(at 195.58 228.6 0)
-			(uuid "0fd60bed-98d4-52b2-9a46-7cd7c83d5f45")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "TS2_WAKE_BQ2" bidirectional
-			(at 195.58 236.22 0)
-			(uuid "8a9ae6c4-4d67-5253-82a5-ff6982680cea")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "LD_WAKE_BQ2" bidirectional
-			(at 195.58 243.84 0)
-			(uuid "e526d24a-4729-5002-9158-07bf694a2adc")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(instances
-			(project "qfbms32-bq-monitors"
-				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
-					(page "3")
-				)
-			)
-		)
-	)
-	(no_connect (at 195.58 93.98) (uuid "c1e33750-9227-5ad8-bf16-55523b87280a"))
-	(no_connect (at 195.58 101.6) (uuid "2bbb624d-3b10-59d3-bf42-408c329b567b"))
-	(sheet
-		(at 25.4 40.64)
-		(size 170.18 83.82)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke (width 0.1524) (type solid))
-		(fill (color 0 0 0 0.0000))
-		(uuid "a18c44e0-6b21-4f55-9d30-2c7e91ab6044")
-		(property "Sheetname" "Upper I2C isolation"
-			(at 25.4 126.46 0)
-			(effects (font (size 1.524 1.524)) (justify left bottom))
-		)
-		(property "Sheetfile" "qfbms32-bq-iso-i2c.kicad_sch"
-			(at 25.4 38.64 0)
-			(effects (font (size 1.27 1.27)) (justify left top))
-		)
-		(pin "SDA_BQ2" bidirectional
-			(at 195.58 48.26 0)
-			(uuid "2ac02d9e-698a-5a1e-8262-7fe239d3b29f")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "SCL_BQ2" bidirectional
-			(at 195.58 55.88 0)
-			(uuid "e4915639-8c4b-501c-a89b-42aa27db3c91")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "ALERT_BQ2" bidirectional
-			(at 195.58 63.5 0)
-			(uuid "08c05ef2-14ac-539f-824d-b21b63412238")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "REG1_BQ2" bidirectional
-			(at 195.58 71.12 0)
-			(uuid "14f8f1a9-b59a-54c0-97c3-ca6dc6978889")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "SDA_HOST" bidirectional
-			(at 195.58 78.74 0)
-			(uuid "8f68e4be-adf5-5a15-a9ba-882ec3425033")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "SCL_HOST" bidirectional
-			(at 195.58 86.36 0)
-			(uuid "2a108a2b-f7da-5410-8a0e-d30b05b7d339")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "GPIO9" bidirectional
-			(at 195.58 93.98 0)
-			(uuid "d3776476-91db-5475-93bc-9ed98d78e939")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(pin "HOST_3V3" bidirectional
-			(at 195.58 101.6 0)
-			(uuid "04e14c54-0571-5933-94bc-5a2b0fa8f817")
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-		)
-		(instances
-			(project "qfbms32-bq-monitors"
-				(path "/b7c1a0e2-4d55-4a1e-9c31-0f6a2b8d1001"
-					(page "4")
-				)
-			)
-		)
-	)
-	(text "Host I2C is SDA_HOST and SCL_HOST: GPIO21 and GPIO20, 100 kHz.\nGPIO9 is pulled high on the isolation sheet. GPIO9 low selects ESP32-C3 download mode.\nUpper-bus disconnect uses U204 TMUX154E; GPIO9 high opens, low connects after the lower address\ncheck.\nThat connection is allowed only after the lower device has been verified at 0x10.\nCHG_NEG and the wake ports remain open. No charge FET, USB, or CAN is on these sheets.\nCELL0 and CELL16 stay separate. CELL16 is the upper reference, not the lower ground.\nIsolation OPEN items:\nU_ISO: Bidirectional I2C isolator using the ISO1640 8-D pin map (VCC1, SDA1, SCL1, GND1, GND2, SCL2,\nSDA2, VCC2). No enable pin. Orderable suffix is OPEN; the 16-DW package has different pin numbers\nand is not this symbol.\nU204: TI TMUX154EDGSR, 2-channel SPDT switch in VSSOP-10. Pin 4 A and pin 6 B are the host-side\nSDA/SCL commons; pins 2 A0 and 8 B0 face ISO1640 SDA1/SCL1. Pins 3 A1 and 7 B1 are unused; pin 1 SEL\nis held low to select A0/B0; pin 9 EN is active low and goes directly to GPIO9; pin 10 VCC is\nHOST_3V3; pin 5 GND is CELL0. TI specifies 3.0-4.3 V supply, I/O to 5.25 V, and high-impedance I/O\nwhen unpowered.\nR201: Switch/ISO1640 side-1 SDA pull-up to HOST_3V3. Resistance remains OPEN pending rail-\ndifference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.\nR202: Switch/ISO1640 side-1 SCL pull-up to HOST_3V3. Resistance remains OPEN pending rail-\ndifference, aggregate sink-current, capacitance and rise-time calculation at 100 kHz.\nC203: 100 nF local bypass from HOST_3V3 to CELL0.\nALERT_BQ2: Upper ALERT stays on the upper side and ends at a no-connect on this sheet. Do not tie it\nto CELL0. Firmware does not consume upper ALERT. A unidirectional isolator MPN across the barrier is\nOPEN; do not invent that part.\nR203: GPIO9 reset pull-up to HOST_3V3. Value is OPEN. GPIO9 must be high at reset because GPIO9 low\nselects ESP32-C3 download mode; that level disables U204."
-		(at 279.4 49.53 0)
 		(effects
 			(font
-				(size 1.15 1.15)
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b77736bc-93a3-586e-b7d4-7bf996704985")
+	)
+	(label "SDA_HOST"
+		(at 104.14 179.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "339d8e2e-489a-5651-8cfd-f15ada0733ae")
+	)
+	(label "SCL_HOST"
+		(at 87.63 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33d22a7f-3808-5506-8a33-c0d9e9039a93")
+	)
+	(label "SCL_HOST"
+		(at 104.14 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8e45d9c5-4799-5086-9bbf-72625f95f4ba")
+	)
+	(text "HOST DOMAIN   /   CELL0"
+		(at 22.86 49.53 0)
+		(effects
+			(font
+				(size 2 2)
 			)
 			(justify left top)
 		)
-		(uuid "cf9c1864-aa91-522c-a837-b561bbc0676f")
+		(uuid "ca119e3b-8eb8-54b5-a4d9-35887f9be858")
+	)
+	(text "UPPER DOMAIN   /   CELL16"
+		(at 274.32 49.53 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left top)
+		)
+		(uuid "dbf2bbb1-fa9c-5e32-8ab4-3d0bfc2788b7")
+	)
+	(text "U204  TMUX154E   >   U_ISO  ISO1640"
+		(at 154.94 55.88 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left top)
+		)
+		(uuid "6add2669-29d1-5b04-8f57-916ba3c48d95")
+	)
+	(text "Domain boundary inside ISO1640"
+		(at 154.94 63.5 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left top)
+		)
+		(uuid "c472d907-ea47-5b72-a4d3-3b6853179295")
+	)
+	(text "Cells 17-32   |   upper address 0x08"
+		(at 299.72 156.21 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left top)
+		)
+		(uuid "20851f29-fd1f-523f-a021-0215a3b3b935")
+	)
+	(text "Cells 1-16   |   lower address 0x08 at reset"
+		(at 22.86 238.76 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left top)
+		)
+		(uuid "e0b46ae3-511d-5163-9b5c-6f5cea7d8140")
+	)
+	(text "Startup sequence"
+		(at 144.78 175.26 0)
+		(effects
+			(font
+				(size 2.3 2.3)
+			)
+			(justify left top)
+		)
+		(uuid "3a47ab55-eca8-5b03-85c7-4d1adc989bc7")
+	)
+	(text "1   GPIO9 high opens U204. Configure lower BQ on the direct host bus.\n2   Verify lower BQ at 0x10.\n3   Drive GPIO9 low to admit upper BQ at 0x08 through ISO1640."
+		(at 144.78 186.69 0)
+		(effects
+			(font
+				(size 1.7 1.7)
+			)
+			(justify left top)
+		)
+		(uuid "ed202e1e-688b-56b8-8c9b-14c81c0fbfa3")
+	)
+	(text "OPEN   Lower BQ remains connected with its rail off. See lower sheet.\nOPEN   Both TS2 wake drivers require local VSS switching with REG1 off."
+		(at 144.78 213.36 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left top)
+		)
+		(uuid "5e465056-404f-5626-af4f-2864b0b72df0")
 	)
 	(sheet_instances
 		(path "/"

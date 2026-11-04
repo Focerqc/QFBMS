@@ -1008,6 +1008,47 @@
     }
   }
 
+  async function triggerRenderSchematic() {
+    if (!S.boardPath) return toast('No board selected', 'warn');
+    const btn = $('btnSchematic');
+    const oldHtml = btn ? btn.innerHTML : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.add('btn-spinning');
+      btn.textContent = 'Rendering schematic…';
+    }
+    try {
+      const response = await fetch(`/api/render_schematic?path=${encodeURIComponent(S.boardPath)}`, { method: 'POST' });
+      const responseText = await response.text();
+      let res;
+      try {
+        res = JSON.parse(responseText);
+      } catch {
+        const hint = response.status === 404
+          ? 'Dashboard API not found. Run Start Dashboards.cmd, then reload the page.'
+          : `Dashboard returned HTTP ${response.status} instead of JSON.`;
+        throw new Error(hint);
+      }
+      if (!response.ok && !res.error) throw new Error(`Dashboard returned HTTP ${response.status}.`);
+      if (res.error) throw new Error(res.error);
+      $('schematicFrame').src = `/api/schematic_pdf?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`;
+      $('schematicSubTitle').textContent = `Rendered ${res.timestamp} · scroll to navigate sheets`;
+      $('schematicModal').classList.add('open');
+    } catch (err) {
+      toast(`Schematic render failed: ${err.message}`, 'error');
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.classList.remove('btn-spinning');
+        btn.innerHTML = oldHtml;
+      }
+    }
+  }
+
+  function closeSchematicViewer() {
+    $('schematicModal')?.classList.remove('open');
+  }
+
   // ---------- ISOMETRIC 3D VIEWER ----------
   function openIsoViewer() {
     if (!S.renderIsoPath) {
@@ -2102,7 +2143,7 @@
   function buildPrompt() {
     const boxesFile = S.boardPath.replace(/\.kicad_pcb$/i, '.boxes.json');
     const lines = [];
-    lines.push(`### Parts to place / update on \`${S.boardPath}\``);
+    lines.push(`### PCB context / requested work on \`${S.boardPath}\``);
     lines.push('');
     lines.push(`Reference image: \`${S.doc.ref || '(none)'}\``);
     if (S.doc.refBot) lines.push(`Bottom reference image: \`${S.doc.refBot}\``);
@@ -2114,9 +2155,11 @@
     }
     lines.push(`Box file (same data, machine-readable): \`${boxesFile}\``);
     lines.push('');
-    lines.push('X/Y = center in KiCad board coordinates (mm). W×H = part/box size. ' +
-               'Place/update footprints directly on the PCB and move/align footprint to center. ' +
-               'Check color notes to add new parts or correct/align existing footprints. Ask me if a note is missing or unclear.');
+    lines.push('X/Y = center in KiCad board coordinates (mm). W×H = part/box size.');
+    lines.push('');
+    lines.push('Interpret the user’s accompanying request first. Selected existing footprints are deliberate pointers to the component(s) or area they mean, even if they do not know the reference designator. Use the listed reference, value, footprint, position and board context to identify them; do not rely on a screenshot alone. Selection is context, not by itself a request to move, replace, or modify a part.');
+    lines.push('');
+    lines.push('Answer informational questions (such as identifying a part or checking whether it appears in the schematic) from the project files without making placement changes. Make PCB edits only when the request asks for them. For requested placement work, treat box X/Y as the target center and align the footprint there; use color notes to understand additions or corrections. If a missing or unclear note prevents the requested change, ask a focused question before changing the PCB.');
 
     let patLetter = 0;
     const patName = new Map();
@@ -2129,7 +2172,7 @@
       const compRefs = bs.filter(b => b.ref).map(b => b.ref);
       const titleExtra = compRefs.length ? ` · Selected: ${compRefs.join(', ')}` : '';
       lines.push('');
-      lines.push(`#### Color ${k + 1} (${c.hex}): ${c.note ? c.note : '**(no note, ask me)**'} · ${its.length} item${its.length > 1 ? 's' : ''}${titleExtra}`);
+      lines.push(`#### Color ${k + 1} (${c.hex}): ${c.note ? c.note : '**(no color note)**'} · ${its.length} item${its.length > 1 ? 's' : ''}${titleExtra}`);
       lines.push('');
       lines.push('| # | Ref / Item | Value / Footprint | X (mm) | Y (mm) | W×H (mm) | Details / Pattern |');
       lines.push('|---|---|---|---|---|---|---|');
@@ -2399,6 +2442,13 @@
 
     const btnTop = $('btnTopRender3D');
     if (btnTop) btnTop.onclick = () => triggerRender3D('top');
+    const btnSchematic = $('btnSchematic');
+    if (btnSchematic) btnSchematic.onclick = triggerRenderSchematic;
+    const btnSchematicRerender = $('btnSchematicRerender');
+    if (btnSchematicRerender) btnSchematicRerender.onclick = triggerRenderSchematic;
+    const btnSchematicClose = $('btnSchematicClose');
+    if (btnSchematicClose) btnSchematicClose.onclick = closeSchematicViewer;
+    $('schematicModal')?.addEventListener('click', e => { if (e.target === $('schematicModal')) closeSchematicViewer(); });
     const btnIso = $('btnIsoRender3D');
     if (btnIso) btnIso.onclick = () => triggerRender3D('iso');
     const btnViewIso = $('btnViewIso');

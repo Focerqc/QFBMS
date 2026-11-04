@@ -65,7 +65,9 @@ static bool com_set_level(int level) {
 		}
 		return false;
 	}
-	if (m_i2c_ready && (level == 0) != m_com_connected &&
+	// Opening the path must always be possible, including when a connected
+	// device has wedged SDA or SCL low. Only connecting requires an idle bus.
+	if (level == 0 && !m_com_connected && m_i2c_ready &&
 		(gpio_get_level(PIN_SDA) == 0 || gpio_get_level(PIN_SCL) == 0)) {
 		if (i2c_mutex) {
 			xSemaphoreGive(i2c_mutex);
@@ -1378,6 +1380,12 @@ static lbm_value ext_i2c_detect_addr(lbm_value *args, lbm_uint argn) {
 
 	uint8_t address = lbm_dec_as_u32(args[0]);
 	xSemaphoreTake(i2c_mutex, portMAX_DELAY);
+	// Address detection is also a bus transaction; enforce the same 0x08
+	// admission rule as i2c_tx_rx while holding the I2C mutex.
+	if (address == BQ_ADDR_2 && !m_lower_addr08_setup && !m_com_connected) {
+		xSemaphoreGive(i2c_mutex);
+		return ENC_SYM_NIL;
+	}
 	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 	i2c_master_start(cmd);
 	i2c_master_write_byte(cmd, (address << 1) | I2C_MASTER_WRITE, true);

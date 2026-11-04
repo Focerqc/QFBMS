@@ -8,9 +8,26 @@ try {
         @{ Port = 5181; Script = 'progress_dashboard\server.py' }
     )) {
         $port = $dashboard.Port
+        $scriptPath = Join-Path $PSScriptRoot $dashboard.Script
         $listener = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue
-        if (-not $listener) {
-            $scriptPath = Join-Path $PSScriptRoot $dashboard.Script
+        if ($listener) {
+            foreach ($connection in $listener) {
+                $process = Get-CimInstance Win32_Process -Filter ("ProcessId = {0}" -f $connection.OwningProcess)
+                $commandLine = [string]$process.CommandLine
+                if (-not $commandLine -or $commandLine.IndexOf($scriptPath, [StringComparison]::OrdinalIgnoreCase) -lt 0) {
+                    throw "Port $port is already used by a process other than this QFBMS dashboard. Close that process, then run this script again."
+                }
+                Stop-Process -Id $connection.OwningProcess -Force
+            }
+            for ($attempt = 0; $attempt -lt 20; $attempt++) {
+                if (-not (Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue)) { break }
+                Start-Sleep -Milliseconds 250
+            }
+            if (Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue) {
+                throw "The old QFBMS dashboard on port $port did not stop."
+            }
+        }
+        if (-not (Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue)) {
             $logPrefix = Join-Path $env:TEMP "qfbms-dashboard-$port"
             Start-Process -FilePath $pythonPath -ArgumentList ('"{0}"' -f $scriptPath) -WorkingDirectory $repoRoot -WindowStyle Hidden -RedirectStandardOutput "$logPrefix.out.log" -RedirectStandardError "$logPrefix.err.log"
         }

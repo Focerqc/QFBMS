@@ -6,6 +6,7 @@ Serves the UI and talks to KiCad through kicad_bridge.py (run with KiCad's own P
   python server.py            -> http://localhost:5180
 """
 import datetime
+import hashlib
 import http.server
 import json
 import mimetypes
@@ -124,6 +125,28 @@ def render_board_3d(board_full, kind="top"):
         "timestamp": timestamp_str,
         "mtime": mtime
     }
+
+
+def schematic_pdf_file(board_full):
+    key = hashlib.sha256(os.path.abspath(board_full).encode("utf-8")).hexdigest()[:12]
+    return os.path.join(REPO_ROOT, "exports", f"schematic-preview-{key}.pdf")
+
+
+def render_schematic(board_full):
+    if not board_full.lower().endswith(".kicad_pcb"):
+        raise ValueError("path must be a .kicad_pcb")
+    schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
+    if not os.path.isfile(schematic):
+        raise FileNotFoundError(f"Matching schematic not found: {rel(schematic)}")
+    out_pdf = schematic_pdf_file(board_full)
+    os.makedirs(os.path.dirname(out_pdf), exist_ok=True)
+    res = subprocess.run(
+        [KICAD_CLI, "sch", "export", "pdf", "--output", out_pdf, schematic],
+        capture_output=True, text=True, timeout=120,
+    )
+    if res.returncode != 0 or not os.path.isfile(out_pdf):
+        raise RuntimeError(f"kicad-cli schematic export failed: {res.stderr or res.stdout}")
+    return {"status": "ok", "pdf": rel(out_pdf), "timestamp": datetime.datetime.fromtimestamp(os.path.getmtime(out_pdf)).strftime("%b %d, %I:%M:%S %p")}
 
 
 def get_render_3d_status(board_full, kind=None):
@@ -261,6 +284,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 kind = q.get("kind", ["top"])[0]
                 return self.send_json(render_board_3d(full, kind=kind))
 
+            if u.path == "/api/schematic_pdf":
+                full = safe_path(q.get("path", [""])[0])
+                if not full.lower().endswith(".kicad_pcb"):
+                    raise ValueError("path must be a .kicad_pcb")
+                pdf = schematic_pdf_file(full)
+                if not os.path.isfile(pdf):
+                    return self.send_error(404)
+                with open(pdf, "rb") as f:
+                    data = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/pdf")
+                self.send_header("Content-Length", str(len(data)))
+                self.send_header("Content-Disposition", "inline; filename=schematic-preview.pdf")
+                self.end_headers()
+                self.wfile.write(data)
+                return
+
             if u.path == "/api/image":
                 full = safe_path(q.get("path", [""])[0])
                 if not os.path.isfile(full):
@@ -287,6 +327,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         length = int(self.headers.get("Content-Length", 0))
         payload = json.loads(self.rfile.read(length) or b"{}")
         try:
+            if u.path == "/api/render_schematic":
+                full = safe_path(q.get("path", [""])[0])
+                return self.send_json(render_schematic(full))
+
             if u.path == "/api/render_3d":
                 full = safe_path(q.get("path", [""])[0])
                 kind = q.get("kind", ["top"])[0]

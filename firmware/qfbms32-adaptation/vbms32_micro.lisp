@@ -216,7 +216,10 @@ loopwhile-thd
 (defun with-com (expr) {
         (mutex-lock com-mutex)
 
-        (bms-set-com 0)
+        (if (not (bms-set-com 0)) {
+                (mutex-unlock com-mutex)
+                (exit-error 0)
+        })
 
         (var res (looprange i 0 4 {
                     (match (trap (eval expr))

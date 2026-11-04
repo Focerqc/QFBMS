@@ -590,6 +590,8 @@ kbd {
   background: rgba(4, 6, 11, 0.88); backdrop-filter: blur(12px);
   z-index: 50;
 }
+.schematic-window { width: min(96vw, 1500px); height: min(94vh, 1000px); }
+.schematic-frame { display: block; width: 100%; height: calc(100% - 58px); border: 0; background: #f4f4f4; }
 .iso-window {
   width: 95vw; height: 92vh; display: flex; flex-direction: column;
   background: var(--panel-solid); border: 1px solid var(--line-2); border-radius: 16px;
