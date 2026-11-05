@@ -1,0 +1,24 @@
+{
+  "source_revision": "41740fd86d202732501445f181add5510cca9a62",
+  "exported_date": "2026-11-04",
+  "status": "Engineering draft; source and PDF hashes do not establish electrical validation.",
+  "schematic_sources": {
+    "qfbms32-bq-iso-i2c.kicad_sch": "08eb2fb47e869adec9b94c30530d77c0b8b0dff1cc7e8956bbff2ae33d440972",
+    "qfbms32-bq-lower.kicad_sch": "a2e21f8ba91576ded9439dca80c187c3dad1f4f25e02ebfce3e9fc865aab944e",
+    "qfbms32-bq-monitors.kicad_sch": "22d7ee46540d1b0ba6a8873d03ad90f699bc962bff17c182221d4a183353ea02",
+    "qfbms32-bq-startup.kicad_sch": "dd4772312f38eb603e0fd47391501586bc5ebe46fd26666fcdc40d3e7d34f4c3",
+    "qfbms32-bq-upper.kicad_sch": "707d9192766940dc0f2e220b218d36bdb5f4a3a1889145dbf93f2e8c12358604",
+    "qfbms32-charge-only-draft.kicad_sch": "2046caabfa361b79879ecac0b6701c29ad2b849d31c6c96f0d3d1434c0cc5761",
+    "qfbms32.kicad_sch": "c8b17e5aa0936d8ffa2d0c3b4535be0b898064dc0976f2abd4436c4a3b704603"
+  },
+  "pdfs": {
+    "main-schematic-draft.pdf": {
+      "sha256": "ceb44f66f9a83cd5fa873ea8e92b0539bb7e4f7444f7efa0733f1b459223559f",
+      "pages": 1
+    },
+    "monitor-schematic-draft.pdf": {
+      "sha256": "a630bb5e9ad11e83769a45fa99f24d092ac3387478d9e5004be561a50957a3b2",
+      "pages": 5
+    }
+  }
+}
