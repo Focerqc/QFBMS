@@ -1,0 +1,2299 @@
+PAGE 1
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+Load
+Supply
+(0 V to 36 V)
+2.7 V to 5.5 V
+RPULL-UP
+10 k
+RLIMIT
+RESET
++
+INA301
+CBYPASS
+0.1 PF
+LIMIT
+GPIO
+GPIO
+ADC
+DAC
+Microcontroller
+Product
+Folder
+Sample &
+Buy
+Technical
+Documents
+Tools &
+Software
+Support &
+Community
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+INA301 36-V, High-Speed, Zero-Drift, Voltage-Output,
+Current-Shunt Monitor with High-Speed, Overcurrent Comparator
+1
+1
+Features
+1•
+Wide Common-Mode Input Range: 0 V to 36 V
+•
+Dual Output: Amplifier and Comparator Output
+•
+High Accuracy Amplifier:
+–
+Offset Voltage: 35 µV (Max)
+–
+Offset Voltage Drift: 0.5 µV/°C (Max)
+–
+Gain Error: 0.1% (Max)
+–
+Gain Error Drift: 10 ppm/°C
+•
+Available Amplifier Gains:
+–
+INA301A1: 20 V/V
+–
+INA301A2: 50 V/V
+–
+INA301A3: 100 V/V
+•
+Programmable Alert Threshold Set Through a
+Single Resistor
+•
+Total Alert Response Time: 1 µs
+•
+Open-Drain Output With Latching Mode
+•
+Package: VSSOP-8
+2
+Applications
+•
+Overcurrent Protection
+•
+Power-Supply Protection
+•
+Circuit Breakers
+•
+Computers and Servers
+•
+Telecom Equipment
+•
+Battery Management
+3
+Description
+The INA301 includes both a high common-mode,
+current-sensing
+amplifier
+and
+a
+high-speed
+comparator
+configured
+to
+detect
+overcurrent
+conditions through measuring the voltage developed
+across a current-sensing or current-shunt resistor and
+comparing that voltage to a defined threshold limit.
+The device features an adjustable limit threshold
+range that is set using a single external limit-setting
+resistor. This current-shunt monitor can measure
+differential voltage signals on common-mode voltages
+that can vary from 0 V up to 36 V, independent of the
+supply voltage.
+The open-drain alert output can be configured to
+operate in either a transparent mode where the
+output status follows the input state or in a latched
+mode where the alert output is cleared when the latch
+is reset. The device alert response time is under 1 µs,
+allowing for quick detection of overcurrent events.
+This device operates from a single 2.7-V to 5.5-V
+supply, drawing a maximum supply current of 700 µA.
+The device is specified over the extended operating
+temperature
+range
+(–40°C
+to
++125°C),
+and
+is
+available in an 8-pin VSSOP package.
+Device Information
+PART NUMBER
+PACKAGE
+BODY SIZE
+INA301
+VSSOP (8)
+3.00 mm × 3.00 mm
+Typical Application
+
+PAGE 2
+2
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Table of Contents
+1
+Features.................................................................. 1
+2
+Applications ........................................................... 1
+3
+Description ............................................................. 1
+4
+Revision History..................................................... 2
+5
+Pin Configuration and Functions......................... 3
+6
+Specifications......................................................... 4
+6.1
+Absolute Maximum Ratings ...................................... 4
+6.2
+ESD Ratings.............................................................. 4
+6.3
+Recommended Operating Conditions....................... 4
+6.4
+Thermal Information.................................................. 4
+6.5
+Electrical Characteristics........................................... 5
+6.6
+Typical Characteristics.............................................. 7
+7
+Detailed Description ............................................ 13
+7.1
+Overview ................................................................. 13
+7.2
+Functional Block Diagram ....................................... 13
+7.3
+Feature Description................................................. 14
+7.4
+Device Functional Modes........................................ 19
+8
+Applications and Implementation ...................... 21
+8.1
+Application Information .......................................... 21
+8.2
+Typical Application .................................................. 21
+9
+Power Supply Recommendations...................... 23
+10
+Layout................................................................... 23
+10.1
+Layout Guidelines ................................................. 23
+10.2
+Layout Example .................................................... 23
+11
+Device and Documentation Support ................. 24
+11.1
+Community Resources.......................................... 24
+11.2
+Trademarks........................................................... 24
+11.3
+Electrostatic Discharge Caution............................ 24
+11.4
+Glossary................................................................ 24
+12
+Mechanical, Packaging, and Orderable
+Information ........................................................... 24
+4
+Revision History
+Changes from Original (September 2015) to Revision A
+Page
+•
+Released to production .......................................................................................................................................................... 1
+
+PAGE 3
+1
+2
+3
+4
+5
+8
+7
+6
+OUT
+VS
+GND
+LIMIT
+IN+
+IN-
+RESET
+ALERT
+3
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+5
+Pin Configuration and Functions
+DGK Package
+8-Pin VSSOP
+Top View
+Pin Functions
+PIN
+I/O
+DESCRIPTION
+NO.
+NAME
+1
+VS
+Analog
+Power supply, 2.7 V to 5.5 V
+2
+OUT
+Analog output
+Output voltage
+3
+LIMIT
+Analog input
+Alert threshold limit input; see the Setting The Current-Limit Threshold section for
+details on setting the limit threshold
+4
+GND
+Analog
+Ground
+5
+RESET
+Digital input
+Transparent or latch mode selection input
+6
+ALERT
+Digital output
+Overlimit alert, active-low, open-drain output
+7
+IN–
+Analog input
+Connect to load side of the shunt resistor
+8
+IN+
+Analog input
+Connect to supply side of the shunt resistor
+
+PAGE 4
+4
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+(1)
+Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2)
+VIN+ and VIN– are the voltages at the IN+ and IN– pins, respectively.
+(3)
+Input voltage can exceed the voltage shown without causing damage to the device if the current at that pin is limited to 5 mA.
+6
+Specifications
+6.1
+Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted)(1)
+MIN
+MAX
+UNIT
+Supply voltage, VS
+6
+V
+Analog inputs (IN+, IN–)
+Differential (VIN+) – (VIN–)(2)
+–40
+40
+V
+Common-mode(3)
+GND – 0.3
+40
+Analog input
+LIMIT pin
+GND – 0.3
+(VS) + 0.3
+V
+Analog output
+OUT pin
+GND – 0.3
+(VS) + 0.3
+V
+Digital input
+RESET pin
+GND – 0.3
+(VS) + 0.3
+V
+Digital output
+ALERT pin
+GND – 0.3
+6
+V
+Junction temperature, TJ
+150
+°C
+Storage temperature, Tstg
+–65
+150
+°C
+(1)
+JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)
+JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+6.2
+ESD Ratings
+VALUE
+UNIT
+V(ESD)
+Electrostatic discharge
+Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001(1)
+±2000
+V
+Charged-device model (CDM), per JEDEC specification JESD22-C101(2)
+±1000
+6.3
+Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+MIN
+NOM
+MAX
+UNIT
+VCM
+Common-mode input voltage
+12
+V
+VS
+Operating supply voltage
+5
+V
+TA
+Operating free-air temperature
+–40
+125
+°C
+(1)
+For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report, SPRA953.
+6.4
+Thermal Information
+THERMAL METRIC(1)
+INA301
+UNIT
+DGK (MSOP)
+8 PINS
+RθJA
+Junction-to-ambient thermal resistance
+161.5
+°C/W
+RθJC(top)
+Junction-to-case (top) thermal resistance
+62.3
+°C/W
+RθJB
+Junction-to-board thermal resistance
+81.4
+°C/W
+ψJT
+Junction-to-top characterization parameter
+6.8
+°C/W
+ψJB
+Junction-to-board characterization parameter
+80
+°C/W
+RθJC(bot)
+Junction-to-case (bottom) thermal resistance
+N/A
+°C/W
+
+PAGE 5
+5
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+(1)
+RTI = referred-to-input.
+6.5
+Electrical Characteristics
+at TA = 25°C, VSENSE = VIN+ – VIN– = 10 mV, VS = 5 V, VIN+ = 12 V, and VLIMIT = 2 V (unless otherwise noted)
+PARAMETER
+TEST CONDITIONS
+MIN
+TYP
+MAX
+UNIT
+INPUT
+VCM
+Common-mode input voltage range
+0
+36
+V
+VIN
+Differential input voltage range
+VIN = VIN+ – VIN–, INA301A1
+0
+250
+mV
+VIN = VIN+ – VIN–, INA301A2
+0
+100
+VIN = VIN+ – VIN–, INA301A3
+0
+50
+CMR
+Common-mode rejection
+INA301A1, VIN+ = 0 V to 36 V,
+TA = –40ºC to +125ºC
+100
+110
+dB
+INA301A2, VIN+ = 0 V to 36 V,
+TA = –40ºC to +125ºC
+106
+118
+INA301A3, VIN+ = 0 V to 36 V,
+TA = –40ºC to +125ºC
+110
+120
+VOS
+Offset voltage, RTI(1)
+INA301A1
+±25
+±125
+µV
+INA301A2
+±15
+±50
+INA301A3
+±10
+±35
+dVOS/dT
+Offset voltage drift, RTI(1)
+TA= –40ºC to +125ºC
+0.1
+0.5
+µV/°C
+PSRR
+Power-supply rejection ratio
+VS = 2.7 V to 5.5 V, VIN+ = 12 V,
+TA = –40ºC to +125ºC
+±0.1
+±10
+µV/V
+IB
+Input bias current
+IB+, IB–
+120
+µA
+IOS
+Input offset current
+VSENSE = 0 mV
+±0.1
+µA
+OUTPUT
+G
+Gain
+INA301A1
+20
+V/V
+INA301A2
+50
+INA301A3
+100
+Gain error
+INA301A1, VOUT = 0.5 V to VS – 0.5 V
+±0.03%
+±0.1%
+INA301A2, VOUT = 0.5 V to VS – 0.5 V
+±0.05%
+±0.15%
+INA301A3, VOUT = 0.5 V to VS – 0.5 V
+±0.11%
+±0.2%
+TA= –40ºC to 125ºC
+3
+10
+ppm/°C
+Nonlinearity error
+VOUT = 0.5 V to VS – 0.5 V
+±0.01%
+Maximum capacitive load
+No sustained oscillation
+500
+pF
+VOLTAGE OUTPUT
+Swing to VS power-supply rail
+RL = 10 kΩ to GND,
+TA = –40ºC to +125ºC
+VS – 0.05
+VS – 0.1
+V
+Swing to GND
+RL = 10 kΩ to GND,
+TA = –40ºC to +125ºC
+VGND + 20
+VGND + 30
+mV
+FREQUENCY RESPONSE
+BW
+Bandwidth
+INA301A1
+550
+kHz
+INA301A2
+500
+INA301A3
+450
+SR
+Slew rate
+4
+V/µs
+NOISE, RTI(1)
+Voltage noise density
+30
+nV/√Hz
+
+PAGE 6
+6
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Electrical Characteristics (continued)
+at TA = 25°C, VSENSE = VIN+ – VIN– = 10 mV, VS = 5 V, VIN+ = 12 V, and VLIMIT = 2 V (unless otherwise noted)
+PARAMETER
+TEST CONDITIONS
+MIN
+TYP
+MAX
+UNIT
+COMPARATOR
+tp
+Total alert propagation delay
+Input overdrive = 1 mV
+0.75
+1
+µs
+Slew-rate-limited tp
+VOUT step = 0.5 V to 4.5 V, VLIMIT = 4 V
+1
+1.5
+ILIMIT
+Limit threshold output current
+TA = 25ºC
+79.7
+80
+80.3
+µA
+TA = –40ºC to +125ºC
+79.2
+80.8
+VOS
+Comparator offset voltage
+INA301A1
+1
+3.5
+mV
+INA301A2
+1
+4
+INA301A3
+1.5
+4.5
+HYS
+Hysteresis
+INA301A1
+20
+mV
+INA301A2
+50
+INA301A3
+100
+VIH
+High-level input voltage
+1.4
+6
+V
+VIL
+Low-level input voltage
+0
+0.4
+V
+VOL
+Alert low-level output voltage
+IOL = 3 mA
+70
+300
+mV
+ALERT pin leakage input current
+VOH = 3.3 V
+0.1
+1
+µA
+Digital leakage input current
+0 ≤VIN ≤VS
+1
+µA
+POWER SUPPLY
+VS
+Operating supply range
+TA = –40ºC to +125ºC
+2.7
+5.5
+V
+IQ
+Quiescent current
+VSENSE = 0 mV, TA = 25ºC
+500
+650
+µA
+TA = –40ºC to +125ºC
+700
+TEMPERATURE RANGE
+Specified range
+–40
+125
+°C
+
+PAGE 7
+CMRR (PV/V)
+Population
+-10
+-8
+-6
+-4
+-2
+0
+2
+4
+6
+8
+10
+CMRR (PV/V)
+Population
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+Input Offset Voltage (PV)
+Population
+-100
+-80
+-60
+-40
+-20
+0
+20
+40
+60
+80
+100
+Temperature (qC)
+Offset Voltage (PV)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+-20
+0
+20
+40
+60
+INA301A1
+INA301A2
+INA301A3
+Input Offset Voltage (PV)
+Population
+-100
+-80
+-60
+-40
+-20
+0
+20
+40
+60
+80
+100
+Input Offset Voltage (PV)
+Population
+-100
+-80
+-60
+-40
+-20
+0
+20
+40
+60
+80
+100
+7
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+6.6
+Typical Characteristics
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 1. Input Offset Voltage Distribution (INA301A1)
+Figure 2. Input Offset Voltage Distribution (INA301A2)
+Figure 3. Input Offset Voltage Distribution (INA301A3)
+Figure 4. Input Offset Voltage vs Temperature
+Figure 5. Common-Mode Rejection Ratio Distribution
+(INA301A1)
+Figure 6. Common-Mode Rejection Ratio Distribution
+(INA301A2)
+
+PAGE 8
+Gain Error (%)
+Population
+-0.1
+-0.08
+-0.06
+-0.04
+-0.02
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+Gain Error (%)
+Population
+-0.2
+-0.16
+-0.12
+-0.08
+-0.04
+0
+0.04
+0.08
+0.12
+0.16
+0.2
+Gain Error (%)
+Population
+-0.1
+-0.08
+-0.06
+-0.04
+-0.02
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+Frequency (Hz)
+CMRR (dB)
+60
+80
+100
+120
+140
+10
+100
+1k
+10k
+100k
+1M
+INA301A1
+INA301A2
+INA301A3
+CMRR (PV/V)
+Population
+-3
+-2.5
+-2
+-1.5
+-1
+-0.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+Temperature (qC)
+CMRR (Pv/v)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+-1
+-0.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+INA301A1
+INA301A2
+INA301A3
+8
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 7. Common-Mode Rejection Ratio Distribution
+(INA301A3)
+Figure 8. Common-Mode Rejection Ratio vs Temperature
+Figure 9. Common-Mode Rejection Ratio vs Frequency
+Figure 10. Gain Error Distribution (INA301A1)
+Figure 11. Gain Error Distribution (INA301A2)
+Figure 12. Gain Error Distribution (INA301A3)
+
+PAGE 9
+Common-Mode Voltage (V)
+Input Bias Current (PA)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+-50
+0
+50
+100
+150
+200
+250
+Common-Mode Voltage (V)
+Input Bias Current (PA)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0
+30
+60
+90
+120
+150
+Frequency (Hz)
+PSRR (dB)
+20
+40
+60
+80
+100
+120
+140
+1
+10
+100
+1k
+10k
+100k
+1M
+10M
+VS
+V - 1
+S
+V
+2
+-
+S
+GND + 3
+GND + 2
+GND + 1
+GND
+0
+2
+4
+6
+8
+10
+12
+14
+Output Current (mA)
+Output Voltage Swing (V)
+125ºC
+25ºC
+-40ºC
+Temperature (qC)
+Gain Error (%)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+-0.5
+-0.4
+-0.3
+-0.2
+-0.1
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+INA301A1
+INA301A2
+INA301A3
+Frequency (Hz)
+Gain (dB)
+-20
+-10
+0
+10
+20
+30
+40
+50
+1
+10
+100
+1k
+10k
+100k
+1M
+10M
+INA301A1
+INA301A2
+INA301A3
+9
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 13. Gain Error vs Temperature
+Figure 14. Gain vs Frequency
+Figure 15. Power-Supply Rejection Ratio vs Frequency
+Figure 16. Output Voltage Swing vs Output Current
+Figure 17. Input Bias Current vs Common-Mode Voltage
+(VS = 5 V)
+Figure 18. Input Bias Current vs Common-Mode Voltage
+(VS = 0 V)
+
+PAGE 10
+Time (1 Ps/div)
+Output (1 V/div)           Input (200 mV/div)
+Input
+Output
+Time (1 s/div)
+Referred-to-Input Voltage Noise
+(200 nV/div)
+Temperature (qC)
+Quiescent Current (PA)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+420
+440
+460
+480
+500
+520
+540
+Frequency (Hz)
+Input-Referred Voltage Noise (nV/—Hz)
+0
+5
+10
+15
+20
+25
+30
+35
+1
+10
+100
+1k
+10k
+100k
+1M
+INA301A1
+INA301A2
+INA301A3
+Temperature (qC)
+Input Bias Current (PA)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+100
+105
+110
+115
+120
+125
+130
+135
+140
+145
+Supply Voltage (V)
+Quiescent Current (PA)
+2.7
+3
+3.3
+3.6
+3.9
+4.2
+4.5
+4.8
+5.1
+5.4
+5.7
+300
+350
+400
+450
+500
+550
+600
+10
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 19. Input Bias Current vs Temperature
+Figure 20. Quiescent Current vs Supply Voltage
+Figure 21. Quiescent Current vs Temperature
+Figure 22. Input-Referred Voltage Noise vs Frequency
+Figure 23. 0.1-Hz to 10-Hz Voltage Noise
+(Referred-to-Input)
+Figure 24. Voltage Output Rising Step Response
+(4-VPP Output Step)
+
+PAGE 11
+Time (200 ns/div)
+Voltage (0.5 V/div)
+VIN * 20 V/V
+Alert
+VLIMIT
+Time (200 ns/div)
+Voltage (0.5 V/div)
+VIN * 50 V/V
+Alert
+VLIMIT
+Temperature (qC)
+Limit Current Source (PA)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+79.2
+79.4
+79.6
+79.8
+80
+80.2
+80.4
+80.6
+80.8
+Time (5 Ps/div)
+Voltage (2 V/div)
+VSUPPLY
+VOUT
+Time (1 Ps/div)
+Output (1 V/div)           Input (200 mV/div)
+Input
+Output
+Time (2 Ps/div)
+Common-Mode Voltage (10 V/div)
+VOUT (60 mV/div)
+VCM
+VOUT
+11
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 25. Voltage Output Falling Step Response
+(4-VPP Output Step)
+Figure 26. Common-Mode Voltage Transient Response
+Figure 27. Start-Up Response
+Figure 28. Limit Current Source vs Temperature
+Figure 29. Total Propagation Delay (INA301A1)
+Figure 30. Total Propagation Delay (INA301A2)
+
+PAGE 12
+Time (2 Ps/div)
+Voltage (2 V/div)
+Reset
+Alert
+Low-Level Output Current (mA)
+Low-Level Output Voltage (mV)
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+0
+20
+40
+60
+80
+100
+120
+Temperature (qC)
+Hysteresis (mV)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+0
+20
+40
+60
+80
+100
+120
+INA301A1
+INA301A2
+INA301A3
+Temperature (qC)
+Propagation Delay (ns)
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+0
+200
+400
+600
+800
+1,000
+Time (200 ns/div)
+Voltage (0.5 V/div)
+VIN * 100 V/V
+Alert
+VLIMIT
+12
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and alert pullup resistor = 10 kΩ (unless otherwise noted)
+Figure 31. Total Propagation Delay (INA301A3)
+Figure 32. Comparator Propagation Delay vs Temperature
+(VOD = 1 mV)
+Figure 33. Comparator Alert VOL vs IOL
+Figure 34. Hysteresis vs Temperature
+Figure 35. Comparator Reset Response
+
+PAGE 13
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+LIMIT
+Load
+Power Supply
+(0 V to 36 V)
+2.7 V to 5.5 V
+RPULL-UP
+10k
+RSET
+Gain = 20, 50, 
+100
+RESET
++
++
+INA301
+CBYPASS
+0.1 PF
+13
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+7
+Detailed Description
+7.1
+Overview
+The INA301 is a 36-V common-mode, zero-drift topology, current-sensing amplifier that can be used in both low-
+side and high-side configurations. These specially-designed, current-sensing amplifiers are able to accurately
+measure voltages developed across current-sensing resistors (also known as current-shunt resistors) on
+common-mode voltages that far exceed the supply voltage powering the device. Current can be measured on
+input voltage rails as high as 36 V, and the device can be powered from supply voltages as low as 2.7 V. The
+device can also withstand the full 36-V common-mode voltage at the input pins when the supply voltage is
+removed without causing damage.
+The zero-drift topology enables high-precision measurements with maximum input offset voltages as low as
+35 μV with a temperature contribution of only 0.5 μV/°C over the full temperature range of –40°C to +125°C. The
+low total offset voltage of the INA301 enables smaller current-sense resistor values to be used, and allows for a
+more efficient system operation without sacrificing measurement accuracy resulting from the smaller input signal.
+The INA301 uses a single external resistor to allow for a simple method of setting the corresponding current
+threshold level for the device to use for out-of-range comparison. Combining the precision measurement of the
+current-sense amplifier and the on-board comparator enables an all-in-one overcurrent detection device. This
+combination creates a highly-accurate solution that is capable of fast detection of out-of-range conditions and
+allows the system to take corrective actions to prevent potential component or system-wide damage.
+7.2
+Functional Block Diagram
+
+PAGE 14
+±1 
+0 
+1 
+2 
+3 
+4 
+5 
+6 
+Voltage (V) 
+Time (5 ms/div) 
+VOUT 
+VLIMIT 
+ALERT 
+C001 
+14
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+7.3
+Feature Description
+7.3.1
+Alert Output
+The device ALERT pin is an active-low, open-drain output that is designed to be pulled low when the input
+conditions are detected to be out-of-range. This open-drain output pin is recommended to include a 10-kΩ, pullup
+resistor to the supply voltage. This open-drain pin can be pulled up to a voltage beyond the supply voltage, VS,
+but must not exceed 5.5 V.
+Figure 36 shows the alert output response of the internal comparator. When the output voltage of the amplifier is
+lower than the voltage developed at the LIMIT pin, the comparator output is in the default high state. When the
+amplifier output voltage exceeds the threshold voltage set at the LIMIT pin, the comparator output becomes
+active and pulls low. This active low output indicates that the measured signal at the amplifier input has
+exceeded the programmed threshold level, indicating an overcurrent or out-of-range condition has occurred.
+Figure 36. Overcurrent Alert Response
+7.3.2
+Alert Mode
+The device has two output operating modes, transparent and latched, that are selected based on the RESET pin
+setting. These modes change how the ALERT pin responds following an alert when the overcurrent condition is
+removed.
+7.3.2.1
+Transparent Output Mode
+The device is set to transparent mode when the RESET pin is pulled low, thus allowing the output alert state to
+change and follow the input signal with respect to the programmed alert threshold. For example, when the
+differential input signal rises above the alert threshold, the alert output pin is pulled low. As soon as the
+differential input signal drops below the alert threshold, the output returns to the default high output state. A
+common implementation using the device in transparent mode is to connect the ALERT pin to a hardware
+interrupt input on a microcontroller. As soon as an overcurrent condition is detected and the ALERT pin is pulled
+low, the controller interrupt pin detects the output state change and can begin making changes to the system
+operation required to address the overcurrent condition. Under this configuration, the ALERT pin transition from
+high to low is captured by the microcontroller so the output can return to the default high state when the
+overcurrent event is removed.
+7.3.2.2
+Latch Output Mode
+Some applications do not have the functionality available to continuously monitor the state of the output ALERT
+pin to detect an overcurrent condition as described in the Transparent Output Mode section. A typical example of
+this application is a system that is only able to poll the ALERT pin state periodically to determine if the system is
+functioning correctly. If the device is set to transparent mode in this type of application, the state change of the
+ALERT pin can be missed when ALERT is pulled low to indicate an out-of-range event if the out-of-range
+condition does not appear during one of these periodic polling events. Latch mode is specifically intended to
+accommodate these applications.
+
+PAGE 15
+VIN 
+(VIN+ - VIN-)
+VLIMIT
+0 V
+ALERT
+RESET
+Latch Mode
+Transparent Mode
+Alert Does Not Clear
+Alert Clears
+15
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Feature Description (continued)
+The device is placed into the corresponding output modes based on the signal connected to RESET, as shown
+in Table 1. The difference between latch mode and transparent mode is how the alert output responds when an
+overcurrent event ends. In transparent mode (RESET = low), when the differential input signal drops below the
+limit threshold level after the ALERT pin asserts because of an overcurrent event, the ALERT pin state returns to
+the default high setting to indicate that the overcurrent event has ended.
+Table 1. Output Mode Settings
+OUTPUT MODE
+RESET PIN SETTING
+Transparent mode
+RESET = low
+Latch mode
+RESET = high
+In latch mode (RESET = high), when an overlimit condition is detected and the ALERT pin is pulled low, the
+ALERT pin does not return to the default high state when the differential input signal drops below the alert
+threshold level. In order to clear the alert, the RESET pin must be pulled low for at least 100 ns. Pulling the
+RESET pin low allows the ALERT pin to return to the default high level provided that the differential input signal
+has dropped below the alert threshold. If the input signal is still above the threshold limit when the RESET pin is
+pulled low, the ALERT pin remains low. When the alert condition is detected by the system controller, the RESET
+pin can be set back to high in order to place the device back in latch mode.
+The latch and transparent modes are represented in Figure 37. In Figure 37, when VIN drops back below the
+VLIMIT threshold for the first time, the RESET pin is pulled high. With the RESET pin is pulled high, the device is
+set to latch mode so that the alert output state does not return high when the input signal drops below the VLIMIT
+threshold. Only when the RESET pin is pulled low does the ALERT pin return to the default high level, thus
+indicating that the input signal is below the limit threshold. When the input signal drops below the limit threshold
+for the second time, the RESET pin is already pulled low. The device is set to transparent mode at this point and
+the ALERT pin is pulled back high as soon as the input signal drops below the alert threshold.
+Figure 37. Transparent versus Latch Mode
+7.3.3
+Setting The Current-Limit Threshold
+The INA301 determines if an overcurrent event is present by comparing the amplified measured voltage
+developed across the current-sensing resistor to the corresponding signal developed at the LIMIT pin. The
+threshold voltage for the LIMIT pin can be set using a single external resistor or by connecting an external
+voltage source to the LIMIT pin.
+
+PAGE 16
+16
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+7.3.3.1
+Resistor-Controlled Current Limit
+The typical approach for setting the limit threshold voltage is to connect a resistor from the LIMIT pin to ground.
+The value of this resistor, RLIMIT, is chosen in order to create a corresponding voltage at the LIMIT pin equivalent
+to the output voltage, VOUT, when the maximum desired load current is flowing through the current-sensing
+resistor. An internal 80-µA current source is connected to the LIMIT pin to create a corresponding voltage used
+to compare to the amplifier output voltage, depending on the value of the RLIMIT resistor.
+In the equations from Table 2, VTRIP represents the overcurrent threshold that the device is programmed to
+monitor for and VLIMIT is the programmed signal set to detect the VTRIP level.
+Table 2. Calculating the Limit Threshold Setting Resistor, RLIMIT
+PARAMETER
+EQUATION
+VTRIP
+VOUT at the desired current trip value
+ILOAD × RSENSE x Gain
+VLIMIT
+Threshold limit voltage
+VLIMIT = VTRIP
+ILIMIT × RLIMIT
+RLIMIT
+Calculate the threshold limit-setting resistor
+VLIMIT / ILIMIT
+VLIMIT / 80 µA
+7.3.3.1.1
+Resistor-Controlled Current Limit: Example
+For example, if the current level indicating an out-of-range condition is present is 20 A and the current-sense
+resistor value is 10 mΩ, then the input threshold signal is 200 mV. The INA301A1 has a gain of 20 so the
+resulting output voltage at the 20-A input condition is 4 V. The value for RLIMIT is selected to allow the device to
+detect to this 20-A threshold, indicating an overcurrent event has occurred. When the INA301 detects this out-of-
+range condition, the ALERT pin asserts and pulls low. For this example, the value of RLIMIT to detect a 4-V level
+is calculated to be 50 kΩ, as shown in Table 3.
+Table 3. Calculating the Limit Threshold Setting Resistor, RLIMIT: Example
+PARAMETER
+EQUATION
+VTRIP
+VOUT at the desired current trip value
+ILOAD × RSENSE x Gain
+20 A x 10 mΩ x 20 V/V = 4 V
+VLIMIT
+Threshold limit voltage
+VLIMIT = VTRIP
+ILIMIT × RLIMIT
+RLIMIT
+Calculate the threshold limit-setting resistor
+VLIMIT / ILIMIT
+4 V / 80 µA = 50 kΩ
+7.3.3.2
+Voltage-Source-Controlled Current Limit
+The second method for setting the limit voltage is to connect the LIMIT pin to a programmable digital-to-analog
+converter (DAC) or other external voltage source. The benefit of this method is the ability to adjust the current-
+limit threshold to account for different threshold voltages that are used for different system operating conditions.
+For example, this method can be used in a system that has one current-limit threshold level that must be
+monitored during a power-up sequence but different threshold levels that must be monitored during other system
+operating modes.
+In Table 4, VTRIP represents the overcurrent threshold that the device is programmed to monitor for and VSOURCE
+is the programmed signal set to detect the VTRIP level.
+Table 4. Calculating the Limit Threshold Voltage Source, VSOURCE
+PARAMETER
+EQUATION
+VTRIP
+VOUT at the desired current trip value
+ILOAD × RSENSE × Gain
+VSOURCE
+Program the threshold limit voltage
+VSOURCE = VTRIP
+
+PAGE 17
+17
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+7.3.4
+Selecting a Current-Sensing Resistor
+The device measures the differential voltage developed across a resistor when current flows through the
+component to determine if the current being monitored exceeds a defined limit. This resistor is commonly
+referred to as a current-sensing resistor or a current-shunt resistor, with each term commonly used
+interchangeably. The flexible design of the device allows for measuring a wide differential input signal range
+across this current-sensing resistor.
+Selecting the value of this current-sensing resistor is based primarily on two factors: the required accuracy of the
+current measurement and the allowable power dissipation across the current-sensing resistor. Larger voltages
+developed across this resistor allow for more accurate measurements to be made. Amplifiers have fixed internal
+errors that are largely dominated by the inherent input offset voltage. When the input signal decreases, these
+fixed internal amplifier errors become a larger portion of the measurement and increase the uncertainty in the
+measurement accuracy. When the input signal increases, the measurement uncertainty is reduced because the
+fixed errors are a smaller percentage of the signal being measured. Therefore, the use of larger value current-
+sensing resistors inherently improves the measurement accuracy.
+However, a system design trade-off must be evaluated through use of larger input signals for improving the
+measurement accuracy. Increasing the current sense resistor value results in an increase in power dissipation
+across the current-sensing resistor. Increasing the value of the current-shunt resistor increases the differential
+voltage developed across the resistor when current passes through the component. This increase in voltage
+across the resistor increases the power that the resistor must be able to dissipate. Decreasing the value of the
+current-shunt resistor value reduces the power dissipation requirements of the resistor, but increases the
+measurement errors resulting from the decreased input signal. Selecting the optimal value for the shunt resistor
+requires factoring both the accuracy requirement for the specific application and the allowable power dissipation
+of this component.
+An increasing number of very low ohmic-value resistors are becoming more widely available with values reaching
+down as low as 200 µΩ or lower with power dissipations of up to 5 W that enable large currents to be accurately
+monitored with sensing resistors.
+7.3.4.1
+Selecting a Current-Sensing Resistor: Example
+In this example, the trade-offs involved in selecting a current-sensing resistor are discussed. This example
+requires 2.5% accuracy for detecting a 10-A overcurrent event where only 250 mW is allowable for the
+dissipation across the current-sensing resistor at the full-scale current level. Although the maximum power
+dissipation is defined as 250 mW, a lower dissipation is preferred to improve system efficiency. Some initial
+assumptions are made that are used in this example: the limit-setting resistor (RLIMIT) is a 1% component and the
+maximum tolerance specification for the internal threshold setting current source (0.5%) is used. Given the total
+error budget of 2.5%, up to 1% of error is available to be attributed to the measurement error of the device under
+these conditions.
+
+PAGE 18
+VLIMIT
+VLIMIT - Hysteresis
+Alert
+Output
+ALERT
+VOUT
+18
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+As shown in Table 5, the maximum value calculated for the current-sensing resistor with these requirements is
+2.5 mΩ. Although this value satisfies the maximum power dissipation requirement of 250 mW, headroom is
+available from the 2.5% maximum total overcurrent detection error to reduce the value of the current-sensing
+resistor and reduce the power dissipation further. Selecting a 1.5-mΩ, current-sensing resistor value offers a
+good tradeoff for reducing the power dissipation in this scenario by approximately 40% and still remaining within
+the accuracy region.
+Table 5. Calculating the Current-Sensing Resistor, RSENSE
+PARAMETER
+EQUATION
+VALUE
+UNIT
+IMAX
+Maximum current
+10
+A
+PD_MAX
+Maximum allowable power dissipation
+250
+mW
+RSENSE_MAX
+Maximum allowable RSENSE
+PD_MAX / IMAX2
+2.5
+mΩ
+VOS
+Offset voltage
+150
+µV
+VOS_ERROR
+Initial offset voltage error
+(VOS / (RSENSE_MAX × IMAX ) × 100
+0.6%
+EG
+Gain error
+0.25%
+ERRORTOTAL
+Total measurement error
+√(VOS_ERROR2 + EG2)
+0.65%
+Allowable current threshold accuracy
+2.5%
+ERRORINITIAL
+Initial threshold error
+ILIMIT Tolerance + RLIMIT Tolerance
+1.5%
+ERRORAVAILABLE
+Maximum allowable measurement error
+Maximum Error – ERRORINITIAL
+1%
+VOS_ERROR_MAX
+Maximum allowable offset error
+√(ERRORAVAILABLE2 – EG2)
+0.97%
+VDIFF_MIN
+Minimum differential voltage
+VOS / VOS_ERROR_MAX (1%)
+15
+mV
+RSENSE_MIN
+Minimum sense resistor value
+VDIFF_MIN / IMAX
+1.5
+mΩ
+PD_MIN
+Lowest possible power dissipation
+RSENSE_MIN × IMAX2
+150
+mW
+7.3.5
+Hysteresis
+The on-board comparator in the INA301 is designed to reduce the possibility of oscillations in the alert output
+when the measured signal level is near the overlimit threshold level because of noise. When the output voltage
+(VOUT) exceeds the voltage developed at the LIMIT pin, the ALERT pin is asserted and pulls low. The output
+voltage must drop below the LIMIT pin threshold voltage by the gain-dependent hysteresis level in order for the
+ALERT pin to de-assert and return to the nominal high state, as shown in Figure 38.
+Figure 38. Typical Comparator Hysteresis
+
+PAGE 19
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+Load
+Supply
+(0 V to 36 V)
+2.7 V to 5.5 V
+RPULL-UP
+10 k
+RLIMIT
+RESET
++
+INA301
+CBYPASS
+0.1 PF
+LIMIT
+CFILTER
+RFILTER 
+”10 
+19
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+7.4
+Device Functional Modes
+7.4.1
+Input Filtering
+External system noise can significantly affect the ability of a comparator to accurately measure and detect
+whether input signals exceed the reference threshold levels, thus reliably indicating an overrange condition. The
+most obvious effect that external noise can have on the operation of a comparator is to cause a false alert
+condition. If a comparator detects a large noise transient coupled into the signal, the device can easily interpret
+this transient as an overrange condition.
+External filtering can help reduce the amount of noise that reaches the comparator and reduce the likelihood of a
+false alert from occurring. The tradeoff to adding this noise filter is that the alert response time is increased
+because of the input signal being filtered as well as the noise. Figure 39 shows the implementation of an input
+filter for the device.
+Figure 39. Input Filter
+Limiting the amount of input resistance used in this filter is important because this resistance can have a
+significant affect on the input signal that reaches the device input pins resulting from the device input bias
+currents. A typical system implementation involves placing the current-sensing resistor very near the device so
+the traces are very short and the trace impedance is very small. This layout helps reduce the ability of coupling
+additional noise into the measurement. Under these conditions, the characteristics of the input bias currents have
+minimal affect on device performance.
+As illustrated in Figure 40, the input bias currents increase in opposite directions when the differential input
+voltage increases. This increase results from the design of the device that allows common-mode input voltages
+to far exceed the device supply voltage range. With input filter resistors now placed in series with these unequal
+input bias currents, there are unequal voltage drops developed across these input resistors. The difference
+between these two drops appears as an added signal that (in this case) subtracts from the voltage developed
+across the current-sensing resistor, thus reducing the signal that reaches the device input pins. Smaller value
+input resistors reduce this effect of signal attenuation to allow for a more accurate measurement.
+
+PAGE 20
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+Load
+Supply
+(0 V to 36 V)
+2.7 V to 5.5 V
+RPULL-UP
+10k
+RLIMIT
+RESET
++
+INA301
+CBYPASS
+0.1 PF
+LIMIT
+RPROTECT
+”10 
+0 
+25 
+50 
+75 
+100 
+125 
+150 
+175 
+200 
+225 
+0 
+50 
+100 
+150 
+200 
+250 
+Input Bias Current (µA) 
+Differential Input Voltage (mV) 
+C002 
+20
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Device Functional Modes (continued)
+Figure 40. Input Bias Current vs Differential Input Voltage
+For example, with a differential voltage of 10 mV developed across a current-sensing resistor and using 20-Ω
+resistors, the differential signal that actually reaches the device is 9.85 mV. A measurement error of 1.5% is
+created as a result of these external input filter resistors. Using 10-Ω input filter resistors instead of the 20-Ω
+resistors reduces this added error from 1.5% down to 0.75%.
+7.4.2
+Using The INA301 with Common-Mode Transients Above 36 V
+With a small amount of additional circuitry, the device can be used in circuits subject to transients higher than
+36 V. Use only zener diodes or zener-type transient absorbers (sometimes referred to as transzorbs). Any other
+type of transient absorber has an unacceptable time delay. Start by adding a pair of resistors, as shown in
+Figure 41, as a working impedance for the zener diode. Keeping these resistors as small as possible is best,
+preferably 10 Ωor less. Larger values can be used with an additional induced error resulting from a reduced
+signal that actually reaches the device input pins. Because this circuit limits only short-term transients, many
+applications are satisfied with a 10-Ωresistor along with conventional zener diodes of the lowest power rating
+available. This combination uses the least amount of board space. These diodes can be found in packages as
+small as SOT-523 or SOD-523.
+Figure 41. Transient Protection
+
+PAGE 21
+Load
+Power Supply 
+(0 V to 36 V)
+Current
+OCP+
+OCP-
+Output
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+2.7 V to 5.5 V
+RPULL-UP
+10 k
+RLIMIT
+CBYPASS
+0.1 PF
+LIMIT
+VS
+GND
+OUT
+ALERT
+IN+
+IN-
+2.7 V to 5.5 V
+RPULL-UP
+10 k
+RLIMIT
+CBYPASS
+0.1 PF
+LIMIT
++
++
+21
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+8
+Applications and Implementation
+NOTE
+Information in the following applications sections is not part of the TI component
+specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+responsible for determining suitability of components for their purposes. Customers should
+validate and test their design implementation to confirm system functionality.
+8.1
+Application Information
+The INA301 is designed to enable easy configuration for detecting overcurrent conditions in an application. This
+device is individually targeted towards unidirectional overcurrent detection of a single threshold. However, this
+device can also be paired with additional devices and circuitry to create more complex monitoring functional
+blocks.
+8.2
+Typical Application
+Figure 42. Bidirectional Application
+8.2.1
+Design Requirements
+Although the device is only able to measure current through a current-sensing resistor flowing in one direction, a
+second INA301 can be used to create a bidirectional monitor.
+
+PAGE 22
+Alert Output
+(1 V/div)
+Time (5 ms/div)
+Input
+(5 mV/div)
+Positive Limit
+Negtive Limit
+0V
+22
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+Typical Application (continued)
+8.2.2
+Detailed Design Procedure
+With the input pins of a second device reversed across the same current-sensing resistor, the second device is
+now able to detect current flowing in the other direction relative to the first device; see Figure 42. The outputs of
+each device connect to an AND gate to detect if either of the limit threshold levels are exceeded. As shown in
+Table 6, the output of the AND gate is high if neither overcurrent limit thresholds are exceeded. A low output
+state of the AND gate indicates that either the positive overcurrent limit or the negative overcurrent limit are
+surpassed.
+Table 6. Bidirectional Overcurrent Output Status
+OCP STATUS
+OUTPUT
+OCP+
+0
+OCP–
+0
+No OCP
+1
+8.2.3
+Application Curve
+Figure 43 shows two INA301 devices being used in a bidirectional configuration and an output control circuit to
+detect if one of the two alerts is exceeded.
+Figure 43. Bidirectional Application Curve
+
+PAGE 23
+Output Voltage
+RSHUNT
+RLIMIT
+CBYPASS
+Supply 
+Voltage
+Load
+Power 
+Supply
+Alert Output
+VIA to 
+Ground 
+Plane
+VIA to 
+Ground 
+Plane
+RPULL-UP
+ 1
+ 2
+ 3
+GND
+IN-
+IN+
+INA301
+LIMIT
+VS
+OUT
+ 4
+ALERT RESET
+  8  
+7
+6
+5
+23
+INA301
+www.ti.com
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+9
+Power Supply Recommendations
+The device input circuitry can accurately measure signals on common-mode voltages beyond the power-supply
+voltage, VS. For example, the voltage applied to the VS power-supply pin can be 5 V, whereas the load power-
+supply voltage being monitored (VCM) can be as high as 36 V. Note also that the device can withstand the full
+–0.3 V to 36 V range at the input pins, regardless of whether the device has power applied or not.
+Power-supply bypass capacitors are required for stability and must be placed as closely as possible to the supply
+and ground pins of the device. A typical value for this supply bypass capacitor is 0.1 µF. Applications with noisy
+or high-impedance power supplies can require additional decoupling capacitors to reject power-supply noise.
+10
+Layout
+10.1
+Layout Guidelines
+•
+Place the power-supply bypass capacitor as closely as possible to the supply and ground pins. The
+recommended value of this bypass capacitor is 0.1 µF. Additional decoupling capacitance can be added to
+compensate for noisy or high-impedance power supplies.
+•
+Make the connection of RLIMIT to the ground pin as direct as possible to limit additional capacitance on this
+node. Routing this connection must be limited to the same plane if possible to avoid vias to internal planes. If
+the routing can not be made on the same plane and must pass through vias, ensure that a path is routed
+from RLIMIT back to the ground pin and that RLIMIT is not simply connected directly to a ground plane.
+•
+The open-drain output pin is recommended to be pulled up to the supply voltage rail through a 10-kΩ pullup
+resistor.
+10.2
+Layout Example
+NOTE: Connect the limit resistor directly to the GND pin.
+Figure 44. Recommended Layout
+
+PAGE 24
+24
+INA301
+SBOS713A –SEPTEMBER 2015–REVISED FEBRUARY 2016
+www.ti.com
+Product Folder Links: INA301
+Submit Documentation Feedback
+Copyright © 2015–2016, Texas Instruments Incorporated
+11
+Device and Documentation Support
+11.1
+Community Resources
+The following links connect to TI community resources. Linked contents are provided "AS IS" by the respective
+contributors. They do not constitute TI specifications and do not necessarily reflect TI's views; see TI's Terms of
+Use.
+TI E2E™Online Community TI's Engineer-to-Engineer (E2E) Community. Created to foster collaboration
+among engineers. At e2e.ti.com, you can ask questions, share knowledge, explore ideas and help
+solve problems with fellow engineers.
+Design Support TI's Design Support Quickly find helpful E2E forums along with design support tools and
+contact information for technical support.
+11.2
+Trademarks
+E2E is a trademark of Texas Instruments.
+All other trademarks are the property of their respective owners.
+11.3
+Electrostatic Discharge Caution
+These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+during storage or handling to prevent electrostatic damage to the MOS gates.
+11.4
+Glossary
+SLYZ022 — TI Glossary.
+This glossary lists and explains terms, acronyms, and definitions.
+12
+Mechanical, Packaging, and Orderable Information
+The following pages include mechanical packaging and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+PAGE 25
+PACKAGE OPTION ADDENDUM
+www.ti.com
+15-Jul-2026
+PACKAGING INFORMATION
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+INA301A1IDGKR
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR
+-40 to 125
+ZGD6
+INA301A1IDGKR.B
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-2-260C-1 YEAR
+-40 to 125
+ZGD6
+INA301A2IDGKR
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAUAG
+Level-2-260C-1 YEAR
+-40 to 125
+ZGI6
+INA301A2IDGKR.B
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAUAG
+Level-2-260C-1 YEAR
+-40 to 125
+ZGI6
+INA301A2IDGKT
+Obsolete
+Production
+VSSOP (DGK) | 8
+-
+-
+Call TI
+Call TI
+-40 to 125
+ZGI6
+INA301A3IDGKR
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR
+-40 to 125
+ZGH6
+INA301A3IDGKR.B
+Active
+Production
+VSSOP (DGK) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-2-260C-1 YEAR
+-40 to 125
+ZGH6
+INA301A3IDGKT
+Obsolete
+Production
+VSSOP (DGK) | 8
+-
+-
+Call TI
+Call TI
+-40 to 125
+ZGH6
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+Addendum-Page 1
+
+PAGE 26
+PACKAGE OPTION ADDENDUM
+www.ti.com
+15-Jul-2026
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF INA301 :
+• Automotive : INA301-Q1
+ NOTE: Qualified Version Definitions:
+• Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+Addendum-Page 2
+
+PAGE 27
+www.ti.com
+PACKAGE OUTLINE
+C
+6X 0.65
+2X
+1.95
+8X 0.38
+0.25
+5.05
+4.75 TYP
+SEATING
+PLANE
+0.15
+0.05
+0.25
+GAGE PLANE
+0 -8
+1.1 MAX
+0.23
+0.13
+B
+3.1
+2.9
+NOTE 4
+A
+3.1
+2.9
+NOTE 3
+0.7
+0.4
+VSSOP - 1.1 mm max height
+DGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+1
+4
+5
+8
+0.13
+C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-187.
+ 
+PowerPAD is a trademark of Texas Instruments.
+A  20
+DETAIL A
+TYPICAL
+SCALE  4.000
+
+PAGE 28
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+8X (1.4)
+8X (0.45)
+6X (0.65)
+(4.4)
+(R0.05) TYP
+VSSOP - 1.1 mm max height
+DGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+NOTES: (continued)
+ 
+  6. Publication IPC-7351 may have alternate designs. 
+  7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+  8. Vias are optional depending on application, refer to device data sheet. If any vias are implemented, refer to their locations shown
+      on this view. It is recommended that vias under paste be filled, plugged or tented.
+  9. Size of metal pad may vary due to creepage requirement.
+ 
+TM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 15X
+SYMM
+SYMM
+1
+4
+5
+8
+SEE DETAILS
+15.000
+METAL
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METAL
+EXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+
+PAGE 29
+www.ti.com
+EXAMPLE STENCIL DESIGN
+8X (1.4)
+8X (0.45)
+6X (0.65)
+(4.4)
+(R0.05) TYP
+VSSOP - 1.1 mm max height
+DGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+NOTES: (continued)
+ 
+11. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+      design recommendations.   
+12. Board assembly site may have different recommendations for stencil design.
+ 
+TM
+SOLDER PASTE EXAMPLE
+ SCALE: 15X
+SYMM
+SYMM
+1
+4
+5
+8
+
+PAGE 30
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

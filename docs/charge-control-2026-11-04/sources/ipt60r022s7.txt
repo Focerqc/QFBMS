@@ -1,0 +1,1118 @@
+PAGE 1
+1
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+1 2 34
+8
+7
+6
+5
+Tab
+8 7 6
+5 4
+3 2
+1
+Tab
+HSOF
+Drain
+Tab
+Gate
+Pin 1
+Source
+Pin 3-8
+Driver
+Source
+Pin 2
+*1
+*1: Internal body diode
+MOSFET
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7enablesthebestpriceperformanceforlowfrequency
+switchingapplications.CoolMOS™S7boaststhelowestRdsonvaluesfor
+aHVSJMOSFET,withdistinctiveincreaseofenergyefficiency.
+CoolMOS™S7isoptimizedfor“staticswitching”andhighcurrent
+applications.Itisanidealfitforsolidstaterelayandcircuitbreakerdesigns
+aswellasforlinerectificationinSMPSandinvertertopologies.
+Features
+•CoolMOS™S7technologyenables22mΩRDS(on)inthesmallestfootprint
+•Optimizedpriceperformanceinlowfrequencyswitchingapplications
+•Highpulsecurrentcapability
+•KelvinSourcepinimprovesswitchingperformanceathighcurrent
+•TOLLpackageisMSL1compliant,totalPb-free,haseasyvisual
+inspectionleads
+Benefits
+•Minimizedconductionlosses(eliminate/reduceheatsink)
+•Increasedsystemperformance
+•Morecompactandeasierdesign
+•LowerBOMor/andTCOoverprolongedlifetime
+Comparedtoelectromechanicaldevices:
+•Fasterswitchingtimes
+•Morereliabilityandlongersystemlifetime
+•Shock&Vibrationresistance
+•Nocontactarcing,bouncingordegradationoverlifetime
+Potentialapplications
+•Solidstaterelaysandcircuitbreakers
+•Linerectificationinhighpower/performanceapplicationse.g.Computing,
+Telecom,UPSandSolar
+Productvalidation
+FullyqualifiedaccordingtoJEDECforIndustrialApplications
+Pleasenote:Forparalleling4pinMOSFETdevicestheplacementofthe
+gateresistorisgenerallyrecommendedtobeontheDriverSourceinstead
+oftheGate.
+Table1KeyPerformanceParameters
+Parameter
+Value
+Unit
+RDS(on),max
+22
+mΩ
+Qg,typ
+150
+nC
+VSD
+0.82
+V
+Pulsed ISD, IDS
+375
+A
+Type/OrderingCode
+Package
+Marking
+RelatedLinks
+IPT60R022S7
+PG-HSOF-8
+60R022S7
+see Appendix A
+
+PAGE 2
+2
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+TableofContents
+Description   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Maximum ratings   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Thermal characteristics  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Electrical characteristics  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Electrical characteristics diagrams  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Test Circuits  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+Package Outlines  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Appendix A  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+Revision History  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Trademarks   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Disclaimer   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+PAGE 3
+3
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+1Maximumratings
+atTj=25°C,unlessotherwisespecified
+Table2Maximumratings
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Drain current rating
+ID
+-
+-
+23
+A
+TC=140°C
+Current is limited by Tj max = 150°C;
+Lower case temp does increase
+current capability
+Pulsed drain current1)
+ID,pulse
+-
+-
+375
+A
+TC=25°C
+Avalanche energy, single pulse
+EAS
+-
+-
+289
+mJ
+ID=3.8A; VDD=50V; see table 10
+Avalanche current, single pulse
+IAS
+-
+-
+3.8
+A
+-
+MOSFET dv/dt ruggedness2)
+dv/dt
+-
+-
+20
+V/ns
+VDS=0Vto300V
+Gate source voltage (static)
+VGS
+-20
+-
+20
+V
+static
+Gate source voltage (dynamic)
+VGS
+-30
+-
+30
+V
+AC (f>1 Hz)
+Power dissipation
+Ptot
+-
+-
+390
+W
+TC=25°C
+Storage temperature
+Tstg
+-55
+-
+150
+°C
+-
+Operating junction temperature
+Tj
+-55
+-
+150
+°C
+-
+Mounting torque
+-
+-
+-
+n.a.
+Ncm
+-
+Diode forward current rating
+IS
+-
+-
+23
+A
+TC=140°C
+Current is limited by Tj max = 150°C;
+Lower case temp does increase
+current capability
+Diode pulse current1)
+IS,pulse
+-
+-
+375
+A
+TC=25°C
+Reverse diode dv/dt3)
+dv/dt
+-
+-
+5
+V/ns
+VDS=0to300V,ISD<=23A,Tj=25°C
+     see table 8
+Maximum diode commutation speed
+dif/dt
+-
+-
+1000
+A/µs
+VDS=0to300V,ISD<=23A,Tj=25°C
+     see table 8
+Insulation withstand voltage
+VISO
+-
+-
+n.a.
+V
+Vrms,TC=25°C,t=1min
+1) Pulse width tp limited by Tj,max
+2) The dv/dt has to be limited by appropriate gate resistor
+3) Identical low side and high side switch
+
+PAGE 4
+4
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+2Thermalcharacteristics
+Table3Thermalcharacteristics
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Thermal resistance, junction  - case
+RthJC
+-
+-
+0.32
+°C/W -
+Thermal resistance, junction  - ambient RthJA
+-
+-
+62
+°C/W device on PCB, minimal footprint
+Thermal resistance, junction  - ambient
+for SMD version
+RthJA
+-
+35
+45
+°C/W
+Device on 40mm*40mm*1.5mm
+epoxy PCB FR4 with 6cm² (one
+layer, 70µm thickness) copper area
+for drain connection and cooling.
+PCB is vertical without air stream
+cooling.
+Soldering temperature, wave- & reflow
+soldering allowed
+Tsold
+-
+-
+260
+°C
+reflow MSL1
+
+PAGE 5
+5
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+3Electricalcharacteristics
+atTj=25°C,unlessotherwisespecified
+Table4Staticcharacteristics
+For applications with applied blocking voltage >70% of the specified blocking voltage, it is required that the customer 
+evaluates the impact of cosmic radiation effect in early design phase and contacts the Infineon sales office for the 
+necessary technical support by Infineon
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Drain-source breakdown voltage
+V(BR)DSS
+600
+-
+-
+V
+VGS=0V,ID=1mA
+Gate threshold voltage
+V(GS)th
+3.5
+4.0
+4.5
+V
+VDS=VGS,ID=1.44mA
+Zero gate voltage drain current
+IDSS
+-
+-
+-
+50
+5
+-
+µA
+VDS=600V,VGS=0V,Tj=25°C
+VDS=600V,VGS=0V,Tj=150°C
+Gate-source leakage current
+IGSS
+-
+-
+100
+nA
+VGS=20V,VDS=0V
+Drain-source on-state resistance
+RDS(on)
+-
+-
+0.02
+0.046
+0.022
+-
+Ω
+VGS=12V,ID=23A,Tj=25°C
+VGS=12V,ID=23A,Tj=150°C
+Gate resistance
+RG
+-
+0.80
+-
+Ω
+f=1MHz,opendrain
+Table5Dynamiccharacteristics
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Input capacitance
+Ciss
+-
+5639
+-
+pF
+VGS=0V,VDS=300V,f=250kHz
+Output capacitance
+Coss
+-
+89
+-
+pF
+VGS=0V,VDS=300V,f=250kHz
+Effective output capacitance, energy
+related1)
+Co(er)
+-
+303
+-
+pF
+VGS=0V,VDS=0to300V
+Effective output capacitance, time
+related2)
+Co(tr)
+-
+2678
+-
+pF
+ID=constant,VGS=0V,VDS=0to300V
+Output charge
+Qoss
+-
+803
+-
+nC
+VGS=0V,VDS=0to300V
+Turn-on delay time
+td(on)
+-
+30
+-
+ns
+VDD=300V,VGS=13V,ID=23A,
+RG=5.3Ω;seetable9
+Rise time
+tr
+-
+4
+-
+ns
+VDD=300V,VGS=13V,ID=23A,
+RG=5.3Ω;seetable9
+Turn-off delay time
+td(off)
+-
+150
+-
+ns
+VDD=300V,VGS=13V,ID=23A,
+RG=5.3Ω;seetable9
+Fall time
+tf
+-
+9
+-
+ns
+VDD=300V,VGS=13V,ID=23A,
+RG=5.3Ω;seetable9
+Table6Gatechargecharacteristics
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Gate to source charge
+Qgs
+-
+31
+-
+nC
+VDD=300V,ID=23A,VGS=0to12V
+Gate to drain charge
+Qgd
+-
+49
+-
+nC
+VDD=300V,ID=23A,VGS=0to12V
+Gate charge total
+Qg
+-
+150
+-
+nC
+VDD=300V,ID=23A,VGS=0to12V
+Gate plateau voltage
+Vplateau
+-
+5.4
+-
+V
+VDD=300V,ID=23A,VGS=0to12V
+1)Co(er)isafixedcapacitancethatgivesthesamestoredenergyasCosswhileVDSisrisingfrom0to300V
+2)Co(tr)isafixedcapacitancethatgivesthesamechargingtimeasCosswhileVDSisrisingfrom0to300V
+
+PAGE 6
+6
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+Table7Reversediodecharacteristics
+Values
+Min.
+Typ.
+Max.
+Parameter
+Symbol
+Unit
+Note/TestCondition
+Diode forward voltage
+VSD
+-
+0.82
+-
+V
+VGS=0V,IF=23A,Tj=25°C
+Reverse recovery time
+trr
+-
+460
+-
+ns
+VR=300V,IF=23A,diF/dt=100A/µs;
+see table 8
+Reverse recovery charge
+Qrr
+-
+9
+-
+µC
+VR=300V,IF=23A,diF/dt=100A/µs;
+see table 8
+Peak reverse recovery current
+Irrm
+-
+40
+-
+A
+VR=300V,IF=23A,diF/dt=100A/µs;
+see table 8
+
+PAGE 7
+7
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+4Electricalcharacteristicsdiagrams
+Diagram1:Powerdissipation
+TC[°C]
+Ptot[W]
+0
+25
+50
+75
+100
+125
+150
+0
+50
+100
+150
+200
+250
+300
+350
+400
+Ptot=f(TC)
+Diagram2:Safeoperatingarea
+VDS[V]
+ID[A]
+100
+101
+102
+103
+10-3
+10-2
+10-1
+100
+101
+102
+103
+1 µs
+10 µs
+100 µs
+1 ms
+10 ms
+DC
+ID=f(VDS);TC=25°C;D=0;parameter:tp
+Diagram3:Safeoperatingarea
+VDS[V]
+ID[A]
+100
+101
+102
+103
+10-3
+10-2
+10-1
+100
+101
+102
+103
+1 µs
+100 µs
+10 µs
+1 ms
+10 ms
+DC
+ID=f(VDS);TC=80°C;D=0;parameter:tp
+Diagram4:Max.transientthermalimpedance
+tp[s]
+ZthJC[K/W]
+10-5
+10-4
+10-3
+10-2
+10-1
+10-2
+10-1
+100
+0.5
+0.2
+0.1
+0.05
+0.02
+0.01
+single pulse
+ZthJC=f(tP);parameter:D=tp/T
+
+PAGE 8
+8
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+Diagram5:Typ.outputcharacteristics
+VDS[V]
+ID[A]
+0
+4
+8
+12
+16
+20
+0
+100
+200
+300
+400
+500
+600
+20 V
+12 V
+10 V
+8 V
+ID=f(VDS);Tj=25°C;parameter:VGS
+Diagram6:Typ.outputcharacteristics
+VDS[V]
+ID[A]
+0
+4
+8
+12
+16
+20
+0
+50
+100
+150
+200
+250
+300
+350
+20 V
+12 V
+10 V
+8 V
+ID=f(VDS);Tj=125°C;parameter:VGS
+Diagram7:Typ.drain-sourceon-stateresistance
+ID[A]
+RDS(on)[Ω]
+0
+50
+100
+150
+200
+250
+300
+0.035
+0.040
+0.045
+0.050
+0.055
+0.060
+20 V
+12 V
+10 V
+8 V
+RDS(on)=f(ID);Tj=125°C;parameter:VGS
+Diagram8:Drain-sourceon-stateresistance
+Tj[°C]
+RDS(on)[normalized]
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+0.6
+0.9
+1.2
+1.5
+1.8
+2.1
+2.4
+RDS(on)=f(Tj);ID=23.0A;VGS=12V
+
+PAGE 9
+9
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+Diagram9:Typ.transfercharacteristics
+VGS[V]
+ID[A]
+0
+2
+4
+6
+8
+10
+12
+0
+100
+200
+300
+400
+500
+600
+150 °C
+25 °C
+ID=f(VGS);VDS=20V;parameter:Tj
+Diagram10:Typ.gatecharge
+Qgate[nC]
+VGS[V]
+0
+25
+50
+75
+100
+125
+150
+0
+2
+4
+6
+8
+10
+12
+300 V
+120 V
+VGS=f(Qgate);ID=23.0Apulsed;parameter:VDD
+Diagram11:Forwardcharacteristicsofreversediode
+VSD[V]
+IF[A]
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+10-1
+100
+101
+102
+103
+125 °C
+25 °C
+IF=f(VSD);VGS=0V;parameter:Tj
+Diagram12:Forwardcharacteristicsofreversediode
+VSD[V]
+IF[A]
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+10-1
+100
+101
+102
+103
+25 °C
+125 °C
+IF=f(VSD);VGS=12V;parameter:Tj
+
+PAGE 10
+10
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+Diagram13:Avalancheenergy
+Tj[°C]
+EAS[mJ]
+25
+50
+75
+100
+125
+150
+0
+50
+100
+150
+200
+250
+300
+EAS=f(Tj);ID=3.8A;VDD=50V
+Diagram14:Drain-sourcebreakdownvoltage
+Tj[°C]
+VBR(DSS)[V]
+-50
+-25
+0
+25
+50
+75
+100
+125
+150
+540
+560
+580
+600
+620
+640
+660
+680
+VBR(DSS)=f(Tj);ID=1mA
+Diagram15:Typ.capacitances
+VDS[V]
+C[pF]
+0
+50
+100
+150
+200
+250
+300
+101
+102
+103
+104
+105
+Ciss
+Coss
+Crss
+C=f(VDS);VGS=0V;f=250kHz
+Diagram17:Typ.Qossoutputcharge
+VDS[V]
+Qoss[nC]
+0
+50
+100
+150
+200
+250
+300
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+Qoss=f(VDS);VGS=0V
+
+PAGE 11
+11
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+5TestCircuits
+Table8Diodecharacteristics
+Test circuit for diode characteristics
+Diode recovery waveform
+VDS
+IF
+Rg1
+Rg 2
+Rg1 = Rg 2
+Table9Switchingtimes(ss)
+Switching times test circuit for inductive load
+Switching times waveform
+VDS
+VGS
+td(on)
+td(off)
+tr
+ton
+tf
+toff
+10%
+90%
+VDS
+VGS
+Table10Unclampedinductiveload(ss)
+Unclamped inductive load test circuit
+Unclamped inductive waveform
+VDS
+V(BR)DS
+ID
+VDS
+VDS
+ID
+
+PAGE 12
+12
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+6PackageOutlines
+Z8B00176939
+REVISION
+ISSUE DATE
+EUROPEAN PROJECTION
+01
+28-04-2015
+DOCUMENT NO.
+E5
+E4
+K1
+e
+MILLIMETERS
+A
+DIM
+MIN
+MAX
+INCHES
+MIN
+MAX
+b1
+c
+D
+D2
+E
+E1
+N
+L
+2.20
+2.40
+0.087
+0.094
+9.70
+0.40
+10.28
+9.70
+9.90
+0.60
+10.58
+10.10
+0.382
+0.016
+0.405
+0.382
+0.390
+0.024
+0.416
+0.398
+8
+8
+1.20 (BSC)
+0.047 (BSC)
+b
+0.70
+0.90
+0.028
+0.035
+1) partially covered with Mold Flash
+b2
+0.42
+0.50
+0.017
+0.020
+H
+H1
+11.48
+11.88
+0.452
+0.468
+H2
+7.15
+0.281
+H3
+3.59
+0.141
+H4
+3.26
+0.128
+L1
+0.50
+0.90
+0.020
+0.035
+3.30
+0.130
+7.50
+0.295
+8.50
+0.335
+9.46
+0.372
+6.55
+6.75
+0.258
+0.266
+4.18
+0.165
+L4
+1.00
+1.30
+0.039
+0.051
+L2
+0.50
+0.70
+0.020
+0.028
+2
+SCALE
+0
+4mm
+0
+2
+L5
+2.62
+2.81
+0.103
+0.111
+1.40
+1.80
+0.055
+0.071
+Figure1OutlinePG-HSOF-8,dimensionsinmm/inches
+
+PAGE 13
+13
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+7AppendixA
+Table11RelatedLinks
+• IFXCoolMOSS7Webpage:www.infineon.com
+• IFXCoolMOSS7applicationnote:www.infineon.com
+• IFXCoolMOSS7simulationmodel:www.infineon.com
+• IFXDesigntools:www.infineon.com
+
+PAGE 14
+14
+600VCoolMOSªSJS7PowerDevice
+IPT60R022S7
+Rev.2.1,2021-10-25
+Final Data Sheet
+RevisionHistory
+IPT60R022S7
+Revision:2021-10-25,Rev.2.1
+Previous Revision
+Revision
+Date
+Subjects (major changes since last revision)
+2.0
+2019-05-07
+Release of final version
+2.1
+2021-10-25
+Change of wording regarding breakdown voltage / cosmic ray
+Trademarks
+Allreferencedproductorservicenamesandtrademarksarethepropertyoftheirrespectiveowners.
+WeListentoYourComments
+Anyinformationwithinthisdocumentthatyoufeeliswrong,unclearormissingatall?Yourfeedbackwillhelpustocontinuously
+improvethequalityofthisdocument.Pleasesendyourproposal(includingareferencetothisdocument)to:
+erratum@infineon.com
+Publishedby
+InfineonTechnologiesAG
+81726München,Germany
+©2021InfineonTechnologiesAG
+AllRightsReserved.
+LegalDisclaimer
+Theinformationgiveninthisdocumentshallinnoeventberegardedasaguaranteeofconditionsorcharacteristics
+(“Beschaffenheitsgarantie”).
+Withrespecttoanyexamples,hintsoranytypicalvaluesstatedhereinand/oranyinformationregardingtheapplicationofthe
+product,InfineonTechnologiesherebydisclaimsanyandallwarrantiesandliabilitiesofanykind,includingwithoutlimitation
+warrantiesofnon-infringementofintellectualpropertyrightsofanythirdparty.
+Inaddition,anyinformationgiveninthisdocumentissubjecttocustomer’scompliancewithitsobligationsstatedinthis
+documentandanyapplicablelegalrequirements,normsandstandardsconcerningcustomer’sproductsandanyuseofthe
+productofInfineonTechnologiesincustomer’sapplications.
+Thedatacontainedinthisdocumentisexclusivelyintendedfortechnicallytrainedstaff.Itistheresponsibilityofcustomer’s
+technicaldepartmentstoevaluatethesuitabilityoftheproductfortheintendedapplicationandthecompletenessoftheproduct
+informationgiveninthisdocumentwithrespecttosuchapplication.
+Information
+Forfurtherinformationontechnology,deliverytermsandconditionsandpricespleasecontactyournearestInfineon
+TechnologiesOffice(www.infineon.com).
+Warnings
+Duetotechnicalrequirements,componentsmaycontaindangeroussubstances.Forinformationonthetypesinquestion,
+pleasecontactthenearestInfineonTechnologiesOffice.
+TheInfineonTechnologiescomponentdescribedinthisDataSheetmaybeusedinlife-supportdevicesorsystemsand/or
+automotive,aviationandaerospaceapplicationsorsystemsonlywiththeexpresswrittenapprovalofInfineonTechnologies,ifa
+failureofsuchcomponentscanreasonablybeexpectedtocausethefailureofthatlife-support,automotive,aviationand
+aerospacedeviceorsystemortoaffectthesafetyoreffectivenessofthatdeviceorsystem.Lifesupportdevicesorsystemsare
+intendedtobeimplantedinthehumanbodyortosupportand/ormaintainandsustainand/orprotecthumanlife.Iftheyfail,itis
+reasonabletoassumethatthehealthoftheuserorotherpersonsmaybeendangered.

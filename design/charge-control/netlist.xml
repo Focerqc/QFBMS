@@ -1,0 +1,4153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\quinn\Documents\GitHub\QFBMS\design\charge-control\charge-control.kicad_sch</source>
+    <date>2026-11-04T22:33:36</date>
+    <tool>Eeschema 10.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>charge-control.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/">
+      <title_block>
+        <title>01 / Charge path - reference AGM option</title>
+        <company/>
+        <rev>DRAFT - NOT RELEASED</rev>
+        <date>2026-11-04</date>
+        <source>power.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/">
+      <title_block>
+        <title>02 / Isolated gate drive</title>
+        <company/>
+        <rev>DRAFT - NOT RELEASED</rev>
+        <date>2026-11-04</date>
+        <source>driver.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/">
+      <title_block>
+        <title>03 / Watchdog and deliberate permission</title>
+        <company/>
+        <rev>DRAFT - NOT RELEASED</rev>
+        <date>2026-11-04</date>
+        <source>permission.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/">
+      <title_block>
+        <title>04 / Hardware polarity and fast current window</title>
+        <company/>
+        <rev>DRAFT - NOT RELEASED</rev>
+        <date>2026-11-04</date>
+        <source>sensing.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="DCC1">
+      <value>REVERSE CROWBAR - OPEN</value>
+      <fields>
+        <field name="MPN">UNRESOLVED</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Diode" description=""/>
+      <property name="MPN" value="UNRESOLVED"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>a38ea654-3b49-5573-8057-5b9787832254</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="DCC2">
+      <value>PDZ16B</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <fields>
+        <field name="MPN">PDZ16B,115</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Diode" description=""/>
+      <property name="MPN" value="PDZ16B,115"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>2c885a9d-2a4b-50b5-90d3-606e9e7e179c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="DCC3">
+      <value>PDZ16B</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <fields>
+        <field name="MPN">PDZ16B,115</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Diode" description=""/>
+      <property name="MPN" value="PDZ16B,115"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>045776b5-9c08-5d20-b033-749e98444728</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="FCC1">
+      <value>PACK FUSE - OPEN SELECTION</value>
+      <fields>
+        <field name="MPN">UNRESOLVED</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Fuse" description=""/>
+      <property name="MPN" value="UNRESOLVED"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>98176079-0152-5dea-8fae-fe1313239c52</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="FCC2">
+      <value>CHARGER FUSE - OPEN SELECTION</value>
+      <fields>
+        <field name="MPN">UNRESOLVED</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Fuse" description=""/>
+      <property name="MPN" value="UNRESOLVED"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>88374611-3ef2-5a6e-88b8-bbcef61fe17b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P1">
+      <value>CELL32</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>6f9b2811-2722-571f-b3e2-0aafe0ed1613</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P2">
+      <value>CELL0</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>8115363a-a59b-5d1d-959d-5a38890aa187</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P3">
+      <value>CHG_POS</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>285a5e16-541b-5126-a78e-1919a4fcea97</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P4">
+      <value>CHG_NEG</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>f2d0fc77-632a-5927-a90f-a031a57644f7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="QCC1">
+      <value>AGM15T03LL</value>
+      <fields>
+        <field name="MPN">AGM15T03LL</field>
+        <field name="Status">CONDITIONAL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AGM15T03LL" description=""/>
+      <property name="MPN" value="AGM15T03LL"/>
+      <property name="Status" value="CONDITIONAL"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>fcca19ce-a759-5e05-b931-b933d75995e4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="6"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="QCC2">
+      <value>AGM15T03LL</value>
+      <fields>
+        <field name="MPN">AGM15T03LL</field>
+        <field name="Status">CONDITIONAL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AGM15T03LL" description=""/>
+      <property name="MPN" value="AGM15T03LL"/>
+      <property name="Status" value="CONDITIONAL"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>bf65fe9c-d4fb-52fe-a845-b0652cf84ddc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="6"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC1">
+      <value>10m / fast-trip Kelvin</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <fields>
+        <field name="MPN">WSLP2512R0100FEA</field>
+        <field name="Status">CONDITIONAL</field>
+        <field name="Footprint">Resistor_SMD:R_2512_6332Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="WSLP2512R0100FEA"/>
+      <property name="Status" value="CONDITIONAL"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>87338039-6157-5df1-a5e9-8174bc567053</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC2">
+      <value>Existing R_SH1 1m</value>
+      <fields>
+        <field name="MPN">UNRESOLVED_EXISTING</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="UNRESOLVED_EXISTING"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>6e78c1b4-a305-5df8-9773-797794c29703</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC3">
+      <value>Existing R_SH2 1m</value>
+      <fields>
+        <field name="MPN">UNRESOLVED_EXISTING</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="UNRESOLVED_EXISTING"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>db822a31-3ca9-5bb8-a37b-1e2aac5383e2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC4">
+      <value>22</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0722RL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0722RL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>9852e7a4-b990-5fd2-94a2-39af9d720f68</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC5">
+      <value>22</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0722RL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0722RL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>e75cd7ea-7161-5ce2-9c7d-e452a266d94c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC6">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>bc787509-209f-57c8-b274-c8f88925f19f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC7">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="01 / Charge path - reference AGM option"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/01 / Charge path - reference AGM option/" tstamps="/b8670dd8-2538-5539-a148-97ebfa284e01/"/>
+      <tstamps>d6bfdd9a-1000-55bf-a61c-27f266aeb6be</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC1">
+      <value>10u 50V</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="MPN">GRM32ER71H106KA12L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM32ER71H106KA12L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>15aad42c-9760-5b70-81ea-64a1e6cb8421</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC2">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>137d9dc6-9264-5e4c-9d40-764281b78009</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC3">
+      <value>10u 50V</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="MPN">GRM32ER71H106KA12L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM32ER71H106KA12L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>98ed77f8-b34a-52a3-967d-e8a85495d4d9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC4">
+      <value>10u 50V</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="MPN">GRM32ER71H106KA12L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM32ER71H106KA12L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d94b2cf6-b8dc-5b10-b6f2-8bff9994684d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC5">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>78e0495a-50a8-542b-b26a-cd63b220b243</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC6">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d3d0c892-43de-5a03-bca8-9a3f34affc55</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC7">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>98123fd2-7847-5cfe-9e8d-b43ece0858bc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC8">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>29f9af59-e32d-54e3-8e79-fc37ab0e2ec0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="DCC4">
+      <value>LDO reverse discharge</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <fields>
+        <field name="MPN">SS14</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Diode" description=""/>
+      <property name="MPN" value="SS14"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>ae205558-a41c-5a86-85b6-148b1b80df65</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="FCC3">
+      <value>600mA anti-surge input</value>
+      <fields>
+        <field name="MPN">UNRESOLVED</field>
+        <field name="Status">OPEN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Fuse" description=""/>
+      <property name="MPN" value="UNRESOLVED"/>
+      <property name="Status" value="OPEN"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>6643255a-689f-5afc-9a2e-283fb685e7bb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="QCC3">
+      <value>MMBT3904LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="MPN">MMBT3904LT1G</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="NPN" description=""/>
+      <property name="MPN" value="MMBT3904LT1G"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>b5443ac8-36ef-538c-8f6b-19d433e67692</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC8">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">CRCW12062K00FKEA</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="CRCW12062K00FKEA"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>b6fe7649-cf14-5524-bd24-3aa695815a8a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC9">
+      <value>680</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">CRCW1206680RFKEA</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="CRCW1206680RFKEA"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>f25af6f7-2127-5836-952d-f6c5c91ccfd6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC10">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>5f04d69e-252e-5aae-b84d-14d97463072b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC11">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d35e2ad5-8b25-50de-9af9-584aa8c7a871</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC12">
+      <value>287k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07287KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07287KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>0171f36d-71b2-544b-aee9-02d27d4ba26e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC13">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>31f49be7-a70e-5c61-8c06-5ae85c0c7c06</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC14">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>02d614f3-921f-5672-9ffe-a83489342eb1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC15">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>cc5a7739-87b2-5743-b856-ccfa28c6e116</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC16">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d3cfb5db-582a-58cc-85db-7e6ed0b2eb1d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC17">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">CRCW12062K00FKEA</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="CRCW12062K00FKEA"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>f5f9f7f0-2f93-58af-9f54-e4afb16ab163</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC18">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>c350981a-e44e-54fb-a430-90b43c606615</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC1">
+      <value>MGJ1D051505MPC-R7</value>
+      <fields>
+        <field name="MPN">MGJ1D051505MPC-R7</field>
+        <field name="Status">CONDITIONAL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="MGJ1" description=""/>
+      <property name="MPN" value="MGJ1D051505MPC-R7"/>
+      <property name="Status" value="CONDITIONAL"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>fffd6d05-23e7-568f-b43c-239400d65f41</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="8"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="7"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC2">
+      <value>TPS7A1601DGNR</value>
+      <footprint>Package_SO:HVSSOP-8-1EP_3x3mm_P0.65mm</footprint>
+      <fields>
+        <field name="MPN">TPS7A1601DGNR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_SO:HVSSOP-8-1EP_3x3mm_P0.65mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TPS7A1601" description=""/>
+      <property name="MPN" value="TPS7A1601DGNR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>a752b0d4-d158-5fae-bafd-35e8eeefe662</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="8"/>
+            <pin num="5"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="9"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC3">
+      <value>ADuM4120CRIZ</value>
+      <fields>
+        <field name="MPN">ADuM4120CRIZ</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="ADUM4120" description=""/>
+      <property name="MPN" value="ADuM4120CRIZ"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d725e5a4-16b2-5150-a095-9021142918ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC4">
+      <value>TLV76033DBZR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="MPN">TLV76033DBZR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TLV760" description=""/>
+      <property name="MPN" value="TLV76033DBZR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d1cffbd2-404a-5107-a30a-488d84b5f28e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC5">
+      <value>TPS3808G01DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="MPN">TPS3808G01DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TPS3808" description=""/>
+      <property name="MPN" value="TPS3808G01DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>7bebfdb0-e523-5e04-a438-ab8f39a87e67</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC6">
+      <value>VO617A-3X018T</value>
+      <fields>
+        <field name="MPN">VO617A-3X018T</field>
+        <field name="Status">CONDITIONAL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Opto" description=""/>
+      <property name="MPN" value="VO617A-3X018T"/>
+      <property name="Status" value="CONDITIONAL"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>d449729a-2e4f-5d7d-9365-5422ce292e98</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC7">
+      <value>SN74LVC1G14DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G14DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="INV" description=""/>
+      <property name="MPN" value="SN74LVC1G14DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="02 / Isolated gate drive"/>
+      <property name="Sheetfile" value="driver.kicad_sch"/>
+      <sheetpath names="/02 / Isolated gate drive/" tstamps="/3590353d-a074-59f6-b941-dcfe51997403/"/>
+      <tstamps>85627847-dbbc-557c-b613-0af40dcb69a6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC10">
+      <value>1n C0G 1%</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">C0603C102F5GACTU</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="C0603C102F5GACTU"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>fb8a3c53-fe94-5cfc-bdd0-68a578cf99b1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC11">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>35d7b679-3c63-54b6-8356-f9369a785be4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC30">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>ce29836c-6c74-505b-b6f8-1aebfabd622b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC31">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>18be69ef-5f2e-5860-9654-707f581c8af9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC32">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>dfc37b7f-e17f-5149-a99b-8416f10071a6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC33">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>560b43ed-7042-584b-88f8-e8bc9f8bad95</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC34">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>3c8b645f-3236-57a7-8325-98a58d062e41</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC35">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>df15e48a-7086-57b4-a610-a2470663d061</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC36">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>704584bd-9314-57a1-930e-ad326dad6635</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC37">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>4342f5e7-813f-5b2b-b025-62731a923c4b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC38">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>9b326e35-00da-5e8b-8e6a-77ac46bff07e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC39">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>ad1c96c1-dc3a-591f-829a-83c55212f5f0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC40">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>3eecb015-f7a0-5e38-9858-fc232bc81354</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC41">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>47fa3253-6654-55d5-b2c3-aff57645b264</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC42">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>8f6ca501-3c4f-5b48-980d-fae010ab8858</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC43">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>69c6b865-18f4-50db-a236-4063c8f6073e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC44">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>3394469e-fcd1-5eb4-b033-f08e3fc497fd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC45">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>81cce3a1-0bd4-5800-943c-c7aa40940046</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC46">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>f66ce111-3ef2-5748-bd95-7aed7b5bf1b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC20">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>1c68fb73-1499-579b-9eeb-a35d959c59f1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC21">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>f5c86b17-14d5-5a1d-8909-90a24241a801</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC22">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>f59d0317-c1d5-5717-ab18-91c7d673cde1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC23">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>b156cd20-326c-54fe-a8be-0f6f62c41f57</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC24">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-070RL</field>
+        <field name="Status">DNP</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-070RL"/>
+      <property name="Status" value="DNP"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>f7fa83a1-e327-54b6-bffb-8a76801db2a9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC25">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>76d5356d-e9f1-54ba-98a9-e46ec3d7f3cf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC26">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>af88b03d-ca78-5670-8fa8-966e711c0307</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC27">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>0159f9e2-e635-54a3-b2ca-e28e4b68dc85</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC28">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>f19d0e4c-e989-5e2c-8b74-fcb768d2c0f9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SWCC1">
+      <value>Deliberate REARM</value>
+      <fields>
+        <field name="MPN">TL1105SPF160Q</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Switch" description=""/>
+      <property name="MPN" value="TL1105SPF160Q"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>074ed431-64a8-52e1-a61a-89285993fd53</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC10">
+      <value>TPS3431SDRBR</value>
+      <footprint>Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.5x2.4mm</footprint>
+      <fields>
+        <field name="MPN">TPS3431SDRBR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.5x2.4mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TPS3431" description=""/>
+      <property name="MPN" value="TPS3431SDRBR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>bcfa4988-407a-51d2-a155-ae447a093f59</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="9"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC11">
+      <value>TPS3808G33DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="MPN">TPS3808G33DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TPS3808" description=""/>
+      <property name="MPN" value="TPS3808G33DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>0a81a67d-9dd4-5d19-a2ac-86d4bd5a85d4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC12">
+      <value>TPS3808G50DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="MPN">TPS3808G50DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="TPS3808" description=""/>
+      <property name="MPN" value="TPS3808G50DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>14c64478-efb4-5dce-b17b-b2758ad982ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC13">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>5265d568-e147-54c2-a688-dedfcbece780</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC14">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>4d1aeda9-b51a-54f6-b4c0-f49c7c838163</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC15">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>1e97999d-dbd5-5e05-9e4c-cbecab36af85</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC16">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>d8f230bf-76d3-588d-b526-ebcc3d1eea29</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC17">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>01a8450f-0c2b-5a40-b0b8-a421846f4ae6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC18">
+      <value>SN74LVC1G14DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G14DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="INV" description=""/>
+      <property name="MPN" value="SN74LVC1G14DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>499413f6-8729-57ee-86a0-1b4658ed3008</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC19">
+      <value>SN74LVC1G74DCUR</value>
+      <footprint>Package_SO:VSSOP-8_2.3x2mm_P0.5mm</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G74DCUR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_SO:VSSOP-8_2.3x2mm_P0.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="DFF" description=""/>
+      <property name="MPN" value="SN74LVC1G74DCUR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>a5d1f606-4d4b-5786-a437-20bdecef7ae1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="6"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC20">
+      <value>SN74LVC1G14DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G14DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="INV" description=""/>
+      <property name="MPN" value="SN74LVC1G14DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>197b28ae-542b-5acc-9e51-c46d7519b53f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC21">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>39e9a0ce-2ca1-5797-80d3-c598a28528e0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC22">
+      <value>SN74LVC1G14DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G14DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="INV" description=""/>
+      <property name="MPN" value="SN74LVC1G14DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>cb1341f4-e742-58e4-ae88-2c7edae9212e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC23">
+      <value>SN74LVC1G74DCUR</value>
+      <footprint>Package_SO:VSSOP-8_2.3x2mm_P0.5mm</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G74DCUR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_SO:VSSOP-8_2.3x2mm_P0.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="DFF" description=""/>
+      <property name="MPN" value="SN74LVC1G74DCUR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>ed9abf39-d275-56b8-81e9-a99e1b2a89db</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="6"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC24">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>8e659006-6cfe-5570-b9eb-fa9d6d758a43</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC25">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>4dcdc9b6-b918-57b2-adbd-9f7efe881c4e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC26">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="03 / Watchdog and deliberate permission"/>
+      <property name="Sheetfile" value="permission.kicad_sch"/>
+      <sheetpath names="/03 / Watchdog and deliberate permission/" tstamps="/c56a28fa-f306-5176-9b55-f5223bd4a47a/"/>
+      <tstamps>48a4b2c8-bd3d-5602-87e2-295ff3f430af</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC60">
+      <value>47p C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM1885C1H470JA01D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM1885C1H470JA01D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>733c3935-4edf-53af-bb38-447f1370c4d7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC61">
+      <value>47p C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM1885C1H470JA01D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM1885C1H470JA01D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>15b4c5e2-e5f9-5cda-9a62-4ab8a212b070</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC62">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>8e7aa952-8d25-5520-abce-91b50d851e16</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC63">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>4d700bcb-ca20-55fc-9728-6f415631eaae</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC64">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>8c8eb222-4229-559d-815f-b4aebba68675</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CCC65">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM188R71H104KA93D</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="C" description=""/>
+      <property name="MPN" value="GRM188R71H104KA93D"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>f0826429-06dd-5264-bd80-71d190a34a23</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P5">
+      <value>HOST_3V3</value>
+      <fields>
+        <field name="MPN">EXTERNAL_PREREQUISITE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="SupplyPort" description=""/>
+      <property name="MPN" value="EXTERNAL_PREREQUISITE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>89b32492-85d9-5a20-afb4-0e90d65bbc56</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P6">
+      <value>HOST_5V</value>
+      <fields>
+        <field name="MPN">EXTERNAL_PREREQUISITE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="SupplyPort" description=""/>
+      <property name="MPN" value="EXTERNAL_PREREQUISITE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>8f578010-d74e-5988-b6af-ba4fba94aca1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P7">
+      <value>HEARTBEAT</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>2e55b613-3571-5ca1-890f-c557b49f5cc9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P8">
+      <value>CHG_REQ</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>cef24d0d-36f2-5ab2-b777-31f4ffad0508</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P9">
+      <value>PSW_EN</value>
+      <fields>
+        <field name="MPN">INTERFACE</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="Port" description=""/>
+      <property name="MPN" value="INTERFACE"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>0b628982-27de-5dff-a476-300b23ae130f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC30">
+      <value>330k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07330KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07330KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>54f5329c-eda8-5d88-9509-2d9274b038db</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC31">
+      <value>330k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07330KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07330KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>dc7c35c2-7166-5b51-849a-248a3309b2b1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC32">
+      <value>330k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07330KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07330KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>872121d4-23ad-5707-8bf7-3d632b8eb112</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC33">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>1865eae1-1d2d-556f-8946-ed5a2f2346dc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC34">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>553810bc-2d6b-5ab3-b2a1-10284669484a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC35">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>6224be10-0918-5e13-98a7-0815c39b5b1f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC36">
+      <value>10.2k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710K2L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710K2L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>f7e66768-c02b-5b0e-8c50-e06e466e008f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC37">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>d8c40c1c-bc92-514b-91a4-3a59a888eee8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC38">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>15deedd6-a484-57ad-931f-17a26397b33d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC39">
+      <value>10.7k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710K7L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710K7L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>bdd79bfb-ca04-5450-8993-1fb32f77d351</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC40">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>7e491870-ec6e-5699-bc85-ce4593afff4e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC41">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710KL</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710KL"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>e97b10e2-52e0-5050-bb9a-b26598da508a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCC42">
+      <value>10.7k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603BR-0710K7L</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="R" description=""/>
+      <property name="MPN" value="RC0603BR-0710K7L"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>bdd56fa3-9d84-5d00-a573-66d65b393eb2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC30">
+      <value>TLV3201AIDBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">TLV3201AIDBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="CMP" description=""/>
+      <property name="MPN" value="TLV3201AIDBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>0a2b3d68-3646-5db6-ad00-4dfb4510f1a2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC31">
+      <value>TLV3201AIDBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">TLV3201AIDBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="CMP" description=""/>
+      <property name="MPN" value="TLV3201AIDBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>1110013e-c813-5e98-b2f1-7d9db99628dc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC32">
+      <value>TLV3201AIDBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">TLV3201AIDBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="CMP" description=""/>
+      <property name="MPN" value="TLV3201AIDBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>5e0ff722-b68e-5f20-88d9-8a97945ce20b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="UCC33">
+      <value>SN74LVC1G08DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="MPN">SN74LVC1G08DBVR</field>
+        <field name="Status">DRAFT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Charge" part="AND" description=""/>
+      <property name="MPN" value="SN74LVC1G08DBVR"/>
+      <property name="Status" value="DRAFT"/>
+      <property name="Sheetname" value="04 / Hardware polarity and fast current window"/>
+      <property name="Sheetfile" value="sensing.kicad_sch"/>
+      <sheetpath names="/04 / Hardware polarity and fast current window/" tstamps="/96af1991-e869-5958-884c-6430f0f81476/"/>
+      <tstamps>3df2da94-e955-5659-82cb-18cf82fef591</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Charge" part="ADUM4120">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADUM4120</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD1" type="power_in"/>
+        <pin num="2" name="VIN" type="input"/>
+        <pin num="3" name="GND1" type="power_in"/>
+        <pin num="4" name="GND2" type="power_in"/>
+        <pin num="5" name="VOUT" type="output"/>
+        <pin num="6" name="VDD2" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="AGM15T03LL">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AGM15T03LL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+        <pin num="4" name="S" type="passive"/>
+        <pin num="5" name="S" type="passive"/>
+        <pin num="6" name="S" type="passive"/>
+        <pin num="7" name="S" type="passive"/>
+        <pin num="8" name="S" type="passive"/>
+        <pin num="9" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="AND">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AND</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="input"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="C">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="CMP">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CMP</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="output"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="IN+" type="input"/>
+        <pin num="4" name="IN-" type="input"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="DFF">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DFF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK" type="input"/>
+        <pin num="2" name="D" type="input"/>
+        <pin num="3" name="Q_N" type="output"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="Q" type="output"/>
+        <pin num="6" name="CLR_N" type="input"/>
+        <pin num="7" name="PRE_N" type="input"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="Diode">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Diode</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="Fuse">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="INV">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">INV</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="MGJ1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MGJ1</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN-" type="power_in"/>
+        <pin num="2" name="NA" type="no_connect"/>
+        <pin num="3" name="-5V" type="power_out"/>
+        <pin num="4" name="-5V" type="passive"/>
+        <pin num="5" name="+15V" type="power_out"/>
+        <pin num="6" name="0V" type="power_out"/>
+        <pin num="7" name="NC" type="no_connect"/>
+        <pin num="8" name="VIN+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="NPN">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NPN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="open_collector"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="Opto">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Opto</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="E" type="passive"/>
+        <pin num="4" name="C" type="open_collector"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="Port">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Port</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="BOUNDARY" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="R">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="SupplyPort">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SupplyPort</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="EXTERNAL_RAIL" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="Switch">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Switch</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="TLV760">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLV760</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="power_out"/>
+        <pin num="2" name="IN" type="power_in"/>
+        <pin num="3" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="TPS3431">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS3431</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="CWD" type="passive"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="SET1" type="input"/>
+        <pin num="6" name="WDI" type="input"/>
+        <pin num="7" name="WDO_N" type="open_collector"/>
+        <pin num="8" name="ENOUT" type="open_collector"/>
+        <pin num="9" name="EP" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="TPS3808">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS3808</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="RESET_N" type="open_collector"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="MR_N" type="input"/>
+        <pin num="4" name="CT" type="passive"/>
+        <pin num="5" name="SENSE" type="input"/>
+        <pin num="6" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Charge" part="TPS7A1601">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS7A1601</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="power_out"/>
+        <pin num="2" name="FB" type="input"/>
+        <pin num="3" name="PG" type="open_collector"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="EN" type="input"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="DELAY" type="passive"/>
+        <pin num="8" name="IN" type="power_in"/>
+        <pin num="9" name="EP" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Charge">
+      <uri>${KIPRJMOD}/charge.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="ALL_SAFE" class="Default">
+      <node ref="UCC17" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC19" pin="6" pinfunction="CLR_N_6" pintype="input"/>
+      <node ref="UCC23" pin="6" pinfunction="CLR_N_6" pintype="input"/>
+      <node ref="UCC26" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="2" name="ARM_DATA" class="Default">
+      <node ref="UCC21" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC23" pin="2" pinfunction="D_2" pintype="input"/>
+    </net>
+    <net code="3" name="ARM_EDGE" class="Default">
+      <node ref="UCC22" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC23" pin="1" pinfunction="CLK_1" pintype="input"/>
+    </net>
+    <net code="4" name="ARM_RAW" class="Default">
+      <node ref="CCC11" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC25" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SWCC1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC22" pin="2" pinfunction="A_2" pintype="input"/>
+    </net>
+    <net code="5" name="CELL0" class="Default">
+      <node ref="CCC1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC10" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC11" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC30" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC31" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC32" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC33" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC34" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC35" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC36" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC37" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC38" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC39" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC40" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC41" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC42" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC43" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC44" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC45" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC46" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC60" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC61" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC62" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC63" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC64" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC65" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC8" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="P2" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+      <node ref="RCC1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC21" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC23" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC26" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC27" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC28" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC34" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC36" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC40" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC42" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SWCC1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC1" pin="1" pinfunction="VIN-_1" pintype="power_in"/>
+      <node ref="UCC10" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="UCC10" pin="9" pinfunction="EP_9" pintype="power_in"/>
+      <node ref="UCC11" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="UCC12" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="UCC13" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC14" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC15" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC16" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC17" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC18" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC19" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="UCC20" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC21" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC22" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC23" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="UCC24" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC25" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC26" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC3" pin="3" pinfunction="GND1_3" pintype="power_in"/>
+      <node ref="UCC30" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="UCC31" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="UCC32" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="UCC33" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC6" pin="3" pinfunction="E_3" pintype="passive"/>
+      <node ref="UCC7" pin="3" pinfunction="GND_3" pintype="power_in"/>
+    </net>
+    <net code="6" name="CELL32" class="Default">
+      <node ref="FCC1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="P1" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+    </net>
+    <net code="7" name="CHG_FUSED" class="Default">
+      <node ref="DCC1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="FCC2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="QCC2" pin="9" pinfunction="D_9" pintype="passive"/>
+      <node ref="RCC30" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="8" name="CHG_NEG" class="Default">
+      <node ref="DCC1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="P4" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+      <node ref="RCC3" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="9" name="CHG_POS" class="Default">
+      <node ref="FCC2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="P3" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+    </net>
+    <net code="10" name="CHG_REQ" class="Default">
+      <node ref="P8" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+      <node ref="RCC26" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC20" pin="2" pinfunction="A_2" pintype="input"/>
+      <node ref="UCC24" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="11" name="CMD1" class="Default">
+      <node ref="UCC24" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC25" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="12" name="CMD2" class="Default">
+      <node ref="UCC25" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC26" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="13" name="COMMON_SOURCE" class="Default">
+      <node ref="CCC2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="CCC7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="DCC2" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="DCC3" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="QCC1" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="QCC1" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="QCC1" pin="4" pinfunction="S_4" pintype="passive"/>
+      <node ref="QCC1" pin="5" pinfunction="S_5" pintype="passive"/>
+      <node ref="QCC1" pin="6" pinfunction="S_6" pintype="passive"/>
+      <node ref="QCC1" pin="7" pinfunction="S_7" pintype="passive"/>
+      <node ref="QCC1" pin="8" pinfunction="S_8" pintype="passive"/>
+      <node ref="QCC2" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="QCC2" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="QCC2" pin="4" pinfunction="S_4" pintype="passive"/>
+      <node ref="QCC2" pin="5" pinfunction="S_5" pintype="passive"/>
+      <node ref="QCC2" pin="6" pinfunction="S_6" pintype="passive"/>
+      <node ref="QCC2" pin="7" pinfunction="S_7" pintype="passive"/>
+      <node ref="QCC2" pin="8" pinfunction="S_8" pintype="passive"/>
+      <node ref="QCC3" pin="2" pinfunction="E_2" pintype="passive"/>
+      <node ref="RCC11" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC13" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC16" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC8" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC9" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC1" pin="6" pinfunction="0V_6" pintype="power_out"/>
+      <node ref="UCC2" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="UCC2" pin="9" pinfunction="EP_9" pintype="power_in"/>
+      <node ref="UCC3" pin="4" pinfunction="GND2_4" pintype="power_in"/>
+      <node ref="UCC4" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="UCC5" pin="2" pinfunction="GND_2" pintype="power_in"/>
+    </net>
+    <net code="14" name="CURRENT_BIAS" class="Default">
+      <node ref="CCC61" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC37" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC38" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC31" pin="3" pinfunction="IN+_3" pintype="input"/>
+      <node ref="UCC32" pin="4" pinfunction="IN-_4" pintype="input"/>
+    </net>
+    <net code="15" name="CWD" class="Default">
+      <node ref="CCC10" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC10" pin="2" pinfunction="CWD_2" pintype="passive"/>
+    </net>
+    <net code="16" name="DRIVE_ENABLE" class="Default">
+      <node ref="RCC28" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC26" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC3" pin="2" pinfunction="VIN_2" pintype="input"/>
+    </net>
+    <net code="17" name="GATE_A" class="Default">
+      <node ref="DCC2" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="QCC1" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="RCC4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC6" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="18" name="GATE_B" class="Default">
+      <node ref="DCC3" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="QCC2" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="RCC5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC7" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="19" name="GATE_DRIVE" class="Default">
+      <node ref="RCC4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC5" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC3" pin="5" pinfunction="VOUT_5" pintype="output"/>
+    </net>
+    <net code="20" name="HB_SEEN" class="Default">
+      <node ref="UCC19" pin="5" pinfunction="Q_5" pintype="output"/>
+      <node ref="UCC21" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="21" name="HEARTBEAT" class="Default">
+      <node ref="P7" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+      <node ref="RCC21" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC10" pin="6" pinfunction="WDI_6" pintype="input"/>
+      <node ref="UCC18" pin="2" pinfunction="A_2" pintype="input"/>
+    </net>
+    <net code="22" name="HEARTBEAT_EDGE" class="Default">
+      <node ref="UCC18" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC19" pin="1" pinfunction="CLK_1" pintype="input"/>
+    </net>
+    <net code="23" name="HOST_3V3" class="Default">
+      <node ref="CCC30" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC31" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC32" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC33" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC34" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC35" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC36" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC37" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC38" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC39" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC40" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC41" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC42" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC43" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC44" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC45" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC46" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC5" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC62" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC63" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC64" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC65" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC8" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="P5" pin="1" pinfunction="EXTERNAL_RAIL_1" pintype="power_out"/>
+      <node ref="RCC18" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC20" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC22" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC24" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC25" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC33" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC35" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC37" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC39" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC41" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC10" pin="1" pinfunction="VDD_1" pintype="power_in"/>
+      <node ref="UCC10" pin="5" pinfunction="SET1_5" pintype="input"/>
+      <node ref="UCC11" pin="3" pinfunction="MR_N_3" pintype="input"/>
+      <node ref="UCC11" pin="5" pinfunction="SENSE_5" pintype="input"/>
+      <node ref="UCC11" pin="6" pinfunction="VDD_6" pintype="power_in"/>
+      <node ref="UCC12" pin="3" pinfunction="MR_N_3" pintype="input"/>
+      <node ref="UCC12" pin="6" pinfunction="VDD_6" pintype="power_in"/>
+      <node ref="UCC13" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC14" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC15" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC16" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC17" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC18" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC19" pin="2" pinfunction="D_2" pintype="input"/>
+      <node ref="UCC19" pin="7" pinfunction="PRE_N_7" pintype="input"/>
+      <node ref="UCC19" pin="8" pinfunction="VCC_8" pintype="power_in"/>
+      <node ref="UCC20" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC21" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC22" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC23" pin="7" pinfunction="PRE_N_7" pintype="input"/>
+      <node ref="UCC23" pin="8" pinfunction="VCC_8" pintype="power_in"/>
+      <node ref="UCC24" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC25" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC26" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC3" pin="1" pinfunction="VDD1_1" pintype="power_in"/>
+      <node ref="UCC30" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC31" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC32" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC33" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="UCC7" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+    </net>
+    <net code="24" name="HOST_5V" class="Default">
+      <node ref="FCC3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="P6" pin="1" pinfunction="EXTERNAL_RAIL_1" pintype="power_out"/>
+      <node ref="UCC12" pin="5" pinfunction="SENSE_5" pintype="input"/>
+    </net>
+    <net code="25" name="HOST_5V_FUSED" class="Default">
+      <node ref="CCC1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="FCC3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC1" pin="8" pinfunction="VIN+_8" pintype="power_in"/>
+    </net>
+    <net code="26" name="ISO_3V3" class="Default">
+      <node ref="CCC7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC14" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC4" pin="1" pinfunction="OUT_1" pintype="power_out"/>
+      <node ref="UCC5" pin="3" pinfunction="MR_N_3" pintype="input"/>
+      <node ref="UCC5" pin="6" pinfunction="VDD_6" pintype="power_in"/>
+    </net>
+    <net code="27" name="ISO_13V" class="Default">
+      <node ref="CCC4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="DCC4" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="RCC10" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC12" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC17" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC2" pin="1" pinfunction="OUT_1" pintype="power_out"/>
+      <node ref="UCC3" pin="6" pinfunction="VDD2_6" pintype="power_in"/>
+      <node ref="UCC4" pin="2" pinfunction="IN_2" pintype="power_in"/>
+    </net>
+    <net code="28" name="ISO_BAD" class="Default">
+      <node ref="RCC18" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC6" pin="4" pinfunction="C_4" pintype="open_collector"/>
+      <node ref="UCC7" pin="2" pinfunction="A_2" pintype="input"/>
+    </net>
+    <net code="29" name="ISO_BASE" class="Default">
+      <node ref="QCC3" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="RCC15" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC16" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="30" name="ISO_FB" class="Default">
+      <node ref="RCC10" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC11" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC2" pin="2" pinfunction="FB_2" pintype="input"/>
+    </net>
+    <net code="31" name="ISO_LED_A" class="Default">
+      <node ref="RCC17" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC6" pin="1" pinfunction="A_1" pintype="passive"/>
+    </net>
+    <net code="32" name="ISO_LED_K" class="Default">
+      <node ref="QCC3" pin="3" pinfunction="C_3" pintype="open_collector"/>
+      <node ref="UCC6" pin="2" pinfunction="K_2" pintype="passive"/>
+    </net>
+    <net code="33" name="ISO_NEG5" class="Default">
+      <node ref="RCC9" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC1" pin="3" pinfunction="-5V_3" pintype="power_out"/>
+      <node ref="UCC1" pin="4" pinfunction="-5V_4" pintype="passive"/>
+    </net>
+    <net code="34" name="ISO_OK" class="Default">
+      <node ref="UCC16" pin="1" pinfunction="A_1" pintype="input"/>
+      <node ref="UCC7" pin="4" pinfunction="Y_4" pintype="output"/>
+    </net>
+    <net code="35" name="ISO_RAW15" class="Default">
+      <node ref="CCC2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="CCC3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="DCC4" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="RCC8" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC1" pin="5" pinfunction="+15V_5" pintype="power_out"/>
+      <node ref="UCC2" pin="5" pinfunction="EN_5" pintype="input"/>
+      <node ref="UCC2" pin="8" pinfunction="IN_8" pintype="power_in"/>
+    </net>
+    <net code="36" name="ISO_RESET_N" class="Default">
+      <node ref="RCC14" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC15" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC5" pin="1" pinfunction="RESET_N_1" pintype="open_collector"/>
+    </net>
+    <net code="37" name="ISO_SENSE" class="Default">
+      <node ref="RCC12" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC13" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC5" pin="5" pinfunction="SENSE_5" pintype="input"/>
+    </net>
+    <net code="38" name="I_HIGH" class="Default">
+      <node ref="RCC41" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC42" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC32" pin="3" pinfunction="IN+_3" pintype="input"/>
+    </net>
+    <net code="39" name="I_LOW" class="Default">
+      <node ref="RCC39" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC40" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC31" pin="4" pinfunction="IN-_4" pintype="input"/>
+    </net>
+    <net code="40" name="PACK_FUSED" class="Default">
+      <node ref="FCC1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="QCC1" pin="9" pinfunction="D_9" pintype="passive"/>
+    </net>
+    <net code="41" name="PERMIT" class="Default">
+      <node ref="UCC23" pin="5" pinfunction="Q_5" pintype="output"/>
+      <node ref="UCC24" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="42" name="POL_H1" class="Default">
+      <node ref="RCC30" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC31" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="43" name="POL_H2" class="Default">
+      <node ref="RCC31" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC32" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="44" name="POL_OK" class="Default">
+      <node ref="UCC14" pin="1" pinfunction="A_1" pintype="input"/>
+      <node ref="UCC30" pin="1" pinfunction="OUT_1" pintype="output"/>
+    </net>
+    <net code="45" name="POL_REF" class="Default">
+      <node ref="RCC35" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC36" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC30" pin="4" pinfunction="IN-_4" pintype="input"/>
+    </net>
+    <net code="46" name="POL_SENSE" class="Default">
+      <node ref="CCC60" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC32" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC33" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC34" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC30" pin="3" pinfunction="IN+_3" pintype="input"/>
+    </net>
+    <net code="47" name="PSW_EN" class="Default">
+      <node ref="P9" pin="1" pinfunction="BOUNDARY_1" pintype="passive"/>
+      <node ref="RCC27" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="UCC25" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="48" name="QUALIFIED_LINK" class="Default">
+      <node ref="RCC23" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC24" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC16" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="49" name="REQ_LOW" class="Default">
+      <node ref="UCC20" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC21" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="50" name="RETURN_SENSE" class="Default">
+      <node ref="RCC1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RCC38" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="51" name="SAFE1" class="Default">
+      <node ref="UCC13" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC15" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="52" name="SAFE2" class="Default">
+      <node ref="UCC14" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC15" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="53" name="SAFE3" class="Default">
+      <node ref="UCC15" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC17" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="54" name="SAFE4" class="Default">
+      <node ref="UCC16" pin="4" pinfunction="Y_4" pintype="output"/>
+      <node ref="UCC17" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="55" name="SC_FORWARD_OK" class="Default">
+      <node ref="UCC31" pin="1" pinfunction="OUT_1" pintype="output"/>
+      <node ref="UCC33" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="56" name="SC_OK" class="Default">
+      <node ref="UCC14" pin="2" pinfunction="B_2" pintype="input"/>
+      <node ref="UCC33" pin="4" pinfunction="Y_4" pintype="output"/>
+    </net>
+    <net code="57" name="SC_REVERSE_OK" class="Default">
+      <node ref="UCC32" pin="1" pinfunction="OUT_1" pintype="output"/>
+      <node ref="UCC33" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="58" name="SHUNT_MID" class="Default">
+      <node ref="RCC2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RCC3" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="59" name="SUP_OK" class="Default">
+      <node ref="RCC22" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC10" pin="3" pinfunction="EN_3" pintype="input"/>
+      <node ref="UCC11" pin="1" pinfunction="RESET_N_1" pintype="open_collector"/>
+      <node ref="UCC12" pin="1" pinfunction="RESET_N_1" pintype="open_collector"/>
+      <node ref="UCC13" pin="1" pinfunction="A_1" pintype="input"/>
+    </net>
+    <net code="60" name="WD_OK" class="Default">
+      <node ref="RCC20" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="UCC10" pin="7" pinfunction="WDO_N_7" pintype="open_collector"/>
+      <node ref="UCC10" pin="8" pinfunction="ENOUT_8" pintype="open_collector"/>
+      <node ref="UCC13" pin="2" pinfunction="B_2" pintype="input"/>
+    </net>
+    <net code="61" name="unconnected-(UCC1-NA-Pad2)" class="Default">
+      <node ref="UCC1" pin="2" pinfunction="NA_2" pintype="no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(UCC1-NC-Pad7)" class="Default">
+      <node ref="UCC1" pin="7" pinfunction="NC_7" pintype="no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(UCC2-DELAY-Pad7)" class="Default">
+      <node ref="UCC2" pin="7" pinfunction="DELAY_7" pintype="passive+no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(UCC2-NC-Pad6)" class="Default">
+      <node ref="UCC2" pin="6" pinfunction="NC_6" pintype="no_connect"/>
+    </net>
+    <net code="65" name="unconnected-(UCC2-PG-Pad3)" class="Default">
+      <node ref="UCC2" pin="3" pinfunction="PG_3" pintype="open_collector+no_connect"/>
+    </net>
+    <net code="66" name="unconnected-(UCC5-CT-Pad4)" class="Default">
+      <node ref="UCC5" pin="4" pinfunction="CT_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(UCC7-NC-Pad1)" class="Default">
+      <node ref="UCC7" pin="1" pinfunction="NC_1" pintype="no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(UCC11-CT-Pad4)" class="Default">
+      <node ref="UCC11" pin="4" pinfunction="CT_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(UCC12-CT-Pad4)" class="Default">
+      <node ref="UCC12" pin="4" pinfunction="CT_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="70" name="unconnected-(UCC18-NC-Pad1)" class="Default">
+      <node ref="UCC18" pin="1" pinfunction="NC_1" pintype="no_connect"/>
+    </net>
+    <net code="71" name="unconnected-(UCC19-Q_N-Pad3)" class="Default">
+      <node ref="UCC19" pin="3" pinfunction="Q_N_3" pintype="output+no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(UCC20-NC-Pad1)" class="Default">
+      <node ref="UCC20" pin="1" pinfunction="NC_1" pintype="no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(UCC22-NC-Pad1)" class="Default">
+      <node ref="UCC22" pin="1" pinfunction="NC_1" pintype="no_connect"/>
+    </net>
+    <net code="74" name="unconnected-(UCC23-Q_N-Pad3)" class="Default">
+      <node ref="UCC23" pin="3" pinfunction="Q_N_3" pintype="output+no_connect"/>
+    </net>
+  </nets>
+</export>

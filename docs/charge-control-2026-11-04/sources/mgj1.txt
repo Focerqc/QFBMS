@@ -1,0 +1,1628 @@
+PAGE 1
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 1 of 16
+www.murata-ps.com
+www.murata-ps.com/support
+For full details go to
+www.murata-ps.com/rohs
+ 
+SELECTION GUIDE
+Order Code1
+Nominal Input  
+Voltage
+Output Voltage 1
+Output Voltage 2
+Output Current 1  
+Output Current 2
+Input Current  
+at Rated Load
+Output 1
+Output 2
+Load Regulation 
+(Typ)
+Load Regulation 
+(Max)
+Load Regulation 
+(Typ)
+Load Regulation 
+(Max)
+V
+V
+V
+mA
+%
+MGJ1D051505MPC
+5
+15
+-5
+50
+50
+320
+7
+8.1
+0.3
+0.5
+MGJ1D051510MPC
+5
+15
+-10
+40
+40
+310
+7.6
+8.8
+0
+0.1
+MGJ1D051905MPC
+5
+19
+-5
+42
+42
+320
+6.2
+7.4
+0.2
+0.3
+MGJ1D121505MPC
+12
+15
+-5
+50
+50
+115
+5.6
+6.6
+0.3
+0.4
+MGJ1D121509MPC
+12
+15
+-9
+42
+42
+115
+6.6
+7.6
+0
+0.1
+MGJ1D121905MPC
+12
+19
+-5
+42
+42
+115
+5.1
+6
+0.2
+0.3
+MGJ1D241505MPC
+24
+15
+-5
+50
+50
+65
+3.8
+5.2
+0.2
+0.3
+MGJ1D241509MPC
+24
+15
+-9
+42
+42
+65
+4.5
+6
+0
+0.1
+MGJ1D241905MPC
+24
+19
+-5
+42
+42
+65
+3.4
+4.5
+0.2
+0.3
+FEATURES
+
+Patent pending
+Optimised bipolar output voltages for IGBT/ 
+MOSFET gate drives
+ Reinforced insulation to UL60950 recognition 
+pending
+
+ANSI/AAMI ES60601-1 recognition pending 
+5.2kVDC isolation test voltage ‘Hi Pot Test’
+Ultra low coupling capacitance
+Surface mount package style
+5V, 12V & 24V inputs
++15V/-9V, +15V/-5V & +19V/-5V outputs
+Operation to 105 oC
+
+Short circuit protection
+
+Thermal shutdown
+Characterised partial discharge performance
+DC link voltage 3kVDC
+PRODUCT OVERVIEW
+The MGJ1 series of DC-DC converters is ideal 
+for powering ‘high side’ and ‘low side’ gate drive 
+circuits for IGBTs and MOSFETS in bridge circuits.
+A choice of asymmetric output voltages allows 
+optimum drive levels for best system efﬁciency. 
+The MGJ1 series is characterised for high isolation  
+requirements commonly seen in bridge circuits 
+used in motor drives and inverters, while the MGJ1 
+industrial grade temperature rating and construction 
+gives long service life and reliability.
+SELECTION GUIDE (Continued)
+Order Code1
+Ripple & Noise  
+(Typ)3
+Ripple & Noise 
+(Max)3
+Efﬁciency (Min)
+Efﬁciency (Typ)
+Isolation                 
+Capacitance
+MTTF2
+mVp-p
+%
+pF
+MIL.
+Tel.
+kHrs
+MGJ1D051505MPC
+15
+30
+60
+63.5
+5
+1964
+70733
+MGJ1D051510MPC
+14
+30
+60
+64
+5
+1872
+65924
+MGJ1D051905MPC
+14
+30
+61
+64.5
+5
+1816
+55135
+MGJ1D121505MPC
+10
+20
+67
+71.5
+5
+2214
+39194
+MGJ1D121509MPC
+10
+20
+68
+73
+5
+2069
+37971
+MGJ1D121905MPC
+10
+20
+67
+72
+5
+1908
+37172
+MGJ1D241505MPC
+15
+30
+57
+64
+5
+1500
+33052
+MGJ1D241509MPC
+15
+30
+60
+64
+5
+1378
+31761
+MGJ1D241905MPC
+15
+30
+58
+64
+5
+1356
+29139
+INPUT CHARACTERISTICS
+Parameter
+Conditions
+Min.
+Typ.
+Max.
+Units
+Voltage range
+Continuous operation, 5V input types
+4.5
+5
+5.5
+V
+Continuous operation, 12V input types
+10.8
+12
+13.2
+Continuous operation, 24V input types
+21.6
+24
+26.4
+Input short circuit      
+current ISC
+5V input types
+125
+mA
+12V input types
+55
+24V input types
+80
+Input reﬂected ripple 
+5V input types
+7.5
+mA 
+p-p
+12V input types
+2
+24V input types
+2.5
+1. Components are supplied in tape and reel packaging, please refer to package speciﬁcation section. Orderable part numbers are 
+MGJ1D051505MPC-R7 (80 pieces per reel), or MGJ1D051505MPC-R13 (400 pieces per reel).
+2.  Calculated using MIL-HDBK-217 FN2 and Telcordia SR-332 calculation model with nominal input voltage at full load.
+3.  See ripple & noise test method.
+All speciﬁcations typical at TA=25°C, nominal input voltage and rated output current unless otherwise speciﬁed
+
+PAGE 2
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 2 of 16
+www.murata-ps.com/support
+OUTPUT CHARACTERISTICS
+Parameter
+Conditions
+Min.
+Typ.
+Max.
+Units
+Rated Power
+TA=-40ºC to 105ºC
+1.0
+W
+Voltage Set Point Accuracy
+See tolerance envelopes
+Line regulation
+051505
+High VIN to low VIN OP1
+1.38
+1.45
+%/%
+High VIN to low VIN OP2
+0.06
+0.08
+051510
+High VIN to low VIN OP1
+1.68
+1.75
+High VIN to low VIN OP2
+0.01
+0.01
+051905
+High VIN to low VIN OP1
+1.32
+1.40
+High VIN to low VIN OP2
+0.05
+0.06
+121505
+High VIN to low VIN OP1
+1.56
+1.62
+High VIN to low VIN OP2
+0.05
+0.06
+121509
+High VIN to low VIN OP1
+1.64
+1.70
+High VIN to low VIN OP2
+0.006
+0.01
+121905
+High VIN to low VIN OP1
+1.29
+1.32
+High VIN to low VIN OP2
+0.06
+0.07
+241505
+High VIN to low VIN OP1
+1.34
+1.40
+High VIN to low VIN OP2
+0.07
+0.10
+241509
+High VIN to low VIN OP1
+1.61
+1.70
+High VIN to low VIN OP2
+0.01
+0.01
+241905
+High VIN to low VIN OP1
+1.26
+1.32
+High VIN to low VIN OP2
+0.05
+0.07
+ABSOLUTE MAXIMUM RATINGS
+Short-circuit protection
+Continuous
+Lead temperature 1mm from case for 10 seconds
+245°C
+Input voltage VIN, MGJ1D05
+6V
+Input voltage VIN, MGJ1D12
+15V
+Input voltage VIN, MGJ1D24
+28V
+ISOLATION CHARACTERISTICS
+Parameter
+Conditions
+Min.
+Typ.
+Max.
+Units
+Isolation test voltage
+Production tested for 1 second 
+5200
+VDC
+Qualiﬁcation tested for 1 minute 
+5200
+VDC
+Resistance
+Viso= 500VDC
+1
+GΩ
+GENERAL CHARACTERISTICS
+Parameter
+Conditions
+Min.
+Typ.
+Max.
+Units
+Switching frequency
+5V input types
+90
+kHz
+12V input types
+95
+24V input types
+115
+TEMPERATURE CHARACTERISTICS
+Parameter
+Conditions
+Min.
+Typ.
+Max.
+Units
+Speciﬁcation
+All output types (see derating curves)
+-40
+105
+°C
+Storage
+-55
+125
+Product Temperature above 
+ambient
+5V input types
+23
+12V input types
+17
+24V input types
+26
+Cooling
+Free air convection
+ 
+
+PAGE 3
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 3 of 16
+www.murata-ps.com/support
+POSITIVE OUTPUT VOLTAGE TOLERANCE ENVELOPES
+ 
+The voltage tolerance envelopes show typical load regulation characteristics for this product series. The tolerance envelope is the maximum output voltage variation due to 
+changes in output loading and set point accuracy.
+051505
+051510
+051905
+121505, 121509, 121905
+241505, 241509
+241905
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+6%
+2%
+3%
+-3%
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+11%
+8%
+5%
+0%
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+12%
+7%
+6%
+-1%
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+8%
+5%
+1%
+-3%
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+5%
+1%
+-1%
+-6%
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+Output Voltage
+5%
+1%
+3%
+-3%
+
+PAGE 4
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 4 of 16
+www.murata-ps.com/support
+NEGATIVE OUTPUT VOLTAGE TOLERANCE ENVELOPES
+ 
+051505, 121905, 241905
+051510, 121509, 241509
+051905
+121505, 241505
+Output Voltage
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+2%
+-6%
+2%
+-6%
+Output Load Current (%)
+Output Voltage
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+1%
+-3%
+1%
+-3%
+Output Voltage
+Output Load Current (%)
+100
+75
+50
+25
+ 10
+1%
+-7%
+1%
+-7%
+Output Voltage
+100
+75
+50
+25
+ 10
+3%
+-4%
+3%
+-5%
+
+PAGE 5
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 5 of 16
+www.murata-ps.com/support
+TECHNICAL NOTES
+ISOLATION VOLTAGE
+‘Hi Pot Test’, ‘Flash Tested’, ‘Withstand Voltage’, ‘Proof Voltage’, ‘Dielectric Withstand Voltage’ & ‘Isolation Test Voltage’ are all terms that relate to the same thing, a test 
+voltage, applied for a speciﬁed time, across a component designed to provide electrical isolation, to verify the integrity of that isolation. 
+Murata Power Solutions MGJ1 series of DC/DC converters are all 100% production tested at 5.2kVDC for 1 second and have been qualiﬁcation tested at 5.2kVDC for 1 
+minute.
+A question commonly asked is, “What is the continuous voltage that can be applied across the part in normal operation?”
+When the insulation in the MGJ1 series is not used as a safety barrier , i.e. provides functional isolation only, continuous or switched voltages across the barrier up to 
+3kV are sustainable. Long term reliability testing at these voltages continues. Peak Inception voltages measured were in excess of 3kV when testing for partial dis-
+charge in accordance with IEC 60270. Please contact Murata for further information.
+The MGJ1 series is pending recognition by Underwiters Laboratory to 250 Vrms Reinforced Insulation, please see safety approval section below.
+REPEATED HIGH-VOLTAGE ISOLATION TESTING
+It is well known that repeated high-voltage isolation testing of a barrier component can actually degrade isolation capability, to a lesser or greater degree depending on 
+materials, construction and environment. We therefore strongly advise against repeated high voltage isolation testing, but if it is absolutely required, that the voltage be 
+reduced by 20% from speciﬁed test voltage.
+SAFETY APPROVAL
+ANSI/AAMI ES60601-1  
+The MGJ1 series is pending recognition ANSI/AAMI ES60601-1. 
+UL 60950 
+The MGJ1 series is pending recognition by Underwriters Laboratory (UL) to UL 60950 for reinforced insulation to a working voltage of 250Vrms with a maximum mea-
+sured product operating temperature of 105°C.
+Creepage and clearance 9.3mm.
+FUSING 
+The MGJ1 Series of converters are not internally fused so to meet the requirements of UL an anti-surge input line fuse should always be used with ratings as deﬁned 
+below. Input Voltage, 5V 600mA 
+Input Voltage, 12V 250mA 
+Input Voltage, 24V 125mA 
+All fuses should be Anti-Surge and UL rated.
+RoHS COMPLIANCE, MSL AND PSL INFORMATION 
+This series is compatible with Pb-Free soldering systems and is also backward compatible with Sn/Pb soldering systems.
+The MGJ1 series has a process, moisture, and reﬂow sensitivity classiﬁcation of MSL2 PSL R7F as deﬁned in J-STD-020
+and J-STD-075. This translates to: MSL2 = 1 year ﬂoor life, PSL R7F = Peak reﬂow temperature 245°C with a
+limitation on the time above liquidus (217°C) which for this series is 90sec max. The pin termination ﬁnish on this product 
+series is Gold with a plating thickness of 0.12 microns.
+
+PAGE 6
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 6 of 16
+www.murata-ps.com/support
+APPLICATION NOTES
+Minimum load
+The minimum load to meet datasheet speciﬁcation is 10% of the full rated load across the speciﬁed input voltage range. Lower than 10% minimum loading will result in 
+an increase in output voltage, which may rise to typically 1.25 times the speciﬁed output voltage if the output load falls to less than 5%.
+Capacitive loading and start up
+Typical start up times for this series, with a typical input voltage rise time of 2.2μs and output capacitance of 10μF, are shown in the table below. The product 
+series will start into capacitance ranging up to 47μF (Capacitor across +V to -V or 100μF across each output) with increased start times.
+Ripple & Noise Characterisation Method
+Ripple and noise measurements are performed with the following test conﬁguration.
+C1
+1μF X7R m ultilayer ceramic capacitor, voltage rating to be a minimum of 3 times the output voltage of the DC/DC converter
+C2
+10μF tantalum capacitor, voltage rating to be a minimum of 1.5 times the output voltage of the DC/DC converter with an ESR of less 
+than 100mΩ at 100 kHz
+C3
+100nF multilayer ceramic capacitor, general purpose
+R1
+450Ω resistor, carbon ﬁlm, ±1% tolerance
+R2
+50Ω BNC termination
+T1
+3T of the coax cable through a ferrite toroid
+RLOAD
+Resistive load to the maximum power rating of the DC/DC converter. Connections should be made via twisted wires
+Measured values are multiplied by 10 to obtain the speciﬁed values.
+Differential Mode Noise Test Schematic
+Start-up time
+ms
+MGJ1D051505MPC
+4.2
+MGJ1D051509MPC
+5
+MGJ1D051905MPC
+5.2
+MGJ1D121505MPC
+2.8
+MGJ1D121509MPC
+3.9
+MGJ1D121905MPC
+4
+MGJ1D241505MPC
+1
+MGJ1D241509MPC
+1.3
+MGJ1D241905MPC
+1.3
+Typical Start-Up Wave Form
+OSCILLOSCOPE
+ 
+ 
+ 
+Y INPUT
+ 
+SUPPLY
+ 
+  C1   C2   C3        R1                  T1                 R2
+ 
+Input        Output
+ 
+DC/DC Converter 
+ 
+R LOAD
+ 
++        +
+ 
+ 
+                
+         - 
+-
+ 
+
+PAGE 7
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 7 of 16
+www.murata-ps.com/support
+APPLICATION NOTES (Continued)
+Opitional Conﬁguration:
+The MGJ1 series is a dual output DC/DC speciﬁcally designed for gate drive applications and its output conﬁguration is not suitable for application usage as a general 
+dual output DC/DC converter. However the MGJ1 series can be used as a general purpose single output converter, by loading from +Vout to -Vout. 
+The MGJ1 series provides a dual output by using a zener voltage divider network, the negative output is obtained by using a zener diode as a voltage regulator. If a 
+short circuit occurs, the zener diode is protected. A 5V1 zener diode is used to set the -5 Vout, a 9V1 zener diode to set the -9Vout and a 10V zener diode to set the 
+-10Vout. A tolerance of 2% should be taken into consideration for the zener diodes. The 5V1 zener diode is rated at 300mW, the 9V1 and 10V zener diodes are rated at 
+400mW. 
+ 
+ 
+ 
+For optional conﬁguration where alternative negative output voltages are required, an external zener diode network can be connected across the main 20V or 24V 
+output. However this zener diode will no longer be protected from short circuits as the internal short circuit protection is bypassed.    
+OSCILLATOR
+Protection 
+P8
+P7
+P2
+P1
+P5
+P6
+P4
+P3
++VIN
+NC
+NC
+-VIN
++VOUT
+-VOUT
+-VOUT
+0V
+Protection 
+External Zener Diode Network Circuit Option 1
++VOUT
+-VOUT
+-VOUT
+0V
+Protection 
+External Zener Diode Network Circuit Option 2
++VOUT
+-VOUT
+-VOUT
+0V
+
+PAGE 8
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 8 of 16
+www.murata-ps.com/support
+APPLICATION NOTES (Continued)
+Schematic for driving IGBT, SiC & MOSFET
+IGBT
+MGJ1DXX1509MPC
+MGJ1D051510MPC
+OPTOCOUPLER
+-9V/-10V
++15V
+6
+NA
++Vin
+1
+8
+2
+-Vin
+5
+NC
+0V
+3/4
+PWM DRIVE
+IGBT
+MGJ1 DC-DC CONNECTIONS FOR DRIVING IGBT DEVICES
+7
+MGJ1 DC-DC CONNECTIONS FOR DRIVING SiC DEVICES
++19V
+SiC
+PWM DRIVE
+0V
+-5V
+5
+-Vin
+8
++Vin
+OPTOCOUPLER
+MGJ1DXX1905MPC
+SiC
+6
+NA
+1
+2
+NC
+3/4
+7
+PWM DRIVE
+MOSFET
+MOSFET
+MGJ1DXX1505MPC
+MGJ1 DC-DC CONNECTIONS FOR DRIVING MOSFET DEVICES
++15V
+0V
+-5V
+-Vin
+8
++Vin
+OPTOCOUPLER
+NA
+1
+2
+7
+NC
+5
+6
+3/4
+
+PAGE 9
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 9 of 16
+www.murata-ps.com/support
+EFFICIENCY VS LOAD
+MGJ1D051505MPC
+MGJ1D051510MPC
+MGJ1D051905MPC
+MGJ1D121505MPC
+MGJ1D121509MPC
+MGJ1D121905MPC
+0
+10
+20
+30
+40
+50
+60
+70
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+
+PAGE 10
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 10 of 16
+www.murata-ps.com/support
+EFFICIENCY VS LOAD
+MGJ1D241505MPC
+MGJ1D241509MPC
+MGJ1D241905MPC
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Efficiency  (%)
+Load  (%)
+
+PAGE 11
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 11 of 16
+www.murata-ps.com/support
+TEMPERATURE DERATING
+MGJ1D051505MPC
+MGJ1D051510MPC
+MGJ1D051905MPC
+MGJ1D121505MPC
+MGJ1D121509MPC
+MGJ1D121905MPC
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 5V
+VIN = 5.5V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 12V
+VIN = 13.2V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 12V
+VIN = 13.2V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 5V
+VIN = 5.5V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 12V
+VIN = 13.2V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 5V
+VIN = 5.5V
+
+PAGE 12
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 12 of 16
+www.murata-ps.com/support
+TEMPERATURE DERATING
+MGJ1D241505MPC
+MGJ1D241509MPC
+MGJ1D241905MPC
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 24V
+VIN = 26.4V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 24V
+VIN = 26.4V
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+70
+75
+80
+85
+90
+95
+100
+105
+Load (%)
+Temperature (°C)
+VIN = 24V
+VIN = 26.4V
+
+PAGE 13
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 13 of 16
+www.murata-ps.com/support
+EMC FILTERING AND SPECTRA
+FILTERING
+An input capacitor and inductor is required to meet EN 55022 Curve B, Quasi-Peak EMC limit, as shown in the following plots. The following plots show positive and    
+negative quasi peak and CISPR22 Average Limit B (green line) and Quasi Peak Limit B (pink line) adherence limits. The recommended input capacitor to use for this circuit 
+is 10μF/50V. The recommended Murata part is GRM32ER71H106KA1Z.
+MGJ1D051505MPC
+MGJ1D051510MPC
+MGJ1D051905MPC
+MGJ1D121505MPC 
+DC
+DC
+L
+C
+Load
+Power
+Source
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+Inductor
+Capacitor
+L, μH
+SMD
+Through Hole 
+C, μF
+MGJ1D051505MPC
+15
+46153C
+13R153C
+10
+MGJ1D051510MPC
+15
+46153C
+13R153C
+10
+MGJ1D051905MPC
+15
+46153C
+13R153C
+10 
+MGJ1D121505MPC
+10
+46103C
+13R103C
+10
+MGJ1D121509MPC
+10
+46103C
+13R103C
+10
+MGJ1D121905MPC
+10
+46103C
+13R103C
+10
+MGJ1D241505MPC
+10
+46103C
+13R103C
+10
+MGJ1D241509MPC
+10
+46103C
+13R103C
+10
+MGJ1D241905MPC
+10
+46103C
+13R103C
+10
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+
+PAGE 14
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 14 of 16
+www.murata-ps.com/support
+EMC FILTERING AND SPECTRA
+MGJ1D121509MPC 
+MGJ1D121905MPC 
+MGJ1D241505MPC 
+MGJ1D241509MPC 
+MGJ1D241905MPC 
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+1.00E+05
+1.00E+06
+1.00E+07
+1.00E+08
+dBuV
+Frequency (Hz)
+
+PAGE 15
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 15 of 16
+www.murata-ps.com/support
+PACKAGE SPECIFICATIONS
+MECHANICAL DIMENSIONS
+PIN CONNECTIONS
+Pin
+Function
+1
+-Vin
+2
+NA
+3
+-Vout
+4
+-Vout
+5
++Vout
+6
+0V
+7
+NC
+8
++Vin
+RECOMMENDED FOOTPRINT DETAILS
+x8 PLACES
+1.45 [0.057]
+10.92 [0.430]
+1.08 [0.042]
+x 8 PLACES 0.61 [0.024]
+1
+2
+2.54 [0.100]
+14.99 [0.590]
+SMA PICKUP POINT
+(TOP OF PCB)
+3.16±0.24 [0.124±0.009]
+4.41±0.45 [0.174±0.018]
+0.1 (0.004) S x8 PINS
+S
+19.94 [0.785]
+3
+4
+2.54 [0.100]
+8
+7
+6
+5
+SEATING
+PLANE
+All dimensions in mm (inches), Controlling dimensions is mm. 
+Tolerance (unless otherwise stated) ±0.25 (0.010).
+Weight:  2.3g
+2.54 [0.100]
+10.92 [0.430]
+x8 PLACES
+2.30 [0.091]
+x8 PLACES
+1.00 [0.039]
+13.97 [0.550]
+RECOMMENDED
+ISOLATION BARRIER
+2.54 [0.100]
+NA - Not Available for electrical connection.
+
+PAGE 16
+MGJ1 Series
+5.2kVDC Isolated 1W SM Gate Drive DC/DC Converters
+KDC_MGJ1_A02 Page 16 of 16
+www.murata-ps.com/support
+Murata Power Solutions, Inc. makes no representation that the use of its products in the circuits described herein, or the use of other 
+technical information contained herein, will not infringe upon existing or future patent rights. The descriptions contained herein do not imply 
+the granting of licenses to make, use, or sell equipment constructed in accordance therewith. Speciﬁcations are subject to change without 
+notice.    
+ 
+ 
+ 
+ 
+  © 2016 Murata Power Solutions, Inc.
+Murata Power Solutions, Inc.  
+11 Cabot Boulevard, Mansﬁeld, MA 02048-1151 U.S.A.
+ISO 9001 and 14001 REGISTERED
+This product is subject to the following operating requirements 
+and the Life and Safety Critical Application Sales Policy:  
+Refer to: http://www.murata-ps.com/requirements/
+TAPE & REEL SPECIFICATIONS
+REEL OUTLINE DIMENSIONS
+REEL PACKAGING DETAILS
+TAPE OUTLINE DIMENSIONS
+20.5 [0.524]#
+6.1 [0.240]
+15.5 [0.610]#
+DIRECTION OF UNREELING
+14.2 [0.559]
+4.0 [0.157]
+24.0 [0.945]
+COVER TAPE
+32.0 [1.260]
+28.4 [1.118]
+Product Orientation
+Pin 1, located nearest to 
+carrier drive sprocket.
+Reel Quantity: 7” - 80 or 13” - 400
+38.4 [1.512]
+MAX #
+Ø13.5
+12.8 [Ø0.531
+0.504 ]
+1.5 [0.059]
+MIN ##
+Ø20.2 [Ø0.795]
+MIN
+Ø330 [13.000]
+OR
+Ø178 [7.000]
+100 [3.937]
+MIN
+LEADER SECTION
+400 [15.748] MIN
+GOODS
+ENCLOSURE
+SECTION
+TRAILER SECTION
+160 [6.299] MIN
+Tape & Reel speciﬁcations shall conform with current EIA-481 standard
+Unless otherwise stated all dimensions in mm(inches) 
+Controlling dimension is mm
+# Measured at hub
+## Six equi-spaced slots on 180mm/7” reel
+Tape & Reel speciﬁcations shall conform with current EIA-481 standard
+Unless otherwise stated all dimensions in mm(inches) 
+Controlling dimension is mm
+Components shall be orientated within the carrier tape as indicated
+# Measured on a plane 0.3mm above the bottom pocket 

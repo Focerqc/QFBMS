@@ -108,7 +108,7 @@ This plan records completed checks and unfinished investigation separately. Comp
 
 ## User-confirmed product inputs — November 3, 2026
 
-- Cells: lithium-ion Samsung 50S. Verify the exact Samsung cell datasheet before final voltage settings and ratings.
+- Cells: RS50 (corrected by the user November 4, 2026). Verify the exact manufacturer and cell datasheet before final voltage settings and ratings.
 - Charger: 5 A. This establishes nominal charger current; the supplied 16 A software default is not automatically the selected charge-overcurrent threshold. Charger output voltage/tolerance remains to be established.
 - Temperature limits: use the supplied firmware/package reference definitions as the intended baseline, including charge cell range 0–45 °C, charge MOS limit 85 °C and balancing cell/IC maxima 45/85 °C. Verify runtime settings and actual sensor fault handling against these definitions.
 - Harness: supplied folder photographs and wiring reference are the evidence to inspect; do not ask the user to recreate the mapping. The wiring image was visually opened in this session. It depicts 32s cell wiring, four external temperatures, CAN and enable override, but does not by itself prove the current PCB connector pad numbering.
@@ -117,7 +117,7 @@ These inputs supersede the corresponding requests above for cell identity, nomin
 
 ### Pack and charger clarification
 
-User confirmed 32S1P Samsung 50S pack and a 134 V, 5 A charger. These are the selected nominal product inputs; pack configuration and nominal charger voltage are no longer open questions. Charger nominal power is 670 W and nominal average cell voltage at 134 V is 4.1875 V. Actual charger tolerance, transients and individual-cell imbalance remain engineering verification items; the pack-average voltage does not replace per-cell cutoff checks.
+User confirmed 32S1P RS50 pack and a 134 V, 5 A charger. These are the selected nominal product inputs; pack configuration and nominal charger voltage are no longer open questions. Charger nominal power is 670 W and nominal average cell voltage at 134 V is 4.1875 V. Actual charger tolerance, transients and individual-cell imbalance remain engineering verification items; the pack-average voltage does not replace per-cell cutoff checks.
 
 ## WP1 execution checkpoint and implementation priority — November 3, 2026
 
