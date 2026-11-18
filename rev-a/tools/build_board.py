@@ -165,7 +165,8 @@ def clean_text(path, text, keep_refs):
                 m = re.search(r'\(property "Reference" "([^"]+)"', block)
                 keep = bool(m and m.group(1) in keep_refs)
             if keep:
-                out.append(block)
+                # fixed parts come from the root project: their 3D models live one level up
+                out.append(block.replace('(model "${KIPRJMOD}/3dmodels/', '(model "${KIPRJMOD}/../3dmodels/'))
             i = end
             continue
         out.append(line)

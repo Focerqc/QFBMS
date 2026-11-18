@@ -13069,7 +13069,7 @@
 			(uuid "9dfc3bd9-914d-4d12-adcc-0fb6d6af8cff")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/XT30PW-F.step"
+		(model "${KIPRJMOD}/../3dmodels/XT30PW-F.step"
 			(offset
 				(xyz 0.8 0 0)
 			)
@@ -17240,7 +17240,7 @@
 			(uuid "329b648d-7716-4a02-ac03-9b27e46e0ba3")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/XT30PW-M.step"
+		(model "${KIPRJMOD}/../3dmodels/XT30PW-M.step"
 			(offset
 				(xyz 4.1 0 2.5)
 			)
@@ -26576,7 +26576,7 @@
 			(uuid "78dd2ee1-deea-4d54-83ce-33895a8fe3a2")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/USB-C.step"
+		(model "${KIPRJMOD}/../3dmodels/USB-C.step"
 			(offset
 				(xyz 0 0 0)
 			)
