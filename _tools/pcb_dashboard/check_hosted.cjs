@@ -11,7 +11,8 @@ vm.runInContext(fs.readFileSync(path.join(site, 'hosted.js'), 'utf8'), context);
 (async () => {
  const request = async (endpoint, options) => (await context.window.dashboardFetch(endpoint, options)).json();
  const boards = await request('/api/boards');
- assert.equal(boards.length, 2);
+ assert.equal(boards.length, 3);
+ assert.equal(boards[0], 'rev-a/qfbms-rev-a.kicad_pcb');
  for (const board of boards) {
   const query = '?path=' + encodeURIComponent(board);
   assert.equal((await request('/api/board' + query)).path, board);
@@ -20,7 +21,7 @@ vm.runInContext(fs.readFileSync(path.join(site, 'hosted.js'), 'utf8'), context);
   assert.equal((await request('/api/boxes' + query)).colors[0].id, 'test');
  }
  for (const asset of Object.values(snapshot.assets)) assert.ok(fs.existsSync(path.join(site, asset)), asset);
- for (const file of ['news.html', 'news.css', 'files/full-system-schematic.pdf', 'files/main-schematic-draft.pdf']) assert.ok(fs.existsSync(path.join(site, file)), file);
+ for (const file of ['news.html', 'news.css', 'files/full-system-schematic.pdf', 'files/main-schematic-draft.pdf', 'files/rev-a-schematic.pdf', 'files/rev-a-3d-top.png']) assert.ok(fs.existsSync(path.join(site, file)), file);
  assert.ok(!fs.readFileSync(path.join(site, 'app.js'), 'utf8').includes('`/api/image'));
  assert.ok(fs.readFileSync(path.join(site, 'index.html'), 'utf8').includes('href="news.html"'));
  assert.ok(!fs.readFileSync(path.join(site, 'news.html'), 'utf8').includes('Samsung 50S'));

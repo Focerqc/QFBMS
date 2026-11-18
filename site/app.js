@@ -747,7 +747,7 @@
       bSel.innerHTML = boards.map(b => `<option value="${esc(b)}">${esc(b)}</option>`).join('');
       const saved = localStorage.getItem('pcb_dashboard_last_board');
       bSel.value = (saved && boards.includes(saved)) ? saved :
-                   (boards.find(b => /qfbms32\.kicad_pcb$/i.test(b)) ||
+                   (boards.find(b => /qfbms-rev-a\.kicad_pcb$/i.test(b)) ||
                     boards.find(b => /qfbms/i.test(b)) ||
                     boards[0] || '');
 
@@ -1036,7 +1036,7 @@
       if (res.error) throw new Error(res.error);
       fullSchematicView = fullSystem;
       const pdfEndpoint = fullSystem ? 'full_schematic_pdf' : 'schematic_pdf';
-      $('schematicFrame').src = fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf';
+      $('schematicFrame').src = (S.boardPath || '').startsWith('rev-a/') ? 'files/rev-a-schematic.pdf' : (fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf');
       $('schematicSubTitle').textContent = fullSystem
         ? `Main schematic, then separate monitor project · ${res.pages} pages · ${res.timestamp}`
         : `Published snapshot · ${res.timestamp} · scroll to navigate sheets`;

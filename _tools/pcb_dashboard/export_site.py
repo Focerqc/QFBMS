@@ -26,7 +26,7 @@ def asset(relative):
     return assets[relative]
 
 boards = {}
-for relative in ['qfbms32.kicad_pcb', 'exports/reconciliation-qa/qfbms32.kicad_pcb']:
+for relative in ['rev-a/qfbms-rev-a.kicad_pcb', 'qfbms32.kicad_pcb', 'exports/reconciliation-qa/qfbms32.kicad_pcb']:
     source = ROOT / relative
     if not source.exists():
         continue
@@ -78,7 +78,19 @@ js = (UI / 'app.js').read_text(encoding='utf-8')
 js = js.replace("'use strict';", "'use strict';\n  const fetch = window.dashboardFetch;")
 import re
 js = re.sub(r'`/api/image\?path=\$\{encodeURIComponent\((\w+)\)\}(?:&t=\$\{Date.now\(\)\})?`', r'window.dashboardAsset(\1)', js)
-js = js.replace('`/api/${pdfEndpoint}?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`', "fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf'")
+js = js.replace('`/api/${pdfEndpoint}?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`', "(S.boardPath || '').startsWith('rev-a/') ? 'files/rev-a-schematic.pdf' : (fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf')")
+js = js.replace("$('schematicFrame').src = fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf';", "$('schematicFrame').src = (S.boardPath || '').startsWith('rev-a/') ? 'files/rev-a-schematic.pdf' : (fullSystem ? 'files/full-system-schematic.pdf' : 'files/main-schematic-draft.pdf');")
+# Hosted page opens rev A first; the local dashboard keeps its own default.
+js = js.replace(r"boards.find(b => /qfbms32\.kicad_pcb$/i.test(b))", r"boards.find(b => /qfbms-rev-a\.kicad_pcb$/i.test(b))")
+# Rev A files for the News page
+FILES = SITE / 'files'
+for src, dst in [('rev-a/render/rev-a-schematic.pdf', 'rev-a-schematic.pdf'),
+                 ('rev-a/qfbms-rev-a_3d_top.png', 'rev-a-3d-top.png'),
+                 ('rev-a/qfbms-rev-a_3d_iso.png', 'rev-a-3d-iso.png'),
+                 ('rev-a/render/rev-a-bottom.png', 'rev-a-3d-bottom.png'),
+                 ('rev-a/bom.csv', 'rev-a-bom.csv')]:
+    if (ROOT / src).exists():
+        shutil.copyfile(ROOT / src, FILES / dst)
 js = js.replace('`/api/image?path=${encodeURIComponent(S.renderIsoPath)}&t=${Date.now()}`', 'window.dashboardAsset(S.renderIsoPath)')
 js = js.replace('`saved · ${res.file.split(\'/\').pop()}`', "'saved in this browser'")
 js = js.replace('with KiCad… (first load can take ~10 s)', 'from published snapshot…')
