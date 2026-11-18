@@ -1,0 +1,45 @@
+{
+ "summary": {
+  "real": 7,
+  "unconnected": 4,
+  "parity": 0,
+  "pinout_pairs": 3,
+  "fixed_footprint": 6,
+  "ignored_cosmetic": {
+   "silk_edge_clearance": 5,
+   "lib_footprint_mismatch": 1,
+   "text_height": 1,
+   "silk_over_copper": 125,
+   "silk_overlap": 199
+  }
+ },
+ "real": [
+  "copper_edge_clearance: Segment on Edge.Cuts ; Track [/GND] on F.Cu, length 0.1414 mm",
+  "copper_edge_clearance: Segment on Edge.Cuts ; Track [/GND] on F.Cu, length 21.7000 mm",
+  "starved_thermal: Zone [/BAT_POS] on F.Cu, priority 2 ; Pad 1 [/BAT_POS] of F1 on F.Cu",
+  "starved_thermal: Zone [/CELL16] on F.Cu, priority 0 ; Pad 33 [/CELL16] of U_BQ2 on F.Cu",
+  "starved_thermal: Zone [/GND] on F.Cu, priority 0 ; Pad 3 [/GND] of U9 on F.Cu",
+  "starved_thermal: Zone [/GND] on F.Cu, priority 0 ; Pad 33 [/GND] of U_BQ1 on F.Cu",
+  "track_dangling: Track [/CHG_NEG] on In2.Cu, length 0.8000 mm"
+ ],
+ "unconnected": [
+  "Zone [/CHG_SRC] on F.Cu, priority 2 ; Pad 2 [/CHG_SRC] of R1 on F.Cu",
+  "Pad 2 [/CHG_SRC] of R1 on F.Cu ; Zone [/CHG_SRC] on F.Cu, priority 2",
+  "Pad 17 [/GND] of U_BQ1 on F.Cu ; Zone [/GND] on F.Cu, priority 0",
+  "Pad 1 [/SW] of D2 on F.Cu ; Track [/SW] on In1.Cu, length 4.6266 mm"
+ ],
+ "parity": [],
+ "pinout": [
+  "clearance: Pad 1 [/CHG_GATE] of Q2 on F.Cu ; Pad 2 [/CHG_SRC] of Q2 on F.Cu",
+  "clearance: Pad 2 [/CHG_SRC] of Q1 on F.Cu ; Pad 1 [/CHG_GATE] of Q1 on F.Cu",
+  "clearance: Pad 1 [/CHG_GATE] of R1 on F.Cu ; Pad 2 [/CHG_SRC] of R1 on F.Cu"
+ ],
+ "fixed": [
+  "hole_clearance: Pad B12 [/GND] of J_USB1 on F.Cu ; NPTH pad of J_USB1",
+  "hole_clearance: Pad A1 [/GND] of J_USB1 on F.Cu ; NPTH pad of J_USB1",
+  "hole_clearance: Pad A12 [/GND] of J_USB1 on F.Cu ; NPTH pad of J_USB1",
+  "hole_clearance: Pad B1 [/GND] of J_USB1 on F.Cu ; NPTH pad of J_USB1",
+  "courtyards_overlap: Footprint J_CELL3 ; Footprint J_CELL4",
+  "courtyards_overlap: Footprint J_CELL4 ; Footprint J_COMM1"
+ ]
+}

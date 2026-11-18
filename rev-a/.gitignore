@@ -1,0 +1,8 @@
+# Routing scratch: keep only the DRC summary and the placed board the README cites
+route/*
+!route/drc-summary.json
+!route/placed-planes.kicad_pcb
+tools/__pycache__/
+*.kicad_prl
+fp-info-cache
+*-backups/

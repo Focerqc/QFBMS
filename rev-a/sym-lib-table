@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "qfbms_reva")(type "KiCad")(uri "${KIPRJMOD}/qfbms_reva.kicad_sym")(options "")(descr "Rev A local symbols"))
+)

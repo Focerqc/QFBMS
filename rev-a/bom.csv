@@ -1,0 +1,194 @@
+Ref,Block,Value,MPN / requirement,Footprint,Fixed,Purpose
+J_CELL1,cells,CELL9-CELL0,,Connector_JST:JST_GH_BM10B-GHS-TBT_1x10-1MP_P1.25mm_Vertical,yes,"Balance-lead plug, taps CELL9 down to CELL0 (fixed position)"
+J_CELL2,cells,CELL18-CELL10,,Connector_JST:JST_GH_BM09B-GHS-TBT_1x09-1MP_P1.25mm_Vertical,yes,"Balance-lead plug, taps CELL18 down to CELL10 (fixed position)"
+J_CELL3,cells,CELL26-CELL19,,Connector_JST:JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical,yes,"Balance-lead plug, taps CELL26 down to CELL19 (fixed position)"
+J_CELL4,cells,CELL32-CELL27,,Connector_JST:JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical,yes,"Balance-lead plug, taps CELL32 down to CELL27 (fixed position)"
+R_B33,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 0 (fixed position)
+R_B32,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 1 (fixed position)
+R_B31,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 2 (fixed position)
+R_B30,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 3 (fixed position)
+R_B29,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 4 (fixed position)
+R_B28,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 5 (fixed position)
+R_B27,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 6 (fixed position)
+R_B26,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 7 (fixed position)
+R_B25,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 8 (fixed position)
+R_B24,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 9 (fixed position)
+R_B23,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 10 (fixed position)
+R_B22,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 11 (fixed position)
+R_B21,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 12 (fixed position)
+R_B20,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 13 (fixed position)
+R_B19,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 14 (fixed position)
+R_B18,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 15 (fixed position)
+R_B17,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 16 (fixed position)
+R_B16,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 17 (fixed position)
+R_B15,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 18 (fixed position)
+R_B14,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 19 (fixed position)
+R_B13,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 20 (fixed position)
+R_B12,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 21 (fixed position)
+R_B11,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 22 (fixed position)
+R_B10,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 23 (fixed position)
+R_B9,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 24 (fixed position)
+R_B8,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 25 (fixed position)
+R_B7,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 26 (fixed position)
+R_B6,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 27 (fixed position)
+R_B5,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 28 (fixed position)
+R_B4,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 29 (fixed position)
+R_B3,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 30 (fixed position)
+R_B2,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 31 (fixed position)
+R_B1,cells,27R 0805,,Resistor_SMD:R_0805_2012Metric,yes,Cell-input / balance resistor for tap 32 (fixed position)
+C_F1,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 1 input filter (with R_B) for the lower monitor
+C_F2,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 2 input filter (with R_B) for the lower monitor
+C_F3,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 3 input filter (with R_B) for the lower monitor
+C_F4,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 4 input filter (with R_B) for the lower monitor
+C_F5,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 5 input filter (with R_B) for the lower monitor
+C_F6,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 6 input filter (with R_B) for the lower monitor
+C_F7,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 7 input filter (with R_B) for the lower monitor
+C_F8,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 8 input filter (with R_B) for the lower monitor
+C_F9,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 9 input filter (with R_B) for the lower monitor
+C_F10,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 10 input filter (with R_B) for the lower monitor
+C_F11,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 11 input filter (with R_B) for the lower monitor
+C_F12,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 12 input filter (with R_B) for the lower monitor
+C_F13,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 13 input filter (with R_B) for the lower monitor
+C_F14,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 14 input filter (with R_B) for the lower monitor
+C_F15,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 15 input filter (with R_B) for the lower monitor
+C_F16,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 16 input filter (with R_B) for the lower monitor
+C_F17,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 17 input filter (with R_B) for the upper monitor
+C_F18,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 18 input filter (with R_B) for the upper monitor
+C_F19,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 19 input filter (with R_B) for the upper monitor
+C_F20,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 20 input filter (with R_B) for the upper monitor
+C_F21,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 21 input filter (with R_B) for the upper monitor
+C_F22,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 22 input filter (with R_B) for the upper monitor
+C_F23,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 23 input filter (with R_B) for the upper monitor
+C_F24,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 24 input filter (with R_B) for the upper monitor
+C_F25,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 25 input filter (with R_B) for the upper monitor
+C_F26,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 26 input filter (with R_B) for the upper monitor
+C_F27,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 27 input filter (with R_B) for the upper monitor
+C_F28,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 28 input filter (with R_B) for the upper monitor
+C_F29,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 29 input filter (with R_B) for the upper monitor
+C_F30,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 30 input filter (with R_B) for the upper monitor
+C_F31,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 31 input filter (with R_B) for the upper monitor
+C_F32,cells,100n 16V,,Capacitor_SMD:C_0402_1005Metric,,Cell 32 input filter (with R_B) for the upper monitor
+U_BQ1,lower,BQ7695202,BQ7695202PFBR,Package_QFP:TQFP-48_7x7mm_P0.5mm,,"Lower monitor, cells 1-16: voltages, balancing, charge current, temperatures. 02 variant = I2C+CRC, REG1 on at 3.3 V (firmware baseline)"
+D101,lower,BAV21W,BAV21W,Diode_SMD:D_SOD-123,,BAT series diode: keeps the monitor alive through a stack dip (TI 16.2)
+R101,lower,100R 0603,,Resistor_SMD:R_0603_1608Metric,,Limits inrush into the BAT capacitor when the balance plugs go in
+C101,lower,1u 100V,,Capacitor_SMD:C_0805_2012Metric,,BAT pin hold-up capacitor (TI 16.2)
+C102,lower,2.2u 25V,,Capacitor_SMD:C_0603_1608Metric,,"Charge-pump capacitor, CP1 to BAT (datasheet 9.3)"
+D102,lower,BAV21W,BAV21W,Diode_SMD:D_SOD-123,,"REG0 collector diode, blocks reverse current through BREG (TI 16.2.2)"
+Q100,lower,BCX56-16,BCX56-16,Package_TO_SOT_SMD:SOT-89-3,,"REG0 preregulator transistor, drops the <=67 V half-stack to ~5 V REGIN (80 V, SOT-89)"
+R102,lower,10M,,Resistor_SMD:R_0402_1005Metric,,"BREG to VSS, prevents leakage turn-on (TI 16.2.2)"
+C103,lower,22n 25V,,Capacitor_SMD:C_0402_1005Metric,,"REGIN capacitor, 15-27 nF required (datasheet 7.5)"
+C104,lower,2.2u 10V,,Capacitor_SMD:C_0603_1608Metric,,"REG18 decoupling, 1.8-22 uF (datasheet 7.5)"
+C105,lower,1u 10V,,Capacitor_SMD:C_0603_1608Metric,,REG1 output capacitor; REG1 is enabled by firmware
+R103,lower,10k,,Resistor_SMD:R_0402_1005Metric,,"PACK to top of stack via 10k, as TI says for designs without high-side FETs"
+R104,lower,10k,,Resistor_SMD:R_0402_1005Metric,,TS2 to VSS: auto-wakes the monitor from SHUTDOWN and reads 25 C (TS2 is never configured)
+R105,lower,10k,,Resistor_SMD:R_0402_1005Metric,,Defines DDSG (disabled by firmware) whatever its power-up default
+U_BQ2,upper,BQ7695202,BQ7695202PFBR,Package_QFP:TQFP-48_7x7mm_P0.5mm,,"Upper monitor, cells 17-32: voltages, balancing. 02 variant = I2C+CRC, REG1 on at 3.3 V (firmware baseline)"
+D201,upper,BAV21W,BAV21W,Diode_SMD:D_SOD-123,,BAT series diode: keeps the monitor alive through a stack dip (TI 16.2)
+R201,upper,100R 0603,,Resistor_SMD:R_0603_1608Metric,,Limits inrush into the BAT capacitor when the balance plugs go in
+C201,upper,1u 100V,,Capacitor_SMD:C_0805_2012Metric,,BAT pin hold-up capacitor (TI 16.2)
+C202,upper,2.2u 25V,,Capacitor_SMD:C_0603_1608Metric,,"Charge-pump capacitor, CP1 to BAT (datasheet 9.3)"
+D202,upper,BAV21W,BAV21W,Diode_SMD:D_SOD-123,,"REG0 collector diode, blocks reverse current through BREG (TI 16.2.2)"
+Q200,upper,BCX56-16,BCX56-16,Package_TO_SOT_SMD:SOT-89-3,,"REG0 preregulator transistor, drops the <=67 V half-stack to ~5 V REGIN (80 V, SOT-89)"
+R202,upper,10M,,Resistor_SMD:R_0402_1005Metric,,"BREG to VSS, prevents leakage turn-on (TI 16.2.2)"
+C203,upper,22n 25V,,Capacitor_SMD:C_0402_1005Metric,,"REGIN capacitor, 15-27 nF required (datasheet 7.5)"
+C204,upper,2.2u 10V,,Capacitor_SMD:C_0603_1608Metric,,"REG18 decoupling, 1.8-22 uF (datasheet 7.5)"
+C205,upper,1u 10V,,Capacitor_SMD:C_0603_1608Metric,,REG1 output capacitor; REG1 is enabled by firmware
+R203,upper,10k,,Resistor_SMD:R_0402_1005Metric,,"PACK to top of stack via 10k, as TI says for designs without high-side FETs"
+R204,upper,10k,,Resistor_SMD:R_0402_1005Metric,,TS2 to VSS: auto-wakes the monitor from SHUTDOWN and reads 25 C (TS2 is never configured)
+R205,upper,10k,,Resistor_SMD:R_0402_1005Metric,,Defines DDSG (disabled by firmware) whatever its power-up default
+R206,upper,10k,,Resistor_SMD:R_0402_1005Metric,,Defines unused ALERT; safe if it powers up as an output
+R207,upper,10k,,Resistor_SMD:R_0402_1005Metric,,Defines unused DCHG; safe if it powers up as an output
+R_SH1,charge,1m 2512 1%,"1 mOhm 2512 metal strip, TCR <= 50 ppm",Resistor_SMD:R_2512_6332Metric,,"Charge-current shunt, battery side to charger negative. 1 mOhm matches the firmware scaling"
+NT1,lower,NetTie,,NetTie:NetTie-2_SMD_Pad0.5mm,,Kelvin pick-off at the shunt's battery-side pad
+NT2,lower,NetTie,,NetTie:NetTie-2_SMD_Pad0.5mm,,Kelvin pick-off at the shunt's charger-side pad
+R110,lower,100R,,Resistor_SMD:R_0402_1005Metric,,SRP filter resistor (TI layout guidelines)
+R111,lower,100R,,Resistor_SMD:R_0402_1005Metric,,SRN filter resistor (TI layout guidelines)
+C110,lower,100n,,Capacitor_SMD:C_0402_1005Metric,,SRP-SRN differential filter (TI layout guidelines)
+R112,lower,499R 1%,,Resistor_SMD:R_0402_1005Metric,,T1 series resistor: ESD for the off-board NTC; firmware subtracts 500 ohm
+J_T1,lower,T1,,Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical,yes,Cell thermistor T1 plug (fixed position)
+R113,lower,499R 1%,,Resistor_SMD:R_0402_1005Metric,,T2 series resistor: ESD for the off-board NTC; firmware subtracts 500 ohm
+J_T2,lower,T2,,Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical,yes,Cell thermistor T2 plug (fixed position)
+R114,lower,499R 1%,,Resistor_SMD:R_0402_1005Metric,,T3 series resistor: ESD for the off-board NTC; firmware subtracts 500 ohm
+J_T3,lower,T3,,Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical,yes,Cell thermistor T3 plug (fixed position)
+R115,lower,499R 1%,,Resistor_SMD:R_0402_1005Metric,,T4 series resistor: ESD for the off-board NTC; firmware subtracts 500 ohm
+J_T4,lower,T4,,Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical,yes,Cell thermistor T4 plug (fixed position)
+R116,lower,499R 1%,,Resistor_SMD:R_0402_1005Metric,,FET NTC series resistor (firmware 500 ohm correction)
+RT1,charge,10k B3380,NCP18XH103F03RB,Resistor_SMD:R_0603_1608Metric,,On-board NTC beside the charge FETs; firmware reads it as MOSFET temperature
+J_CHG1,charge,XT30 charger,,qfbms_reva:XT30PW-F_Lugs,yes,Charger input (fixed position)
+J_BAT1,charge,XT30 pack,,qfbms_reva:XT30PW-M_Lugs,yes,Pack main leads; charge current returns through here (fixed position)
+F1,charge,10A >=150VDC,OPEN,Fuse:Fuse_2920_7451Metric,,Fuses everything on the board against the pack. PART OPEN: needs a >=150 V DC SMD rating
+Q1,charge,"200V N-MOSFET TOLL, spec'd at <=8V gate",e.g. IPT111N20NFD (confirm),Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1,,Pack-side charge FET; back-to-back with Q2 so nothing flows either way when off
+Q2,charge,"200V N-MOSFET TOLL, spec'd at <=8V gate",e.g. IPT111N20NFD (confirm),Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1,,Charger-side charge FET; keeps the charge port dead when charging is off
+U5,charge,VOM1271,VOM1271T,Package_SO:SOP-4_4.4x2.6mm_P1.27mm,,"Photovoltaic gate driver: makes ~8 V floating gate drive, no high-side supply needed"
+R1,charge,1M,,Resistor_SMD:R_0402_1005Metric,,Holds the FET gates off when the driver is dark
+D1,charge,12V,BZT52C12,Diode_SMD:D_SOD-123,,"Gate clamp, keeps transients under the FETs' +-20 V gate rating"
+R2,charge,120R,,Resistor_SMD:R_0402_1005Metric,,Sets ~15 mA through the VOM1271 LED
+Q3,charge,AO3400A,AO3400A,Package_TO_SOT_SMD:SOT-23,,LED switch 1: on when firmware sets CHG_EN (GPIO5)
+Q4,charge,AO3400A,AO3400A,Package_TO_SOT_SMD:SOT-23,,LED switch 2: firmware raises PSW_EN (GPIO10) before any switch; both must be on
+R3,charge,100k,,Resistor_SMD:R_0402_1005Metric,,Keeps CHG_EN low while the ESP32 resets
+R4,charge,100k,,Resistor_SMD:R_0402_1005Metric,,Keeps PSW_EN low while the ESP32 resets
+R5,charge,2.2M 1206,,Resistor_SMD:R_1206_3216Metric,,Charger-voltage divider top (charger detect)
+R6,charge,47k 1%,,Resistor_SMD:R_0402_1005Metric,,Charger-voltage divider bottom
+C1,charge,100n,,Capacitor_SMD:C_0402_1005Metric,,ADC filter for the charger voltage
+R7,charge,2.2M 1206,,Resistor_SMD:R_1206_3216Metric,,Pack-voltage divider top (fuse / lead check)
+R8,charge,47k 1%,,Resistor_SMD:R_0402_1005Metric,,Pack-voltage divider bottom
+C2,charge,100n,,Capacitor_SMD:C_0402_1005Metric,,ADC filter for the pack voltage
+U4,power,LTC7138,LTC7138EMSE#PBF,Package_SO:Analog_MSOP-12-16-1EP_3x4.039mm_P0.5mm_EP1.651x2.845mm,,"140 V buck: pack to 5 V for the ESP32, isolators and buzzer"
+R9,power,100R 1206,,Resistor_SMD:R_1206_3216Metric,,Buck input RC filter and inrush limit
+C3,power,1u 250V,,Capacitor_SMD:C_1210_3225Metric,,Buck input capacitor
+C4,power,1u 250V,,Capacitor_SMD:C_1210_3225Metric,,Buck input capacitor
+R10,power,2.2M 1206,,Resistor_SMD:R_1206_3216Metric,,RUN divider top: starts the buck above ~40 V
+R11,power,68k,,Resistor_SMD:R_0402_1005Metric,,RUN divider bottom: keeps RUN under 4.1 V at 134 V
+L1,power,180uH >=0.7A,"180 uH shielded 7.3x7.3, Isat >= 0.7 A",Inductor_SMD:L_7.3x7.3_H4.5,,Buck inductor (VBMS uses 180 uH)
+D2,power,ES1D,ES1D,Diode_SMD:D_SMA,,Buck catch diode; anode returns through the ANODE sense pin
+R12,power,1.05M 1%,,Resistor_SMD:R_0402_1005Metric,,Feedback top: 0.8 V x (1 + 1.05M/200k) = 5.0 V
+R13,power,200k 1%,,Resistor_SMD:R_0402_1005Metric,,Feedback bottom
+C5,power,22u 10V,,Capacitor_SMD:C_1206_3216Metric,,Buck output capacitor
+D3,power,B5819W,B5819W,Diode_SMD:D_SOD-123,,OR-ing diode: buck into the 5 V rail
+D4,power,B5819W,B5819W,Diode_SMD:D_SOD-123,,"OR-ing diode: USB into the 5 V rail, so the ESP32 can be flashed without the pack"
+U6,power,AP2112K-3.3,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,,"3.3 V LDO for the logic, 600 mA; EN tied on"
+C6,power,10u 10V,,Capacitor_SMD:C_0805_2012Metric,,LDO input capacitor
+C7,power,10u 10V,,Capacitor_SMD:C_0805_2012Metric,,LDO output capacitor
+U_ESP1,mcu,ESP32-C3-MINI-1,ESP32-C3-MINI-1-N4,qfbms_reva:ESP32-C3-MINI-1,,Runs VESC Express VBMS32 firmware and the Micro package (pins per hw_vbms32.h)
+C8,mcu,10u 10V,,Capacitor_SMD:C_0805_2012Metric,,ESP32 bulk decoupling
+C9,mcu,100n,,Capacitor_SMD:C_0402_1005Metric,,ESP32 HF decoupling
+R14,mcu,10k,,Resistor_SMD:R_0402_1005Metric,,"EN RC delay, R (Espressif: 10k/1uF)"
+C10,mcu,1u,,Capacitor_SMD:C_0603_1608Metric,,"EN RC delay, C"
+R15,mcu,10k,,Resistor_SMD:R_0402_1005Metric,,GPIO8 strap high (needed for download boot); PCHG_EN is unused
+R16,mcu,10k,,Resistor_SMD:R_0402_1005Metric,,GPIO9 strap high = normal boot; also keeps the upper link off at reset
+TP1,mcu,BOOT,,TestPoint:TestPoint_Pad_D1.0mm,,Short to GND at power-up for manual download mode
+R17,mcu,100k,,Resistor_SMD:R_0402_1005Metric,,ENABLE input idles low = 'key off' (firmware: high keeps it awake)
+SW1,mcu,WAKE,,Button_Switch_SMD:SW_SPST_PTS810,,Press to wake the BMS from deep sleep (GPIO2 high) for a VESC Tool connection
+Q5,mcu,MMBT3904,MMBT3904,Package_TO_SOT_SMD:SOT-23,,Buzzer driver
+R18,mcu,1k,,Resistor_SMD:R_0402_1005Metric,,Buzzer driver base resistor
+R19,mcu,10k,,Resistor_SMD:R_0402_1005Metric,,Keeps the buzzer silent during reset
+BZ1,mcu,4kHz magnetic,"5x5 mm magnetic transducer, 4 kHz, 5 V",qfbms_reva:Buzzer_5.0x5.0mm_SMD,,Status beeper driven by the Micro package
+D5,mcu,1N4148W,1N4148W,Diode_SMD:D_SOD-123,,Flyback clamp for the magnetic buzzer
+J_USB1,mcu,USB-C,,qfbms_reva:USB_C_Receptacle_16P,yes,USB for flashing and VESC Tool (fixed position)
+R20,mcu,5.1k,,Resistor_SMD:R_0402_1005Metric,,USB-C sink identification (CC1)
+R21,mcu,5.1k,,Resistor_SMD:R_0402_1005Metric,,USB-C sink identification (CC2)
+U8,mcu,USBLC6-2SC6,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,,ESD protection on the USB data lines
+R22,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Host I2C pull-up (SDA); lower monitor sits on this bus
+R23,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Host I2C pull-up (SCL)
+U9,comms,74CBTLV1G125,SN74CBTLV1G125DCKR,Package_TO_SOT_SMD:SOT-353_SC-70-5,,"Bus switch (SDA): hides the upper monitor while COM_EN (GPIO9) is high, as the firmware's address-change startup needs"
+U10,comms,74CBTLV1G125,SN74CBTLV1G125DCKR,Package_TO_SOT_SMD:SOT-353_SC-70-5,,"Bus switch (SCL): hides the upper monitor while COM_EN (GPIO9) is high, as the firmware's address-change startup needs"
+C11,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,U9 decoupling
+C12,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,U10 decoupling
+U11,comms,ISO1640BDR,ISO1640BDR,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,,I2C isolator to the upper monitor (CELL16 domain); ISO1640 = ISO1540 pinout
+C13,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,ISO1640 side-1 decoupling
+C14,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,ISO1640 side-2 decoupling
+R24,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Side-1 pull-up (SDA) between switch and isolator
+R25,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Side-1 pull-up (SCL)
+R26,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Upper-monitor bus pull-up (SDA)
+R27,comms,4.7k,,Resistor_SMD:R_0402_1005Metric,,Upper-monitor bus pull-up (SCL)
+U12,comms,VOMA617A,VOMA617A-3X001T,Package_SO:SOP-4_4.4x2.6mm_P1.27mm,,Opto: COM_EN low turns on the isolator's upper-side supply
+R28,comms,1k,,Resistor_SMD:R_0402_1005Metric,,"Opto LED current, ~2 mA (sunk by GPIO9 low)"
+Q6,comms,AO3401A,AO3401A,Package_TO_SOT_SMD:SOT-23,,Switches upper REG1 to the isolator side 2
+R29,comms,100k,,Resistor_SMD:R_0402_1005Metric,,Holds Q6 off unless the opto pulls its gate
+U7,comms,ISO1050DUB,ISO1050DUBR,Package_SO:SOP-8_6.62x9.15mm_P2.54mm,,Isolated CAN transceiver to the VESC
+C15,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,ISO1050 side-1 decoupling
+C16,comms,100n,,Capacitor_SMD:C_0402_1005Metric,,ISO1050 side-2 decoupling
+R30,comms,10k,,Resistor_SMD:R_0402_1005Metric,,Holds CAN recessive while the ESP32 sleeps or resets
+J_COMM1,comms,CAN/5V,,Connector_JST:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical,yes,CAN bus to the VESC; the VESC supplies 5 V for the bus side (fixed position)
+R31,comms,120R,,Resistor_SMD:R_0402_1005Metric,,Optional CAN termination
+JP1,comms,TERM,,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,,Close to terminate the CAN bus at the BMS
