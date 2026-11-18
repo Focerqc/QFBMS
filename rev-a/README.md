@@ -8,7 +8,8 @@ from the datasheets.
 routed on 4 layers with shaped charge-path pours. **Not ready to order:** 4 connections are still
 open and 7 small DRC items remain (list below), and the design assumes a conformal-coated board.
 Work stopped here on purpose: rev A is a reference model, not a build commitment. Rev A is a guess-and-check
-build: it should generally work, and the items under "Check before ordering" are where it might not.
+build. An outside review (below) found one critical circuit error and several major ones, so
+**as drawn it would not work safely**. They are recorded, not fixed: the PCB is left as is.
 
 | Check | Result |
 |---|---|
@@ -101,6 +102,47 @@ Change the design in `circuit.py` only. The schematic is label-per-pin and is ne
 
 U4 (LTC7138), U7 (ISO1050), Q1, F1, BZ1, the C_F caps and U_BQ1/U_BQ2 keep their references
 with new circuits.
+
+## External review (2026-11-17, recorded, not fixed)
+
+A ChatGPT review of `circuit.py`, the README, the BOM, the firmware and the PCB. Its local
+copies were used; it could not open the public links. The top finding was checked against
+`circuit.py` and is correct. Decision: leave the PCB as is and record everything here.
+
+### Hardware (rev A design errors)
+
+| Severity | Part / net | Finding | Fix if rev B happens |
+|---|---|---|---|
+| **Critical** | R_B17, TAP16_F, upper VC0 | Lower VC16 and upper VC0 share TAP16_F through R_B17, but upper VSS is the unfiltered CELL16. Balancing cell 16 (~50 mA × 27 Ω) puts upper VC0 about **1.35 V below its VSS**; SLUSE13B §7.1 allows −0.3 V. Normal operation, not a fault. | Give upper VC0 its own resistor from CELL16 and a local VC0–VSS capacitor; move C_F17's lower end to that node. |
+| Major | Lower VC0, CELL0, GND | CELL0 is not tied to VSS/GND on the PCB, so VC0's reference depends on the harness. TI §16.3 needs VC0 tied to VSS through its resistor on the board before cells attach. Neither monitor has the VC0–VSS capacitor (Table 16-3). Plug-in-any-order tolerance must not be claimed. | Add the local VC0 reference and capacitor; engineer the CELL0 / main-negative link so a missing main lead can't push current through a sense wire. |
+| Major | R112–R116 | The 499 Ω series resistors double-count: the firmware's 500 Ω correction is for the chip's own ~526 Ω pad resistance (§7.23). A real 45 °C reads about 42 °C. | Remove them, or change the conversion to subtract both. |
+| Major | NT1, NT2, R_SH1 | The net ties are not at the shunt pads (NT1 ~8 mm, NT2 ~21 mm away), so the "Kelvin" sense shares charge-current copper. With a 1 mΩ shunt that shifts the calibration. | Start each sense trace at its shunt pad with the net tie there; re-check the current gain. |
+| Major | R9 | A plain 100 Ω 1206 takes the hot-plug inrush: about 18 mJ, 181 W peak, τ 200 µs, repeated with connector bounce. | Use a pulse-rated part or a proper inrush network. |
+| Major (unqualified) | U5, R1, Q1, Q2 | The VOM1271's 7.8–8.4 V is open-circuit; minimum short-circuit current is 6 µA at 10 mA LED current. R1 alone takes 8 µA at 8 V. The loaded gate voltage is not guaranteed, so "fully on at 7.8 V" isn't a valid design condition. | Work out minimum loaded V_GS over temperature, pick the FET for it, and check turn-on SOA; change the driver or bias if needed. |
+| Correction | U4 | 140 V is the LTC7138's **absolute maximum**, not only its operating limit. 134.4 V at full charge is 5.6 V under it. | Re-evaluate the supply topology or add real input transient protection. |
+
+### Firmware (inherited from VBMS32, not changed here)
+
+| Severity | Area | Finding |
+|---|---|---|
+| **Critical** | Charge enable on comms failure | On a persistent BQ comms failure, recovery runs `init-hw` (unbounded retries) before `bms-set-chg 0`, so GPIO5/10 can keep the charge FETs on indefinitely. Automatic BQ protections are disabled, and the board has no independent interlock. Fix: force charge off before any recovery, and add a hardware watchdog that can cut the VOM1271 LED. |
+| Major | FET thermistor fault | An invalid HDQ reading becomes −1 °C, which passes the "below max" charge check, so an open sensor doesn't stop charging. |
+| Major | Upper admission | The upper monitor is connected even if moving the lower one to 0x10 failed: address collision. |
+| Major | COM_EN settling | `with-com` turns on the bus switches and the isolator's upper supply and reads immediately. ISO1640 needs up to 151 µs UVLO recovery plus the supply ramp. The C startup already waits 50 ticks; the Lisp path doesn't. |
+
+### Reviewed and found correct
+
+BQ pin numbering and unused-pin terminations, PACK/LD hookup, upper reference on CELL16, BAT and
+collector diodes, BREG resistor, current sign and the −0.2 scaling (5 A charging reads −5 A),
+the common-source FET topology (VOM1271 has active turn-off), the LTC7138 pinout, ANODE diode,
+adjustable mode, divider and inductor.
+
+### Still unverified
+
+Sleep current and the upper-only isolator drain while comms stay on (TS2's 10 kΩ also prevents
+long-term SHUTDOWN, as TI warns); charger hot-plug gate behaviour; a missing CELL16 or other
+open taps; insulation beyond the coated-rules DRC; copper current and thermal; ADC ranges;
+component voltage and pulse derating.
 
 ## Check before ordering
 
