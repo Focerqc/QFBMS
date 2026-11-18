@@ -1348,12 +1348,42 @@
   }
 
   // ---------- LOADING ----------
+  // Which revision a board file is. Drives the Board menu label, the rev badge in the
+  // top bar, the label on the canvas, the tab title and the Copy Prompt header.
+  // tone picks the badge color: a (amber), vis (pink), b (cyan), old (violet), other (grey).
+  function boardInfo(path) {
+    const file = (path || '').split('/').pop();
+    if (/(^|\/)rev-a\/.*-visual\.kicad_pcb$/i.test(path)) return { rev: 'Rev A', tag: 'A', tone: 'vis', status: 'visual model',
+      detail: 'Parts placed to match the V1.0 photo. Tracks are copied from the routed board and were not rerouted, so this is not for fab.', file };
+    if (/(^|\/)rev-a\//.test(path)) return { rev: 'Rev A', tag: 'A', tone: 'a', status: 'routed',
+      detail: 'The generated, routed 4-layer layout. The external review findings are still open.', file };
+    const m = /(^|\/)rev-([a-z0-9]+)\//i.exec(path || '');
+    if (m) { const r = m[2].toUpperCase();
+      return { rev: `Rev ${r}`, tag: r, tone: r === 'B' ? 'b' : 'other', status: 'working board', detail: '', file }; }
+    if (/reconciliation/.test(path)) return { rev: 'Old board', tag: 'OLD', tone: 'old', status: 'reconciliation copy',
+      detail: 'Copy of the old V1.2 recreation, kept for reconciliation.', file };
+    if (/^qfbms32\.kicad_pcb$/.test(path)) return { rev: 'Old board', tag: 'OLD', tone: 'old', status: 'V1.2 recreation · stalled draft',
+      detail: 'The original Mini32 V1.2 layout copy. Not rev A or rev B.', file };
+    return { rev: file || 'No board', tag: '?', tone: 'other', status: '', detail: '', file };
+  }
   // Plain names in the Board menu (the path stays the value and the tooltip).
   function boardLabel(path) {
-    if (/rev-a\//.test(path)) return 'Rev A · generated, routed';
-    if (/^qfbms32\.kicad_pcb$/.test(path)) return 'Old board · stalled draft';
-    if (/reconciliation/.test(path)) return 'Old board · reconciliation copy';
-    return path;
+    const i = boardInfo(path);
+    return i.status ? `${i.rev} · ${i.status}` : i.rev;
+  }
+  function showBoardRev(path) {
+    const i = boardInfo(path);
+    const tip = `${i.rev}${i.status ? ' · ' + i.status : ''}\n${path}${i.detail ? '\n' + i.detail : ''}`;
+    for (const id of ['revBadge', 'hudRev']) {
+      const el = $(id); if (!el) continue;
+      el.dataset.tone = i.tone; el.title = tip; el.hidden = !path;
+    }
+    if ($('revTag')) $('revTag').textContent = i.tag;
+    if ($('revName')) $('revName').textContent = i.rev;
+    if ($('revStatus')) $('revStatus').textContent = i.status || i.file;
+    if ($('hudRevText')) $('hudRevText').textContent = `${i.rev}${i.status ? ' · ' + i.status : ''}`;
+    if ($('hudRevFile')) $('hudRevFile').textContent = path;
+    document.title = path ? `${i.rev} · Board Boxes` : 'Board Boxes';
   }
 
   async function init() {
@@ -1410,6 +1440,7 @@
 
   async function loadBoard(path) {
     S.boardPath = path;
+    showBoardRev(path);
     S.sel = null;
     S.undo = []; S.redo = [];
     loading(`Reading <b>${esc(path.split('/').pop())}</b> from published snapshot…`);
@@ -2947,6 +2978,9 @@
     const lines = [];
     lines.push(`### PCB context / requested work on \`${S.boardPath}\``);
     lines.push('');
+    { const i = boardInfo(S.boardPath);
+      lines.push(`Board revision: **${i.rev}${i.status ? ' (' + i.status + ')' : ''}**${i.detail ? ' — ' + i.detail : ''}`);
+      lines.push(''); }
     lines.push(`Reference image: \`${S.doc.ref || '(none)'}\``);
     if (S.doc.refBot) lines.push(`Bottom reference image: \`${S.doc.refBot}\``);
     if (S.render3dPath) {

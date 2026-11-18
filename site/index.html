@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=aee710e71a">
+  <link rel="stylesheet" href="style.css?v=ea070e3946">
 </head>
 <body>
   <header class="topbar">
@@ -19,6 +19,11 @@
           <h1>Board Boxes</h1>
           <small>QFBMS · published snapshot · saved in this browser</small>
         </div>
+      </div>
+
+      <div class="rev-badge" id="revBadge" data-tone="other" hidden>
+        <span class="rev-tag" id="revTag">?</span>
+        <span class="rev-text"><b id="revName">–</b><small id="revStatus"></small></span>
       </div>
 
       <div class="pickers">
@@ -236,6 +241,11 @@
         <p id="loadingText">Starting…</p>
       </div>
 
+      <div class="hud hud-rev" id="hudRev" data-tone="other" hidden>
+        <b id="hudRevText">–</b>
+        <span id="hudRevFile"></span>
+      </div>
+
       <div class="hud hud-coords">
         <span>X <b id="hudX">0.00</b></span>
         <span>Y <b id="hudY">0.00</b></span>
@@ -386,6 +396,6 @@
   </div>
 
   <script src="hosted.js?v=0f045a05ba"></script>
-  <script src="app.js?v=1b842ab551"></script>
+  <script src="app.js?v=9437726222"></script>
 </body>
 </html>
