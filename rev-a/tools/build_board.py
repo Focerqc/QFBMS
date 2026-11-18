@@ -61,6 +61,15 @@ R_MCU = [(99.4, 0.4, 129.6, 20.4), (102.6, 25.4, 129.6, 31.7)]
 R_CAN = [(27.0, 0.4, 41.0, 20.4), (14.6, 25.4, 35.4, 31.7)]
 R_BOUNDARY = [(56.0, 0.4, 70.0, 20.4)]
 
+# 3D models for KiCad library footprints that have no model of their own in KiCad 10.
+# L1 and U7 use a library model with the same pad layout; F1's is a body-size placeholder
+# from tools/make_box_models.py.
+MODEL_OVERRIDES = {
+    "F1": "${KIPRJMOD}/../3dmodels/Fuse_2920_7451Metric.step",
+    "L1": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_TDK_SLF7045.step",  # 7.0x7.0x4.5, pads +-3.15
+    "U7": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SOP-8_6.605x9.655mm_P2.54mm.step",  # DUB body 9.5x6.57
+}
+
 UPPER_EXTRA = {"Q6", "R26", "R27", "R29", "C14"}
 BOUNDARY = {"U12", "R28"}
 GND_COMMS = {"U9", "U10", "R22", "R23", "R24", "R25", "C11", "C12", "C13"}
@@ -225,6 +234,10 @@ def main():
         if fp is None:
             raise SystemExit(f"footprint not found: {fpname}")
         fp.SetFPID(pcbnew.LIB_ID(nick, name))
+        if p["ref"] in MODEL_OVERRIDES:
+            models = fp.Models()
+            for i in range(len(models)):   # index, not iterate: iteration yields copies
+                models[i].m_Filename = MODEL_OVERRIDES[p["ref"]]
         fp.SetReference(p["ref"])
         fp.SetValue(p["value"])
         board.Add(fp)

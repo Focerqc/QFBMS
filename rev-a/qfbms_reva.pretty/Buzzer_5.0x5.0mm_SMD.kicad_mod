@@ -113,12 +113,12 @@
 		(size 0.80 1.45)
 		(layers "F.Cu" "F.Paste" "F.Mask")
 	)
-	(model "${KICAD10_3DMODEL_DIR}/Buzzer_Beeper.3dshapes/PUIAudio_SMT_0825_S_4_R.step"
+	(model "${KIPRJMOD}/../3dmodels/Buzzer_5.0x5.0mm_SMD.step"
 		(offset
 			(xyz 0 0 0)
 		)
 		(scale
-			(xyz 0.58 0.58 0.58)
+			(xyz 1 1 1)
 		)
 		(rotate
 			(xyz 0 0 0)
