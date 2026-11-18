@@ -39,6 +39,9 @@
           </button>
         </div>
         <span id="saveState" class="save-state">–</span>
+        <button id="btnSaveTxt" class="btn btn-ghost btn-sm" title="Download this board's boxes as a plain .txt file">Save .txt</button>
+        <button id="btnOpenTxt" class="btn btn-ghost btn-sm" title="Load boxes from a .txt file saved with Save .txt (Undo puts the old ones back)">Open .txt</button>
+        <input id="openTxtFile" type="file" accept=".txt,.json,text/plain" hidden>
         <button id="btnExport" class="btn btn-primary" title="Copy prompt for agent (Ctrl+S)">
           Copy Prompt <em id="boxCount">0</em>
         </button>
@@ -50,13 +53,18 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h8"/></svg>
         Schematic
       </button>
-      <button id="btnFullSchematic" class="btn btn-ghost btn-sm" title="Combine the main schematic and separate BQ monitor project into one review PDF">
+      <button id="btnFullSchematic" class="btn btn-ghost btn-sm" title="Open the board's schematic as one review PDF">
         Full system schematic
       </button>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" title="Open the TI BQ76952 datasheet in a new tab" href="https://www.ti.com/lit/ds/symlink/bq76952.pdf">BQ76952 Datasheet</a>
       <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" title="Open TI’s BQ76952 evaluation board schematic in a new tab" href="/api/image?path=_reference/ti_bq76952/SLUC687A/sluc687/BQ76952EVM_BoardFiles/BMS029B%28001%29_Sch.PDF">TI Reference Schematic</a>
       <button id="btnTopRender3D" class="btn btn-ghost btn-sm" title="Generate fresh 3D top-down render from KiCad">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         Top-Down Render
+      </button>
+      <button id="btnBotRender3D" class="btn btn-ghost btn-sm" title="Generate a fresh 3D render of the back of the board from KiCad (parts on B.Cu)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15h18M9 3v12"/></svg>
+        Bottom Render
       </button>
       <button id="btnIsoRender3D" class="btn btn-ghost btn-sm btn-iso" title="Generate fresh isometric 3D render from KiCad">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -67,6 +75,7 @@
         View Iso
       </button>
       <span id="renderTimeBadge" class="render-badge" title="Timestamp of top-down 3D render">Top: –</span>
+      <span id="renderBotTimeBadge" class="render-badge" title="Timestamp of the bottom 3D render">Bottom: –</span>
       <span id="renderIsoTimeBadge" class="render-badge hidden" title="Timestamp of isometric 3D render">Iso: –</span>
     </div>
   </header>
@@ -79,6 +88,7 @@
         <div class="legend-actions">
           <button id="btnSelectMode" class="btn btn-ghost btn-sm" title="Select existing footprint parts on PCB into the active color group">Select</button>
           <button id="btnInfoMode" class="btn btn-ghost btn-sm" title="Toggle Part Info mode: click any component on PCB to inspect its properties">Info</button>
+          <button id="btnSuperInfo" class="btn btn-ghost btn-sm" title="Super info: click any single pad to see its net and every other pad on that net">Super info</button>
           <button id="btnAddColor" class="btn btn-ghost btn-sm" title="Add a color">+ Add</button>
           <button id="btnClearAll" class="btn btn-ghost btn-sm btn-del" title="Clear all boxes and selections">Clear</button>
         </div>
@@ -98,6 +108,7 @@
           <button class="chip" data-name="1812" data-w="4.5" data-h="3.2" title="1812 (4.50 × 3.20 mm)">1812</button>
           <button class="chip" data-name="SOD-123" data-w="3.6" data-h="1.8" title="SOD-123 (3.60 × 1.80 mm)">SOD-123</button>
           <button class="chip" data-name="2410" data-w="6.1" data-h="2.6" title="2410 (6.10 × 2.60 mm)">2410</button>
+          <button class="chip" data-name="2512" data-w="6.3" data-h="3.2" title="2512 (6.30 × 3.20 mm): the charge shunt">2512</button>
         </div>
       </div>
 
@@ -115,6 +126,10 @@
             <button id="btnCopyInfo" class="btn btn-ghost btn-xs" title="Copy component details to clipboard">Copy</button>
             <button id="btnCloseInfo" class="btn btn-ghost btn-xs" title="Close info box">✕</button>
           </div>
+        </div>
+        <div id="superToggles" class="super-toggles hidden">
+          <button id="tglSuperPulse" class="super-tgl active" title="Pulse: a wave travels along the selected net's traces, outward from the pad you clicked">Pulse</button>
+          <button id="tglSuperFull" class="super-tgl" title="Full length: follow the net on through series parts (resistors, fuses, net ties) until it reaches the chip">Full length</button>
         </div>
         <div id="infoEmptyHint" class="info-empty hidden">Click any component on the board to view its info</div>
         <div id="infoBody" class="info-body">
@@ -168,6 +183,25 @@
             <span class="info-k">MPN</span>
             <span id="infoMpn" class="info-v mono">–</span>
           </div>
+          <div class="info-notes" id="infoNotes">
+            <p id="infoPurpose" class="info-purpose">–</p>
+            <div class="info-issues-head">Possible issues</div>
+            <ul id="infoIssues" class="info-issues"></ul>
+          </div>
+        </div>
+        <div id="padInfoBody" class="info-body hidden">
+          <div class="info-row"><span class="info-k">Pad</span><span id="padNum" class="info-v mono">–</span></div>
+          <div class="info-row"><span class="info-k">Part</span><span id="padPart" class="info-v mono">–</span></div>
+          <div class="info-row"><span class="info-k">Net</span><span id="padNet" class="info-v mono">–</span></div>
+          <div class="info-row info-row-stack"><span class="info-k">Kind</span><div class="info-v-stack"><span id="padKind" class="info-v">–</span></div></div>
+          <div class="info-row"><span class="info-k">Ground</span><span id="padGround" class="info-v">–</span></div>
+          <div class="info-row"><span class="info-k">Center</span><span id="padPos" class="info-v mono">–</span></div>
+          <div class="info-row"><span class="info-k">Size</span><span id="padSize" class="info-v mono">–</span></div>
+          <div id="padPathRow" class="info-row hidden"><span class="info-k">Full length</span><span id="padPath" class="info-v mono">–</span></div>
+          <div class="info-notes">
+            <div class="info-issues-head" id="padPeerHead">Connects to</div>
+            <div id="padPeers" class="pad-peers">–</div>
+          </div>
         </div>
       </div>
 
@@ -194,6 +228,7 @@
 
     <!-- CENTER: canvas -->
     <section class="stage" id="stage">
+      <div id="explainTip" class="explain-tip" hidden></div>
       <canvas id="canvas"></canvas>
 
       <div class="loading" id="loading">
@@ -208,16 +243,20 @@
       </div>
 
       <div class="dock">
-        <div class="dock-view" id="sideView" title="Show the top photo, the bottom photo, or both at once">
+        <div class="dock-view" id="sideView" title="Show the top, the bottom (photo, 3D render or B.Cu parts), or both at once">
           <button type="button" data-side="top">Top</button>
           <button type="button" data-side="both">Both</button>
           <button type="button" data-side="bottom">Bottom</button>
         </div>
         <button class="dock-btn active" id="tglRef" title="Toggle reference photos">Ref</button>
-        <button class="dock-btn btn-3d" id="tgl3D" title="Toggle 3D CAD top render layer on/off">3D Top</button>
+        <button class="dock-btn btn-3d" id="tgl3D" title="Toggle the 3D CAD render layer (top and bottom) on/off">3D</button>
         <button class="dock-btn btn-iso-dock" id="tglIsoView" title="Open Interactive Isometric 3D Viewer">Iso 3D</button>
         <button class="dock-btn active" id="tglParts" title="Toggle existing footprint pads">Parts</button>
+        <button class="dock-btn" id="tglExplain" title="Hover a part to see what it and its group do">Explain</button>
+        <button class="dock-btn active" id="tglGroups" title="Outline every function group in its own colour" hidden>Groups</button>
         <button class="dock-btn btn-cu-top" id="tglTopCu" title="Toggle Top Copper Traces (F.Cu)">F.Cu</button>
+        <button class="dock-btn btn-cu-in1" id="tglIn1Cu" title="Toggle inner layer 1 copper traces (In1.Cu); only on 4-layer boards">In1.Cu</button>
+        <button class="dock-btn btn-cu-in2" id="tglIn2Cu" title="Toggle inner layer 2 copper traces (In2.Cu); only on 4-layer boards">In2.Cu</button>
         <button class="dock-btn btn-cu-bot" id="tglBotCu" title="Toggle Bottom Copper Traces (B.Cu)">B.Cu</button>
         <button class="dock-btn btn-vias" id="tglVias" title="Toggle Vias">Vias</button>
         <button class="dock-btn btn-sides" id="tglSides" title="Show LEFT / RIGHT / TOP / BOTTOM labels on the board (default off)">Sides</button>

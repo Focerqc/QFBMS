@@ -21,19 +21,32 @@
     showRef: true,
     show3D: false,
     showParts: true,
+    explain: false,
+    showGroups: true,
     showTopCu: false,
+    showIn1Cu: false,
+    showIn2Cu: false,
     showBotCu: false,
     showVias: false,
     showSides: false,
     selectMode: false,
     infoMode: false,
+    superMode: false,
+    superPulse: true,        // Super info: wave runs along the selected net
+    superFull: false,        // Super info: follow the net through series parts to the chip
+    superPath: null,         // { nets, extra, parts, segs } for the selected pad
+    padSel: null,
+    padHover: null,
     hoverFp: null,
     infoFp: null,
     activePreset: null,
     mousePos: null,
     render3dImg: null,
-    render3dBounds: null,   // opaque content rect inside render3dImg (handles legacy padded PNGs)
+    render3dBounds: null,   // the board's own rect inside render3dImg (pixels): parked parts and margins lie outside it
     render3dPath: null,
+    render3dBotImg: null,    // render of the back (mirrored by the server so it lies on the board outline)
+    render3dBotBounds: null,
+    render3dBotPath: null,
     renderIsoPath: null,
     isoView: { x: 0, y: 0, scale: 1 },
     isoDrag: null,
@@ -149,12 +162,162 @@
     let bandH = Infinity;
     for (const p of panes) bandH = Math.min(bandH, paneContentBox(p).height);
     const padX = 36;
-    S.view.scale = Math.min((r.width - padX * 2) / Math.max(bb.w, 1), bandH / Math.max(bb.h, 1), 80);
+    // 0.62: leave room around the board on big monitors (was edge-to-edge).
+    S.view.scale = 0.62 * Math.min((r.width - padX * 2) / Math.max(bb.w, 1), bandH / Math.max(bb.h, 1), 80);
     S.view.x = bb.x - (r.width / S.view.scale - bb.w) / 2;
     const box = paneContentBox(panes[0]);
     const boardScreenY = box.top + (box.height - bb.h * S.view.scale) / 2;
     S.view.y = bb.y - boardScreenY / S.view.scale;
     render();
+  }
+
+
+  // ---------- EXPLAIN (hover a part: what its group does) ----------
+  // QFBMS rev A groups (full purpose per part: Info mode, from rev-a/tools/circuit.py)
+  const FP_GROUPS = [
+    [/^U_BQ1$/, 'Lower monitor', 'BQ7695202: cells 1–16 against GND, charge current, 4 cell NTCs + FET NTC.'],
+    [/^U_BQ2$/, 'Upper monitor', 'BQ7695202: cells 17–32 against CELL16. Talks I²C through the ISO1640.'],
+    [/^J_CELL\d$/, 'Cell taps', 'Balance-lead plugs: CELL0–CELL32 (fixed positions).'],
+    [/^R_B\d+$/, 'Cell input resistors', '27 Ω per tap into the monitors; internal balancing (~50 mA) flows through them.'],
+    [/^C_F\d+$/, 'Cell input filter C', '100 nF across adjacent monitor inputs; RC filter with R_B.'],
+    [/^(R|C|D|Q)1\d\d$/, 'Lower monitor support', 'BAT diode + RC, REG0 preregulator, REG18/REG1/REGIN caps, sense filter, NTC series R.'],
+    [/^(R|C|D|Q)2\d\d$/, 'Upper monitor support', 'Same supply parts as the lower monitor, referenced to CELL16.'],
+    [/^J_T\d$/, 'Cell thermistors', '10 k B3380 NTC plugs into TS1, TS3, ALERT, DCHG.'],
+    [/^(Q1|Q2|U5|R1|D1|R2|Q3|Q4|R3|R4)$/, 'Charge switch', 'Back-to-back 200 V FETs, VOM1271 photovoltaic gate driver, enable FETs.'],
+    [/^(J_CHG1|J_BAT1|F1|R_SH1|NT\d)$/, 'Charge path', 'Charger and pack XT30s, pack fuse, 1 mΩ shunt with Kelvin net ties.'],
+    [/^(R[5-8]|C[12])$/, 'Voltage dividers', '2.2 M / 47 k: charger and pack voltage to the ESP32 ADC.'],
+    [/^(U4|L1|R9|R1[0-3]|C[3-5]|D2)$/, 'Buck regulator', 'LTC7138: pack (up to 134 V) to 5 V.'],
+    [/^(U6|D3|D4|C[67])$/, '3.3 V supply', '5 V from buck or USB (diode-OR) to the AP2112K 3.3 V LDO.'],
+    [/^(U9|U10|U11|U12|Q6|R2[2-9]|C1[1-4])$/, 'Upper monitor link', 'Bus switches, ISO1640 isolator and its switched upper-side supply.'],
+    [/^(U7|J_COMM1|C1[56]|R3[01]|JP1)$/, 'Isolated CAN', 'ISO1050 to the VESC; optional 120 Ω termination.'],
+    [/^(U_ESP1|C[89]|C10|R1[4-9]|SW1|TP1)$/, 'ESP32-C3', 'Runs the VBMS32 firmware; strap pull-ups, EN delay, wake button.'],
+    [/^(Q5|BZ1|D5)$/, 'Beeper', '4 kHz magnetic buzzer driven from GPIO3.'],
+    [/^(J_USB1|U8|R2[01])$/, 'USB-C', 'Flashing and VESC Tool; ESD protection and CC pull-downs.'],
+    [/^RT1$/, 'FET thermistor', 'On-board NTC beside Q1/Q2, read through HDQ.'],
+  ];
+  function fpGroup(fp) {
+    for (const g of FP_GROUPS) if (g[0].test(fp.ref)) return g;
+    return null;
+  }
+  function showExplain(fp, e) {
+    const tip = $('explainTip');
+    if (!tip) return;
+    if (!fp || !S.explain) { tip.hidden = true; return; }
+    const g = fpGroup(fp);
+    const n = g ? S.board.footprints.filter(f => g[0].test(f.ref)).length : 1;
+    tip.innerHTML = '<b></b><span class="xt-ref"></span><div></div>';
+    tip.children[0].textContent = g ? g[1] : fp.ref;
+    tip.children[1].textContent = ' ' + fp.ref + ' · ' + fp.value + (n > 1 ? ' · ' + n + ' parts' : '');
+    tip.children[2].textContent = g ? g[2] : (fp.fpid.split(':').pop());
+    tip.hidden = false;
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = e.clientX + 16, y = e.clientY + 16;
+    if (x + w > innerWidth - 8) x = e.clientX - w - 16;
+    if (y + h > innerHeight - 8) y = e.clientY - h - 16;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+
+
+  // Coloured outline around each function group (Explain > Groups).
+  function drawGroupOutlines(pane) {
+    ctx.save();
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 3]);
+    ctx.font = '600 11px "JetBrains Mono"';
+    const tags = [];
+    FP_GROUPS.forEach((g, i) => {
+      if (g[1] === 'Mounting holes') return; // spans the whole board
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (const fp of S.board.footprints) {
+        if (!g[0].test(fp.ref) || !fpOnSide(fp, pane.side)) continue;
+        const b = getFpBBox(fp);
+        x0 = Math.min(x0, b.minX); y0 = Math.min(y0, b.minY); x1 = Math.max(x1, b.maxX); y1 = Math.max(y1, b.maxY);
+      }
+      if (x0 === Infinity) return;
+      const hot = S.hoverFp && g[0].test(S.hoverFp.ref);
+      const col = `hsl(${(i * 137.5) % 360}, 85%, 62%)`;
+      const a = toScreen(x0, y0), c = toScreen(x1, y1);
+      const sx = Math.min(a.x, c.x) - 3, sy = Math.min(a.y, c.y) - 3, w = Math.abs(c.x - a.x) + 6, h = Math.abs(c.y - a.y) + 6;
+      ctx.strokeStyle = col; ctx.globalAlpha = hot ? 1 : 0.7; ctx.lineWidth = hot ? 2.5 : 1.5;
+      ctx.strokeRect(sx, sy, w, h);
+      tags.push({ name: g[1], col, hot, sx, sy, w, h, cx: sx + w / 2, cy: sy + h / 2 });
+    });
+    // 1) Put each name in the nearest free spot by its box: touching it, then a little
+    //    further out with a short leader. Free = no pad/part/silk ref, group box or name.
+    const hits = (r, o) => r.x < o.x + o.w && r.x + r.w > o.x && r.y < o.y + o.h && r.y + r.h > o.y;
+    const obst = [];
+    const sc = S.view.scale, m = 1.3; // mm margin around parts covers their silk reference text
+    for (const fp of S.board.footprints) {
+      if (!fpOnSide(fp, pane.side)) continue;
+      const b = getFpBBox(fp);
+      const a = toScreen(b.minX - m, b.minY - m), c = toScreen(b.maxX + m, b.maxY + m);
+      obst.push({ x: Math.min(a.x, c.x), y: Math.min(a.y, c.y), w: Math.abs(c.x - a.x), h: Math.abs(c.y - a.y) });
+    }
+    for (const tx of S.board.texts || []) {
+      if ((tx.side === 'B') !== (pane.side === 'bot')) continue;
+      const a = toScreen(tx.x - 0.5, tx.y - 0.5), c = toScreen(tx.x + tx.w + 0.5, tx.y + tx.h + 0.5);
+      obst.push({ x: Math.min(a.x, c.x), y: Math.min(a.y, c.y), w: Math.abs(c.x - a.x), h: Math.abs(c.y - a.y) });
+    }
+    for (const k of tags) obst.push({ x: k.sx - 1, y: k.sy - 1, w: k.w + 2, h: k.h + 2 });
+    const cw = canvas.clientWidth || canvas.width, chh = canvas.clientHeight || canvas.height;
+    const TH = 14;
+    for (const k of [...tags].sort((a, b) => b.w * b.h - a.w * a.h)) {
+      const tw = ctx.measureText(k.name).width + 6;
+      for (const d of [2, 12, 24, 40]) {
+        const cands = [
+          [k.sx, k.sy - d - TH], [k.sx + k.w - tw, k.sy - d - TH],
+          [k.sx, k.sy + k.h + d], [k.sx + k.w - tw, k.sy + k.h + d],
+          [k.sx - d - tw, k.cy - TH / 2], [k.sx + k.w + d, k.cy - TH / 2],
+        ];
+        for (const [x, y] of cands) {
+          const r = { x, y, w: tw, h: TH };
+          if (x < 0 || y < 0 || x + tw > cw || y + TH > chh) continue;
+          if (obst.some(o => hits(r, o))) continue;
+          k.place = r; obst.push(r); break;
+        }
+        if (k.place) break;
+      }
+      if (!k.place) continue;
+      const r = k.place;
+      ctx.globalAlpha = k.hot ? 1 : 0.85; ctx.strokeStyle = k.col; ctx.lineWidth = k.hot ? 2 : 1;
+      // leader from the nearest point of the box to the nearest point of the label
+      const px = Math.min(Math.max(r.x + r.w / 2, k.sx), k.sx + k.w), py = Math.min(Math.max(r.y + r.h / 2, k.sy), k.sy + k.h);
+      const qx = Math.min(Math.max(px, r.x), r.x + r.w), qy = Math.min(Math.max(py, r.y), r.y + r.h);
+      if (Math.hypot(qx - px, qy - py) > 4) { ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(qx, qy); ctx.stroke(); }
+      ctx.fillStyle = 'rgba(10,14,18,.6)'; ctx.fillRect(r.x, r.y, r.w, r.h);
+      ctx.fillStyle = k.col; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+      ctx.fillText(k.name, r.x + 3, r.y + TH / 2);
+    }
+    // 2) Whatever found no room goes to a column outside the board edge, spread so the
+    //    names never overlap, with a dashed leader back to the group box.
+    const bb = S.board.bbox;
+    const tl = toScreen(bb.x, bb.y), br = toScreen(bb.x + bb.w, bb.y + bb.h);
+    const midX = (tl.x + br.x) / 2, gap = 15;
+    for (const side of ['L', 'R']) {
+      const col = tags.filter(k => !k.place && (k.cx < midX) === (side === 'L')).sort((a, b) => a.cy - b.cy);
+      // place at ideal y, push down to keep spacing, then pull back up if it ran off the bottom
+      let y = -Infinity;
+      for (const k of col) { k.ly = Math.max(k.cy, y + gap); y = k.ly; }
+      let over = col.length ? col[col.length - 1].ly - (br.y + 20) : 0;
+      for (let j = col.length - 1; j >= 0 && over > 0; j--) {
+        const lim = j > 0 ? col[j].ly - col[j - 1].ly - gap : Infinity;
+        col[j].ly -= over;
+        for (let q = j + 1; q < col.length; q++) col[q].ly = Math.max(col[q].ly, col[q - 1].ly + gap);
+        over = col[col.length - 1].ly - (br.y + 20);
+        if (lim >= over) break;
+      }
+      for (const k of col) {
+        const lx = side === 'L' ? tl.x - 14 : br.x + 14;
+        const ax = side === 'L' ? k.sx : k.sx + k.w;
+        const ay = Math.min(Math.max(k.ly, k.sy), k.sy + k.h);
+        ctx.strokeStyle = k.col; ctx.globalAlpha = k.hot ? 1 : 0.75; ctx.lineWidth = k.hot ? 2 : 1;
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(lx, k.ly); ctx.stroke();
+        ctx.fillStyle = k.col; ctx.textBaseline = 'middle';
+        ctx.textAlign = side === 'L' ? 'right' : 'left';
+        ctx.fillText(k.name, lx + (side === 'L' ? -4 : 4), k.ly);
+      }
+    }
+    ctx.restore();
   }
 
   // ---------- DATA MODEL ----------
@@ -188,6 +351,13 @@
   }
   const liveCount = b => instances(b).length;
   const totalCount = () => S.doc.boxes.reduce((n, b) => n + liveCount(b), 0);
+  // Part label on a box: fixed (b.lbl) or counted along its pattern (b.tag = { p: 'R2', start: 18, step: -1 } -> R218, R217, …).
+  function tagFor(b, i) {
+    if (b.lbl) return b.lbl;
+    if (!b.tag) return '';
+    return b.tag.p + String(b.tag.start + b.tag.step * i).padStart(2, '0');
+  }
+  const keepTag = (b, i) => (tagFor(b, i) ? { lbl: tagFor(b, i), auto: b.auto } : {});
 
   function ensureColorExists() {
     // Keep at least one color group in the doc, but do not arm it for drawing.
@@ -201,6 +371,7 @@
     if (!color(id)) return false;
     S.activeColor = id;
     if (S.infoMode) toggleInfoMode(false);
+    if (S.superMode) toggleSuperMode(false);
     if (toastMsg) toast(toastMsg);
     return true;
   }
@@ -236,7 +407,7 @@
     if (!it) return null;
     if (!b.pat || liveCount(b) <= 1) return b;
     b.pat.skip = [...(b.pat.skip || []), i];
-    const nb = { id: uid('b'), c: b.c, x: it.x, y: it.y, w: b.w, h: b.h, pat: null };
+    const nb = { id: uid('b'), c: b.c, x: it.x, y: it.y, w: b.w, h: b.h, pat: null, ...keepTag(b, i) };
     S.doc.boxes.push(nb);
     return nb;
   }
@@ -244,7 +415,7 @@
   function unlinkAll(b) {
     const its = instances(b);
     const idx = S.doc.boxes.indexOf(b);
-    const fresh = its.map(it => ({ id: uid('b'), c: b.c, x: it.x, y: it.y, w: b.w, h: b.h, pat: null }));
+    const fresh = its.map(it => ({ id: uid('b'), c: b.c, x: it.x, y: it.y, w: b.w, h: b.h, pat: null, ...keepTag(b, it.i) }));
     S.doc.boxes.splice(idx, 1, ...fresh);
     return fresh;
   }
@@ -308,6 +479,7 @@
     S.selectMode = !S.selectMode;
     if (S.selectMode) {
       if (S.infoMode) toggleInfoMode(false);
+      if (S.superMode) toggleSuperMode(false);
       if (!S.showParts) {
         S.showParts = true;
         if ($('tglParts')) $('tglParts').classList.add('active');
@@ -324,6 +496,7 @@
   function toggleInfoMode(forceState) {
     S.infoMode = forceState !== undefined ? forceState : !S.infoMode;
     if (S.infoMode) {
+      if (S.superMode) toggleSuperMode(false);
       if (S.selectMode) {
         S.selectMode = false;
         if ($('btnSelectMode')) $('btnSelectMode').classList.remove('active');
@@ -344,6 +517,8 @@
           $('infoRef').textContent = 'Select part';
         }
       }
+      const eh = $('infoEmptyHint');
+      if (eh) eh.textContent = 'Click any component on the board to view its info';
       toast('Info mode: click any component on PCB to view details.');
     } else {
       S.hoverFp = null;
@@ -352,6 +527,440 @@
       toast('Info mode exited');
     }
     refreshUI();
+  }
+
+  // ---------- SUPER INFO (single pads) ----------
+  function setBadge(text) {
+    const b = document.querySelector('#partInfoCard .info-badge');
+    if (b) b.textContent = text;
+  }
+
+  const SUPER_NET = '#5ee6ff';    // the clicked pad's net
+  const SUPER_EXTRA = '#c49bff';  // nets reached through series parts (Full length)
+
+  function superPadColor(pad) {
+    if (S.padSel && pad === S.padSel.pad) return '#ffb347';
+    if (S.padSel && S.padSel.pad.net && pad.net === S.padSel.pad.net) return SUPER_NET;
+    if (S.superPath && S.superPath.extra.has(pad.net)) return SUPER_EXTRA;
+    if (S.padHover === pad) return '#ffffff';
+    return 'rgba(255, 255, 255, 0.22)';
+  }
+
+  // ---------- SUPER INFO: net path + pulse ----------
+  // Parts a signal passes straight through: resistors, fuses, inductors/ferrites, net ties.
+  const SERIES_REF = /^(R|F|L|FB|NT)\d/;
+
+  function seriesNets(fp) {
+    if (!SERIES_REF.test(fp.ref)) return null;
+    const nets = [...new Set((fp.pads || []).map(p => p.net).filter(n => n && !n.startsWith('unconnected-')))];
+    return nets.length === 2 ? nets : null;
+  }
+
+  function netTouchesChip(net) {
+    return S.board.footprints.some(f => /^U\d/.test(f.ref) && (f.pads || []).some(p => p.net === net));
+  }
+
+  // Which nets to light up. Without Full length: just the clicked pad's net. With it: walk on
+  // through series parts, but stop at ground, at big rails (many pads) and at any net that
+  // reaches the chip (the end of the line), except the net you started on.
+  function computeSuperPath() {
+    S.superPath = null;
+    const sel = S.padSel;
+    if (!sel || !sel.pad.net || !S.board) return;
+    const start = sel.pad.net;
+    const nets = new Set([start]);
+    const parts = [];
+    if (S.superFull && !isGroundNet(start)) {
+      const padCount = {};
+      for (const f of S.board.footprints) for (const p of f.pads || []) if (p.net) padCount[p.net] = (padCount[p.net] || 0) + 1;
+      const queue = [start];
+      while (queue.length && nets.size < 16) {
+        const net = queue.shift();
+        if (net !== start && (isGroundNet(net) || netTouchesChip(net) || padCount[net] > 16)) continue;
+        for (const f of S.board.footprints) {
+          const sn = seriesNets(f);
+          if (!sn || !sn.includes(net)) continue;
+          const other = sn[0] === net ? sn[1] : sn[0];
+          if (!parts.includes(f)) parts.push(f);
+          if (!nets.has(other)) { nets.add(other); queue.push(other); }
+        }
+      }
+    }
+    const extra = new Set([...nets].filter(n => n !== start));
+    S.superPath = { start, nets, extra, parts, segs: buildPulseSegs(nets, parts, sel) };
+  }
+
+  // Distance along the copper from the clicked pad to every track end, so the pulse can run
+  // outward from it as one continuous wave (through vias, pads and the series parts).
+  function buildPulseSegs(nets, parts, sel) {
+    const key = (x, y) => `${Math.round(x * 100)},${Math.round(y * 100)}`;
+    const adj = new Map();
+    const link = (a, b, w) => {
+      if (!adj.has(a)) adj.set(a, []);
+      if (!adj.has(b)) adj.set(b, []);
+      adj.get(a).push([b, w]);
+      adj.get(b).push([a, w]);
+    };
+    // Split each track where another track of its net ends partway along it (a T-junction),
+    // so the wave can turn into the branch and each piece gets its own direction.
+    const raw = (S.board.tracks || []).filter(t => nets.has(t.net));
+    const tracks = [];
+    for (const t of raw) {
+      const dx = t.x2 - t.x1, dy = t.y2 - t.y1, len2 = dx * dx + dy * dy;
+      const cuts = [];
+      if (len2 > 1e-6) {
+        for (const o of raw) {
+          if (o === t || o.net !== t.net || o.layer !== t.layer) continue;
+          for (const [px, py] of [[o.x1, o.y1], [o.x2, o.y2]]) {
+            const u = ((px - t.x1) * dx + (py - t.y1) * dy) / len2;
+            if (u <= 1e-3 || u >= 1 - 1e-3) continue;
+            if (Math.hypot(t.x1 + u * dx - px, t.y1 + u * dy - py) < 0.02) cuts.push(u);
+          }
+        }
+      }
+      const us = [0, ...[...new Set(cuts)].sort((a, b) => a - b), 1];
+      for (let i = 0; i + 1 < us.length; i++) {
+        tracks.push(Object.assign({}, t, {
+          x1: t.x1 + us[i] * dx, y1: t.y1 + us[i] * dy, x2: t.x1 + us[i + 1] * dx, y2: t.y1 + us[i + 1] * dy,
+        }));
+      }
+    }
+    const ends = [];
+    for (const t of tracks) {
+      const a = key(t.x1, t.y1), b = key(t.x2, t.y2);
+      link(a, b, Math.hypot(t.x2 - t.x1, t.y2 - t.y1));
+      ends.push([a, t.x1, t.y1, t.net], [b, t.x2, t.y2, t.net]);
+    }
+    const padKey = (f, p) => `P:${f.ref}.${p.num}`;
+    const inPad = (p, x, y) => {
+      const dx = x - p.x, dy = y - p.y;
+      const a = ((p.angle || 0) * Math.PI) / 180;
+      const lx = dx * Math.cos(a) - dy * Math.sin(a);
+      const ly = dx * Math.sin(a) + dy * Math.cos(a);
+      return Math.abs(lx) <= p.w / 2 + 0.01 && Math.abs(ly) <= p.h / 2 + 0.01;
+    };
+    for (const f of S.board.footprints) {
+      for (const p of f.pads || []) {
+        if (!nets.has(p.net)) continue;
+        for (const [k, x, y, n] of ends) if (n === p.net && inPad(p, x, y)) link(padKey(f, p), k, Math.hypot(x - p.x, y - p.y));
+      }
+    }
+    const partSegs = [];
+    for (const f of parts) {
+      const ps = (f.pads || []).filter(p => nets.has(p.net));
+      const a = ps[0], b = ps.find(p => p.net !== a.net);
+      if (!a || !b) continue;
+      link(padKey(f, a), padKey(f, b), Math.hypot(b.x - a.x, b.y - a.y));
+      partSegs.push({ fp: f, a, b, ka: padKey(f, a), kb: padKey(f, b) });
+    }
+    // Dijkstra from the clicked pad (graphs here are a few hundred nodes, so a plain scan is fine)
+    const dist = new Map([[padKey(sel.fp, sel.pad), 0]]);
+    const done = new Set();
+    for (;;) {
+      let cur = null, cd = Infinity;
+      for (const [k, d] of dist) if (!done.has(k) && d < cd) { cur = k; cd = d; }
+      if (cur === null) break;
+      done.add(cur);
+      for (const [nb, w] of adj.get(cur) || []) {
+        if (cd + w < (dist.get(nb) ?? Infinity)) dist.set(nb, cd + w);
+      }
+    }
+    const segs = [];
+    const orient = (x1, y1, x2, y2, ka, kb, extraFields) => {
+      const da = dist.get(ka), db = dist.get(kb);
+      const flip = da !== undefined && db !== undefined ? db < da : (da === undefined && db !== undefined);
+      const d0 = Math.min(da ?? Infinity, db ?? Infinity);
+      segs.push(Object.assign(flip
+        ? { x1: x2, y1: y2, x2: x1, y2: y1 }
+        : { x1, y1, x2, y2 }, { d0: Number.isFinite(d0) ? d0 : 0 }, extraFields));
+    };
+    for (const t of tracks) orient(t.x1, t.y1, t.x2, t.y2, key(t.x1, t.y1), key(t.x2, t.y2), { layer: t.layer, w: t.w, net: t.net });
+    for (const s of partSegs) orient(s.a.x, s.a.y, s.b.x, s.b.y, s.ka, s.kb, { layer: null, w: 0.3, net: null, fp: s.fp });
+    return segs;
+  }
+
+  let pulseRaf = null;
+  function ensurePulseLoop() {
+    const want = S.superMode && S.superPulse && S.superPath;
+    if (want && !pulseRaf) {
+      const tick = () => {
+        if (!(S.superMode && S.superPulse && S.superPath)) { pulseRaf = null; render(); return; }
+        render();
+        pulseRaf = requestAnimationFrame(tick);
+      };
+      pulseRaf = requestAnimationFrame(tick);
+    }
+  }
+
+  function updateSuperToggles() {
+    $('superToggles')?.classList.toggle('hidden', !S.superMode);
+    $('tglSuperPulse')?.classList.toggle('active', !!S.superPulse);
+    $('tglSuperFull')?.classList.toggle('active', !!S.superFull);
+    const row = $('padPathRow');
+    const p = S.superPath;
+    if (row) {
+      const show = !!(S.superFull && p && S.padSel);
+      row.classList.toggle('hidden', !show);
+      if (show) {
+        const via = p.parts.map(f => f.ref).join(', ');
+        $('padPath').textContent = p.extra.size
+          ? `${[...p.nets].join(' → ')}${via ? ` (through ${via})` : ''}`
+          : 'No series parts on this net';
+      }
+    }
+  }
+
+  function setSuperOption(name, on) {
+    S[name] = on;
+    if (name === 'superFull') computeSuperPath();
+    updateSuperToggles();
+    ensurePulseLoop();
+    render();
+  }
+
+  // Lit-up path drawn over everything else: board dimmed, the path's copper, vias and pads
+  // bright, and (with Pulse) a glowing wave running outward from the clicked pad.
+  function drawSuperPath(pane) {
+    const P = S.superPath;
+    if (!S.superMode || !P) return;
+    const sc = S.view.scale;
+    const r = stage.getBoundingClientRect();
+    ctx.save();
+    ctx.fillStyle = 'rgba(7, 9, 14, 0.55)';
+    ctx.fillRect(0, pane.top, r.width, pane.height);
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    const segOnPane = s => (s.layer ? layerOnPane(pane, s.layer) : fpOnSide(s.fp, pane.side));
+    const colourOf = s => (s.net && s.net !== P.start ? SUPER_EXTRA : (s.net ? SUPER_NET : SUPER_EXTRA));
+    // solid copper
+    for (const s of P.segs) {
+      if (!segOnPane(s)) continue;
+      const a = toScreen(s.x1, s.y1), b = toScreen(s.x2, s.y2);
+      ctx.strokeStyle = colourOf(s);
+      ctx.globalAlpha = s.layer ? 0.75 : 0.45;
+      ctx.lineWidth = Math.max(2, s.w * sc);
+      ctx.setLineDash(s.layer ? [] : [4, 4]);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
+    // vias on the path
+    for (const v of S.board.vias || []) {
+      if (!P.nets.has(v.net)) continue;
+      const p = toScreen(v.x, v.y);
+      ctx.fillStyle = v.net === P.start ? SUPER_NET : SUPER_EXTRA;
+      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(2, (v.width / 2) * sc), 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#07090e';
+      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0.8, (v.drill / 2) * sc), 0, Math.PI * 2); ctx.fill();
+    }
+    // pads on the path (and the series parts' pads)
+    for (const fp of S.board.footprints) {
+      if (!fpOnSide(fp, pane.side)) continue;
+      for (const pad of fp.pads || []) {
+        if (!P.nets.has(pad.net)) continue;
+        const c = toScreen(pad.x, pad.y);
+        ctx.save();
+        ctx.translate(c.x, c.y);
+        ctx.rotate((-pad.angle * Math.PI) / 180);
+        ctx.fillStyle = superPadColor(pad);
+        const w = Math.max(1, pad.w * sc), h = Math.max(1, pad.h * sc);
+        ctx.fillRect(-w / 2, -h / 2, w, h);
+        ctx.restore();
+      }
+    }
+    // the travelling wave: a dash pattern phased by distance from the clicked pad
+    if (S.superPulse) {
+      const t = performance.now() / 1000;
+      const speed = 90;            // screen px per second
+      const dash = 14, gap = 34;
+      ctx.setLineDash([dash, gap]);
+      ctx.shadowBlur = 12;
+      for (const s of P.segs) {
+        if (!segOnPane(s)) continue;
+        const a = toScreen(s.x1, s.y1), b = toScreen(s.x2, s.y2);
+        const col = colourOf(s);
+        ctx.shadowColor = col;
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = Math.max(2, s.w * sc * 0.7);
+        ctx.lineDashOffset = -(t * speed) + s.d0 * sc;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  function toggleSuperMode(forceState) {
+    S.superMode = forceState !== undefined ? forceState : !S.superMode;
+    if (S.superMode) {
+      if (S.selectMode) {
+        S.selectMode = false;
+        if ($('btnSelectMode')) $('btnSelectMode').classList.remove('active');
+      }
+      if (S.infoMode) toggleInfoMode(false);
+      disarmDraw();
+      S.sel = null;
+      if (!S.showParts) {
+        S.showParts = true;
+        if ($('tglParts')) $('tglParts').classList.add('active');
+      }
+      $('partInfoCard')?.classList.remove('hidden');
+      setPadPanelEmpty();
+      toast('Super info: click any pad to see its net and every other pad on that net.');
+    } else {
+      S.padSel = null;
+      S.superPath = null;
+      S.padHover = null;
+      S.infoFp = null;
+      $('partInfoCard')?.classList.add('hidden');
+      $('padInfoBody')?.classList.add('hidden');
+      $('infoBody')?.classList.remove('hidden');
+      const hint = $('infoEmptyHint');
+      if (hint) hint.textContent = 'Click any component on the board to view its info';
+      toast('Super info exited');
+    }
+    updateSuperToggles();
+    refreshUI();
+  }
+
+  function setPadPanelEmpty() {
+    S.padSel = null;
+    S.superPath = null;
+    updateSuperToggles();
+    $('infoBody')?.classList.add('hidden');
+    $('padInfoBody')?.classList.add('hidden');
+    const hint = $('infoEmptyHint');
+    if (hint) {
+      hint.textContent = 'Click a pad on the board to see its net';
+      hint.classList.remove('hidden');
+    }
+    $('infoRef').textContent = 'Select pad';
+    setBadge('Super info');
+  }
+
+  // Which pad is under the pointer. Uses the same rotation as the pad drawing,
+  // so what you click is what you see highlighted.
+  function hitPad(m) {
+    if (!S.board?.footprints) return null;
+    const side = S.sideView === 'both' ? (S.pointerSide || 'top') : (S.sideView === 'bottom' ? 'bot' : 'top');
+    const tol = Math.max(0.02, 1 / S.view.scale); // about one screen pixel, in mm
+    let best = null;
+    let bestArea = Infinity;
+    let bestDepth = Infinity;
+    for (const fp of S.board.footprints) {
+      if (!fpOnSide(fp, side)) continue;
+      for (const pad of fp.pads || []) {
+        const dx = m.x - pad.x;
+        const dy = m.y - pad.y;
+        if (Math.hypot(dx, dy) > Math.hypot(pad.w, pad.h) / 2 + tol) continue;
+        const a = ((pad.angle || 0) * Math.PI) / 180;
+        const lx = dx * Math.cos(a) - dy * Math.sin(a);
+        const ly = dx * Math.sin(a) + dy * Math.cos(a);
+        if (Math.abs(lx) > pad.w / 2 + tol || Math.abs(ly) > pad.h / 2 + tol) continue;
+        // Where pads overlap (a thermal via inside the exposed pad), the smaller pad is the one
+        // you meant. Ties go to the pad the pointer sits deepest inside.
+        const area = pad.w * pad.h;
+        const depth = Math.max(Math.abs(lx) / (pad.w / 2 || 1), Math.abs(ly) / (pad.h / 2 || 1));
+        if (area < bestArea || (area === bestArea && depth < bestDepth)) {
+          best = { fp, pad };
+          bestArea = area;
+          bestDepth = depth;
+        }
+      }
+    }
+    return best;
+  }
+
+  function isGroundNet(net) {
+    return /(^|\/)(V-|GND)$/.test(net || '');
+  }
+
+  function netKind(net) {
+    if (!net) return 'Not connected';
+    if (net.startsWith('unconnected-')) return 'No-connect pad (not wired)';
+    if (isGroundNet(net)) return 'Ground: GND, pack negative (lower monitor reference)';
+    if (/^\/?CELL16$/.test(net)) return 'CELL16: middle of the pack, ground for the upper monitor';
+    const n = net.replace(/^\//, '');
+    let m;
+    if ((m = n.match(/^CELL(\d+)$/))) return `Cell tap ${m[1]} (node between cells ${m[1]} and ${Number(m[1]) + 1})`;
+    if ((m = n.match(/^C(\d+)_F$/))) return `Chip C${m[1]} pin, after its 10 ohm series resistor`;
+    if ((m = n.match(/^S(\d+)$/))) return `Balance pin S${m[1]}, to the cell's balance resistor`;
+    if ((m = n.match(/^TAP(\d+)$/))) return `Guard tap ${m[1]}, after its fuse`;
+    if ((m = n.match(/^TAP(\d+)_F$/))) return `Monitor input for tap ${m[1]}, after its 27 ohm R_B resistor`;
+    if (/^(PACK_F|BAT_POS|CHG_POS|CHG_SRC|CHG_NEG|CHG_GATE|VIN_BUCK|SW)$/.test(n)) return 'Pack-level net (up to 134 V): keep 0.6 mm from other nets';
+    if (/^(3V3|5V|5V_BUCK|VBUS)$/.test(n)) return 'Logic supply';
+    if (/^GPIO\d+$/.test(n)) return 'GPIO: thermistor input, pulled up to VREF2';
+    if (/^V(P_F|BAT_F)$/.test(n)) return 'Supply: V+ at the top of the stack (chip supply)';
+    if (n === 'VREG') return 'Supply: 5 V regulator output (VREG)';
+    if (/^VREF[12]$/.test(n)) return 'Reference: VREF (chip reference)';
+    if (n === 'VCOLL' || n === 'DRIVE') return 'Regulator Q301: collector (VCOLL) or base (DRIVE)';
+    if (/^(IBIAS|ICMP)$/.test(n)) return 'Bias network (IBIAS / ICMP)';
+    if (/ISO|^I[PM][AB]$/.test(n)) return 'isoSPI signal';
+    return 'Signal';
+  }
+
+  function showPadInfo(fp, pad) {
+    S.padSel = { fp, pad };
+    S.infoFp = fp;
+    $('partInfoCard')?.classList.remove('hidden');
+    $('infoEmptyHint')?.classList.add('hidden');
+    $('infoBody')?.classList.add('hidden');
+    $('padInfoBody')?.classList.remove('hidden');
+    setBadge('Super info');
+    $('infoRef').textContent = `${fp.ref} · pad ${pad.num}`;
+
+    const net = pad.net || '';
+    $('padNum').textContent = pad.num;
+    $('padPart').textContent = fp.value ? `${fp.ref} (${fp.value})` : fp.ref;
+    $('padNet').textContent = net || 'No net';
+    $('padKind').textContent = netKind(net);
+    $('padGround').textContent = isGroundNet(net) ? 'Yes: V- is the chip ground' : 'No';
+    $('padPos').textContent = `(${fmt(pad.x)}, ${fmt(pad.y)}) mm`;
+    $('padSize').textContent = `${fmt(pad.w)} × ${fmt(pad.h)} mm`;
+
+    const peers = [];
+    if (net) {
+      for (const f of S.board.footprints) {
+        for (const p of f.pads || []) {
+          if (p.net === net && !(f === fp && p.num === pad.num)) peers.push(`${f.ref}.${p.num}`);
+        }
+      }
+    }
+    const box = $('padPeers');
+    if (!net) {
+      $('padPeerHead').textContent = 'Connects to';
+      box.textContent = 'Nothing: this pad has no net.';
+    } else {
+      $('padPeerHead').textContent = `Connects to (${peers.length} other pad${peers.length === 1 ? '' : 's'} on ${net})`;
+      if (!peers.length) {
+        box.textContent = 'Only this pad is on this net.';
+      } else {
+        const shown = peers.slice(0, 150);
+        box.textContent = shown.join(', ') + (peers.length > shown.length ? ` … +${peers.length - shown.length} more` : '');
+      }
+    }
+    computeSuperPath();
+    updateSuperToggles();
+    ensurePulseLoop();
+    render();
+    toast(`Pad <b>${esc(fp.ref)}.${esc(pad.num)}</b> → ${net ? esc(net) : 'no net'}`);
+  }
+
+  function renderPartNotes(note) {
+    const purpose = $('infoPurpose');
+    const list = $('infoIssues');
+    if (!purpose || !list) return;
+    list.textContent = '';
+    if (!note) {
+      purpose.textContent = 'No note recorded for this part yet.';
+      return;
+    }
+    purpose.textContent = note.purpose;
+    const items = note.issues && note.issues.length ? note.issues : ['None recorded.'];
+    for (const t of items) {
+      const li = document.createElement('li');
+      li.textContent = t;
+      list.appendChild(li);
+    }
   }
 
   // ---------- PART INFO HELPERS ----------
@@ -603,6 +1212,8 @@
     card.classList.remove('hidden');
     $('infoEmptyHint')?.classList.add('hidden');
     $('infoBody')?.classList.remove('hidden');
+    $('padInfoBody')?.classList.add('hidden');
+    setBadge('Part Info');
 
     const { type, val, pkg } = describePart(fp);
 
@@ -659,6 +1270,7 @@
     }
 
     render();
+    renderPartNotes(S.board?.partNotes?.[fp.ref]);
     const toastVal = val.display !== '–' ? val.display : (pkg.package || '');
     toast(`Inspecting <b>${fp.ref}</b>${toastVal ? ` (${toastVal})` : ''}`);
   }
@@ -667,6 +1279,7 @@
     if (!S.infoFp) return;
     const fp = S.infoFp;
     const { type, val, pkg } = describePart(fp);
+    const note = S.board?.partNotes?.[fp.ref];
     const nets = fp.pads ? [...new Set(fp.pads.map(p => p.net).filter(Boolean))].join(', ') : '';
     const text = [
       `Reference: ${fp.ref}`,
@@ -680,7 +1293,8 @@
       `Pads: ${fp.pads?.length || 0}`,
       nets ? `Nets: ${nets}` : 'Nets: Not connected',
       fp.lcsc ? `LCSC: ${fp.lcsc}` : '',
-      fp.mpn ? `MPN: ${fp.mpn}` : ''
+      fp.mpn ? `MPN: ${fp.mpn}` : '',
+      ...(note ? [`Purpose: ${note.purpose}`, ...note.issues.map(t => `Possible issue: ${t}`)] : [])
     ].filter(Boolean).join('\n');
 
     navigator.clipboard.writeText(text).then(() => {
@@ -733,6 +1347,14 @@
   }
 
   // ---------- LOADING ----------
+  // Plain names in the Board menu (the path stays the value and the tooltip).
+  function boardLabel(path) {
+    if (/rev-a\//.test(path)) return 'Rev A · generated, routed';
+    if (/^qfbms32\.kicad_pcb$/.test(path)) return 'Old board · stalled draft';
+    if (/reconciliation/.test(path)) return 'Old board · reconciliation copy';
+    return path;
+  }
+
   async function init() {
     resize();
     hookEvents();
@@ -743,11 +1365,12 @@
         fetch('/api/images').then(r => r.json()),
       ]);
       const bSel = $('boardSelect');
-      bSel.innerHTML = boards.map(b => `<option value="${esc(b)}">${esc(b)}</option>`).join('');
+      bSel.innerHTML = boards.map(b => `<option value="${esc(b)}" title="${esc(b)}">${esc(boardLabel(b))}</option>`).join('');
       const saved = localStorage.getItem('pcb_dashboard_last_board');
+      // Open on rev A unless the user picked another board before.
       bSel.value = (saved && boards.includes(saved)) ? saved :
-                   (boards.find(b => /qfbms32\.kicad_pcb$/i.test(b)) ||
-                    boards.find(b => /qfbms/i.test(b)) ||
+                   (boards.find(b => /qfbms-rev-a\.kicad_pcb$/i.test(b)) ||
+                    boards.find(b => /qfbms32\.kicad_pcb$/i.test(b)) ||
                     boards[0] || '');
 
       S.images = images;
@@ -859,6 +1482,26 @@
         if ($('tgl3D')) $('tgl3D').classList.remove('active');
       }
 
+      // Bottom status: the back of the board, for parts on B.Cu (Lean's test pads)
+      const botInfo = res.bottom;
+      if (botInfo && botInfo.exists) {
+        if ($('renderBotTimeBadge')) {
+          $('renderBotTimeBadge').textContent = `Bottom: ${botInfo.timestamp}`;
+          $('renderBotTimeBadge').classList.add('fresh');
+        }
+        S.render3dBotPath = botInfo.image;
+        await load3DRender(botInfo.image, 'bot');
+      } else {
+        if ($('renderBotTimeBadge')) {
+          $('renderBotTimeBadge').textContent = 'Bottom: –';
+          $('renderBotTimeBadge').classList.remove('fresh');
+        }
+        S.render3dBotPath = null;
+        S.render3dBotImg = null;
+        S.render3dBotBounds = null;
+      }
+      syncSideButtons();
+
       // Iso status
       const isoInfo = res.iso;
       if (isoInfo && isoInfo.exists) {
@@ -888,9 +1531,12 @@
     }
   }
 
-  function opaqueImageBounds(img) {
-    // Find non-transparent content. Legacy top renders often keep large empty margins;
-    // drawing the full PNG stretched to the board outline makes the PCB look tiny.
+  function boardImageBounds(img) {
+    // Where the board itself sits in a top render, in image pixels. The PNG also holds parts
+    // parked off the outline (Lean try 1 parks isoSPI port A right of the board) and, in old
+    // renders, empty margins, so the opaque area is not the board. The board is one solid piece:
+    // its columns and rows hold an unbroken opaque run at least half as long as the longest one.
+    // A parked part, or a row of them with gaps between, is much shorter.
     try {
       const w = img.naturalWidth, h = img.naturalHeight;
       if (!w || !h) return null;
@@ -899,52 +1545,53 @@
       const g = c.getContext('2d', { willReadFrequently: true });
       g.drawImage(img, 0, 0);
       const { data } = g.getImageData(0, 0, w, h);
-      const step = Math.max(1, Math.floor(Math.min(w, h) / 500));
-      let minX = w, minY = h, maxX = -1, maxY = -1;
-      for (let y = 0; y < h; y += step) {
-        for (let x = 0; x < w; x += step) {
-          if (data[(y * w + x) * 4 + 3] > 10) {
-            if (x < minX) minX = x;
-            if (y < minY) minY = y;
-            if (x > maxX) maxX = x;
-            if (y > maxY) maxY = y;
+      const colRun = new Uint32Array(w), colCur = new Uint32Array(w), rowRun = new Uint32Array(h);
+      for (let y = 0, k = 3; y < h; y++) {
+        let cur = 0, best = 0;
+        for (let x = 0; x < w; x++, k += 4) {
+          if (data[k] > 200) {
+            if (++cur > best) best = cur;
+            if (++colCur[x] > colRun[x]) colRun[x] = colCur[x];
+          } else {
+            cur = 0;
+            colCur[x] = 0;
           }
         }
+        rowRun[y] = best;
       }
-      if (maxX < 0) return null;
-      // Expand by one sample step so we don't clip the real edge.
-      minX = Math.max(0, minX - step);
-      minY = Math.max(0, minY - step);
-      maxX = Math.min(w - 1, maxX + step);
-      maxY = Math.min(h - 1, maxY + step);
-      const bounds = { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 };
-      if (bounds.w >= w - 2 && bounds.h >= h - 2) {
-        return { x: 0, y: 0, w, h };
-      }
-      return bounds;
+      const span = runs => {
+        const half = runs.reduce((m, v) => Math.max(m, v), 0) / 2;
+        let a = -1, b = -1;
+        runs.forEach((v, i) => { if (half && v >= half) { if (a < 0) a = i; b = i; } });
+        return [a, b];
+      };
+      const [x0, x1] = span(colRun), [y0, y1] = span(rowRun);
+      if (x0 < 0 || y0 < 0) return null;
+      return { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1 };
     } catch {
       return null;
     }
   }
 
-  function load3DRender(path) {
+  function load3DRender(path, slot = 'top') {
+    const [imgKey, boundsKey] = slot === 'bot' ? ['render3dBotImg', 'render3dBotBounds'] : ['render3dImg', 'render3dBounds'];
     return new Promise(resolve => {
       if (!path) {
-        S.render3dImg = null;
-        S.render3dBounds = null;
+        S[imgKey] = null;
+        S[boundsKey] = null;
         render();
         return resolve();
       }
       const img = new Image();
       img.onload = () => {
-        S.render3dImg = img;
-        S.render3dBounds = opaqueImageBounds(img) || { x: 0, y: 0, w: img.naturalWidth, h: img.naturalHeight };
+        S[imgKey] = img;
+        S[boundsKey] = boardImageBounds(img) || { x: 0, y: 0, w: img.naturalWidth, h: img.naturalHeight };
         render();
         resolve();
       };
       img.onerror = () => {
-        S.render3dImg = null;
-        S.render3dBounds = null;
+        S[imgKey] = null;
+        S[boundsKey] = null;
         resolve();
       };
       img.src = `/api/image?path=${encodeURIComponent(path)}&t=${Date.now()}`;
@@ -953,15 +1600,16 @@
 
   async function triggerRender3D(kind = 'top') {
     if (!S.boardPath) return toast('No board selected', 'warn');
-    const isIso = kind === 'iso';
-    const btn = isIso ? $('btnIsoRender3D') : $('btnTopRender3D');
-    const badge = isIso ? $('renderIsoTimeBadge') : $('renderTimeBadge');
+    const isIso = kind === 'iso', isBot = kind === 'bottom';
+    const label = isIso ? 'Iso' : (isBot ? 'Bottom' : 'Top');
+    const btn = isIso ? $('btnIsoRender3D') : (isBot ? $('btnBotRender3D') : $('btnTopRender3D'));
+    const badge = isIso ? $('renderIsoTimeBadge') : (isBot ? $('renderBotTimeBadge') : $('renderTimeBadge'));
     const oldHtml = btn ? btn.innerHTML : '';
 
     if (btn) {
       btn.disabled = true;
       btn.classList.add('btn-spinning');
-      btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Rendering ${isIso ? 'Iso' : 'Top'}…`;
+      btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Rendering ${label}…`;
     }
     if (badge) {
       badge.textContent = 'Rendering…';
@@ -984,6 +1632,18 @@
         if ($('tglIsoView')) $('tglIsoView').classList.add('active');
         toast(`⚡ Isometric 3D render generated! (${res.timestamp})`);
         openIsoViewer();
+      } else if (isBot) {
+        S.render3dBotPath = res.image;
+        await load3DRender(res.image, 'bot');
+        S.show3D = true;
+        if ($('tgl3D')) $('tgl3D').classList.add('active');
+        if (badge) {
+          badge.textContent = `Bottom: ${res.timestamp}`;
+          badge.classList.add('fresh');
+        }
+        syncSideButtons();
+        toast(`⚡ 3D Bottom render generated! (${res.timestamp})`);
+        render();
       } else {
         S.render3dPath = res.image;
         await load3DRender(res.image);
@@ -998,7 +1658,7 @@
       }
     } catch (err) {
       toast(`3D Render failed: ${esc(err.message)}`, 'err');
-      if (badge) badge.textContent = `${isIso ? 'Iso' : 'Top'}: Failed`;
+      if (badge) badge.textContent = `${label}: Failed`;
     } finally {
       if (btn) {
         btn.disabled = false;
@@ -1037,7 +1697,7 @@
       const pdfEndpoint = fullSystem ? 'full_schematic_pdf' : 'schematic_pdf';
       $('schematicFrame').src = `/api/${pdfEndpoint}?path=${encodeURIComponent(S.boardPath)}&t=${Date.now()}`;
       $('schematicSubTitle').textContent = fullSystem
-        ? `Main schematic, then separate monitor project · ${res.pages} pages · ${res.timestamp}`
+        ? `Full schematic · ${res.pages} pages · ${res.timestamp}`
         : `Rendered ${res.timestamp} · scroll to navigate sheets`;
       $('schematicModal').classList.add('open');
     } catch (err) {
@@ -1180,18 +1840,26 @@
     }).join('');
     sel.value = chosen && [...sel.options].some(o => o.value === chosen) ? chosen : '';
   }
+  // The back can be shown whenever there is something to show: a bottom photo, a bottom 3D render, or
+  // a part on B.Cu (Lean's test pads), so Board Boxes works on the back without any photo.
+  function hasBack() {
+    return !!(S.doc.refBot || S.render3dBotImg || (S.board && S.board.footprints.some(fp => fp.side === 'B')));
+  }
+  function hasFront() {
+    return !!(S.doc.ref || S.render3dImg || !S.board || S.board.footprints.some(fp => fp.side !== 'B'));
+  }
   function syncSideButtons() {
     document.querySelectorAll('#sideView button').forEach(b => {
       b.classList.toggle('on', b.dataset.side === S.sideView);
-      if (b.dataset.side === 'both') b.disabled = !(S.doc.ref && S.doc.refBot);
-      if (b.dataset.side === 'bottom') b.disabled = !S.doc.refBot;
-      if (b.dataset.side === 'top') b.disabled = !S.doc.ref;
+      if (b.dataset.side === 'both') b.disabled = !(hasFront() && hasBack());
+      if (b.dataset.side === 'bottom') b.disabled = !hasBack();
+      if (b.dataset.side === 'top') b.disabled = !hasFront();
     });
   }
   function setSideView(mode, refit) {
-    if (mode === 'both' && !(S.doc.ref && S.doc.refBot)) mode = S.doc.refBot && !S.doc.ref ? 'bottom' : 'top';
-    if (mode === 'bottom' && !S.doc.refBot) mode = 'top';
-    if (mode === 'top' && !S.doc.ref && S.doc.refBot) mode = 'bottom';
+    if (mode === 'both' && !(hasFront() && hasBack())) mode = hasBack() && !hasFront() ? 'bottom' : 'top';
+    if (mode === 'bottom' && !hasBack()) mode = 'top';
+    if (mode === 'top' && !hasFront() && hasBack()) mode = 'bottom';
     S.sideView = mode;
     syncSideButtons();
     if (refit && S.board) fit();
@@ -1233,7 +1901,8 @@
     const sc = S.view.scale;
     const refImg = pane.side === 'bot' ? S.refBotImg : S.refImg;
     const hasRef = S.showRef && refImg;
-    const has3D = pane.side === 'top' && S.show3D && S.render3dImg;
+    const img3D = pane.side === 'bot' ? S.render3dBotImg : S.render3dImg;
+    const has3D = S.show3D && !!img3D;
 
     // Layer 1: Reference image (photo). Top render never covers the bottom photo.
     if (hasRef) {
@@ -1246,18 +1915,17 @@
       ctx.restore();
     }
 
-    // Layer 2: 3D CAD render (KiCad 3D model)
+    // Layer 2: 3D CAD render (KiCad 3D model). The board's rect in the image goes onto the board
+    // outline; the rest of the image (parts parked off the board) is drawn around it at the same scale.
     if (has3D) {
       const p = toScreen(bb.x, bb.y);
-      const src = S.render3dBounds || { x: 0, y: 0, w: S.render3dImg.naturalWidth, h: S.render3dImg.naturalHeight };
+      const img = img3D;
+      const src = (pane.side === 'bot' ? S.render3dBotBounds : S.render3dBounds) || { x: 0, y: 0, w: img.naturalWidth, h: img.naturalHeight };
+      const kx = bb.w * sc / src.w, ky = bb.h * sc / src.h;
       ctx.save();
       ctx.globalAlpha = S.opacity;
       ctx.imageSmoothingQuality = 'high';
-      ctx.drawImage(
-        S.render3dImg,
-        src.x, src.y, src.w, src.h,
-        p.x, p.y, bb.w * sc, bb.h * sc
-      );
+      ctx.drawImage(img, p.x - src.x * kx, p.y - src.y * ky, img.naturalWidth * kx, img.naturalHeight * ky);
       ctx.restore();
     }
 
@@ -1273,22 +1941,52 @@
     }
     ctx.restore();
 
+    // Planning drawings from the board's Dwgs.User layer (the long-term XR slot overlay): dashed, labelled.
+    if ((S.board.user_lines || []).length || (S.board.user_texts || []).length) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(190, 150, 255, 0.7)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([6, 4]);
+      for (const seg of S.board.user_lines || []) {
+        if (seg.length < 2) continue;
+        ctx.beginPath();
+        seg.forEach((pt, k) => { const s = toScreen(pt[0], pt[1]); k ? ctx.lineTo(s.x, s.y) : ctx.moveTo(s.x, s.y); });
+        ctx.stroke();
+      }
+      ctx.fillStyle = 'rgba(190, 150, 255, 0.9)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      for (const t of S.board.user_texts || []) {
+        const p = toScreen(t.x, t.y);
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(-(t.angle || 0) * Math.PI / 180);
+        ctx.font = `600 ${Math.min(14, Math.max(9, (t.size || 1.5) * sc * 0.9))}px "JetBrains Mono"`;
+        ctx.fillText(t.text, 0, 0);
+        ctx.restore();
+      }
+      ctx.restore();
+    }
+
     if (S.showSides) drawSideLabels(bb, sc);
+    if (S.explain && S.showGroups) drawGroupOutlines(pane);
 
     // existing footprints (dimmed pads or color-highlighted if selected)
-    if (S.showParts || S.selectMode || S.infoMode) {
+    if (S.showParts || S.selectMode || S.infoMode || S.superMode || S.explain) {
       ctx.save();
       for (const fp of S.board.footprints) {
         if (!fpOnSide(fp, pane.side)) continue;
         const selB = S.doc.boxes.find(b => b.ref === fp.ref);
         const col = selB ? color(selB.c) : null;
         const hex = col ? col.hex : null;
-        const isHover = (S.selectMode || S.infoMode) && S.hoverFp === fp;
+        const hg = S.explain && S.hoverFp ? fpGroup(S.hoverFp) : null;
+        const isHover = ((S.selectMode || S.infoMode) && S.hoverFp === fp) || (S.explain && S.hoverFp && (S.hoverFp === fp || (hg && hg[0].test(fp.ref))));
         const isInfoSel = S.infoFp === fp;
 
         ctx.fillStyle = isInfoSel ? '#ffb347' : (hex ? hex + '88' : (isHover ? (S.infoMode ? 'rgba(255, 179, 71, 0.65)' : 'rgba(60, 240, 208, 0.55)') : 'rgba(255, 255, 255, 0.22)'));
         for (const pad of fp.pads) {
           const c = toScreen(pad.x, pad.y);
+          if (S.superMode) ctx.fillStyle = superPadColor(pad);
           ctx.save();
           ctx.translate(c.x, c.y);
           ctx.rotate((-pad.angle * Math.PI) / 180);
@@ -1322,6 +2020,24 @@
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
         }
+      }
+      ctx.restore();
+    }
+
+    // Inner copper traces (In2.Cu under In1.Cu), drawn on every pane: they have no side
+    for (const [on, name, colour] of [[S.showIn2Cu, 'In2.Cu', '#ffa94d'], [S.showIn1Cu, 'In1.Cu', '#5fd38a']]) {
+      if (!on || !S.board.tracks) continue;
+      ctx.save();
+      ctx.strokeStyle = colour;
+      ctx.lineCap = 'round';
+      for (const tr of S.board.tracks) {
+        if (tr.layer !== name) continue;
+        const p1 = toScreen(tr.x1, tr.y1), p2 = toScreen(tr.x2, tr.y2);
+        ctx.lineWidth = Math.max(1, tr.w * sc);
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
       }
       ctx.restore();
     }
@@ -1363,6 +2079,8 @@
       ctx.restore();
     }
 
+    if (S.superMode && S.superPath) drawSuperPath(pane);
+
     // boxes
     const selBox = S.sel ? box(S.sel.id) : null;
     for (const b of S.doc.boxes) {
@@ -1399,8 +2117,19 @@
         }
         // color number & component ref
         const ci = colorIndex(b.c) + 1;
-        const tagText = b.ref ? `${ci} · ${b.ref}` : String(ci);
-        if (w > 12 && h > 10) {
+        const lbl = tagFor(b, it.i);
+        const tagText = b.ref ? `${ci} · ${b.ref}` : (lbl || String(ci));
+        if (lbl && Math.max(w, h) > 18) {
+          // part label along the box's long side (vertical boxes get vertical text)
+          const tall = h > w * 1.4;
+          ctx.font = `700 ${Math.min(12, Math.max(8, Math.min(w, h) * 0.75))}px "JetBrains Mono"`;
+          ctx.fillStyle = '#fff';
+          ctx.globalAlpha = 0.95;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.translate(p.x + w / 2, p.y + h / 2);
+          if (tall) ctx.rotate(-Math.PI / 2);
+          ctx.fillText(tagText, 0, 0);
+        } else if (w > 12 && h > 10) {
           ctx.font = `700 ${Math.min(13, Math.max(9, h * 0.55, w * 0.35))}px "JetBrains Mono"`;
           ctx.fillStyle = '#fff';
           ctx.globalAlpha = 0.95;
@@ -1731,6 +2460,15 @@
     }
     if (e.button !== 0) return;
 
+    // Super info: click a single pad to see its net and the pads on that net.
+    if (S.superMode) {
+      const hit = hitPad(m);
+      if (hit) showPadInfo(hit.fp, hit.pad);
+      else setPadPanelEmpty();
+      render();
+      return;
+    }
+
     // Component info inspection mode: click any component to inspect details.
     // Never fall through into draw/move — that was fighting Info mode.
     if (S.infoMode) {
@@ -1841,6 +2579,25 @@
       S.view.y -= (e.clientY - S.pan.y) / S.view.scale;
       S.pan = { x: e.clientX, y: e.clientY };
       render();
+      return;
+    }
+
+    if (S.explain && !S.drag && !S.selectMode && !S.infoMode) {
+      const prev = S.hoverFp;
+      S.hoverFp = hitFootprint(m);
+      showExplain(S.hoverFp, e);
+      if (S.hoverFp !== prev) render();
+      return;
+    }
+
+    if (S.superMode && !S.drag) {
+      const h = hitPad(m);
+      const next = h ? h.pad : null;
+      if (next !== S.padHover) {
+        S.padHover = next;
+        canvas.className = next ? 'over-box' : '';
+        render();
+      }
       return;
     }
 
@@ -2145,6 +2902,44 @@
     toast('Color armed — drag on the board to draw');
   }
 
+  // ---------- SAVE / OPEN AS .TXT (work from a laptop without the local server) ----------
+  function saveTxt() {
+    if (!S.boardPath) return;
+    const { exists, ...doc } = S.doc;
+    const d = new Date(), p = v => String(v).padStart(2, '0');
+    const stamp = `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`;
+    const name = `${S.boardPath.split('/').pop().replace(/\.kicad_pcb$/i, '')}-boxes-${stamp}.txt`;
+    const body = JSON.stringify({ board: S.boardPath, saved: d.toISOString(), ...doc }, null, 1);
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([body], { type: 'text/plain' }));
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    toast(`Saved <b>${esc(name)}</b> (${totalCount()} boxes)`);
+  }
+
+  function openTxt(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      let d;
+      try { d = JSON.parse(rd.result); } catch { d = null; }
+      if (!d || !Array.isArray(d.colors) || !Array.isArray(d.boxes)) return toast('That file isn\'t a Board Boxes save', 'err');
+      if (d.board && d.board !== S.boardPath &&
+          !confirm(`This file was saved from ${d.board}.\nLoad its boxes onto ${S.boardPath} anyway?`)) return;
+      S.doc.colors = d.colors;
+      S.doc.boxes = d.boxes;
+      S.sel = null;
+      S.activeColor = null;
+      ensureColorExists();
+      commit();
+      scheduleSave();
+      toast(`Loaded ${d.boxes.length} boxes from <b>${esc(file.name)}</b>. Undo puts the old ones back.`);
+    };
+    rd.readAsText(file);
+  }
+
   // ---------- EXPORT ----------
   function buildPrompt() {
     const boxesFile = S.boardPath.replace(/\.kicad_pcb$/i, '.boxes.json');
@@ -2155,6 +2950,9 @@
     if (S.doc.refBot) lines.push(`Bottom reference image: \`${S.doc.refBot}\``);
     if (S.render3dPath) {
       lines.push(`Top-Down 3D CAD render: \`${S.render3dPath}\``);
+    }
+    if (S.render3dBotPath) {
+      lines.push(`Bottom 3D CAD render (mirrored to board coordinates): \`${S.render3dBotPath}\``);
     }
     if (S.renderIsoPath) {
       lines.push(`Isometric 3D CAD render: \`${S.renderIsoPath}\``);
@@ -2189,7 +2987,8 @@
         list.forEach((it, j) => {
           n++;
           const pat = name ? `${name} ${j + 1}/${list.length} · ${fmt(b.pat.pitch)} mm ${DIR_ARROW[b.pat.dir]}` : (b.ref ? 'Component on PCB' : '–');
-          const refStr = b.ref ? `**${b.ref}**` : `Box ${n}`;
+          const lbl = tagFor(b, it.i);
+          const refStr = b.ref ? `**${b.ref}**` : lbl ? `**${lbl}** (planned)` : `Box ${n}`;
           const valStr = b.ref ? `${b.val || '–'} / ${b.fpid || '–'}` : '–';
           lines.push(`| ${n} | ${refStr} | ${valStr} | ${fmt(it.x)} | ${fmt(it.y)} | ${fmt(it.w)}×${fmt(it.h)} | ${pat} |`);
         });
@@ -2271,6 +3070,7 @@
     if ($('btnRedo')) $('btnRedo').disabled = S.redo.length === 0;
     if ($('btnSelectMode')) $('btnSelectMode').classList.toggle('active', !!S.selectMode);
     if ($('btnInfoMode')) $('btnInfoMode').classList.toggle('active', !!S.infoMode);
+    if ($('btnSuperInfo')) $('btnSuperInfo').classList.toggle('active', !!S.superMode);
     render();
   }
 
@@ -2311,6 +3111,7 @@
     // and never accidentally resizes or resets orientation of existing boxes!
     S.sel = null;
     if (S.infoMode) toggleInfoMode(false);
+    if (S.superMode) toggleSuperMode(false);
     S.selectMode = false;
     if (!S.activeColor || !color(S.activeColor)) {
       ensureArmedColor();
@@ -2355,9 +3156,23 @@
       clearTimeout(resizeFitTimer);
       resizeFitTimer = setTimeout(() => { if (S.board) fit(); }, 120);
     });
+    // The stage can change size without a window resize (page still laying out on first
+    // load, a hidden pane being shown). Re-fit then too, or the board opens as a speck.
+    if (window.ResizeObserver) {
+      let lastW = 0, lastH = 0;
+      new ResizeObserver(entries => {
+        const { width, height } = entries[0].contentRect;
+        if (Math.abs(width - lastW) < 2 && Math.abs(height - lastH) < 2) return;
+        lastW = width; lastH = height;
+        clearTimeout(resizeFitTimer);
+        resizeFitTimer = setTimeout(() => { resize(); if (S.board) fit(); }, 120);
+      }).observe(stage);
+    }
     canvas.addEventListener('mousedown', onDown);
     window.addEventListener('mousemove', onMove);
     window.addEventListener('mouseup', onUp);
+    const tglGroups = $('tglGroups');
+    if (tglGroups) tglGroups.onclick = () => { S.showGroups = !S.showGroups; tglGroups.classList.toggle('active', S.showGroups); render(); };
     canvas.addEventListener('mouseleave', () => {
       S.mousePos = null;
       if (S.activePreset) render();
@@ -2380,7 +3195,7 @@
     const tgl3D = $('tgl3D');
     if (tgl3D) {
       tgl3D.onclick = () => {
-        if (!S.render3dImg) {
+        if (!S.render3dImg && !S.render3dBotImg) {
           toast('No 3D render yet. Click <b>Render 3D</b> in the top bar to generate one.', 'info');
           return;
         }
@@ -2389,6 +3204,14 @@
         render();
       };
     }
+    const tglExplain = $('tglExplain');
+    if (tglExplain) tglExplain.onclick = () => {
+      S.explain = !S.explain; tglExplain.classList.toggle('active', S.explain);
+      const tg = $('tglGroups'); if (tg) tg.hidden = !S.explain;
+      if (!S.explain) { S.hoverFp = null; showExplain(null); }
+      render();
+    };
+    canvas.addEventListener('mouseleave', () => { if (S.explain) { S.hoverFp = null; showExplain(null); render(); } });
     $('tglParts').onclick = () => { S.showParts = !S.showParts; $('tglParts').classList.toggle('active', S.showParts); render(); };
 
     const tglTopCu = $('tglTopCu');
@@ -2398,6 +3221,10 @@
         tglTopCu.classList.toggle('active', S.showTopCu);
         render();
       };
+    }
+    for (const [id, key] of [['tglIn1Cu', 'showIn1Cu'], ['tglIn2Cu', 'showIn2Cu']]) {
+      const b = $(id);
+      if (b) b.onclick = () => { S[key] = !S[key]; b.classList.toggle('active', S[key]); render(); };
     }
     const tglBotCu = $('tglBotCu');
     if (tglBotCu) {
@@ -2448,6 +3275,8 @@
 
     const btnTop = $('btnTopRender3D');
     if (btnTop) btnTop.onclick = () => triggerRender3D('top');
+    const btnBot = $('btnBotRender3D');
+    if (btnBot) btnBot.onclick = () => triggerRender3D('bottom');
     const btnSchematic = $('btnSchematic');
     if (btnSchematic) btnSchematic.onclick = triggerRenderSchematic;
     const btnFullSchematic = $('btnFullSchematic');
@@ -2473,6 +3302,10 @@
     if (btnSelectMode) btnSelectMode.onclick = toggleSelectMode;
     const btnInfoMode = $('btnInfoMode');
     if (btnInfoMode) btnInfoMode.onclick = () => toggleInfoMode();
+    const btnSuperInfo = $('btnSuperInfo');
+    if (btnSuperInfo) btnSuperInfo.onclick = () => toggleSuperMode();
+    if ($('tglSuperPulse')) $('tglSuperPulse').onclick = () => setSuperOption('superPulse', !S.superPulse);
+    if ($('tglSuperFull')) $('tglSuperFull').onclick = () => setSuperOption('superFull', !S.superFull);
     const btnCopyInfo = $('btnCopyInfo');
     if (btnCopyInfo) btnCopyInfo.onclick = copyPartInfo;
     const btnCloseInfo = $('btnCloseInfo');
@@ -2593,6 +3426,9 @@
     $('btnRefReset').onclick = () => { S.doc.refFit = { ox: 0, oy: 0, sx: 100, sy: 100 }; fillRefFit(); render(); scheduleSave(); };
 
     $('btnExport').onclick = openPrompt;
+    $('btnSaveTxt').onclick = saveTxt;
+    $('btnOpenTxt').onclick = () => $('openTxtFile').click();
+    $('openTxtFile').onchange = e => { const f = e.target.files[0]; if (f) openTxt(f); e.target.value = ''; };
     $('btnCopy').onclick = () => copy($('modalText').textContent);
     $('btnClose').onclick = () => $('modal').classList.remove('open');
     $('modal').addEventListener('click', e => { if (e.target === $('modal')) $('modal').classList.remove('open'); });

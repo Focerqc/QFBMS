@@ -14,24 +14,25 @@ import os
 import socketserver
 import subprocess
 import urllib.parse
-from PIL import Image
+from part_notes import notes_for_board
+from PIL import Image, ImageOps
 from pypdf import PdfReader, PdfWriter
 import tempfile
 
-PORT = 5180
+PORT = int(os.environ.get("DASHBOARD_PORT", "5180"))
 TOOL_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(TOOL_DIR, "..", ".."))
 KICAD_PYTHON = r"C:\Program Files\KiCad\10.0\bin\python.exe"
 KICAD_CLI = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
 BRIDGE = os.path.join(TOOL_DIR, "kicad_bridge.py")
-SKIP_DIRS = {".git", ".history", "node_modules", ".dashboard_backups", "__pycache__"}
+SKIP_DIRS = {"site", "racc", "route", ".git", ".history", "node_modules", ".dashboard_backups", "__pycache__"}
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 
 _board_cache = {}  # abs_path -> (mtime, data)
 
 
 def render_3d_file(board_full, kind="top"):
-    suffix = "_3d_iso.png" if kind == "iso" else "_3d_top.png"
+    suffix = {"iso": "_3d_iso.png", "bottom": "_3d_bottom.png"}.get(kind, "_3d_top.png")
     return os.path.splitext(board_full)[0] + suffix
 
 
@@ -51,7 +52,7 @@ def crop_render_png(out_png, kind="top", force=False):
         margins = (bbox[0], bbox[1], w - bbox[2], h - bbox[3])
         # Skip rewrite when already tight (top) or already padded (iso).
         if not force:
-            if kind == "top" and max(margins) <= 1:
+            if kind in ("top", "bottom") and max(margins) <= 1:
                 return False
             if kind == "iso" and max(margins) <= pad + 1 and min(margins) >= max(0, pad - 2):
                 return False
@@ -102,9 +103,11 @@ def render_board_3d(board_full, kind="top"):
             board_full
         ]
     else:
+        # "bottom" looks at the back of the board; mirrored below so it sits on the board outline
+        # the same way the top render does (the dashboard draws both in board coordinates)
         cmd = [
             KICAD_CLI, "pcb", "render",
-            "--side", "top",
+            "--side", "bottom" if kind == "bottom" else "top",
             "--width", "4000",
             "--height", "2000",
             "--background", "transparent",
@@ -116,6 +119,8 @@ def render_board_3d(board_full, kind="top"):
         raise RuntimeError(f"kicad-cli render failed: {res.stderr or res.stdout}")
 
     crop_render_png(out_png, kind=kind, force=True)
+    if kind == "bottom":
+        ImageOps.mirror(Image.open(out_png).convert("RGBA")).save(out_png)
 
     mtime = os.path.getmtime(out_png)
     dt = datetime.datetime.fromtimestamp(mtime)
@@ -156,7 +161,8 @@ def full_schematic_pdf_file(board_full):
     return os.path.join(REPO_ROOT, "exports", f"full-system-schematic-{key}.pdf")
 
 
-def render_full_schematic(board_full):
+def render_combined_qfbms32(board_full):
+    """Old QFBMS board: main schematic followed by the separate BQ monitor project."""
     if not board_full.lower().endswith(".kicad_pcb"):
         raise ValueError("path must be a .kicad_pcb")
     main_schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
@@ -195,18 +201,40 @@ def render_full_schematic(board_full):
             "timestamp": datetime.datetime.fromtimestamp(os.path.getmtime(output_pdf)).strftime("%b %d, %I:%M:%S %p")}
 
 
+def render_full_schematic(board_full):
+    """Export the board's own schematic (all hierarchical sheets) to one PDF."""
+    if not board_full.lower().endswith(".kicad_pcb"):
+        raise ValueError("path must be a .kicad_pcb")
+    if os.path.basename(board_full).lower() == "qfbms32.kicad_pcb":
+        return render_combined_qfbms32(board_full)
+    schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
+    if not os.path.isfile(schematic):
+        raise FileNotFoundError("No schematic matches this board")
+    output_pdf = full_schematic_pdf_file(board_full)
+    os.makedirs(os.path.dirname(output_pdf), exist_ok=True)
+    result = subprocess.run([KICAD_CLI, "sch", "export", "pdf", "--output", output_pdf, schematic],
+                            capture_output=True, text=True, timeout=120)
+    if result.returncode or not os.path.isfile(output_pdf):
+        raise RuntimeError(f"Schematic export failed: {result.stderr or result.stdout}")
+    return {"status": "ok", "pdf": rel(output_pdf), "pages": len(PdfReader(output_pdf).pages),
+            "timestamp": datetime.datetime.fromtimestamp(os.path.getmtime(output_pdf)).strftime("%b %d, %I:%M:%S %p")}
+
+
 def get_render_3d_status(board_full, kind=None):
-    if kind in ("top", "iso"):
+    if kind in ("top", "iso", "bottom"):
         return render_status_entry(render_3d_file(board_full, kind=kind), kind)
     top_png = render_3d_file(board_full, "top")
     iso_png = render_3d_file(board_full, "iso")
+    bot_png = render_3d_file(board_full, "bottom")
     res = {
         "top": render_status_entry(top_png, "top"),
         "iso": render_status_entry(iso_png, "iso"),
+        "bottom": render_status_entry(bot_png, "bottom"),
     }
     # Nested entries historically omit kind; keep that shape for the UI.
     res["top"].pop("kind", None)
     res["iso"].pop("kind", None)
+    res["bottom"].pop("kind", None)
     res["exists"] = res["top"]["exists"]
     res["image"] = res["top"].get("image")
     res["timestamp"] = res["top"].get("timestamp")
@@ -293,7 +321,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         try:
             if u.path == "/api/boards":
                 boards = sorted(rel(p) for p in walk_files({".kicad_pcb"}))
-                boards.sort(key=lambda b: (0 if "qfbms32" in b.lower() else 1, b))
+                boards.sort(key=lambda b: (0 if "rev-a" in b.lower() else 1 if "qfbms32" in b.lower() else 2, b))
                 return self.send_json(boards)
 
             if u.path == "/api/images":
@@ -309,7 +337,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
             if u.path == "/api/board":
                 full = safe_path(q.get("path", [""])[0])
-                return self.send_json(read_board(full))
+                board = dict(read_board(full))
+                refs = [f["ref"] for f in board.get("footprints", [])]
+                board["partNotes"] = notes_for_board(board["path"], refs)
+                return self.send_json(board)
 
             if u.path == "/api/boxes":
                 bf = boxes_file(safe_path(q.get("path", [""])[0]))
@@ -359,7 +390,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("Content-Type", "application/pdf")
                 self.send_header("Content-Length", str(len(data)))
-                self.send_header("Content-Disposition", "inline; filename=qfbms-full-system-schematic.pdf")
+                self.send_header("Content-Disposition", "inline; filename=full-schematic.pdf")
                 self.end_headers()
                 self.wfile.write(data)
                 return

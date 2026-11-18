@@ -11,19 +11,27 @@ vm.runInContext(fs.readFileSync(path.join(site, 'hosted.js'), 'utf8'), context);
 (async () => {
  const request = async (endpoint, options) => (await context.window.dashboardFetch(endpoint, options)).json();
  const boards = await request('/api/boards');
- assert.equal(boards.length, 3);
- assert.equal(boards[0], 'rev-a/qfbms-rev-a.kicad_pcb');
+ assert.equal(boards[0], 'rev-a/qfbms-rev-a.kicad_pcb', 'rev A opens first');
+ assert.ok(Object.keys((await request('/api/board?path=' + encodeURIComponent(boards[0]))).partNotes || {}).length > 150, 'rev A part notes published');
  for (const board of boards) {
   const query = '?path=' + encodeURIComponent(board);
   assert.equal((await request('/api/board' + query)).path, board);
   assert.equal((await request('/api/render_status' + query)).top.exists, true);
+  const sch = await request('/api/render_full_schematic' + query);
+  assert.equal(sch.status, 'ok', board + ' schematic');
+  assert.ok(fs.existsSync(path.join(site, sch.pdf)), sch.pdf);
   await request('/api/boxes' + query, {method: 'POST', body: JSON.stringify({colors: [{id:'test'}]})});
   assert.equal((await request('/api/boxes' + query)).colors[0].id, 'test');
  }
  for (const asset of Object.values(snapshot.assets)) assert.ok(fs.existsSync(path.join(site, asset)), asset);
- for (const file of ['news.html', 'news.css', 'files/full-system-schematic.pdf', 'files/main-schematic-draft.pdf', 'files/rev-a-schematic.pdf', 'files/rev-a-3d-top.png']) assert.ok(fs.existsSync(path.join(site, file)), file);
+ for (const file of ['news.html', 'news.css']) assert.ok(fs.existsSync(path.join(site, file)), file);
  assert.ok(!fs.readFileSync(path.join(site, 'app.js'), 'utf8').includes('`/api/image'));
- assert.ok(fs.readFileSync(path.join(site, 'index.html'), 'utf8').includes('href="news.html"'));
- assert.ok(!fs.readFileSync(path.join(site, 'news.html'), 'utf8').includes('Samsung 50S'));
- console.log('Passed: board snapshots, renders, browser saves, assets, News and PDF targets.');
+ const page = fs.readFileSync(path.join(site, 'index.html'), 'utf8');
+ assert.ok(page.includes('href="news.html"'));
+ for (const file of ['style.css', 'hosted.js', 'app.js']) {
+  const digest = require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(site, file))).digest('hex').slice(0, 10);
+  assert.ok(page.includes(`"${file}?v=${digest}"`), `index.html must load ${file}?v=${digest} (re-run export_site.py)`);
+ }
+ assert.ok(!JSON.stringify(snapshot).includes('racc'), 'private racc folder must not be published');
+ console.log('Passed: board snapshots, renders, schematics, browser saves, assets, News, hashed script/style URLs, no private files.');
 })();
