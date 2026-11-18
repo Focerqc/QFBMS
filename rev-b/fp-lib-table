@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "qfbms_revb")(type "KiCad")(uri "${KIPRJMOD}/qfbms_revb.pretty")(options "")(descr "Rev B local footprints"))
+)
