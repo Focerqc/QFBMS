@@ -23,3 +23,11 @@ Thumbs.db
 exports/*
 !exports/README.md
 qfbms32_3d_*.png
+
+# SolidWorks files from importing the STEP models (binary, regenerable)
+*.SLDPRT
+*.SLDASM
+*.SLDDRW
+
+# Compiled host test programs
+rev-b/verification/*.exe
