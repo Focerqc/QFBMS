@@ -25,7 +25,8 @@ DATA.mkdir(exist_ok=True)
 FILES.mkdir(exist_ok=True)
 KICAD_CLI = r'C:\Program Files\KiCad\10.0\bin\kicad-cli.exe'
 KICAD_PY = r'C:\Program Files\KiCad\10.0\bin\python.exe'
-BOARDS = ['rev-a/qfbms-rev-a.kicad_pcb', 'qfbms32.kicad_pcb', 'exports/reconciliation-qa/qfbms32.kicad_pcb']
+BOARDS = ['rev-a/qfbms-rev-a.kicad_pcb', 'rev-a/qfbms-rev-a-visual.kicad_pcb', 'qfbms32.kicad_pcb',
+          'exports/reconciliation-qa/qfbms32.kicad_pcb']
 # Old board: main schematic + separate monitor project, published once (Nov 4) and kept as is.
 OLD_SCHEMATIC = 'files/full-system-schematic.pdf'
 
@@ -85,8 +86,9 @@ for relative in BOARDS:
 
     # Schematic PDF per board, published next to the snapshot.
     if relative.startswith('rev-a/'):
+        # Both rev A boards (routed and the visual-only copy) share rev A's schematic.
         pdf = FILES / 'rev-a-schematic.pdf'
-        subprocess.run([KICAD_CLI, 'sch', 'export', 'pdf', '-o', str(pdf), str(source.with_suffix('.kicad_sch'))],
+        subprocess.run([KICAD_CLI, 'sch', 'export', 'pdf', '-o', str(pdf), str(ROOT / 'rev-a/qfbms-rev-a.kicad_sch')],
                        check=True, capture_output=True)
         stamp = datetime.datetime.now().strftime('%B %d, %Y')
         rel_pdf = 'files/' + pdf.name

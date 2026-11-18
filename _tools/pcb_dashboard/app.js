@@ -1349,11 +1349,13 @@
   // ---------- LOADING ----------
   // Which revision a board file is. Drives the Board menu label, the rev badge in the
   // top bar, the label on the canvas, the tab title and the Copy Prompt header.
-  // tone picks the badge color: a (amber), b (cyan), old (violet), other (grey).
+  // tone picks the badge color: a (amber), vis (pink), b (cyan), old (violet), other (grey).
   function boardInfo(path) {
     const file = (path || '').split('/').pop();
-    if (/(^|\/)rev-a\//.test(path)) return { rev: 'Rev A', tag: 'A', tone: 'a', status: 'visual model',
-      detail: 'Parts placed to match the V1.0 photo. Tracks were not rerouted, so this is not for fab.', file };
+    if (/(^|\/)rev-a\/.*-visual\.kicad_pcb$/i.test(path)) return { rev: 'Rev A', tag: 'A', tone: 'vis', status: 'visual model',
+      detail: 'Parts placed to match the V1.0 photo. Tracks are copied from the routed board and were not rerouted, so this is not for fab.', file };
+    if (/(^|\/)rev-a\//.test(path)) return { rev: 'Rev A', tag: 'A', tone: 'a', status: 'routed',
+      detail: 'The generated, routed 4-layer layout. The external review findings are still open.', file };
     const m = /(^|\/)rev-([a-z0-9]+)\//i.exec(path || '');
     if (m) { const r = m[2].toUpperCase();
       return { rev: `Rev ${r}`, tag: r, tone: r === 'B' ? 'b' : 'other', status: 'working board', detail: '', file }; }

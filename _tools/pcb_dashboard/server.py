@@ -143,6 +143,9 @@ def render_schematic(board_full):
     if not board_full.lower().endswith(".kicad_pcb"):
         raise ValueError("path must be a .kicad_pcb")
     schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
+    # A visual-only copy (<name>-visual.kicad_pcb) shares the real board's schematic.
+    if not os.path.isfile(schematic) and schematic.endswith("-visual.kicad_sch"):
+        schematic = schematic[: -len("-visual.kicad_sch")] + ".kicad_sch"
     if not os.path.isfile(schematic):
         raise FileNotFoundError(f"Matching schematic not found: {rel(schematic)}")
     out_pdf = schematic_pdf_file(board_full)
@@ -208,6 +211,9 @@ def render_full_schematic(board_full):
     if os.path.basename(board_full).lower() == "qfbms32.kicad_pcb":
         return render_combined_qfbms32(board_full)
     schematic = os.path.splitext(board_full)[0] + ".kicad_sch"
+    # A visual-only copy (<name>-visual.kicad_pcb) shares the real board's schematic.
+    if not os.path.isfile(schematic) and schematic.endswith("-visual.kicad_sch"):
+        schematic = schematic[: -len("-visual.kicad_sch")] + ".kicad_sch"
     if not os.path.isfile(schematic):
         raise FileNotFoundError("No schematic matches this board")
     output_pdf = full_schematic_pdf_file(board_full)

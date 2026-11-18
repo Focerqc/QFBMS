@@ -442,6 +442,7 @@ kbd {
 /* Which revision is open: badge in the top bar and a label on the canvas. */
 .rev-badge, .hud-rev { --tone: var(--dim); }
 .rev-badge[data-tone="a"], .hud-rev[data-tone="a"] { --tone: var(--amber); }
+.rev-badge[data-tone="vis"], .hud-rev[data-tone="vis"] { --tone: #ff8fd0; }
 .rev-badge[data-tone="b"], .hud-rev[data-tone="b"] { --tone: var(--cyan); }
 .rev-badge[data-tone="old"], .hud-rev[data-tone="old"] { --tone: var(--violet); }
 .rev-badge {
