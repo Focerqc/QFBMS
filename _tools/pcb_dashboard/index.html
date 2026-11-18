@@ -79,6 +79,10 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
         View Iso
       </button>
+      <button id="btnCompare" class="btn btn-ghost btn-sm btn-compare hidden" title="Line the render up with the real board photo and the wiring diagram: stacked, overlaid or swiped">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/></svg>
+        Compare
+      </button>
       <span id="renderTimeBadge" class="render-badge" title="Timestamp of top-down 3D render">Top: –</span>
       <span id="renderBotTimeBadge" class="render-badge" title="Timestamp of the bottom 3D render">Bottom: –</span>
       <span id="renderIsoTimeBadge" class="render-badge hidden" title="Timestamp of isometric 3D render">Iso: –</span>
@@ -371,6 +375,39 @@
         <div class="iso-hint">
           <span>Scroll wheel to zoom · Drag to pan · Double-click to toggle 100%/Fit</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARE: render vs reference pictures -->
+  <div id="compareModal" class="modal iso-modal">
+    <div class="iso-window">
+      <div class="iso-header compare-header">
+        <div class="iso-title-group">
+          <div class="iso-icon compare-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/></svg>
+          </div>
+          <div>
+            <h3>Compare with reference</h3>
+            <small id="compareSub">Render vs reference</small>
+          </div>
+        </div>
+        <div class="iso-toolbar compare-toolbar">
+          <label class="compare-field"><span>Reference</span><select id="compareSource"></select></label>
+          <div class="compare-seg" id="compareMode" role="group" aria-label="Compare mode">
+            <button type="button" data-mode="stack">Stacked</button>
+            <button type="button" data-mode="overlay">Overlay</button>
+            <button type="button" data-mode="swipe">Swipe</button>
+          </div>
+          <label class="compare-field compare-opacity" id="compareOpacityWrap"><span>Render</span>
+            <input type="range" id="compareOpacity" min="0" max="100" value="50"><b id="compareOpacityVal">50%</b>
+          </label>
+          <button id="btnCompareClose" class="btn btn-ghost btn-sm" title="Close (Esc)">✕</button>
+        </div>
+      </div>
+      <div class="iso-viewport compare-viewport" id="compareViewport">
+        <canvas id="compareCanvas"></canvas>
+        <div class="iso-hint"><span id="compareHint"></span></div>
       </div>
     </div>
   </div>

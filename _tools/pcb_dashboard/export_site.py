@@ -70,6 +70,12 @@ for relative in BOARDS:
     board['path'] = relative
     board['partNotes'] = notes_for_board(relative, [f['ref'] for f in board.get('footprints', [])])
     sanitize(board)
+    # Reference pictures warped into the board frame, for the Compare view.
+    comparefile = source.with_suffix('.compare.json')
+    if comparefile.exists():
+        board['compare'] = json.loads(comparefile.read_text(encoding='utf-8'))
+        for picture in board['compare'].get('images', []):
+            asset(picture['path'])
     boxfile = source.with_suffix('.boxes.json')
     boxes = json.loads(boxfile.read_text(encoding='utf-8')) if boxfile.exists() else {}
     boxes['exists'] = boxfile.exists()

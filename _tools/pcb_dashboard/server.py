@@ -346,6 +346,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 board = dict(read_board(full))
                 refs = [f["ref"] for f in board.get("footprints", [])]
                 board["partNotes"] = notes_for_board(board["path"], refs)
+                # Reference pictures warped into this board's frame (<board>.compare.json), for the Compare view.
+                compare = os.path.splitext(full)[0] + ".compare.json"
+                if os.path.isfile(compare):
+                    with open(compare, "r", encoding="utf-8") as f:
+                        board["compare"] = json.load(f)
                 return self.send_json(board)
 
             if u.path == "/api/boxes":

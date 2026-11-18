@@ -1,0 +1,31 @@
+{
+ "note": "Reference pictures warped into the board frame. Made by rev-a/tools/make_compare_images.py.",
+ "boardMm": [
+  130.0,
+  32.0
+ ],
+ "images": [
+  {
+   "label": "Real board \u00b7 V1.0 photo",
+   "path": "rev-a/compare/v1_0_photo.png",
+   "source": "_reference/vfbms32_v1_0_photo.webp",
+   "board": [
+    80.0,
+    80.0,
+    2680.0,
+    720.0
+   ]
+  },
+  {
+   "label": "32s wiring diagram \u00b7 V1.1 board",
+   "path": "rev-a/compare/v1_1_wiring.png",
+   "source": "_reference/vfbms32_wiring_32s_best.jpg",
+   "board": [
+    80.0,
+    80.0,
+    2680.0,
+    720.0
+   ]
+  }
+ ]
+}

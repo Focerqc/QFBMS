@@ -1450,6 +1450,7 @@
       ]);
       if (board.error) throw new Error(board.error);
       S.board = board;
+      syncCompareButton();
       S.doc = Object.assign(emptyDoc(), doc && !doc.error ? doc : {});
       S.doc.refFit = Object.assign({ ox: 0, oy: 0, sx: 100, sy: 100 }, S.doc.refFit);
       ensureColorExists();
@@ -1768,6 +1769,165 @@
 
   function closeIsoViewer() {
     $('isoModal').classList.remove('open');
+  }
+
+  // ---------- COMPARE (render vs reference pictures) ----------
+  // A board can list reference pictures already warped into its frame (<board>.compare.json, made by
+  // rev-a/tools/make_compare_images.py). Each picture says where the board outline sits in it, and the
+  // top 3D render's board rect (S.render3dBounds) is mapped onto that, so both line up exactly.
+  const CMP = { mode: 'stack', src: 0, opacity: 0.5, swipe: 0.5, imgs: {}, layout: null };
+  try { const m = localStorage.getItem('pcb_dashboard_compare_mode'); if (['stack', 'overlay', 'swipe'].includes(m)) CMP.mode = m; } catch {}
+  const compareSet = () => (S.board && S.board.compare && S.board.compare.images) || [];
+  function syncCompareButton() { $('btnCompare')?.classList.toggle('hidden', !compareSet().length); }
+
+  function compareImage(src) {
+    if (CMP.imgs[src]) return CMP.imgs[src];
+    const img = new Image();
+    img.onload = () => drawCompare();
+    img.onerror = () => toast(`Couldn't load <code>${esc(src)}</code>`, 'err');
+    img.src = `/api/image?path=${encodeURIComponent(src)}`;
+    CMP.imgs[src] = img;
+    return img;
+  }
+
+  function openCompare() {
+    const set = compareSet();
+    if (!set.length) return;
+    if (!S.render3dImg) return toast('This board has no top render yet. Make one with Top-Down Render first.', 'warn');
+    CMP.src = Math.min(CMP.src, set.length - 1);
+    $('compareSource').innerHTML = set.map((p, i) => `<option value="${i}">${esc(p.label)}</option>`).join('');
+    $('compareSource').value = String(CMP.src);
+    const info = boardInfo(S.boardPath);
+    $('compareSub').textContent = `${info.rev}${info.status ? ' · ' + info.status : ''} render vs reference · same scale, board outlines matched`;
+    $('compareModal').classList.add('open');
+    setCompareMode(CMP.mode);
+    compareImage(set[CMP.src].path);
+    requestAnimationFrame(drawCompare);
+  }
+  function closeCompare() { $('compareModal').classList.remove('open'); }
+
+  function setCompareMode(mode) {
+    CMP.mode = mode;
+    try { localStorage.setItem('pcb_dashboard_compare_mode', mode); } catch {}
+    document.querySelectorAll('#compareMode button').forEach(b => b.classList.toggle('on', b.dataset.mode === mode));
+    $('compareOpacityWrap').classList.toggle('hidden', mode !== 'overlay');
+    $('compareHint').textContent = {
+      stack: 'Render on top, reference below, same scale',
+      overlay: 'Use the slider to fade the render over the reference',
+      swipe: 'Drag across the board to wipe between the render (left) and the reference (right)',
+    }[mode];
+    $('compareViewport').classList.toggle('swipe', mode === 'swipe');
+    drawCompare();
+  }
+
+  function drawCompare() {
+    const modal = $('compareModal');
+    if (!modal || !modal.classList.contains('open')) return;
+    const canvas = $('compareCanvas'), vp = $('compareViewport');
+    const dpr = window.devicePixelRatio || 1;
+    const cw = vp.clientWidth, ch = vp.clientHeight;
+    canvas.width = Math.round(cw * dpr); canvas.height = Math.round(ch * dpr);
+    canvas.style.width = cw + 'px'; canvas.style.height = ch + 'px';
+    const c = canvas.getContext('2d');
+    c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    c.clearRect(0, 0, cw, ch);
+    const pic = compareSet()[CMP.src];
+    const P = pic && compareImage(pic.path);
+    const R = S.render3dImg;
+    if (!P || !P.naturalWidth || !R) return;
+    const PW = P.naturalWidth, PH = P.naturalHeight;
+    const [bx0, by0, bx1, by1] = pic.board;
+    const rb = S.render3dBounds || { x: 0, y: 0, w: R.naturalWidth, h: R.naturalHeight };
+    const kx = (bx1 - bx0) / rb.w, ky = (by1 - by0) / rb.h;
+    const gap = PH * 0.06;
+    const stack = CMP.mode === 'stack';
+    const totalH = stack ? PH * 2 + gap : PH;
+    const s = Math.min(cw * 0.96 / PW, (ch - 44) * 0.96 / totalH);
+    const ox = (cw - PW * s) / 2, oy = (ch - 30 - totalH * s) / 2;
+
+    const frame = (fy, drawPic, renderAlpha, clipX) => {
+      c.save();
+      c.beginPath(); c.rect(ox, fy, PW * s, PH * s); c.clip();
+      c.fillStyle = '#0b0f17'; c.fillRect(ox, fy, PW * s, PH * s);
+      c.imageSmoothingQuality = 'high';
+      if (drawPic) c.drawImage(P, ox, fy, PW * s, PH * s);
+      if (renderAlpha > 0) {
+        if (clipX != null) { c.beginPath(); c.rect(ox, fy, clipX - ox, PH * s); c.clip(); }
+        c.globalAlpha = renderAlpha;
+        c.drawImage(R, ox + (bx0 - rb.x * kx) * s, fy + (by0 - rb.y * ky) * s, R.naturalWidth * kx * s, R.naturalHeight * ky * s);
+      }
+      c.restore();
+      c.save();
+      c.strokeStyle = 'rgba(60, 240, 208, 0.35)'; c.setLineDash([5, 4]); c.lineWidth = 1;
+      c.strokeRect(ox + bx0 * s, fy + by0 * s, (bx1 - bx0) * s, (by1 - by0) * s);
+      c.restore();
+    };
+    const tag = (text, x, y, color) => {
+      c.save();
+      c.font = '600 11.5px "Space Grotesk", system-ui, sans-serif';
+      const w = c.measureText(text).width + 16;
+      c.fillStyle = 'rgba(7, 9, 14, 0.82)'; c.strokeStyle = color; c.lineWidth = 1;
+      c.beginPath(); c.roundRect(x, y, w, 22, 6); c.fill(); c.stroke();
+      c.fillStyle = color; c.fillText(text, x + 8, y + 15);
+      c.restore();
+    };
+    const info = boardInfo(S.boardPath);
+    const renderName = `Render · ${info.rev}${info.status ? ' ' + info.status : ''}`;
+    if (stack) {
+      frame(oy, false, 1);
+      frame(oy + (PH + gap) * s, true, 0);
+      tag(renderName, ox + 8, oy + 8, '#ff8fd0');
+      tag(pic.label, ox + 8, oy + (PH + gap) * s + 8, '#3cf0d0');
+    } else if (CMP.mode === 'overlay') {
+      frame(oy, true, CMP.opacity);
+      tag(`${renderName} at ${Math.round(CMP.opacity * 100)}% over ${pic.label}`, ox + 8, oy + 8, '#ff8fd0');
+    } else {
+      const x = ox + CMP.swipe * PW * s;
+      frame(oy, true, 1, x);
+      c.save();
+      c.strokeStyle = '#ffffff'; c.lineWidth = 2;
+      c.beginPath(); c.moveTo(x, oy); c.lineTo(x, oy + PH * s); c.stroke();
+      c.fillStyle = '#ffffff'; c.beginPath(); c.arc(x, oy + PH * s / 2, 9, 0, Math.PI * 2); c.fill();
+      c.fillStyle = '#07090e'; c.font = '700 11px system-ui'; c.textAlign = 'center'; c.fillText('⇆', x, oy + PH * s / 2 + 4);
+      c.restore();
+      tag(renderName, ox + 8, oy + 8, '#ff8fd0');
+      c.save(); c.font = '600 11.5px "Space Grotesk", system-ui, sans-serif';
+      const lw = c.measureText(pic.label).width + 16; c.restore();
+      tag(pic.label, ox + PW * s - lw - 8, oy + 8, '#3cf0d0');
+    }
+    CMP.layout = { ox, oy, w: PW * s, h: PH * s };
+  }
+
+  function hookCompare() {
+    const vp = $('compareViewport');
+    if (!vp) return;
+    $('btnCompare').onclick = openCompare;
+    $('btnCompareClose').onclick = closeCompare;
+    $('compareModal').addEventListener('click', e => { if (e.target === $('compareModal')) closeCompare(); });
+    document.querySelectorAll('#compareMode button').forEach(b => { b.onclick = () => setCompareMode(b.dataset.mode); });
+    $('compareSource').onchange = e => { CMP.src = +e.target.value; compareImage(compareSet()[CMP.src].path); drawCompare(); };
+    $('compareOpacity').oninput = e => {
+      CMP.opacity = e.target.value / 100;
+      $('compareOpacityVal').textContent = `${e.target.value}%`;
+      drawCompare();
+    };
+    let dragging = false;
+    const swipeTo = e => {
+      const L = CMP.layout; if (!L) return;
+      const r = vp.getBoundingClientRect();
+      CMP.swipe = Math.max(0, Math.min(1, (e.clientX - r.left - L.ox) / L.w));
+      drawCompare();
+    };
+    vp.addEventListener('pointerdown', e => {
+      if (CMP.mode !== 'swipe') return;
+      dragging = true; vp.setPointerCapture(e.pointerId); swipeTo(e);
+    });
+    vp.addEventListener('pointermove', e => { if (dragging) swipeTo(e); });
+    vp.addEventListener('pointerup', () => { dragging = false; });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && $('compareModal').classList.contains('open')) { e.stopPropagation(); closeCompare(); }
+    }, true);
+    if (window.ResizeObserver) new ResizeObserver(() => drawCompare()).observe(vp);
   }
 
   function fitIso() {
@@ -3369,6 +3529,7 @@
     const btnIsoClose = $('btnIsoClose');
     if (btnIsoClose) btnIsoClose.onclick = closeIsoViewer;
     $('isoModal')?.addEventListener('click', e => { if (e.target === $('isoModal')) closeIsoViewer(); });
+    hookCompare();
 
     const isoVp = $('isoViewport');
     if (isoVp) {
