@@ -174,6 +174,13 @@ button, input, select { font: inherit; color: inherit; }
   font-weight: 600;
   box-shadow: 0 0 10px rgba(255, 179, 71, 0.3);
 }
+#btnSuperInfo.active {
+  background: rgba(94, 230, 255, 0.16);
+  border-color: #5ee6ff;
+  color: #5ee6ff;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(94, 230, 255, 0.35);
+}
 .btn-del:hover {
   color: var(--red);
   border-color: rgba(255, 92, 122, 0.4);
@@ -476,6 +483,12 @@ kbd {
 .dock-btn.btn-cu-top.active {
   color: #ff5c7a; background: rgba(255, 92, 122, 0.15); border-color: rgba(255, 92, 122, 0.4);
 }
+.dock-btn.btn-cu-in1.active {
+  color: #5fd38a; background: rgba(95, 211, 138, 0.15); border-color: rgba(95, 211, 138, 0.4);
+}
+.dock-btn.btn-cu-in2.active {
+  color: #ffa94d; background: rgba(255, 169, 77, 0.15); border-color: rgba(255, 169, 77, 0.4);
+}
 .dock-btn.btn-cu-bot.active {
   color: #5cb8ff; background: rgba(92, 184, 255, 0.15); border-color: rgba(92, 184, 255, 0.4);
 }
@@ -668,3 +681,28 @@ kbd {
   .iso-toolbar { flex-wrap: wrap; justify-content: flex-end; }
   .iso-header { flex-wrap: wrap; gap: 8px; }
 }
+
+.explain-tip { position: fixed; z-index: 50; max-width: 300px; pointer-events: none; padding: 8px 10px;
+  background: rgba(14,18,24,.96); border: 1px solid rgba(60,240,208,.5); border-radius: 8px;
+  font-size: 12px; line-height: 1.35; color: var(--text); box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+.explain-tip b { color: #3cf0d0; }
+.explain-tip .xt-ref { font-family: var(--mono); font-size: 11px; opacity: .65; }
+.explain-tip div { margin-top: 3px; }
+.dock-btn[hidden], .explain-tip[hidden] { display: none; }
+
+/* Part notes (Info mode) and pad list (Super info) */
+.info-notes { margin-top: 10px; }
+.info-purpose { margin: 4px 0 8px; font-size: 12px; line-height: 1.5; }
+.info-issues-head { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 8px 0 4px; }
+.info-issues { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.5; }
+.info-issues li { margin-bottom: 4px; }
+.pad-peers { font-family: monospace; font-size: 11px; line-height: 1.6; word-break: break-word; }
+.super-toggles { display: flex; gap: 6px; margin: 2px 0 8px; }
+.super-toggles.hidden { display: none; }
+.super-tgl {
+  font: 600 11px var(--mono, monospace); padding: 3px 9px; border-radius: 6px; cursor: pointer;
+  background: transparent; color: var(--muted, #8a93a6); border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.super-tgl:hover { border-color: rgba(255, 255, 255, 0.3); color: var(--text, #e6e9ef); }
+.super-tgl.active { color: #5ee6ff; border-color: #5ee6ff; background: rgba(94, 230, 255, 0.14); }
+.super-tgl.active::before { content: "● "; font-size: 9px; }
