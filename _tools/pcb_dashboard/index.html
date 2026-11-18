@@ -21,6 +21,11 @@
         </div>
       </div>
 
+      <div class="rev-badge" id="revBadge" data-tone="other" hidden>
+        <span class="rev-tag" id="revTag">?</span>
+        <span class="rev-text"><b id="revName">–</b><small id="revStatus"></small></span>
+      </div>
+
       <div class="pickers">
         <label class="picker"><span>Board</span><select id="boardSelect"></select></label>
         <label class="picker"><span>Top</span><select id="imageSelect"><option value="">(none)</option></select></label>
@@ -234,6 +239,11 @@
       <div class="loading" id="loading">
         <div class="spinner"></div>
         <p id="loadingText">Starting…</p>
+      </div>
+
+      <div class="hud hud-rev" id="hudRev" data-tone="other" hidden>
+        <b id="hudRevText">–</b>
+        <span id="hudRevFile"></span>
       </div>
 
       <div class="hud hud-coords">
