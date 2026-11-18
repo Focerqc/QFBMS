@@ -94,6 +94,38 @@ button, input, select { font: inherit; color: inherit; }
   background: rgba(164, 107, 255, 0.15); border-color: #a46bff; color: #ffffff;
   box-shadow: 0 0 12px rgba(164, 107, 255, 0.3);
 }
+.btn-compare {
+  background: linear-gradient(135deg, rgba(255, 143, 208, 0.2), rgba(60, 240, 208, 0.16));
+  border-color: rgba(255, 143, 208, 0.5); color: #ffe3f3;
+}
+.btn-compare:hover { border-color: #ff8fd0; box-shadow: 0 0 14px rgba(255, 143, 208, 0.35); }
+
+/* Compare view: render vs reference pictures in the board frame */
+.compare-header { flex-wrap: wrap; gap: 8px 16px; }
+.compare-icon { background: linear-gradient(135deg, #ff8fd0, var(--cyan)); color: #07090e; }
+.compare-toolbar { flex-wrap: wrap; justify-content: flex-end; }
+.compare-field { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+.compare-field span { text-transform: uppercase; letter-spacing: 1px; font-size: 10px; color: var(--dim); }
+.compare-field select {
+  background: var(--panel-solid); border: 1px solid var(--line-2); border-radius: 7px;
+  padding: 4px 8px; outline: none; max-width: 260px;
+}
+.compare-field select:focus { border-color: var(--cyan); }
+.compare-opacity input { width: 120px; accent-color: #ff8fd0; }
+.compare-opacity b { font-family: var(--mono); font-weight: 500; color: var(--text); min-width: 36px; }
+.compare-seg {
+  display: flex; padding: 2px; gap: 2px; border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35); border: 1px solid var(--line-2);
+}
+.compare-seg button {
+  border: 0; background: transparent; color: var(--muted); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+}
+.compare-seg button:hover { color: var(--text); }
+.compare-seg button.on { background: rgba(255, 143, 208, 0.18); color: #ffd6ee; box-shadow: inset 0 0 0 1px rgba(255, 143, 208, 0.5); }
+.compare-viewport { cursor: default; }
+.compare-viewport.swipe { cursor: ew-resize; touch-action: none; }
+.compare-viewport canvas { position: absolute; inset: 0; display: block; }
+
 .btn-view-iso {
   background: linear-gradient(135deg, rgba(164, 107, 255, 0.22), rgba(60, 240, 208, 0.18));
   border-color: rgba(164, 107, 255, 0.45);
