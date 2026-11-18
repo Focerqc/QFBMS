@@ -1,0 +1,82 @@
+{
+ "version": 1,
+ "ref": "",
+ "refBot": "",
+ "sideView": "",
+ "refFit": {
+  "ox": 0,
+  "oy": 0,
+  "sx": 100,
+  "sy": 100
+ },
+ "colors": [
+  {
+   "id": "cyxde4gqrj",
+   "hex": "#4ea1ff",
+   "note": ""
+  },
+  {
+   "id": "cgah8vj3kc",
+   "hex": "#ff6b6b",
+   "note": "u7 here needs to be sorry. "
+  },
+  {
+   "id": "c8mxyq4uzg",
+   "hex": "#ffd166",
+   "note": ""
+  },
+  {
+   "id": "cgjsd24nmz",
+   "hex": "#06d6a0",
+   "note": "both need turned to match pic rotations"
+  }
+ ],
+ "boxes": [
+  {
+   "id": "bcywbnswhx",
+   "c": "cyxde4gqrj",
+   "x": 35.5,
+   "y": 13,
+   "w": 10.37,
+   "h": 10.1,
+   "ref": "U7",
+   "val": "ISO1050DUB",
+   "fpid": "Package_SO:SOP-8_6.62x9.15mm_P2.54mm",
+   "pat": null
+  },
+  {
+   "id": "brqqoagdb6",
+   "c": "cgah8vj3kc",
+   "x": 127,
+   "y": 23.025,
+   "w": 5.9,
+   "h": 13.75,
+   "pat": null
+  },
+  {
+   "id": "bqjalmxp7g",
+   "c": "cgjsd24nmz",
+   "x": 23.31,
+   "y": 6.6,
+   "w": 13.48,
+   "h": 10.3,
+   "ref": "Q2",
+   "val": "200V N-MOSFET TOLL, spec'd at <=8V gate",
+   "fpid": "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1",
+   "pat": null
+  },
+  {
+   "id": "b5lnd5ipkh",
+   "c": "cgjsd24nmz",
+   "x": 22.26,
+   "y": 19.5,
+   "w": 13.48,
+   "h": 10.3,
+   "ref": "Q1",
+   "val": "200V N-MOSFET TOLL, spec'd at <=8V gate",
+   "fpid": "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1",
+   "pat": null
+  }
+ ],
+ "board": "rev-a/qfbms-rev-a.kicad_pcb"
+}
